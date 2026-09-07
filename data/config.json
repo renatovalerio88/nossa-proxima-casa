@@ -1,0 +1,28 @@
+{
+  "projeto": "Nossa Próxima Casa",
+  "cidade": "Divinópolis",
+  "uf": "MG",
+  "tipo": "casa",
+  "operacao": "aluguel",
+  "criterios": {
+    "areaMinimaM2": 90,
+    "quartosMinimos": 3,
+    "aluguelIdealMin": 2000,
+    "aluguelIdealMax": 3000,
+    "aluguelOportunidadeMax": 3500,
+    "desejaveis": ["quintal", "armarios"],
+    "bonus": ["churrasqueira", "piscina", "hidromassagem"]
+  },
+  "referencias": {
+    "hospital": {
+      "nome": "Hospital Santa Mônica",
+      "endereco": "Rua Pedro Ferreira do Amaral, 33 - Padre Libério, Divinópolis - MG"
+    }
+  },
+  "pesosMatch": {
+    "casa": 40,
+    "localizacao": 25,
+    "custoBeneficio": 20,
+    "visual": 15
+  }
+}
