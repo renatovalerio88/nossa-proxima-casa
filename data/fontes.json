@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "auditoria_inicial",
+  "fontes": [
+    {"nome":"Imóveis Casa Nova","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Nova Somar","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Francisco Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Divimóveis Locadora","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Achei Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Gerais Imobiliária","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Ponto Sete Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Prime Francisco","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Bora Morá soluções imobiliárias","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Residencial Imobiliária","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"XP Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Lumine Imobiliária","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"Vitrine Imóveis","tipo":"imobiliaria","status":"a_auditar"},
+    {"nome":"ZAP Imóveis","tipo":"portal","status":"a_auditar"},
+    {"nome":"Viva Real","tipo":"portal","status":"a_auditar"},
+    {"nome":"OLX","tipo":"portal","status":"a_auditar"}
+  ]
+}
