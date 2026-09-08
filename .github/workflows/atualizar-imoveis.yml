@@ -33,15 +33,27 @@ jobs:
       - name: Validar dados e testes
         run: |
           python -m json.tool data/imoveis.json >/dev/null
+          python -m json.tool data/status-coleta.json >/dev/null
           python -m unittest discover -s tests -v
+      - name: Resumo da coleta
+        run: |
+          python - <<'PY'
+          import json, os
+          s=json.load(open('data/status-coleta.json', encoding='utf-8'))
+          text=(f"### Coleta de imóveis\n"
+                f"- Estado: **{s['estado']}**\n"
+                f"- Coletados: **{s['coletados']}**\n"
+                f"- Erros: **{s['erros']}**\n")
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as f: f.write(text)
+          PY
       - name: Commit de atualização
         run: |
-          if git diff --quiet -- data/imoveis.json data/coleta-atual.json; then
-            echo 'Sem alterações de imóveis.'
+          if git diff --quiet -- data/imoveis.json data/coleta-atual.json data/status-coleta.json; then
+            echo 'Sem alterações de imóveis ou status.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/imoveis.json data/coleta-atual.json
-          git commit -m 'data: atualiza imóveis disponíveis'
+          git add data/imoveis.json data/coleta-atual.json data/status-coleta.json
+          git commit -m 'data: atualiza imóveis e saúde da coleta'
           git push
