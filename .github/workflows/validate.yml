@@ -22,5 +22,8 @@ jobs:
           python -m json.tool data/config.json >/dev/null
           python -m json.tool data/imoveis.json >/dev/null
           python -m json.tool data/fontes.json >/dev/null
+          python -m json.tool data/status-coleta.json >/dev/null
+      - name: Validar qualidade dos dados
+        run: python scripts/validate_data_quality.py
       - name: Rodar testes
         run: python -m unittest discover -s tests -v
