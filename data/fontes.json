@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "status": "auditoria_em_andamento",
   "atualizadoEm": "2026-09-08",
   "fontes": [
@@ -25,12 +25,35 @@
       "coletaAutomatica": false,
       "motivo": "Site público possui locações e Política de Privacidade, mas ainda não foi localizada autorização clara para coleta automatizada. Não automatizar até concluir termos/robots."
     },
+    {
+      "nome": "Ponto Sete Imóveis",
+      "tipo": "imobiliaria",
+      "status": "auditoria_avancada",
+      "coletaAutomatica": false,
+      "siteUrl": "https://www.pontoseteimoveis.com.br/",
+      "motivo": "Catálogo público ativo e estruturado, com preço, bairro, quartos, área, comodidades e URL individual. Foram confirmados anúncios residenciais reais em Divinópolis, mas ainda não foi localizada autorização clara para coleta automatizada. Manter somente como fonte candidata/manual até concluir termos/robots."
+    },
+    {
+      "nome": "Achei Imóveis",
+      "tipo": "imobiliaria",
+      "status": "auditoria_avancada",
+      "coletaAutomatica": false,
+      "siteUrl": "https://www.acheiimobiliaria.com/",
+      "motivo": "Site público confirma operação de aluguel em Divinópolis e catálogo de casas/apartamentos. Política de Privacidade é referenciada, porém não foi localizada autorização explícita para coleta automatizada. Manter sem automação até concluir termos/robots."
+    },
+    {
+      "nome": "BRImóveis",
+      "tipo": "portal",
+      "status": "nao_automatizar_sem_autorizacao",
+      "coletaAutomatica": false,
+      "siteUrl": "https://www.brimoveis.com.br/",
+      "termosUrl": "https://www.brimoveis.com.br/termos",
+      "motivo": "Termos em vigor desde 16/07/2026 proíbem expressamente raspagem do catálogo e cópia da base de anúncios. Não usar como coletor automático sem autorização específica."
+    },
     {"nome":"Divimóveis Locadora","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {"nome":"Achei Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Gerais Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {"nome":"Ponto Sete Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Prime Francisco","tipo":"imobiliaria","status":"mesma_operacao_francisco","coletaAutomatica":false},
     {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
