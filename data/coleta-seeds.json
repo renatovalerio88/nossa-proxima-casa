@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "observacao": "Somente URLs permitidas para o piloto de coleta automática. Casa Nova foi removida deste arquivo após auditoria das Condições de Uso de 01/09/2026; seus links públicos históricos permanecem preservados no inventário, mas não são mais consultados automaticamente sem autorização.",
+  "observacao": "Somente URLs permitidas para o piloto de coleta automática. Casa Nova permanece fora após auditoria das Condições de Uso de 01/09/2026. Seeds indisponíveis confirmados podem permanecer temporariamente para registrar tombstones; novos seeds só entram após verificação pública de que são casas residenciais de aluguel em Divinópolis.",
   "urls": [
     {
       "fonte": "Nova Somar",
@@ -11,6 +11,16 @@
       "fonte": "Nova Somar",
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
       "codigoFonte": "10630"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
+      "codigoFonte": "10484"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-4-vagas-porto-velho-divinopolis-mg/10757",
+      "codigoFonte": "10757"
     }
   ]
 }
