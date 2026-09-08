@@ -25,20 +25,31 @@ class CoreTests(unittest.TestCase):
         item = {"cidade": "Divinópolis", "tipo": "casa", "areaM2": 100, "quartos": 3, "aluguel": 2800}
         result = eligibility(item, CFG)
         self.assertTrue(result["elegivel"])
+        self.assertEqual(result["status"], "elegivel")
         match = calculate_match(item, CFG)
         self.assertIn("Quintal: não informado", match["pontosAtencao"])
         self.assertIn("Armários: não informado", match["pontosAtencao"])
+
+    def test_missing_mandatory_fields_are_pending_not_eligible(self):
+        item = {"cidade": "Divinópolis", "tipo": "casa", "areaM2": 100, "quartos": None, "aluguel": None}
+        result = eligibility(item, CFG)
+        self.assertFalse(result["elegivel"])
+        self.assertEqual(result["status"], "pendente")
+        self.assertIn("Quartos não confirmados", result["pendencias"])
+        self.assertIn("Aluguel não confirmado", result["pendencias"])
 
     def test_hard_minimums(self):
         item = {"cidade": "Divinópolis", "tipo": "casa", "areaM2": 80, "quartos": 2, "aluguel": 2500}
         result = eligibility(item, CFG)
         self.assertFalse(result["elegivel"])
+        self.assertEqual(result["status"], "inelegivel")
         self.assertGreaterEqual(len(result["motivos"]), 2)
 
     def test_above_opportunity_ceiling_is_not_eligible(self):
         item = {"cidade": "Divinópolis", "tipo": "casa", "areaM2": 200, "quartos": 3, "aluguel": 5500}
         result = eligibility(item, CFG)
         self.assertFalse(result["elegivel"])
+        self.assertEqual(result["status"], "inelegivel")
         self.assertIn("Acima do teto de oportunidade", result["motivos"])
 
     def test_inventory_preserves_first_seen_and_tracks_price(self):
