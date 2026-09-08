@@ -34,6 +34,23 @@ def query_for(item: Dict[str, Any]) -> Optional[Tuple[str, str]]:
     return None
 
 
+def hospital_reference(hospital_cfg: Dict[str, Any], cache: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    lat = hospital_cfg.get("latitude")
+    lon = hospital_cfg.get("longitude")
+    if lat is not None and lon is not None:
+        return {
+            "latitude": float(lat),
+            "longitude": float(lon),
+            "displayName": hospital_cfg.get("endereco"),
+            "fonte": hospital_cfg.get("fonteCoordenadas"),
+        }
+
+    query = hospital_cfg.get("endereco")
+    if not query:
+        return None
+    return geocode(query, cache)
+
+
 def geocode(query: str, cache: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     key = f"geo:{query.lower()}"
     if key in cache:
@@ -98,20 +115,15 @@ def main() -> None:
     cache = cache_doc.setdefault("entries", {})
 
     hospital_cfg = cfg.get("referencias", {}).get("hospital", {})
-    hospital_query = hospital_cfg.get("endereco")
-    if not hospital_query:
-        print("Hospital sem endereço de referência; enriquecimento ignorado.")
-        return
-
     try:
-        hospital_geo = geocode(hospital_query, cache)
+        hospital_geo = hospital_reference(hospital_cfg, cache)
     except Exception as exc:
-        print(f"Geocodificação do hospital indisponível: {type(exc).__name__}: {exc}")
+        print(f"Referência do hospital indisponível: {type(exc).__name__}: {exc}")
         save_json(CACHE_PATH, cache_doc)
         return
 
     if not hospital_geo:
-        print("Endereço do hospital não foi resolvido; inventário preservado.")
+        print("Hospital sem coordenadas/endereço resolvível; inventário preservado.")
         save_json(CACHE_PATH, cache_doc)
         return
 
@@ -134,6 +146,7 @@ def main() -> None:
         hospital = dict(item.get("hospital") or {})
         hospital["referencia"] = hospital_cfg.get("nome", "Hospital Santa Mônica")
         hospital["precisaoLocalizacao"] = precision
+        hospital["fonteReferencia"] = hospital_cfg.get("fonteCoordenadas")
         hospital["distanciaLinhaRetaKm"] = round(
             haversine_km(geo["latitude"], geo["longitude"], hospital_geo["latitude"], hospital_geo["longitude"]), 1
         )
