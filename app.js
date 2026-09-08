@@ -15,7 +15,7 @@ function decisao(id) {
 }
 
 function setDecisao(id, valor) {
-  if (decisao(id) === valor) delete state.decisoes[id];
+  if (valor === null || decisao(id) === valor) delete state.decisoes[id];
   else state.decisoes[id] = valor;
   salvarDecisoes();
   render();
@@ -33,20 +33,23 @@ function ehNovo(item) {
 }
 
 function filtrar(items) {
-  const elegiveis = document.querySelector('#somenteElegiveis').checked;
-  let rows = items.filter(i => !elegiveis || i.elegibilidade?.elegivel !== false);
+  const somenteElegiveis = document.querySelector('#somenteElegiveis').checked;
+  let rows = items.filter(i => !somenteElegiveis || i.elegibilidade?.elegivel === true);
   rows = rows.filter(i => {
     const d = decisao(i.id);
     if (state.tab === 'favoritados') return d === 'favorito';
     if (state.tab === 'descartados') return d === 'descartado';
-    if (state.tab === 'novos') return ehNovo(i) && d !== 'descartado';
-    return d !== 'descartado';
+    if (state.tab === 'novos') return ehNovo(i) && d === null;
+    return true;
   });
 
   const ordem = document.querySelector('#ordenacao').value;
   return rows.sort((a,b) => {
     if (ordem === 'preco') return (a.aluguel ?? Infinity) - (b.aluguel ?? Infinity);
-    if (ordem === 'recente') return String(b.primeiroVistoEm || '').localeCompare(String(a.primeiroVistoEm || ''));
+    if (ordem === 'recente') {
+      const data = String(b.primeiroVistoEm || '').localeCompare(String(a.primeiroVistoEm || ''));
+      return data !== 0 ? data : (b.match?.final ?? -1) - (a.match?.final ?? -1);
+    }
     return (b.match?.final ?? -1) - (a.match?.final ?? -1);
   });
 }
@@ -58,7 +61,7 @@ function metric(label, value) {
 function renderResumo() {
   const ativos = state.imoveis.filter(i => i.disponivel !== false);
   const fav = ativos.filter(i => decisao(i.id) === 'favorito').length;
-  const novos = ativos.filter(i => ehNovo(i) && decisao(i.id) !== 'descartado').length;
+  const novos = ativos.filter(i => ehNovo(i) && decisao(i.id) === null).length;
   document.querySelector('#resumo').innerHTML = [
     metric('casas ativas', ativos.length),
     metric('novas', novos),
@@ -81,7 +84,8 @@ function render() {
   rows.forEach(item => {
     const node = tpl.content.cloneNode(true);
     const card = node.querySelector('.card');
-    if (decisao(item.id) === 'favorito') card.classList.add('favorito-card');
+    const d = decisao(item.id);
+    if (d === 'favorito') card.classList.add('favorito-card');
     node.querySelector('.fonte').textContent = `${valor(item.fonte, 'Fonte')} · cód. ${valor(item.codigoFonte)}`;
     node.querySelector('.titulo').textContent = valor(item.titulo, 'Casa para aluguel');
     node.querySelector('.local').textContent = [item.bairro, item.cidade].filter(Boolean).join(' · ') || 'Localização a confirmar';
@@ -95,6 +99,10 @@ function render() {
     ].join('');
 
     const alertas = [];
+    const statusElegibilidade = item.elegibilidade?.status;
+    if (statusElegibilidade === 'elegivel') alertas.push('✓ Critérios mínimos confirmados');
+    if (statusElegibilidade === 'pendente') alertas.push('⚠ Dados obrigatórios a confirmar');
+    if (statusElegibilidade === 'inelegivel') alertas.push('✕ Fora dos critérios mínimos');
     if (item.quintal === true) alertas.push('✓ Quintal');
     if (item.armarios === true) alertas.push('✓ Armários');
     if (item.hospital?.tempoCarroMin != null) alertas.push(`Hospital ~${item.hospital.tempoCarroMin} min`);
@@ -106,9 +114,23 @@ function render() {
     if (!item.url) link.classList.add('desativado');
 
     const fav = node.querySelector('.favoritar');
-    fav.textContent = decisao(item.id) === 'favorito' ? '♥ Favoritado' : '♡ Favoritar';
-    fav.addEventListener('click', () => setDecisao(item.id, 'favorito'));
-    node.querySelector('.descartar').addEventListener('click', () => setDecisao(item.id, 'descartado'));
+    const descartar = node.querySelector('.descartar');
+    if (d === 'favorito') {
+      fav.textContent = '↩ Voltar para Novos';
+      fav.addEventListener('click', () => setDecisao(item.id, null));
+      descartar.textContent = '🗑 Descartar';
+      descartar.addEventListener('click', () => setDecisao(item.id, 'descartado'));
+    } else if (d === 'descartado') {
+      fav.textContent = '♡ Favoritar';
+      fav.addEventListener('click', () => setDecisao(item.id, 'favorito'));
+      descartar.textContent = '↩ Voltar para Novos';
+      descartar.addEventListener('click', () => setDecisao(item.id, null));
+    } else {
+      fav.textContent = '♡ Favoritar';
+      fav.addEventListener('click', () => setDecisao(item.id, 'favorito'));
+      descartar.textContent = '🗑 Descartar';
+      descartar.addEventListener('click', () => setDecisao(item.id, 'descartado'));
+    }
     lista.appendChild(node);
   });
 }
