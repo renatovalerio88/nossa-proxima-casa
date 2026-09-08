@@ -4,6 +4,8 @@ import datetime as dt
 import html
 import json
 import re
+import shutil
+import subprocess
 import time
 import urllib.error
 import urllib.request
@@ -33,29 +35,79 @@ def now_iso() -> str:
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def fetch_text(url: str, attempts: int = 3) -> str:
-    last_error: Exception | None = None
+def extract_text(body: str) -> str:
+    parser = TextExtractor()
+    parser.feed(body)
+    return html.unescape("\n".join(parser.parts))
+
+
+def fetch_with_urllib(url: str) -> str:
     headers = {
         "User-Agent": UA,
         "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.5",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Cache-Control": "no-cache",
     }
-    for attempt in range(attempts):
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=25) as resp:
-                charset = resp.headers.get_content_charset() or "utf-8"
-                body = resp.read().decode(charset, errors="replace")
-            parser = TextExtractor()
-            parser.feed(body)
-            return html.unescape("\n".join(parser.parts))
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as exc:
-            last_error = exc
-            if attempt + 1 < attempts:
-                time.sleep(2 ** attempt)
-    assert last_error is not None
-    raise last_error
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=18) as resp:
+        charset = resp.headers.get_content_charset() or "utf-8"
+        return resp.read().decode(charset, errors="replace")
+
+
+def fetch_with_curl(url: str) -> str:
+    curl = shutil.which("curl")
+    if not curl:
+        raise RuntimeError("curl não disponível para fallback")
+
+    cmd = [
+        curl,
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--compressed",
+        "--http1.1",
+        "--ipv4",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "35",
+        "--retry",
+        "2",
+        "--retry-delay",
+        "2",
+        "--retry-connrefused",
+        "--user-agent",
+        UA,
+        "--header",
+        "Accept-Language: pt-BR,pt;q=0.9,en;q=0.5",
+        "--header",
+        "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        url,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=50, check=False)
+    if result.returncode != 0:
+        detail = (result.stderr or "curl falhou").strip().replace("\n", " ")
+        raise RuntimeError(f"curl exit {result.returncode}: {detail[:350]}")
+    if not result.stdout.strip():
+        raise RuntimeError("curl retornou resposta vazia")
+    return result.stdout
+
+
+def fetch_text(url: str) -> str:
+    errors: List[str] = []
+
+    try:
+        return extract_text(fetch_with_urllib(url))
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
+        errors.append(f"urllib={type(exc).__name__}: {exc}")
+
+    try:
+        return extract_text(fetch_with_curl(url))
+    except (RuntimeError, subprocess.TimeoutExpired, OSError) as exc:
+        errors.append(f"curl={type(exc).__name__}: {exc}")
+
+    raise RuntimeError(" | ".join(errors))
 
 
 def money_to_float(raw: str) -> float:
@@ -109,10 +161,13 @@ def parse_casa_nova(text: str, seed: Dict) -> Dict:
     desc = first(r"Descrição\s*(.*?)\s*(?:iframe|Fale com nossos consultores|Fale com nossos corretores|Os preços)", text)
     title = first(r"#?\s*(Casa\s+Aluguel)", text) or "Casa Aluguel"
     row.update({
-        "titulo": title, "tipo": "casa", "bairro": location,
+        "titulo": title,
+        "tipo": "casa",
+        "bairro": location,
         "aluguel": money_to_float(price) if price else None,
         "areaM2": money_to_float(area) if area else None,
-        "quartos": int(rooms) if rooms else None, "banheiros": int(baths) if baths else None,
+        "quartos": int(rooms) if rooms else None,
+        "banheiros": int(baths) if baths else None,
         "vagas": int(parking) if parking else None,
         "quintal": has_any(desc or "", ["quintal", "área externa", "area externa"]),
         "armarios": has_any(desc or "", ["armário", "armarios", "armários", "planejada"]),
@@ -135,10 +190,13 @@ def parse_nova_somar(text: str, seed: Dict) -> Dict:
     desc = first(r"Descricao do imóvel\s*(.*?)\s*(?:Características internas|Cód\. imóvel|Valor)", text)
     title = first(r"(Casa para aluguel[^\n]*)", text) or "Casa para aluguel"
     row.update({
-        "titulo": title, "tipo": "casa", "bairro": location,
+        "titulo": title,
+        "tipo": "casa",
+        "bairro": location,
         "aluguel": money_to_float(price) if price else None,
         "areaM2": money_to_float(area) if area else None,
-        "quartos": int(rooms) if rooms else None, "banheiros": int(baths) if baths else None,
+        "quartos": int(rooms) if rooms else None,
+        "banheiros": int(baths) if baths else None,
         "vagas": int(parking) if parking else None,
         "quintal": has_any(desc or "", ["quintal", "área externa", "area externa"]),
         "armarios": has_any(desc or "", ["armário", "armarios", "armários", "planejada"]),
@@ -180,9 +238,13 @@ def main() -> None:
         except Exception as exc:
             errors.append({"fonte": source, "url": seed["url"], "erro": f"{type(exc).__name__}: {exc}"})
             source_status[source]["erros"] += 1
+        time.sleep(0.5)
 
     finished = now_iso()
-    OUT.write_text(json.dumps({"schemaVersion": 1, "coletadoEm": finished, "imoveis": rows, "erros": errors}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUT.write_text(
+        json.dumps({"schemaVersion": 1, "coletadoEm": finished, "imoveis": rows, "erros": errors}, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     status = {
         "schemaVersion": 1,
         "inicio": started,
