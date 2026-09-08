@@ -30,12 +30,12 @@
     <section class="filtros">
       <label>Ordenar
         <select id="ordenacao">
+          <option value="recente" selected>Mais recentes</option>
           <option value="match">Melhor Match</option>
           <option value="preco">Menor aluguel</option>
-          <option value="recente">Mais recentes</option>
         </select>
       </label>
-      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só elegíveis</label>
+      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só elegíveis confirmados</label>
     </section>
 
     <section id="lista" class="lista" aria-live="polite"></section>
@@ -56,7 +56,7 @@
       <div class="acoes">
         <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
         <button class="favoritar">♡ Favoritar</button>
-        <button class="descartar">Descartar</button>
+        <button class="descartar">🗑 Descartar</button>
       </div>
     </article>
   </template>
