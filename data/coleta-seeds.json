@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "observacao": "URLs públicas verificadas; servem como primeira camada segura de coleta enquanto a descoberta automática por fonte é auditada.",
+  "urls": [
+    {
+      "fonte": "Casa Nova",
+      "url": "https://casanova.imb.br/imovel/122433",
+      "codigoFonte": "122433"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
+      "codigoFonte": "10484"
+    }
+  ]
+}
