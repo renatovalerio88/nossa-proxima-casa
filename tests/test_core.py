@@ -64,10 +64,38 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(item["historico"][-1]["campo"], "aluguel")
         self.assertEqual(item["historico"][-1]["para"], 2400)
 
-    def test_disappeared_listing_is_marked_unavailable(self):
-        initial = merge_inventory({"schemaVersion": 1, "imoveis": []}, [{"fonte": "X", "codigoFonte": "2"}], today="2026-09-08")
+    def test_missing_from_partial_collection_does_not_mark_unavailable(self):
+        initial = merge_inventory(
+            {"schemaVersion": 1, "imoveis": []},
+            [{"fonte": "X", "codigoFonte": "2", "disponivel": True}],
+            today="2026-09-08",
+        )
         updated = merge_inventory(initial, [], today="2026-09-09")
-        self.assertFalse(updated["imoveis"][0]["disponivel"])
+        self.assertTrue(updated["imoveis"][0]["disponivel"])
+        self.assertEqual(updated["imoveis"][0]["ultimoVistoEm"], "2026-09-08")
+
+    def test_explicit_tombstone_marks_existing_listing_unavailable(self):
+        initial = merge_inventory(
+            {"schemaVersion": 1, "imoveis": []},
+            [{"fonte": "X", "codigoFonte": "3", "disponivel": True, "aluguel": 2500}],
+            today="2026-09-08",
+        )
+        updated = merge_inventory(
+            initial,
+            [{"fonte": "X", "codigoFonte": "3", "disponivel": False}],
+            today="2026-09-09",
+        )
+        item = updated["imoveis"][0]
+        self.assertFalse(item["disponivel"])
+        self.assertEqual(item["historico"][-1], {"data": "2026-09-09", "campo": "disponivel", "de": True, "para": False})
+
+    def test_unknown_tombstone_does_not_create_ghost_listing(self):
+        updated = merge_inventory(
+            {"schemaVersion": 1, "imoveis": []},
+            [{"fonte": "X", "codigoFonte": "404", "disponivel": False}],
+            today="2026-09-09",
+        )
+        self.assertEqual(updated["imoveis"], [])
 
 
 if __name__ == "__main__":
