@@ -1,42 +1,27 @@
 {
   "schemaVersion": 1,
-  "coletadoEm": "2026-09-08T12:33:12Z",
-  "imoveis": [
-    {
-      "fonte": "Nova Somar",
-      "codigoFonte": "10484",
-      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
-      "cidade": "Divinópolis",
-      "endereco": null,
-      "latitude": null,
-      "longitude": null,
-      "fotos": [],
-      "publicadoEm": null,
-      "hospital": {},
-      "comercio": {},
-      "avaliacaoVisual": {},
-      "disponivel": true,
-      "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
-      "tipo": "casa",
-      "bairro": "Centro",
-      "aluguel": 5500.0,
-      "areaM2": 200.0,
-      "quartos": 3,
-      "banheiros": 1,
-      "vagas": 0,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM."
-    }
-  ],
+  "coletadoEm": "2026-09-08T12:45:10Z",
+  "imoveis": [],
   "erros": [
     {
       "fonte": "Casa Nova",
       "url": "https://casanova.imb.br/imovel/122433",
       "erro": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
+      "erro": "URLError: <urlopen error timed out>"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
+      "erro": "URLError: <urlopen error timed out>"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
+      "erro": "URLError: <urlopen error timed out>"
     }
   ]
 }
