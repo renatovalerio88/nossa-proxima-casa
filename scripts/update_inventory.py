@@ -18,6 +18,13 @@ def main() -> None:
     incoming_doc = load_json(Path(args.input))
     incoming = incoming_doc.get("imoveis", incoming_doc if isinstance(incoming_doc, list) else [])
 
+    # Uma pane/bloqueio de todas as fontes não significa que todos os imóveis
+    # anteriores ficaram indisponíveis. Só inferimos indisponibilidade quando
+    # houve uma coleta válida com ao menos um item observado.
+    if not incoming:
+        print("Coleta sem imóveis válidos: inventário anterior preservado sem alterar disponibilidade.")
+        return
+
     processed = []
     for item in incoming:
         row = dict(item)
