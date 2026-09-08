@@ -1,5 +1,64 @@
 {
   "schemaVersion": 1,
-  "atualizadoEm": null,
-  "imoveis": []
+  "atualizadoEm": "2026-09-08",
+  "imoveis": [
+    {
+      "fonte": "Nova Somar",
+      "codigoFonte": "10484",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
+      "tipo": "casa",
+      "bairro": "MG\nCentro",
+      "aluguel": 5500.0,
+      "areaM2": 200.0,
+      "quartos": 3,
+      "banheiros": 1,
+      "vagas": 0,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM.",
+      "elegibilidade": {
+        "elegivel": true,
+        "motivos": [
+          "Acima do teto de oportunidade"
+        ]
+      },
+      "match": {
+        "casa": 92.0,
+        "localizacao": 55,
+        "custoBeneficio": 5,
+        "visual": 50.0,
+        "final": 59.0,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "Armários"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Preço acima do teto de oportunidade",
+          "Distância ao Hospital Santa Mônica ainda não calculada",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "fingerprint": "19a154047b1fb67fb7f83d0a",
+      "id": "imv_19a154047b1fb67fb7f83d0a",
+      "primeiroVistoEm": "2026-09-08",
+      "ultimoVistoEm": "2026-09-08",
+      "historico": []
+    }
+  ]
 }
