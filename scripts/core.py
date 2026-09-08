@@ -246,6 +246,28 @@ def eligibility(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def reapply_rules(document: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]:
+    """Recalcula elegibilidade e Match para todo o inventário.
+
+    Isso impede que registros históricos mantenham classificações produzidas por
+    versões antigas das regras quando não forem observados na coleta do dia.
+    Dados de origem, histórico e disponibilidade são preservados integralmente.
+    """
+    updated = deepcopy(document)
+    rows = []
+    for raw in updated.get("imoveis", []):
+        row = deepcopy(raw)
+        row["elegibilidade"] = eligibility(row, cfg)
+        row["match"] = calculate_match(row, cfg)
+        rows.append(row)
+    updated["imoveis"] = sorted(
+        rows,
+        key=lambda x: (x.get("primeiroVistoEm") or "", x.get("match", {}).get("final", 0)),
+        reverse=True,
+    )
+    return updated
+
+
 def _append_history(history: List[Dict[str, Any]], event: Dict[str, Any]) -> None:
     if history and history[-1] == event:
         return
@@ -270,8 +292,6 @@ def merge_inventory(existing: Dict[str, Any], incoming: Iterable[Dict[str, Any]]
         pid = item["id"]
         old = current.get(pid)
 
-        # Não criamos um imóvel novo a partir de um tombstone (404/410). Ele só
-        # serve para atualizar um anúncio que já existia no inventário.
         if old is None and item.get("disponivel") is False:
             continue
 
