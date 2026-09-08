@@ -8,6 +8,7 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'data/coleta-seeds.json'
+      - 'data/fontes.json'
       - 'data/config.json'
       - '.github/workflows/atualizar-imoveis.yml'
   schedule:
@@ -30,6 +31,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validar política de fontes
+        run: python scripts/validate_source_policy.py
       - name: Coletar páginas públicas verificadas
         run: python scripts/collect_public_pages.py
       - name: Atualizar inventário, elegibilidade e Match
@@ -41,6 +44,7 @@ jobs:
           python -m json.tool data/imoveis.json >/dev/null
           python -m json.tool data/status-coleta.json >/dev/null
           python -m json.tool data/geocode-cache.json >/dev/null
+          python -m json.tool data/fontes.json >/dev/null
           python -m unittest discover -s tests -v
       - name: Resumo da coleta
         run: |
