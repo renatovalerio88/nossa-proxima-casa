@@ -15,7 +15,7 @@
       "hospital": {},
       "comercio": {},
       "avaliacaoVisual": {},
-      "disponivel": false,
+      "disponivel": true,
       "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
       "tipo": "casa",
       "bairro": "Centro",
@@ -32,9 +32,11 @@
       "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM.",
       "elegibilidade": {
         "elegivel": false,
+        "status": "inelegivel",
         "motivos": [
           "Acima do teto de oportunidade"
-        ]
+        ],
+        "pendencias": []
       },
       "match": {
         "casa": 92.0,
@@ -64,6 +66,12 @@
           "campo": "disponivel",
           "de": true,
           "para": false
+        },
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": false,
+          "para": true
         }
       ]
     },
