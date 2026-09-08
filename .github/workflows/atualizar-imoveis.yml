@@ -2,6 +2,12 @@ name: Atualizar imóveis
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'data/coleta-seeds.json'
+      - '.github/workflows/atualizar-imoveis.yml'
   schedule:
     - cron: '15 10 * * *'
 
