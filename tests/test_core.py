@@ -35,6 +35,12 @@ class CoreTests(unittest.TestCase):
         self.assertFalse(result["elegivel"])
         self.assertGreaterEqual(len(result["motivos"]), 2)
 
+    def test_above_opportunity_ceiling_is_not_eligible(self):
+        item = {"cidade": "Divinópolis", "tipo": "casa", "areaM2": 200, "quartos": 3, "aluguel": 5500}
+        result = eligibility(item, CFG)
+        self.assertFalse(result["elegivel"])
+        self.assertIn("Acima do teto de oportunidade", result["motivos"])
+
     def test_inventory_preserves_first_seen_and_tracks_price(self):
         initial = {"schemaVersion": 1, "atualizadoEm": None, "imoveis": []}
         incoming = [{"fonte": "X", "codigoFonte": "1", "cidade": "Divinópolis", "tipo": "casa", "aluguel": 2500}]
