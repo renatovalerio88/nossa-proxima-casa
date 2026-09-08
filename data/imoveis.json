@@ -165,8 +165,13 @@
       "hidromassagem": null,
       "descricao": null,
       "elegibilidade": {
-        "elegivel": true,
-        "motivos": []
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
       },
       "match": {
         "casa": 59.0,
@@ -228,8 +233,13 @@
       "hidromassagem": null,
       "descricao": null,
       "elegibilidade": {
-        "elegivel": true,
-        "motivos": []
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
       },
       "match": {
         "casa": 59.0,
@@ -536,8 +546,13 @@
       "descricao": null,
       "elegibilidade": {
         "elegivel": false,
+        "status": "inelegivel",
         "motivos": [
           "Área abaixo do mínimo"
+        ],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
         ]
       },
       "match": {
