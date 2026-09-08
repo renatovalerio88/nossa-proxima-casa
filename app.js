@@ -39,7 +39,7 @@ function filtrar(items) {
     const d = decisao(i.id);
     if (state.tab === 'favoritados') return d === 'favorito';
     if (state.tab === 'descartados') return d === 'descartado';
-    if (state.tab === 'novos') return ehNovo(i) && d === null;
+    if (state.tab === 'novos') return d === null;
     return true;
   });
 
@@ -64,7 +64,7 @@ function renderResumo() {
   const novos = ativos.filter(i => ehNovo(i) && decisao(i.id) === null).length;
   document.querySelector('#resumo').innerHTML = [
     metric('casas ativas', ativos.length),
-    metric('novas', novos),
+    metric('novas em 7 dias', novos),
     metric('favoritas', fav)
   ].join('');
 }
@@ -99,6 +99,7 @@ function render() {
     ].join('');
 
     const alertas = [];
+    if (ehNovo(item)) alertas.push('● Novo nos últimos 7 dias');
     const statusElegibilidade = item.elegibilidade?.status;
     if (statusElegibilidade === 'elegivel') alertas.push('✓ Critérios mínimos confirmados');
     if (statusElegibilidade === 'pendente') alertas.push('⚠ Dados obrigatórios a confirmar');
