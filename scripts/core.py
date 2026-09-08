@@ -196,26 +196,54 @@ def calculate_match(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]
 def eligibility(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]:
     c = cfg["criterios"]
     reasons: List[str] = []
+    missing: List[str] = []
     hard_fail = False
+
     if norm_text(item.get("cidade")) not in {"divinópolis", "divinopolis"}:
         hard_fail = True
         reasons.append("Fora de Divinópolis")
     if norm_text(item.get("tipo")) not in {"casa", "sobrado", "casa residencial"}:
         hard_fail = True
         reasons.append("Tipo diferente de casa")
+
     rooms = item.get("quartos")
     area = item.get("areaM2")
     price = item.get("aluguel")
-    if isinstance(rooms, int) and rooms < c["quartosMinimos"]:
+
+    if not isinstance(rooms, int):
+        missing.append("Quartos não confirmados")
+    elif rooms < c["quartosMinimos"]:
         hard_fail = True
         reasons.append("Quartos abaixo do mínimo")
-    if isinstance(area, (int, float)) and area < c["areaMinimaM2"]:
+
+    if not isinstance(area, (int, float)):
+        missing.append("Área não confirmada")
+    elif area < c["areaMinimaM2"]:
         hard_fail = True
         reasons.append("Área abaixo do mínimo")
-    if isinstance(price, (int, float)) and price > c["aluguelOportunidadeMax"]:
+
+    if not isinstance(price, (int, float)):
+        missing.append("Aluguel não confirmado")
+    elif price > c["aluguelOportunidadeMax"]:
         hard_fail = True
         reasons.append("Acima do teto de oportunidade")
-    return {"elegivel": not hard_fail, "motivos": reasons}
+
+    if hard_fail:
+        status = "inelegivel"
+        eligible = False
+    elif missing:
+        status = "pendente"
+        eligible = False
+    else:
+        status = "elegivel"
+        eligible = True
+
+    return {
+        "elegivel": eligible,
+        "status": status,
+        "motivos": reasons,
+        "pendencias": missing,
+    }
 
 
 def merge_inventory(existing: Dict[str, Any], incoming: Iterable[Dict[str, Any]], today: Optional[str] = None) -> Dict[str, Any]:
