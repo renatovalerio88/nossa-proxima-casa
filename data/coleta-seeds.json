@@ -1,56 +1,16 @@
 {
-  "schemaVersion": 1,
-  "observacao": "URLs públicas verificadas; servem como primeira camada segura de coleta enquanto a descoberta automática por fonte é auditada.",
+  "schemaVersion": 2,
+  "observacao": "Somente URLs permitidas para o piloto de coleta automática. Casa Nova foi removida deste arquivo após auditoria das Condições de Uso de 01/09/2026; seus links públicos históricos permanecem preservados no inventário, mas não são mais consultados automaticamente sem autorização.",
   "urls": [
     {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/120189",
-      "codigoFonte": "120189"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/119610",
-      "codigoFonte": "119610"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/12180",
-      "codigoFonte": "12180"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/13180",
-      "codigoFonte": "13180"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/112321",
-      "codigoFonte": "112321"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/121057",
-      "codigoFonte": "121057"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/13444",
-      "codigoFonte": "13444"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/118802",
-      "codigoFonte": "118802"
-    },
-    {
-      "fonte": "Casa Nova",
-      "url": "https://www.imoveiscasanova.com.br/imovel/16012",
-      "codigoFonte": "16012"
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
+      "codigoFonte": "10693"
     },
     {
       "fonte": "Nova Somar",
-      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
-      "codigoFonte": "10484"
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
+      "codigoFonte": "10630"
     }
   ]
 }
