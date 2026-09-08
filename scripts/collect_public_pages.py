@@ -67,6 +67,14 @@ def first(pattern: str, text: str, flags: int = re.I | re.S) -> Optional[str]:
     return m.group(1).strip() if m else None
 
 
+def clean_location(raw: Optional[str]) -> Optional[str]:
+    if not raw:
+        return None
+    parts = [p.strip(" ,-·") for p in re.split(r"[\r\n]+", raw) if p.strip(" ,-·")]
+    parts = [p for p in parts if p.upper() not in {"MG", "MINAS GERAIS"}]
+    return parts[-1] if parts else None
+
+
 def has_any(text: str, terms: List[str]) -> Optional[bool]:
     low = text.lower()
     return True if any(term in low for term in terms) else None
@@ -97,7 +105,7 @@ def parse_casa_nova(text: str, seed: Dict) -> Dict:
     baths = first(r"(\d+)\s*Banhos?\(s\)", text)
     parking = first(r"(\d+)\s*Vagas?\(s\)", text)
     area = first(r"([\d\.,]+)\s*m²", text)
-    location = first(r"([A-Za-zÀ-ÿ\s]+)\s*·\s*Divinopolis", text)
+    location = clean_location(first(r"([A-Za-zÀ-ÿ\s]+)\s*·\s*Divinopolis", text))
     desc = first(r"Descrição\s*(.*?)\s*(?:iframe|Fale com nossos consultores|Fale com nossos corretores|Os preços)", text)
     title = first(r"#?\s*(Casa\s+Aluguel)", text) or "Casa Aluguel"
     row.update({
@@ -123,7 +131,7 @@ def parse_nova_somar(text: str, seed: Dict) -> Dict:
     rooms = first(r"(\d+)\s*quarto\(s\)", text)
     baths = first(r"(\d+)\s*banheiro\(s\)", text)
     parking = first(r"(\d+)\s*Vaga\(s\)", text)
-    location = first(r"([A-Za-zÀ-ÿ\s]+),\s*Divinopolis\s*-\s*MG", text)
+    location = clean_location(first(r"([A-Za-zÀ-ÿ\s]+),\s*Divinopolis\s*-\s*MG", text))
     desc = first(r"Descricao do imóvel\s*(.*?)\s*(?:Características internas|Cód\. imóvel|Valor)", text)
     title = first(r"(Casa para aluguel[^\n]*)", text) or "Casa para aluguel"
     row.update({
@@ -165,7 +173,6 @@ def main() -> None:
         try:
             text = fetch_text(seed["url"])
             row = parser(text, seed)
-            # Evita considerar uma página inesperada/anti-bot como imóvel válido.
             if row.get("aluguel") is None and row.get("quartos") is None and row.get("areaM2") is None:
                 raise ValueError("página acessível, mas sem campos mínimos reconhecidos")
             rows.append(row)
