@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import math
 import re
 from copy import deepcopy
 from datetime import date
@@ -214,6 +213,7 @@ def eligibility(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]:
         hard_fail = True
         reasons.append("Área abaixo do mínimo")
     if isinstance(price, (int, float)) and price > c["aluguelOportunidadeMax"]:
+        hard_fail = True
         reasons.append("Acima do teto de oportunidade")
     return {"elegivel": not hard_fail, "motivos": reasons}
 
