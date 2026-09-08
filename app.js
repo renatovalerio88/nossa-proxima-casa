@@ -25,6 +25,13 @@ function valor(v, fallback = '—') {
   return v === null || v === undefined || v === '' ? fallback : v;
 }
 
+function dataPtBr(v) {
+  if (!v) return null;
+  const d = new Date(`${v}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return null;
+  return new Intl.DateTimeFormat('pt-BR').format(d);
+}
+
 function ehNovo(item) {
   if (!item.primeiroVistoEm) return true;
   const d = new Date(`${item.primeiroVistoEm}T12:00:00`);
@@ -69,6 +76,11 @@ function renderResumo() {
   ].join('');
 }
 
+function ultimoEventoPreco(item) {
+  const eventos = (item.historico || []).filter(e => e.campo === 'aluguel');
+  return eventos.length ? eventos[eventos.length - 1] : null;
+}
+
 function render() {
   renderResumo();
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === state.tab));
@@ -100,13 +112,40 @@ function render() {
 
     const alertas = [];
     if (ehNovo(item)) alertas.push('● Novo nos últimos 7 dias');
+
+    const primeiro = dataPtBr(item.primeiroVistoEm);
+    const ultimo = dataPtBr(item.ultimoVistoEm);
+    if (primeiro) alertas.push(`Visto desde ${primeiro}`);
+    if (ultimo && ultimo !== primeiro) alertas.push(`Última confirmação ${ultimo}`);
+
+    const ultimoPreco = ultimoEventoPreco(item);
+    if (ultimoPreco && ultimoPreco.para != null) {
+      const de = ultimoPreco.de != null ? fmt.format(ultimoPreco.de) : 'não informado';
+      const para = fmt.format(ultimoPreco.para);
+      alertas.push(`Preço alterado: ${de} → ${para}`);
+    }
+
     const statusElegibilidade = item.elegibilidade?.status;
     if (statusElegibilidade === 'elegivel') alertas.push('✓ Critérios mínimos confirmados');
     if (statusElegibilidade === 'pendente') alertas.push('⚠ Dados obrigatórios a confirmar');
     if (statusElegibilidade === 'inelegivel') alertas.push('✕ Fora dos critérios mínimos');
+    (item.elegibilidade?.motivos || []).forEach(x => alertas.push(`✕ ${x}`));
+    (item.elegibilidade?.pendencias || []).forEach(x => alertas.push(`⚠ ${x}`));
+
     if (item.quintal === true) alertas.push('✓ Quintal');
     if (item.armarios === true) alertas.push('✓ Armários');
     if (item.hospital?.tempoCarroMin != null) alertas.push(`Hospital ~${item.hospital.tempoCarroMin} min`);
+
+    if (item.match) {
+      const partes = [
+        ['Casa', item.match.casa],
+        ['Localização', item.match.localizacao],
+        ['Custo', item.match.custoBeneficio],
+        ['Visual', item.match.visual]
+      ].filter(([, v]) => v !== null && v !== undefined);
+      if (partes.length) alertas.push(`Match: ${partes.map(([k, v]) => `${k} ${v}`).join(' · ')}`);
+    }
+
     (item.match?.pontosAtencao || []).slice(0,2).forEach(x => alertas.push(`⚠ ${x}`));
     node.querySelector('.alertas').innerHTML = alertas.map(x => `<span>${x}</span>`).join('');
 
