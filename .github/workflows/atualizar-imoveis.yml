@@ -1,0 +1,41 @@
+name: Atualizar imóveis
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 10 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-imoveis
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Coletar páginas públicas verificadas
+        run: python scripts/collect_public_pages.py
+      - name: Atualizar inventário, elegibilidade e Match
+        run: python scripts/update_inventory.py --input data/coleta-atual.json
+      - name: Validar dados e testes
+        run: |
+          python -m json.tool data/imoveis.json >/dev/null
+          python -m unittest discover -s tests -v
+      - name: Commit de atualização
+        run: |
+          if git diff --quiet -- data/imoveis.json data/coleta-atual.json; then
+            echo 'Sem alterações de imóveis.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/imoveis.json data/coleta-atual.json
+          git commit -m 'data: atualiza imóveis disponíveis'
+          git push
