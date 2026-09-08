@@ -1,6 +1,15 @@
 {
   "schemaVersion": 1,
   "entries": {
-    "geo:rua pedro ferreira do amaral, 33 - padre libério, divinópolis - mg": null
+    "geo:rua pedro ferreira do amaral, 33 - padre libério, divinópolis - mg": null,
+    "geo:centro, divinópolis, mg, brasil": {
+      "latitude": -20.1059298,
+      "longitude": -44.9741266,
+      "displayName": "Centro, Santo Antônio dos Campos, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "route:-20.105930,-44.974127:-20.120293,-44.895337": {
+      "distanciaKm": 10.4,
+      "tempoCarroMin": 17
+    }
   }
 }

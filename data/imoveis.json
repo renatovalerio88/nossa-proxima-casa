@@ -8,11 +8,19 @@
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
       "cidade": "Divinópolis",
       "endereco": null,
-      "latitude": null,
-      "longitude": null,
+      "latitude": -20.1059298,
+      "longitude": -44.9741266,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 8.4,
+        "distanciaKm": 10.4,
+        "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": true,
@@ -40,19 +48,19 @@
       },
       "match": {
         "casa": 92.0,
-        "localizacao": 55,
+        "localizacao": 52,
         "custoBeneficio": 5,
         "visual": 50.0,
-        "final": 59.0,
+        "final": 58.3,
         "motivosPositivos": [
           "200 m²",
           "3 quartos",
-          "Armários"
+          "Armários",
+          "Hospital Santa Mônica: ~17 min"
         ],
         "pontosAtencao": [
           "Quintal: não informado",
           "Preço acima do teto de oportunidade",
-          "Distância ao Hospital Santa Mônica ainda não calculada",
           "Avaliação visual ainda não disponível"
         ]
       },
