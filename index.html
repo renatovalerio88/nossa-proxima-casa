@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nossa Próxima Casa</title>
+  <meta name="description" content="Painel pessoal para acompanhar casas de aluguel em Divinópolis.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <p class="eyebrow">Divinópolis · aluguel residencial</p>
+      <h1>Nossa Próxima Casa</h1>
+      <p class="sub">Casas reais, organizadas pelo quanto combinam com o que procuramos.</p>
+    </div>
+    <div class="status" id="statusColeta">Carregando dados…</div>
+  </header>
+
+  <main>
+    <section class="resumo" id="resumo"></section>
+
+    <nav class="tabs" aria-label="Filtros principais">
+      <button class="tab ativo" data-tab="novos">Novos</button>
+      <button class="tab" data-tab="favoritados">Favoritados</button>
+      <button class="tab" data-tab="descartados">Descartados</button>
+      <button class="tab" data-tab="todos">Todos</button>
+    </nav>
+
+    <section class="filtros">
+      <label>Ordenar
+        <select id="ordenacao">
+          <option value="match">Melhor Match</option>
+          <option value="preco">Menor aluguel</option>
+          <option value="recente">Mais recentes</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só elegíveis</label>
+    </section>
+
+    <section id="lista" class="lista" aria-live="polite"></section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-topo">
+        <div>
+          <span class="fonte"></span>
+          <h2 class="titulo"></h2>
+          <p class="local"></p>
+        </div>
+        <div class="match"></div>
+      </div>
+      <div class="metricas"></div>
+      <div class="alertas"></div>
+      <div class="acoes">
+        <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
+        <button class="favoritar">♡ Favoritar</button>
+        <button class="descartar">Descartar</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
