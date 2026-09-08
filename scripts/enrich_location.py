@@ -5,10 +5,12 @@ import math
 import time
 import urllib.parse
 import urllib.request
-from pathlib import Path
 from typing import Any, Dict, Optional, Tuple
 
-from core import DATA_DIR, calculate_match, load_json, save_json
+try:
+    from core import DATA_DIR, calculate_match, load_json, save_json
+except ModuleNotFoundError:
+    from scripts.core import DATA_DIR, calculate_match, load_json, save_json
 
 CACHE_PATH = DATA_DIR / "geocode-cache.json"
 INVENTORY_PATH = DATA_DIR / "imoveis.json"
