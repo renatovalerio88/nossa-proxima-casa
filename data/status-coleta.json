@@ -1,19 +1,16 @@
 {
   "schemaVersion": 1,
-  "inicio": "2026-09-08T17:57:08Z",
-  "fim": "2026-09-08T17:57:53Z",
+  "inicio": "2026-09-08T17:59:06Z",
+  "fim": "2026-09-08T17:59:10Z",
   "estado": "parcial",
-  "coletados": 6,
-  "erros": 4,
+  "coletados": 0,
+  "indisponiveisConfirmados": 2,
+  "erros": 2,
   "fontes": {
-    "Casa Nova": {
-      "tentativas": 9,
-      "sucessos": 5,
-      "erros": 4
-    },
     "Nova Somar": {
-      "tentativas": 1,
-      "sucessos": 1,
+      "tentativas": 2,
+      "sucessos": 0,
+      "indisponiveis": 2,
       "erros": 0
     }
   }
