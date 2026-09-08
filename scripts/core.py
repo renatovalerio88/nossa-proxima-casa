@@ -246,18 +246,35 @@ def eligibility(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def _append_history(history: List[Dict[str, Any]], event: Dict[str, Any]) -> None:
+    if history and history[-1] == event:
+        return
+    history.append(event)
+
+
 def merge_inventory(existing: Dict[str, Any], incoming: Iterable[Dict[str, Any]], today: Optional[str] = None) -> Dict[str, Any]:
+    """Mescla observações sem inferir desaparecimento pela simples ausência.
+
+    Uma coleta parcial, timeout ou mudança na lista de seeds nunca deve marcar
+    imóveis antigos como indisponíveis. A indisponibilidade só é registrada
+    quando chega uma observação explícita com ``disponivel=False`` para o mesmo
+    identificador estável de fonte/código.
+    """
     today = today or date.today().isoformat()
     current = {x["id"]: deepcopy(x) for x in existing.get("imoveis", []) if x.get("id")}
-    seen_ids = set()
 
     for raw in incoming:
         item = deepcopy(raw)
         item["fingerprint"] = item.get("fingerprint") or property_fingerprint(item)
         item["id"] = item.get("id") or stable_id(item)
         pid = item["id"]
-        seen_ids.add(pid)
         old = current.get(pid)
+
+        # Não criamos um imóvel novo a partir de um tombstone (404/410). Ele só
+        # serve para atualizar um anúncio que já existia no inventário.
+        if old is None and item.get("disponivel") is False:
+            continue
+
         if old is None:
             item["primeiroVistoEm"] = item.get("primeiroVistoEm") or today
             item["ultimoVistoEm"] = today
@@ -266,11 +283,19 @@ def merge_inventory(existing: Dict[str, Any], incoming: Iterable[Dict[str, Any]]
             current[pid] = item
             continue
 
+        history = deepcopy(old.get("historico") or [])
         previous_price = old.get("aluguel")
         new_price = item.get("aluguel")
-        history = old.setdefault("historico", [])
         if new_price is not None and previous_price != new_price:
-            history.append({"data": today, "campo": "aluguel", "de": previous_price, "para": new_price})
+            _append_history(history, {"data": today, "campo": "aluguel", "de": previous_price, "para": new_price})
+
+        previous_availability = old.get("disponivel", True)
+        new_availability = item.get("disponivel", previous_availability)
+        if new_availability is not previous_availability:
+            _append_history(
+                history,
+                {"data": today, "campo": "disponivel", "de": previous_availability, "para": new_availability},
+            )
 
         first_seen = old.get("primeiroVistoEm") or today
         merged = deepcopy(old)
@@ -279,17 +304,16 @@ def merge_inventory(existing: Dict[str, Any], incoming: Iterable[Dict[str, Any]]
                 merged[key] = value
         merged["primeiroVistoEm"] = first_seen
         merged["ultimoVistoEm"] = today
-        merged["disponivel"] = item.get("disponivel", True)
+        merged["disponivel"] = new_availability
         merged["historico"] = history
         current[pid] = merged
-
-    for pid, item in current.items():
-        if pid not in seen_ids and item.get("disponivel") is True:
-            item.setdefault("historico", []).append({"data": today, "campo": "disponivel", "de": True, "para": False})
-            item["disponivel"] = False
 
     return {
         "schemaVersion": existing.get("schemaVersion", 1),
         "atualizadoEm": today,
-        "imoveis": sorted(current.values(), key=lambda x: (x.get("primeiroVistoEm") or "", x.get("match", {}).get("final", 0)), reverse=True),
+        "imoveis": sorted(
+            current.values(),
+            key=lambda x: (x.get("primeiroVistoEm") or "", x.get("match", {}).get("final", 0)),
+            reverse=True,
+        ),
     }
