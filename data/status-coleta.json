@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "inicio": "2026-09-08T13:53:57Z",
-  "fim": "2026-09-08T13:54:07Z",
+  "inicio": "2026-09-08T15:44:29Z",
+  "fim": "2026-09-08T15:44:44Z",
   "estado": "parcial",
-  "coletados": 1,
+  "coletados": 5,
   "erros": 3,
   "fontes": {
     "Casa Nova": {
-      "tentativas": 1,
-      "sucessos": 0,
+      "tentativas": 5,
+      "sucessos": 4,
       "erros": 1
     },
     "Nova Somar": {
