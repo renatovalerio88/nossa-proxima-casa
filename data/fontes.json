@@ -1,26 +1,46 @@
 {
-  "schemaVersion": 1,
-  "status": "auditoria_inicial",
+  "schemaVersion": 2,
+  "status": "auditoria_em_andamento",
+  "atualizadoEm": "2026-09-08",
   "fontes": [
-    {"nome":"Imóveis Casa Nova","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Nova Somar","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Francisco Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Divimóveis Locadora","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Achei Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Gerais Imobiliária","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Ponto Sete Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Prime Francisco","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Bora Morá soluções imobiliárias","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Residencial Imobiliária","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"XP Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Lumine Imobiliária","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"Vitrine Imóveis","tipo":"imobiliaria","status":"a_auditar"},
-    {"nome":"ZAP Imóveis","tipo":"portal","status":"a_auditar"},
-    {"nome":"Viva Real","tipo":"portal","status":"a_auditar"},
-    {"nome":"OLX","tipo":"portal","status":"a_auditar"}
+    {
+      "nome": "Imóveis Casa Nova",
+      "tipo": "imobiliaria",
+      "status": "nao_automatizar_sem_autorizacao",
+      "coletaAutomatica": false,
+      "motivo": "Condições de Uso atualizadas em 01/09/2026 proíbem coleta/cópia/extração automatizada sem autorização. Links públicos podem continuar preservados no inventário para uso pessoal.",
+      "termosUrl": "https://www.imoveiscasanova.com.br/termos-de-uso"
+    },
+    {
+      "nome": "Nova Somar",
+      "tipo": "imobiliaria",
+      "status": "piloto_baixa_frequencia",
+      "coletaAutomatica": true,
+      "motivo": "Páginas públicas estruturadas; nenhuma proibição explícita de coleta encontrada na auditoria inicial. Acesso externo está instável no GitHub Actions, portanto permanece em piloto de baixa frequência."
+    },
+    {
+      "nome": "Francisco Imóveis",
+      "tipo": "imobiliaria",
+      "status": "auditoria_avancada",
+      "coletaAutomatica": false,
+      "motivo": "Site público possui locações e Política de Privacidade, mas ainda não foi localizada autorização clara para coleta automatizada. Não automatizar até concluir termos/robots."
+    },
+    {"nome":"Divimóveis Locadora","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Achei Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Gerais Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Ponto Sete Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Prime Francisco","tipo":"imobiliaria","status":"mesma_operacao_francisco","coletaAutomatica":false},
+    {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Bora Morá soluções imobiliárias","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Residencial Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"XP Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Lumine Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Vitrine Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"ZAP Imóveis","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
+    {"nome":"Viva Real","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
+    {"nome":"OLX","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false}
   ]
 }
