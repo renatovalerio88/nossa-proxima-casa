@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from core import DATA_DIR, calculate_match, eligibility, load_json, merge_inventory, save_json
+from core import DATA_DIR, calculate_match, eligibility, load_json, merge_inventory, reapply_rules, save_json
 
 
 def main() -> None:
@@ -18,11 +18,13 @@ def main() -> None:
     incoming_doc = load_json(Path(args.input))
     incoming = incoming_doc.get("imoveis", incoming_doc if isinstance(incoming_doc, list) else [])
 
-    # Uma pane/bloqueio de todas as fontes não significa que todos os imóveis
-    # anteriores ficaram indisponíveis. Só inferimos indisponibilidade quando
-    # houve uma coleta válida com ao menos um item observado.
+    # Mesmo quando a coleta do dia não traz imóveis válidos, reaplicamos as
+    # regras atuais ao inventário já conhecido. Isso corrige classificações
+    # legadas sem inventar disponibilidade, preço ou qualquer dado de origem.
     if not incoming:
-        print("Coleta sem imóveis válidos: inventário anterior preservado sem alterar disponibilidade.")
+        refreshed = reapply_rules(existing, cfg)
+        save_json(inventory_path, refreshed)
+        print("Coleta sem imóveis válidos: disponibilidade preservada e regras atuais reaplicadas.")
         return
 
     processed = []
@@ -33,8 +35,9 @@ def main() -> None:
         processed.append(row)
 
     merged = merge_inventory(existing, processed, today=args.today)
+    merged = reapply_rules(merged, cfg)
     save_json(inventory_path, merged)
-    print(f"Inventário atualizado: {len(merged['imoveis'])} imóveis")
+    print(f"Inventário atualizado e reclassificado: {len(merged['imoveis'])} imóveis")
 
 
 if __name__ == "__main__":
