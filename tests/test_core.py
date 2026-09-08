@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.core import calculate_match, eligibility, merge_inventory, property_fingerprint
+from scripts.core import calculate_match, eligibility, merge_inventory, property_fingerprint, reapply_rules
 
 
 CFG = {
@@ -51,6 +51,33 @@ class CoreTests(unittest.TestCase):
         self.assertFalse(result["elegivel"])
         self.assertEqual(result["status"], "inelegivel")
         self.assertIn("Acima do teto de oportunidade", result["motivos"])
+
+    def test_reapply_rules_updates_legacy_classification_without_losing_history(self):
+        document = {
+            "schemaVersion": 1,
+            "atualizadoEm": "2026-09-08",
+            "imoveis": [
+                {
+                    "id": "imv_legacy",
+                    "fonte": "Casa Nova",
+                    "codigoFonte": "1",
+                    "cidade": "Divinópolis",
+                    "tipo": "casa",
+                    "areaM2": 100,
+                    "quartos": None,
+                    "aluguel": None,
+                    "disponivel": False,
+                    "historico": [{"data": "2026-09-08", "campo": "disponivel", "de": True, "para": False}],
+                    "elegibilidade": {"elegivel": True, "motivos": []},
+                }
+            ],
+        }
+        updated = reapply_rules(document, CFG)
+        item = updated["imoveis"][0]
+        self.assertFalse(item["elegibilidade"]["elegivel"])
+        self.assertEqual(item["elegibilidade"]["status"], "pendente")
+        self.assertEqual(item["historico"], document["imoveis"][0]["historico"])
+        self.assertFalse(item["disponivel"])
 
     def test_inventory_preserves_first_seen_and_tracks_price(self):
         initial = {"schemaVersion": 1, "atualizadoEm": None, "imoveis": []}
