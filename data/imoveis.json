@@ -15,7 +15,7 @@
       "hospital": {},
       "comercio": {},
       "avaliacaoVisual": {},
-      "disponivel": true,
+      "disponivel": false,
       "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
       "tipo": "casa",
       "bairro": "Centro",
@@ -58,7 +58,14 @@
       "id": "imv_19a154047b1fb67fb7f83d0a",
       "primeiroVistoEm": "2026-09-08",
       "ultimoVistoEm": "2026-09-08",
-      "historico": []
+      "historico": [
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": true,
+          "para": false
+        }
+      ]
     },
     {
       "fonte": "Casa Nova",
@@ -89,8 +96,13 @@
       "hidromassagem": null,
       "descricao": null,
       "elegibilidade": {
-        "elegivel": true,
-        "motivos": []
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
       },
       "match": {
         "casa": 67.0,
@@ -129,7 +141,7 @@
       "hospital": {},
       "comercio": {},
       "avaliacaoVisual": {},
-      "disponivel": true,
+      "disponivel": false,
       "titulo": "Casa Aluguel",
       "tipo": "casa",
       "bairro": null,
@@ -170,7 +182,14 @@
       "id": "imv_ad4a74856f004056baee1a52",
       "primeiroVistoEm": "2026-09-08",
       "ultimoVistoEm": "2026-09-08",
-      "historico": []
+      "historico": [
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": true,
+          "para": false
+        }
+      ]
     },
     {
       "fonte": "Casa Nova",
@@ -185,7 +204,7 @@
       "hospital": {},
       "comercio": {},
       "avaliacaoVisual": {},
-      "disponivel": true,
+      "disponivel": false,
       "titulo": "Casa Aluguel",
       "tipo": "casa",
       "bairro": null,
@@ -226,6 +245,257 @@
       "id": "imv_86dfbd60c9f718ee984879dc",
       "primeiroVistoEm": "2026-09-08",
       "ultimoVistoEm": "2026-09-08",
+      "historico": [
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": true,
+          "para": false
+        }
+      ]
+    },
+    {
+      "fonte": "Casa Nova",
+      "codigoFonte": "12180",
+      "url": "https://www.imoveiscasanova.com.br/imovel/12180",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa Aluguel",
+      "tipo": "casa",
+      "bairro": null,
+      "aluguel": null,
+      "areaM2": 100.0,
+      "quartos": null,
+      "banheiros": null,
+      "vagas": null,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": null,
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
+      },
+      "match": {
+        "casa": 59.0,
+        "localizacao": 55,
+        "custoBeneficio": 35.0,
+        "visual": 50.0,
+        "final": 51.9,
+        "motivosPositivos": [
+          "100 m²"
+        ],
+        "pontosAtencao": [
+          "Quartos não informados",
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Aluguel não informado",
+          "Distância ao Hospital Santa Mônica ainda não calculada",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "fingerprint": "f1433af393fb10f5d139dbc2",
+      "id": "imv_f1433af393fb10f5d139dbc2",
+      "primeiroVistoEm": "2026-09-08",
+      "ultimoVistoEm": "2026-09-08",
+      "historico": []
+    },
+    {
+      "fonte": "Casa Nova",
+      "codigoFonte": "112321",
+      "url": "https://www.imoveiscasanova.com.br/imovel/112321",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa Aluguel",
+      "tipo": "casa",
+      "bairro": null,
+      "aluguel": null,
+      "areaM2": 100.0,
+      "quartos": null,
+      "banheiros": null,
+      "vagas": null,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": null,
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
+      },
+      "match": {
+        "casa": 59.0,
+        "localizacao": 55,
+        "custoBeneficio": 35.0,
+        "visual": 50.0,
+        "final": 51.9,
+        "motivosPositivos": [
+          "100 m²"
+        ],
+        "pontosAtencao": [
+          "Quartos não informados",
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Aluguel não informado",
+          "Distância ao Hospital Santa Mônica ainda não calculada",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "fingerprint": "2818101a61b7315494b1a6e6",
+      "id": "imv_2818101a61b7315494b1a6e6",
+      "primeiroVistoEm": "2026-09-08",
+      "ultimoVistoEm": "2026-09-08",
+      "historico": []
+    },
+    {
+      "fonte": "Casa Nova",
+      "codigoFonte": "16012",
+      "url": "https://www.imoveiscasanova.com.br/imovel/16012",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa Aluguel",
+      "tipo": "casa",
+      "bairro": null,
+      "aluguel": null,
+      "areaM2": 100.0,
+      "quartos": null,
+      "banheiros": null,
+      "vagas": null,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": null,
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
+      },
+      "match": {
+        "casa": 59.0,
+        "localizacao": 55,
+        "custoBeneficio": 35.0,
+        "visual": 50.0,
+        "final": 51.9,
+        "motivosPositivos": [
+          "100 m²"
+        ],
+        "pontosAtencao": [
+          "Quartos não informados",
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Aluguel não informado",
+          "Distância ao Hospital Santa Mônica ainda não calculada",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "fingerprint": "821ff566d83eba30ce019300",
+      "id": "imv_821ff566d83eba30ce019300",
+      "primeiroVistoEm": "2026-09-08",
+      "ultimoVistoEm": "2026-09-08",
+      "historico": []
+    },
+    {
+      "fonte": "Casa Nova",
+      "codigoFonte": "119610",
+      "url": "https://www.imoveiscasanova.com.br/imovel/119610",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa Aluguel",
+      "tipo": "casa",
+      "bairro": null,
+      "aluguel": null,
+      "areaM2": 90.0,
+      "quartos": null,
+      "banheiros": null,
+      "vagas": null,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": null,
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Quartos não confirmados",
+          "Aluguel não confirmado"
+        ]
+      },
+      "match": {
+        "casa": 58.0,
+        "localizacao": 55,
+        "custoBeneficio": 35.0,
+        "visual": 50.0,
+        "final": 51.5,
+        "motivosPositivos": [
+          "90 m²"
+        ],
+        "pontosAtencao": [
+          "Quartos não informados",
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Aluguel não informado",
+          "Distância ao Hospital Santa Mônica ainda não calculada",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "fingerprint": "de5be3e2d2a763b25b7c7035",
+      "id": "imv_de5be3e2d2a763b25b7c7035",
+      "primeiroVistoEm": "2026-09-08",
+      "ultimoVistoEm": "2026-09-08",
       "historico": []
     },
     {
@@ -241,7 +511,7 @@
       "hospital": {},
       "comercio": {},
       "avaliacaoVisual": {},
-      "disponivel": true,
+      "disponivel": false,
       "titulo": "Casa Aluguel",
       "tipo": "casa",
       "bairro": null,
@@ -283,7 +553,14 @@
       "id": "imv_57779b8616964f01728f8e6f",
       "primeiroVistoEm": "2026-09-08",
       "ultimoVistoEm": "2026-09-08",
-      "historico": []
+      "historico": [
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": true,
+          "para": false
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "coletadoEm": "2026-09-08T15:44:44Z",
+  "coletadoEm": "2026-09-08T16:51:29Z",
   "imoveis": [
     {
       "fonte": "Casa Nova",
@@ -33,8 +33,37 @@
     },
     {
       "fonte": "Casa Nova",
-      "codigoFonte": "110823",
-      "url": "https://www.imoveiscasanova.com.br/imovel/110823",
+      "codigoFonte": "119610",
+      "url": "https://www.imoveiscasanova.com.br/imovel/119610",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa Aluguel",
+      "tipo": "casa",
+      "bairro": null,
+      "aluguel": null,
+      "areaM2": 90.0,
+      "quartos": null,
+      "banheiros": null,
+      "vagas": null,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": null
+    },
+    {
+      "fonte": "Casa Nova",
+      "codigoFonte": "12180",
+      "url": "https://www.imoveiscasanova.com.br/imovel/12180",
       "cidade": "Divinópolis",
       "endereco": null,
       "latitude": null,
@@ -62,8 +91,8 @@
     },
     {
       "fonte": "Casa Nova",
-      "codigoFonte": "122407",
-      "url": "https://www.imoveiscasanova.com.br/imovel/122407",
+      "codigoFonte": "112321",
+      "url": "https://www.imoveiscasanova.com.br/imovel/112321",
       "cidade": "Divinópolis",
       "endereco": null,
       "latitude": null,
@@ -91,8 +120,8 @@
     },
     {
       "fonte": "Casa Nova",
-      "codigoFonte": "111811",
-      "url": "https://www.imoveiscasanova.com.br/imovel/111811",
+      "codigoFonte": "16012",
+      "url": "https://www.imoveiscasanova.com.br/imovel/16012",
       "cidade": "Divinópolis",
       "endereco": null,
       "latitude": null,
@@ -107,7 +136,7 @@
       "tipo": "casa",
       "bairro": null,
       "aluguel": null,
-      "areaM2": 80.0,
+      "areaM2": 100.0,
       "quartos": null,
       "banheiros": null,
       "vagas": null,
@@ -117,52 +146,33 @@
       "piscina": null,
       "hidromassagem": null,
       "descricao": null
-    },
-    {
-      "fonte": "Nova Somar",
-      "codigoFonte": "10484",
-      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
-      "cidade": "Divinópolis",
-      "endereco": null,
-      "latitude": null,
-      "longitude": null,
-      "fotos": [],
-      "publicadoEm": null,
-      "hospital": {},
-      "comercio": {},
-      "avaliacaoVisual": {},
-      "disponivel": true,
-      "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
-      "tipo": "casa",
-      "bairro": "Centro",
-      "aluguel": 5500.0,
-      "areaM2": 200.0,
-      "quartos": 3,
-      "banheiros": 1,
-      "vagas": 0,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM."
     }
   ],
   "erros": [
     {
       "fonte": "Casa Nova",
-      "url": "https://casanova.imb.br/imovel/122433",
-      "erro": "RuntimeError: urllib=URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)> | curl=RuntimeError: curl exit 60: curl: (60) SSL certificate problem: self-signed certificate More details here: https://curl.se/docs/sslcerts.html  curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above."
+      "url": "https://www.imoveiscasanova.com.br/imovel/13180",
+      "erro": "RuntimeError: urllib=HTTPError: HTTP Error 404: Not Found | curl=RuntimeError: curl exit 22: curl: (22) The requested URL returned error: 404"
+    },
+    {
+      "fonte": "Casa Nova",
+      "url": "https://www.imoveiscasanova.com.br/imovel/121057",
+      "erro": "RuntimeError: urllib=HTTPError: HTTP Error 404: Not Found | curl=RuntimeError: curl exit 22: curl: (22) The requested URL returned error: 404"
+    },
+    {
+      "fonte": "Casa Nova",
+      "url": "https://www.imoveiscasanova.com.br/imovel/13444",
+      "erro": "RuntimeError: urllib=HTTPError: HTTP Error 404: Not Found | curl=RuntimeError: curl exit 22: curl: (22) The requested URL returned error: 404"
+    },
+    {
+      "fonte": "Casa Nova",
+      "url": "https://www.imoveiscasanova.com.br/imovel/118802",
+      "erro": "RuntimeError: urllib=HTTPError: HTTP Error 404: Not Found | curl=RuntimeError: curl exit 22: curl: (22) The requested URL returned error: 404"
     },
     {
       "fonte": "Nova Somar",
-      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
-      "erro": "RuntimeError: urllib=HTTPError: HTTP Error 410: Gone | curl=RuntimeError: curl exit 22: curl: (22) The requested URL returned error: 410"
-    },
-    {
-      "fonte": "Nova Somar",
-      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
-      "erro": "RuntimeError: urllib=HTTPError: HTTP Error 410: Gone | curl=RuntimeError: curl exit 22: curl: (22) The requested URL returned error: 410"
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
+      "erro": "RuntimeError: urllib=URLError: <urlopen error timed out> | curl=RuntimeError: curl exit 28: curl: (28) Failed to connect to www.novasomar.com.br port 443 after 10002 ms: Timeout was reached curl: (28) Failed to connect to www.novasomar.com.br port 443 after 10002 ms: Timeout was reached curl: (28) Failed to connect to www.novasomar.com.br port 443 after 10002 ms: Timeout was reached"
     }
   ]
 }
