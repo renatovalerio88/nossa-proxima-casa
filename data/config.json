@@ -16,7 +16,10 @@
   "referencias": {
     "hospital": {
       "nome": "Hospital Santa Mônica",
-      "endereco": "Rua Pedro Ferreira do Amaral, 33 - Padre Libério, Divinópolis - MG"
+      "endereco": "Rua Pedro Ferreira do Amaral, 33 - Padre Libério, Divinópolis - MG",
+      "latitude": -20.120292716318463,
+      "longitude": -44.89533733843522,
+      "fonteCoordenadas": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica"
     }
   },
   "pesosMatch": {
