@@ -20,6 +20,10 @@ STATUS = DATA / "status-coleta.json"
 UA = "Mozilla/5.0 (compatible; NossaProximaCasa/1.0; +https://github.com/renatovalerio88/nossa-proxima-casa)"
 
 
+class ListingUnavailable(RuntimeError):
+    """Anúncio confirmado como removido (HTTP 404/410)."""
+
+
 class TextExtractor(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
@@ -99,7 +103,11 @@ def fetch_text(url: str) -> str:
 
     try:
         return extract_text(fetch_with_urllib(url))
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
+    except urllib.error.HTTPError as exc:
+        if exc.code in {404, 410}:
+            raise ListingUnavailable(f"HTTP {exc.code}") from exc
+        errors.append(f"urllib=HTTPError: {exc}")
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
         errors.append(f"urllib={type(exc).__name__}: {exc}")
 
     try:
@@ -150,6 +158,12 @@ def base(seed: Dict) -> Dict:
     }
 
 
+def tombstone(seed: Dict) -> Dict:
+    row = base(seed)
+    row["disponivel"] = False
+    return row
+
+
 def parse_casa_nova(text: str, seed: Dict) -> Dict:
     row = base(seed)
     price = first(r"Valor do aluguel:\s*R\$\s*([\d\.]+,\d{2})", text)
@@ -159,10 +173,10 @@ def parse_casa_nova(text: str, seed: Dict) -> Dict:
     area = first(r"([\d\.,]+)\s*m²", text)
     location = clean_location(first(r"([A-Za-zÀ-ÿ\s]+)\s*·\s*Divinopolis", text))
     desc = first(r"Descrição\s*(.*?)\s*(?:iframe|Fale com nossos consultores|Fale com nossos corretores|Os preços)", text)
-    title = first(r"#?\s*(Casa\s+Aluguel)", text) or "Casa Aluguel"
+    title = first(r"#?\s*(Casa\s+Aluguel)", text) or first(r"(Casa\s+para\s+aluguel[^\n]*)", text)
     row.update({
         "titulo": title,
-        "tipo": "casa",
+        "tipo": "casa" if title else None,
         "bairro": location,
         "aluguel": money_to_float(price) if price else None,
         "areaM2": money_to_float(area) if area else None,
@@ -188,10 +202,10 @@ def parse_nova_somar(text: str, seed: Dict) -> Dict:
     parking = first(r"(\d+)\s*Vaga\(s\)", text)
     location = clean_location(first(r"([A-Za-zÀ-ÿ\s]+),\s*Divinopolis\s*-\s*MG", text))
     desc = first(r"Descricao do imóvel\s*(.*?)\s*(?:Características internas|Cód\. imóvel|Valor)", text)
-    title = first(r"(Casa para aluguel[^\n]*)", text) or "Casa para aluguel"
+    title = first(r"(Casa para aluguel[^\n]*)", text)
     row.update({
         "titulo": title,
-        "tipo": "casa",
+        "tipo": "casa" if title else None,
         "bairro": location,
         "aluguel": money_to_float(price) if price else None,
         "areaM2": money_to_float(area) if area else None,
@@ -208,6 +222,16 @@ def parse_nova_somar(text: str, seed: Dict) -> Dict:
     return row
 
 
+def validate_row(row: Dict) -> None:
+    if row.get("tipo") != "casa":
+        raise ValueError("página não confirmou que o anúncio é uma casa para aluguel")
+    if not row.get("descricao"):
+        raise ValueError("página acessível, mas descrição do imóvel não foi reconhecida")
+    recognized = sum(row.get(field) is not None for field in ("aluguel", "quartos", "areaM2"))
+    if recognized < 2:
+        raise ValueError("página acessível, mas campos essenciais vieram incompletos")
+
+
 def parser_for(source: str):
     return {"Casa Nova": parse_casa_nova, "Nova Somar": parse_nova_somar}.get(source)
 
@@ -218,10 +242,11 @@ def main() -> None:
     rows: List[Dict] = []
     errors: List[Dict] = []
     source_status: Dict[str, Dict] = {}
+    unavailable = 0
 
     for seed in seeds:
         source = seed["fonte"]
-        source_status.setdefault(source, {"tentativas": 0, "sucessos": 0, "erros": 0})
+        source_status.setdefault(source, {"tentativas": 0, "sucessos": 0, "indisponiveis": 0, "erros": 0})
         source_status[source]["tentativas"] += 1
         parser = parser_for(source)
         if parser is None:
@@ -231,16 +256,21 @@ def main() -> None:
         try:
             text = fetch_text(seed["url"])
             row = parser(text, seed)
-            if row.get("aluguel") is None and row.get("quartos") is None and row.get("areaM2") is None:
-                raise ValueError("página acessível, mas sem campos mínimos reconhecidos")
+            validate_row(row)
             rows.append(row)
             source_status[source]["sucessos"] += 1
+        except ListingUnavailable as exc:
+            rows.append(tombstone(seed))
+            unavailable += 1
+            source_status[source]["indisponiveis"] += 1
+            errors.append({"fonte": source, "url": seed["url"], "erro": f"anúncio indisponível confirmado: {exc}"})
         except Exception as exc:
             errors.append({"fonte": source, "url": seed["url"], "erro": f"{type(exc).__name__}: {exc}"})
             source_status[source]["erros"] += 1
         time.sleep(0.5)
 
     finished = now_iso()
+    valid_count = sum(1 for row in rows if row.get("disponivel") is not False)
     OUT.write_text(
         json.dumps({"schemaVersion": 1, "coletadoEm": finished, "imoveis": rows, "erros": errors}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -249,15 +279,19 @@ def main() -> None:
         "schemaVersion": 1,
         "inicio": started,
         "fim": finished,
-        "estado": "ok" if rows and not errors else ("parcial" if rows else "indisponivel"),
-        "coletados": len(rows),
+        "estado": "ok" if valid_count and not errors else ("parcial" if valid_count or unavailable else "indisponivel"),
+        "coletados": valid_count,
+        "indisponiveisConfirmados": unavailable,
         "erros": len(errors),
         "fontes": source_status,
     }
     STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Coletados: {len(rows)} | erros: {len(errors)} | estado: {status['estado']}")
-    if not rows:
-        print("Aviso: fontes externas indisponíveis nesta execução; inventário anterior será preservado.")
+    print(
+        f"Coletados válidos: {valid_count} | indisponíveis confirmados: {unavailable} | "
+        f"erros/avisos: {len(errors)} | estado: {status['estado']}"
+    )
+    if not valid_count:
+        print("Aviso: nenhuma observação válida nova; inventário anterior será preservado, salvo tombstones confirmados.")
 
 
 if __name__ == "__main__":
