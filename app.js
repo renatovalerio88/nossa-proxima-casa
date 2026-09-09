@@ -81,6 +81,15 @@ function ultimoEventoPreco(item) {
   return eventos.length ? eventos[eventos.length - 1] : null;
 }
 
+function distanciaHospital(item) {
+  const hospital = item.hospital || {};
+  const km = hospital.distanciaKm ?? hospital.distanciaLinhaRetaKm;
+  if (km === null || km === undefined) return null;
+  const aproximada = hospital.precisaoLocalizacao === 'bairro';
+  const sufixo = aproximada ? ' (aprox. pelo bairro)' : '';
+  return `Hospital: ~${Number(km).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} km${sufixo}`;
+}
+
 function render() {
   renderResumo();
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === state.tab));
@@ -134,7 +143,8 @@ function render() {
 
     if (item.quintal === true) alertas.push('✓ Quintal');
     if (item.armarios === true) alertas.push('✓ Armários');
-    if (item.hospital?.tempoCarroMin != null) alertas.push(`Hospital ~${item.hospital.tempoCarroMin} min`);
+    const hospitalKm = distanciaHospital(item);
+    if (hospitalKm) alertas.push(hospitalKm);
 
     if (item.match) {
       const partes = [
