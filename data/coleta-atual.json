@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "coletadoEm": "2026-09-08T23:32:56Z",
+  "coletadoEm": "2026-09-09T10:02:27Z",
   "imoveis": [
     {
       "fonte": "Nova Somar",
@@ -30,7 +30,48 @@
       "piscina": null,
       "hidromassagem": null,
       "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM."
+    },
+    {
+      "fonte": "Nova Somar",
+      "codigoFonte": "10630",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": false
+    },
+    {
+      "fonte": "Nova Somar",
+      "codigoFonte": "10693",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": null,
+      "longitude": null,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {},
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": false
     }
   ],
-  "erros": []
+  "erros": [
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
+      "erro": "anúncio indisponível confirmado: HTTP 410"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
+      "erro": "anúncio indisponível confirmado: HTTP 410"
+    }
+  ]
 }
