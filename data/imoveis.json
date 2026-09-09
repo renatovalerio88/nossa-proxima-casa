@@ -3,6 +3,90 @@
   "atualizadoEm": "2026-09-09",
   "imoveis": [
     {
+      "fonte": "Ponto Sete Imóveis",
+      "codigoFonte": "2973",
+      "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santa Cruz (Santo Antônio dos Campos)",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": 4000.0,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 200 m², 3 quartos (1 suíte), cozinha com armário e bancadas, área de serviço com armário, quintal amplo, área gourmet com churrasqueira, piscina, pomar, 3 vagas e terreno de aproximadamente 4.000 m².",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "06519f78d5bad5edcae04bc1",
+      "id": "imv_06519f78d5bad5edcae04bc1",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Ponto Sete Imóveis",
+          "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 48,
+        "custoBeneficio": 68.0,
+        "visual": 50.0,
+        "final": 73.1,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "Quintal",
+          "Armários",
+          "Churrasqueira",
+          "Piscina",
+          "Hospital Santa Mônica: ~18 min"
+        ],
+        "pontosAtencao": [
+          "Preço na faixa de oportunidade",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1105467,
+      "longitude": -44.9787517,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 8.8,
+        "distanciaKm": 11.4,
+        "tempoCarroMin": 18,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Nova Somar",
       "codigoFonte": "10484",
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
