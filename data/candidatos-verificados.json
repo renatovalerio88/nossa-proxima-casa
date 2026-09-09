@@ -92,6 +92,36 @@
       "fonteVerificacao": "pagina_publica",
       "coletaAutomaticaPermitida": false,
       "notaProveniencia": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+    },
+    {
+      "fonte": "Porto Seguro Imóveis",
+      "codigoFonte": "19751",
+      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-vaga-santa-lucia-divinopolis-mg/19751",
+      "observadoEm": "2026-09-09",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santa Lúcia",
+      "endereco": null,
+      "aluguel": 1800.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 75.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 1,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa com 3 quartos, sala, banheiro com armário, cozinha, área de serviço e 1 vaga, com aproximadamente 75 m².",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
     }
   ]
 }
