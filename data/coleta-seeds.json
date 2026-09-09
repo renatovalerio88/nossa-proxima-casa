@@ -1,11 +1,21 @@
 {
   "schemaVersion": 2,
-  "observacao": "Somente URLs permitidas para o piloto de coleta automática. Casa Nova permanece fora após auditoria das Condições de Uso de 01/09/2026. Seeds com indisponibilidade confirmada já registrada no histórico são removidos para que a saúde da coleta reflita apenas anúncios que ainda devem ser observados.",
+  "observacao": "Somente URLs públicas verificadas e permitidas para coleta automática. Casa Nova permanece fora após auditoria das Condições de Uso de 01/09/2026. Priorizamos anúncios explicitamente residenciais; imóveis comerciais não entram como candidatos de moradia.",
   "urls": [
     {
       "fonte": "Nova Somar",
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
       "codigoFonte": "10484"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
+      "codigoFonte": "10630"
+    },
+    {
+      "fonte": "Nova Somar",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
+      "codigoFonte": "10693"
     }
   ]
 }
