@@ -28,6 +28,15 @@
     "route:-20.141639,-44.874687:-20.120293,-44.895337": {
       "distanciaKm": 4.2,
       "tempoCarroMin": 8
+    },
+    "geo:ermida, divinópolis, mg, brasil": {
+      "latitude": -20.0803489,
+      "longitude": -45.0252039,
+      "displayName": "Santo Antônio dos Campos, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "route:-20.080349,-45.025204:-20.120293,-44.895337": {
+      "distanciaKm": 18.3,
+      "tempoCarroMin": 29
     }
   }
 }

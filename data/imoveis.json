@@ -169,6 +169,90 @@
       }
     },
     {
+      "fonte": "Porto Seguro Imóveis",
+      "codigoFonte": "19059",
+      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-3-vagas-ermida-divinopolis-mg/19059",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Ermida",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 100.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 100 m², 3 quartos, sendo 1 suíte, sala, banheiro social, cozinha com armário e bancada, área de serviço, churrasqueira, piscina e 3 vagas.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "5da13508daad915813451800",
+      "id": "imv_5da13508daad915813451800",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Porto Seguro Imóveis",
+          "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-3-vagas-ermida-divinopolis-mg/19059"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 91.0,
+        "localizacao": 4,
+        "custoBeneficio": 68.0,
+        "visual": 50.0,
+        "final": 58.5,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Armários",
+          "Churrasqueira",
+          "Piscina",
+          "Hospital Santa Mônica: ~29 min"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Preço na faixa de oportunidade",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.0803489,
+      "longitude": -45.0252039,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 14.3,
+        "distanciaKm": 18.3,
+        "tempoCarroMin": 29,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Nova Somar",
       "codigoFonte": "10484",
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
