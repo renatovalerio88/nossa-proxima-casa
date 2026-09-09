@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "atualizadoEm": "2026-09-09",
+  "observacao": "Descobertas reais verificadas em fontes que ainda não estão autorizadas/aprovadas para coleta automática. Estes registros preservam a evidência e a URL sem fingir atualização diária. Campos não confirmados permanecem null.",
+  "imoveis": [
+    {
+      "fonte": "Ponto Sete Imóveis",
+      "codigoFonte": "2973",
+      "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973",
+      "observadoEm": "2026-09-09",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santa Cruz (Santo Antônio dos Campos)",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": 4000.0,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 200 m², 3 quartos (1 suíte), cozinha com armário e bancadas, área de serviço com armário, quintal amplo, área gourmet com churrasqueira, piscina, pomar, 3 vagas e terreno de aproximadamente 4.000 m².",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+    }
+  ]
+}

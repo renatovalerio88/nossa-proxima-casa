@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "status": "auditoria_em_andamento",
-  "atualizadoEm": "2026-09-08",
+  "atualizadoEm": "2026-09-09",
   "fontes": [
     {
       "nome": "Imóveis Casa Nova",
@@ -28,10 +28,10 @@
     {
       "nome": "Ponto Sete Imóveis",
       "tipo": "imobiliaria",
-      "status": "auditoria_avancada",
+      "status": "manual_verificado_sem_automacao",
       "coletaAutomatica": false,
       "siteUrl": "https://www.pontoseteimoveis.com.br/",
-      "motivo": "Catálogo público ativo e estruturado, com preço, bairro, quartos, área, comodidades e URL individual. Foram confirmados anúncios residenciais reais em Divinópolis, mas ainda não foi localizada autorização clara para coleta automatizada. Manter somente como fonte candidata/manual até concluir termos/robots."
+      "motivo": "Catálogo público ativo e estruturado. Em 09/09/2026 foi confirmada uma casa residencial relevante (cód. 2973), preservada em candidatos-verificados.json. Como não foi encontrada autorização clara para coleta automatizada e o robots.txt não pôde ser validado com segurança, a fonte permanece somente em descoberta/verificação manual."
     },
     {
       "nome": "Achei Imóveis",
