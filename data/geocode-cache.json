@@ -73,6 +73,33 @@
     "route:-20.157612,-44.870577:-20.120293,-44.895337": {
       "distanciaKm": 6.4,
       "tempoCarroMin": 11
+    },
+    "geo:porto velho, divinópolis, mg, brasil": {
+      "latitude": -20.1463965,
+      "longitude": -44.8809205,
+      "displayName": "Porto Velho, Divinópolis, Minas Gerais, Região Sudeste, 35500-434, Brasil"
+    },
+    "route:-20.146397,-44.880921:-20.120293,-44.895337": {
+      "distanciaKm": 4.7,
+      "tempoCarroMin": 9
+    },
+    "geo:bom pastor, divinópolis, mg, brasil": {
+      "latitude": -20.1191,
+      "longitude": -44.8885593,
+      "displayName": "Bom Pastor, Divinópolis, Minas Gerais, Região Sudeste, 35500-184, Brasil"
+    },
+    "route:-20.119100,-44.888559:-20.120293,-44.895337": {
+      "distanciaKm": 1.0,
+      "tempoCarroMin": 3
+    },
+    "geo:nossa senhora das graças, divinópolis, mg, brasil": {
+      "latitude": -20.1250697,
+      "longitude": -44.876236,
+      "displayName": "Rua Nossa Senhora das Graças, Manoel Valinhas, Itaí, Divinópolis, Minas Gerais, Região Sudeste, 35500-339, Brasil"
+    },
+    "route:-20.125070,-44.876236:-20.120293,-44.895337": {
+      "distanciaKm": 3.1,
+      "tempoCarroMin": 7
     }
   }
 }
