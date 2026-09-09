@@ -3,75 +3,20 @@
   "status": "auditoria_em_andamento",
   "atualizadoEm": "2026-09-09",
   "fontes": [
-    {
-      "nome": "Imóveis Casa Nova",
-      "tipo": "imobiliaria",
-      "status": "nao_automatizar_sem_autorizacao",
-      "coletaAutomatica": false,
-      "motivo": "Condições de Uso atualizadas em 01/09/2026 proíbem coleta/cópia/extração automatizada sem autorização. Links públicos podem continuar preservados no inventário para uso pessoal.",
-      "termosUrl": "https://www.imoveiscasanova.com.br/termos-de-uso"
-    },
-    {
-      "nome": "Nova Somar",
-      "tipo": "imobiliaria",
-      "status": "piloto_baixa_frequencia",
-      "coletaAutomatica": true,
-      "motivo": "Páginas públicas estruturadas; nenhuma proibição explícita de coleta encontrada na auditoria inicial. Acesso externo está instável no GitHub Actions, portanto permanece em piloto de baixa frequência."
-    },
-    {
-      "nome": "Francisco Imóveis",
-      "tipo": "imobiliaria",
-      "status": "auditoria_avancada",
-      "coletaAutomatica": false,
-      "motivo": "Site público possui locações e Política de Privacidade, mas ainda não foi localizada autorização clara para coleta automatizada. Não automatizar até concluir termos/robots."
-    },
-    {
-      "nome": "Ponto Sete Imóveis",
-      "tipo": "imobiliaria",
-      "status": "manual_verificado_sem_automacao",
-      "coletaAutomatica": false,
-      "siteUrl": "https://www.pontoseteimoveis.com.br/",
-      "motivo": "Catálogo público ativo e estruturado. Em 09/09/2026 foi confirmada uma casa residencial relevante (cód. 2973), preservada em candidatos-verificados.json. Como não foi encontrada autorização clara para coleta automatizada e o robots.txt não pôde ser validado com segurança, a fonte permanece somente em descoberta/verificação manual."
-    },
-    {
-      "nome": "Achei Imóveis",
-      "tipo": "imobiliaria",
-      "status": "auditoria_avancada",
-      "coletaAutomatica": false,
-      "siteUrl": "https://www.acheiimobiliaria.com/",
-      "motivo": "Site público confirma operação de aluguel em Divinópolis e catálogo de casas/apartamentos. Política de Privacidade é referenciada, porém não foi localizada autorização explícita para coleta automatizada. Manter sem automação até concluir termos/robots."
-    },
-    {
-      "nome": "BRImóveis",
-      "tipo": "portal",
-      "status": "nao_automatizar_sem_autorizacao",
-      "coletaAutomatica": false,
-      "siteUrl": "https://www.brimoveis.com.br/",
-      "termosUrl": "https://www.brimoveis.com.br/termos",
-      "motivo": "Termos em vigor desde 16/07/2026 proíbem expressamente raspagem do catálogo e cópia da base de anúncios. Não usar como coletor automático sem autorização específica."
-    },
-    {
-      "nome": "Divimóveis Locadora",
-      "tipo": "imobiliaria",
-      "status": "nao_usar_catalogo_ate_validacao",
-      "coletaAutomatica": false,
-      "siteUrl": "https://www.divimoveislocadora.com.br/",
-      "motivo": "O site institucional e os contatos de Divinópolis estão ativos, porém a página pública auditada em 08/09/2026 exibe conteúdo de demonstração inconsistente (ex.: imóvel em Tampa City e valor incompatível). Não ingerir esse catálogo até a imobiliária publicar anúncios locais confiáveis e a política de automação ser esclarecida."
-    },
-    {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {
-      "nome":"Gerais Imobiliária",
-      "tipo":"imobiliaria",
-      "status":"manual_verificado_sem_automacao",
-      "coletaAutomatica":false,
-      "siteUrl":"https://www.geraisimobiliaria.com.br/",
-      "motivo":"Catálogo público ativo e estruturado. Em 09/09/2026 foi verificada a casa cód. 33194, no bairro Niterói, preservada em candidatos-verificados.json. Como ainda não foi localizada autorização clara para coleta automatizada, a fonte permanece em descoberta/verificação manual."
-    },
-    {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Imóveis Casa Nova","tipo":"imobiliaria","status":"nao_automatizar_sem_autorizacao","coletaAutomatica":false,"motivo":"Condições de Uso atualizadas em 01/09/2026 proíbem coleta/cópia/extração automatizada sem autorização. Links públicos podem continuar preservados no inventário para uso pessoal.","termosUrl":"https://www.imoveiscasanova.com.br/termos-de-uso"},
+    {"nome":"Nova Somar","tipo":"imobiliaria","status":"piloto_baixa_frequencia","coletaAutomatica":true,"motivo":"Páginas públicas estruturadas; nenhuma proibição explícita de coleta encontrada na auditoria inicial. Acesso externo está instável no GitHub Actions, portanto permanece em piloto de baixa frequência."},
+    {"nome":"Francisco Imóveis","tipo":"imobiliaria","status":"auditoria_avancada","coletaAutomatica":false,"siteUrl":"https://franciscoimoveis.com.br/","motivo":"Site público possui catálogo estruturado, inclusive páginas de casas em Divinópolis, e Política de Privacidade. Ainda não foi localizada autorização clara para coleta automatizada; manter descoberta/verificação sem automação até concluir termos/robots."},
+    {"nome":"Ponto Sete Imóveis","tipo":"imobiliaria","status":"manual_verificado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.pontoseteimoveis.com.br/","motivo":"Catálogo público ativo e estruturado. Em 09/09/2026 foi confirmada uma casa residencial relevante (cód. 2973), preservada em candidatos-verificados.json. Como não foi encontrada autorização clara para coleta automatizada e o robots.txt não pôde ser validado com segurança, a fonte permanece somente em descoberta/verificação manual."},
+    {"nome":"Achei Imóveis","tipo":"imobiliaria","status":"auditoria_avancada","coletaAutomatica":false,"siteUrl":"https://www.acheiimobiliaria.com/","motivo":"Site público confirma operação de aluguel em Divinópolis e catálogo de casas/apartamentos. Política de Privacidade é referenciada, porém não foi localizada autorização explícita para coleta automatizada. Manter sem automação até concluir termos/robots."},
+    {"nome":"BRImóveis","tipo":"portal","status":"nao_automatizar_sem_autorizacao","coletaAutomatica":false,"siteUrl":"https://www.brimoveis.com.br/","termosUrl":"https://www.brimoveis.com.br/termos","motivo":"Termos em vigor desde 16/07/2026 proíbem expressamente raspagem do catálogo e cópia da base de anúncios. Não usar como coletor automático sem autorização específica."},
+    {"nome":"Divimóveis Locadora","tipo":"imobiliaria","status":"nao_usar_catalogo_ate_validacao","coletaAutomatica":false,"siteUrl":"https://www.divimoveislocadora.com.br/","motivo":"O site institucional e os contatos de Divinópolis estão ativos, porém a página pública auditada em 08/09/2026 exibe conteúdo de demonstração inconsistente. Não ingerir esse catálogo até publicar anúncios locais confiáveis e esclarecer política de automação."},
+    {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"identidade_local_confirmada_auditoria_catalogo","coletaAutomatica":false,"motivo":"Operação local em Divinópolis confirmada por diretório público (Rua Pernambuco, Centro). Catálogo/termos próprios ainda precisam ser identificados e validados antes de qualquer ingestão."},
+    {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"catalogo_publico_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.imobiliariareferencia.com.br/","motivo":"Site oficial ativo em Divinópolis confirma busca por Casas, Comprar e Alugar e seção de destaques de aluguel. Possui Política de Privacidade, mas não foi localizada autorização explícita para coleta automatizada; manter descoberta/verificação sem automação até concluir termos/robots."},
+    {"nome":"Gerais Imobiliária","tipo":"imobiliaria","status":"manual_verificado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.geraisimobiliaria.com.br/","motivo":"Catálogo público ativo e estruturado. Em 09/09/2026 foi verificada a casa cód. 33194, no bairro Niterói, preservada em candidatos-verificados.json. Como ainda não foi localizada autorização clara para coleta automatizada, a fonte permanece em descoberta/verificação manual."},
+    {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"identidade_site_confirmados_auditoria_catalogo","coletaAutomatica":false,"siteUrl":"https://www.psimobiliaria.com.br/","motivo":"Operação imobiliária em Divinópolis e domínio próprio confirmados em diretório público. Catálogo e política de automação ainda precisam de validação direta antes de ingestão."},
     {"nome":"Prime Francisco","tipo":"imobiliaria","status":"mesma_operacao_francisco","coletaAutomatica":false},
-    {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {"nome":"Bora Morá soluções imobiliárias","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"identidade_site_confirmados_auditoria_catalogo","coletaAutomatica":false,"siteUrl":"https://www.cidadeimoveis.net.br/","motivo":"Operação local em Divinópolis desde 2002, com atuação em aluguel, compra e venda e domínio próprio confirmados publicamente. Catálogo/termos ainda precisam de validação direta antes de ingestão."},
+    {"nome":"Bora Morá soluções imobiliárias","tipo":"imobiliaria","status":"identidade_local_confirmada_auditoria_catalogo","coletaAutomatica":false,"motivo":"Operação local em Divinópolis confirmada por diretório público. Catálogo e política de automação ainda precisam ser validados."},
     {"nome":"Residencial Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"XP Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Lumine Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
