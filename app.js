@@ -39,6 +39,10 @@ function ehNovo(item) {
   return (Date.now() - d.getTime()) <= 7 * 86400000;
 }
 
+function precisaConfirmacao(item) {
+  return item.elegibilidade?.status === 'pendente';
+}
+
 function filtrar(items) {
   const somenteElegiveis = document.querySelector('#somenteElegiveis').checked;
   let rows = items.filter(i => !somenteElegiveis || i.elegibilidade?.elegivel === true);
@@ -46,7 +50,8 @@ function filtrar(items) {
     const d = decisao(i.id);
     if (state.tab === 'favoritados') return d === 'favorito';
     if (state.tab === 'descartados') return d === 'descartado';
-    if (state.tab === 'novos') return d === null;
+    if (state.tab === 'a-confirmar') return d === null && precisaConfirmacao(i);
+    if (state.tab === 'novos') return d === null && !precisaConfirmacao(i);
     return true;
   });
 
@@ -67,11 +72,14 @@ function metric(label, value) {
 
 function renderResumo() {
   const ativos = state.imoveis.filter(i => i.disponivel !== false);
+  const avaliaveis = ativos.filter(i => !precisaConfirmacao(i)).length;
+  const confirmar = ativos.filter(i => precisaConfirmacao(i)).length;
   const fav = ativos.filter(i => decisao(i.id) === 'favorito').length;
-  const novos = ativos.filter(i => ehNovo(i) && decisao(i.id) === null).length;
+  const novos = ativos.filter(i => ehNovo(i) && decisao(i.id) === null && !precisaConfirmacao(i)).length;
   document.querySelector('#resumo').innerHTML = [
-    metric('casas ativas', ativos.length),
+    metric('casas avaliáveis', avaliaveis),
     metric('novas em 7 dias', novos),
+    metric('a confirmar', confirmar),
     metric('favoritas', fav)
   ].join('');
 }
@@ -83,11 +91,14 @@ function ultimoEventoPreco(item) {
 
 function distanciaHospital(item) {
   const hospital = item.hospital || {};
-  const km = hospital.distanciaKm ?? hospital.distanciaLinhaRetaKm;
+  const kmRota = hospital.distanciaKm;
+  const kmLinhaReta = hospital.distanciaLinhaRetaKm;
+  const km = kmRota ?? kmLinhaReta;
   if (km === null || km === undefined) return null;
   const aproximada = hospital.precisaoLocalizacao === 'bairro';
+  const tipo = kmRota != null ? '' : ' em linha reta';
   const sufixo = aproximada ? ' (aprox. pelo bairro)' : '';
-  return `Hospital: ~${Number(km).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} km${sufixo}`;
+  return `Hospital: ~${Number(km).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} km${tipo}${sufixo}`;
 }
 
 function render() {
@@ -97,7 +108,7 @@ function render() {
   const rows = filtrar(state.imoveis.filter(i => i.disponivel !== false));
   lista.innerHTML = '';
   if (!rows.length) {
-    lista.innerHTML = '<div class="vazio"><strong>Nenhuma casa aqui ainda.</strong><span>Assim que a coleta encontrar imóveis válidos, eles aparecerão automaticamente.</span></div>';
+    lista.innerHTML = '<div class="vazio"><strong>Nenhuma casa aqui ainda.</strong><span>Assim que houver um imóvel real nessa categoria, ele aparecerá automaticamente.</span></div>';
     return;
   }
 
@@ -106,12 +117,22 @@ function render() {
     const node = tpl.content.cloneNode(true);
     const card = node.querySelector('.card');
     const d = decisao(item.id);
+    const pendente = precisaConfirmacao(item);
     if (d === 'favorito') card.classList.add('favorito-card');
+    if (pendente) card.classList.add('pendente-card');
     node.querySelector('.fonte').textContent = `${valor(item.fonte, 'Fonte')} · cód. ${valor(item.codigoFonte)}`;
+    const qualidade = node.querySelector('.qualidade');
+    qualidade.textContent = pendente ? 'A confirmar' : item.elegibilidade?.elegivel === true ? 'Elegível' : 'Dados confirmados';
+    qualidade.dataset.tipo = pendente ? 'pendente' : item.elegibilidade?.elegivel === true ? 'elegivel' : 'confirmado';
     node.querySelector('.titulo').textContent = valor(item.titulo, 'Casa para aluguel');
     node.querySelector('.local').textContent = [item.bairro, item.cidade].filter(Boolean).join(' · ') || 'Localização a confirmar';
     const match = node.querySelector('.match');
-    match.innerHTML = `<strong>${valor(item.match?.final)}</strong><span>Match</span>`;
+    if (pendente) {
+      match.classList.add('match-pendente');
+      match.innerHTML = '<strong>—</strong><span>Match após confirmação</span>';
+    } else {
+      match.innerHTML = `<strong>${valor(item.match?.final)}</strong><span>Match</span>`;
+    }
     node.querySelector('.metricas').innerHTML = [
       metric('aluguel', item.aluguel != null ? fmt.format(item.aluguel) : '—'),
       metric('área', item.areaM2 != null ? `${item.areaM2} m²` : '—'),
@@ -143,10 +164,12 @@ function render() {
 
     if (item.quintal === true) alertas.push('✓ Quintal');
     if (item.armarios === true) alertas.push('✓ Armários');
+    if (item.churrasqueira === true) alertas.push('✓ Churrasqueira');
+    if (item.piscina === true) alertas.push('✓ Piscina');
     const hospitalKm = distanciaHospital(item);
     if (hospitalKm) alertas.push(hospitalKm);
 
-    if (item.match) {
+    if (item.match && !pendente) {
       const partes = [
         ['Casa', item.match.casa],
         ['Localização', item.match.localizacao],
