@@ -12,7 +12,7 @@ class FrontendContractTests(unittest.TestCase):
         cls.js = (ROOT / "app.js").read_text(encoding="utf-8")
 
     def test_abas_principais_estao_publicadas(self):
-        for tab in ("novos", "favoritados", "descartados", "todos"):
+        for tab in ("novos", "a-confirmar", "favoritados", "descartados", "todos"):
             self.assertIn(f'data-tab="{tab}"', self.html)
 
     def test_controles_essenciais_existem(self):
@@ -60,6 +60,20 @@ class FrontendContractTests(unittest.TestCase):
             "item.match.visual",
         ):
             self.assertIn(componente, self.js)
+
+    def test_pendentes_ficam_separados_e_sem_match_aparente(self):
+        self.assertIn("function precisaConfirmacao(item)", self.js)
+        self.assertIn("state.tab === 'a-confirmar'", self.js)
+        self.assertIn("!precisaConfirmacao(i)", self.js)
+        self.assertIn("Match após confirmação", self.js)
+        self.assertIn('data-tab="a-confirmar"', self.html)
+
+    def test_distancia_do_hospital_prioriza_quilometros(self):
+        self.assertIn("hospital.distanciaKm", self.js)
+        self.assertIn("hospital.distanciaLinhaRetaKm", self.js)
+        self.assertIn("aprox. pelo bairro", self.js)
+        self.assertIn(" km", self.js)
+        self.assertNotIn("tempoCarroMin", self.js)
 
 
 if __name__ == "__main__":
