@@ -32,6 +32,36 @@
       "fonteVerificacao": "pagina_publica",
       "coletaAutomaticaPermitida": false,
       "notaProveniencia": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+    },
+    {
+      "fonte": "Gerais Imobiliária",
+      "codigoFonte": "33194",
+      "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-aluguel-5-quartos-1-vaga-niteroi-divinopolis-mg/33194",
+      "observadoEm": "2026-09-09",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Niterói",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 180.0,
+      "terrenoM2": null,
+      "quartos": 5,
+      "suites": null,
+      "banheiros": 5,
+      "vagas": 1,
+      "quintal": true,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa com 2 salas, 2 copas, 5 quartos, 5 banheiros sociais, cozinha com bancada, lavabo, área de serviço, quintal e 1 vaga, com aproximadamente 180 m² de área construída.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado em página pública da Gerais Imobiliária em 09/09/2026. Valores devem ser confirmados com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
     }
   ]
 }
