@@ -62,6 +62,36 @@
       "fonteVerificacao": "pagina_publica",
       "coletaAutomaticaPermitida": false,
       "notaProveniencia": "Registro observado em página pública da Gerais Imobiliária em 09/09/2026. Valores devem ser confirmados com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+    },
+    {
+      "fonte": "Porto Seguro Imóveis",
+      "codigoFonte": "19059",
+      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-3-vagas-ermida-divinopolis-mg/19059",
+      "observadoEm": "2026-09-09",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Ermida",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 100.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 100 m², 3 quartos, sendo 1 suíte, sala, banheiro social, cozinha com armário e bancada, área de serviço, churrasqueira, piscina e 3 vagas.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
     }
   ]
 }
