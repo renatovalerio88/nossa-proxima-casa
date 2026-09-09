@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "inicio": "2026-09-09T14:34:55Z",
-  "fim": "2026-09-09T14:35:39Z",
+  "inicio": "2026-09-09T16:00:39Z",
+  "fim": "2026-09-09T16:00:44Z",
   "estado": "parcial",
   "coletados": 1,
-  "indisponiveisConfirmados": 0,
+  "indisponiveisConfirmados": 2,
   "erros": 2,
   "fontes": {
     "Nova Somar": {
       "tentativas": 3,
       "sucessos": 1,
-      "indisponiveis": 0,
-      "erros": 2
+      "indisponiveis": 2,
+      "erros": 0
     }
   }
 }
