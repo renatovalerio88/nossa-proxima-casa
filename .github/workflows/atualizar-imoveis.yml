@@ -8,6 +8,7 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'data/coleta-seeds.json'
+      - 'data/candidatos-verificados.json'
       - 'data/fontes.json'
       - 'data/config.json'
       - '.github/workflows/atualizar-imoveis.yml'
@@ -41,6 +42,8 @@ jobs:
         run: python scripts/collect_public_pages.py
       - name: Atualizar inventário, elegibilidade e Match
         run: python scripts/update_inventory.py --input data/coleta-atual.json
+      - name: Integrar candidatos verificados
+        run: python scripts/ingest_verified_candidates.py
       - name: Enriquecer localização e distância ao hospital
         run: python scripts/enrich_location.py
       - name: Validar dados e testes
@@ -49,6 +52,7 @@ jobs:
           python -m json.tool data/status-coleta.json >/dev/null
           python -m json.tool data/geocode-cache.json >/dev/null
           python -m json.tool data/fontes.json >/dev/null
+          python -m json.tool data/candidatos-verificados.json >/dev/null
           python scripts/validate_data_quality.py
           python -m unittest discover -s tests -v
       - name: Resumo da coleta
@@ -58,11 +62,13 @@ jobs:
           s=json.load(open('data/status-coleta.json', encoding='utf-8'))
           inv=json.load(open('data/imoveis.json', encoding='utf-8'))
           localizados=sum(1 for i in inv.get('imoveis', []) if (i.get('hospital') or {}).get('distanciaKm') is not None)
+          manuais=sum(1 for i in inv.get('imoveis', []) if (i.get('proveniencia') or {}).get('modo') == 'verificacao_manual')
           text=(f"### Coleta de imóveis\n"
                 f"- Estado: **{s['estado']}**\n"
-                f"- Coletados: **{s['coletados']}**\n"
+                f"- Coletados automaticamente: **{s['coletados']}**\n"
                 f"- Erros: **{s['erros']}**\n"
-                f"- Com distância por rota ao hospital: **{localizados}**\n")
+                f"- Candidatos verificados no inventário: **{manuais}**\n"
+                f"- Com distância ao hospital: **{localizados}**\n")
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as f: f.write(text)
           PY
       - name: Commit de atualização
