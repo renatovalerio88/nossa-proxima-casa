@@ -170,6 +170,90 @@
     },
     {
       "fonte": "Porto Seguro Imóveis",
+      "codigoFonte": "19751",
+      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-vaga-santa-lucia-divinopolis-mg/19751",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santa Lúcia",
+      "endereco": null,
+      "aluguel": 1800.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 75.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 1,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa com 3 quartos, sala, banheiro com armário, cozinha, área de serviço e 1 vaga, com aproximadamente 75 m².",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "310d4113313c84ae2f7e04f2",
+      "id": "imv_310d4113313c84ae2f7e04f2",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro observado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações e valores sujeitos a confirmação com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Porto Seguro Imóveis",
+          "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-vaga-santa-lucia-divinopolis-mg/19751"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Área abaixo do mínimo"
+        ],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 51.5,
+        "localizacao": 48,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 60.1,
+        "motivosPositivos": [
+          "3 quartos",
+          "Armários",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~18 min"
+        ],
+        "pontosAtencao": [
+          "Área abaixo de 90 m²",
+          "Quintal: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.169216,
+      "longitude": -44.8435304,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 7.7,
+        "distanciaKm": 10.0,
+        "tempoCarroMin": 18,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Porto Seguro Imóveis",
       "codigoFonte": "19059",
       "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-3-vagas-ermida-divinopolis-mg/19059",
       "tipo": "casa",

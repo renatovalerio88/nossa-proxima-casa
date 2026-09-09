@@ -37,6 +37,15 @@
     "route:-20.080349,-45.025204:-20.120293,-44.895337": {
       "distanciaKm": 18.3,
       "tempoCarroMin": 29
+    },
+    "geo:santa lúcia, divinópolis, mg, brasil": {
+      "latitude": -20.169216,
+      "longitude": -44.8435304,
+      "displayName": "Santa Lúcia, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "route:-20.169216,-44.843530:-20.120293,-44.895337": {
+      "distanciaKm": 10.0,
+      "tempoCarroMin": 18
     }
   }
 }
