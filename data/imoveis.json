@@ -85,6 +85,171 @@
       }
     },
     {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "301585037",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Catalão",
+      "endereco": "Rua Fagundes Varela",
+      "aluguel": 1400.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 320.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": true,
+      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 3 quartos, sendo 1 suíte com box e banheira de hidromassagem, sala, copa, banheiro social, cozinha com armário, área de serviço, varanda com cozinha externa, quintal cimentado, terraço e 3 vagas, com aproximadamente 320 m².",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "a77a8a617cb7f23878f17e42",
+      "id": "imv_a77a8a617cb7f23878f17e42",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 80,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 87.5,
+        "motivosPositivos": [
+          "320 m²",
+          "3 quartos",
+          "Quintal",
+          "Armários",
+          "Hidromassagem",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~10 min"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1583588,
+      "longitude": -44.9066475,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 4.4,
+        "distanciaKm": 7.5,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "301010991",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-2-vagas-sao-judas-divinopolismg-aluguel-mg-301010991",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Catalão",
+      "endereco": "Rua Coronel Bragança",
+      "aluguel": 800.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 120.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 2,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 3 quartos, sala, cozinha com bancada e armário, banheiro social com armário e box, área de serviço, cômodo de despejo, quintal e 2 vagas, com aproximadamente 120 m².",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "6f6f48133581f6fc6287c035",
+      "id": "imv_6f6f48133581f6fc6287c035",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-2-vagas-sao-judas-divinopolismg-aluguel-mg-301010991"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 97.0,
+        "localizacao": 80,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 86.3,
+        "motivosPositivos": [
+          "120 m²",
+          "3 quartos",
+          "Quintal",
+          "Armários",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~10 min"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1608705,
+      "longitude": -44.9090641,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 4.7,
+        "distanciaKm": 7.6,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Ponto Sete Imóveis",
       "codigoFonte": "2973",
       "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973",
@@ -165,6 +330,90 @@
         "distanciaLinhaRetaKm": 8.8,
         "distanciaKm": 11.4,
         "tempoCarroMin": 18,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "300731990",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Interlagos",
+      "endereco": "Rua Barbosa Lagares",
+      "aluguel": 3500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 683.0,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 5,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 4 quartos, 1 suíte, sala, copa, cozinha planejada, quintal grande, área gourmet com fogão a lenha, churrasqueira e forno, piscina com cascata, sauna, cozinha externa e vagas de garagem; área anunciada de 683 m².",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. Há divergência entre o título (6 vagas) e o resumo estruturado (5 vagas); foi preservado o valor estruturado de 5 vagas e a divergência deve ser confirmada antes de visita.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "9610855da434b3e3d1b09e0b",
+      "id": "imv_9610855da434b3e3d1b09e0b",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. Há divergência entre o título (6 vagas) e o resumo estruturado (5 vagas); foi preservado o valor estruturado de 5 vagas e a divergência deve ser confirmada antes de visita."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 76,
+        "custoBeneficio": 53.0,
+        "visual": 50.0,
+        "final": 77.1,
+        "motivosPositivos": [
+          "683 m²",
+          "4 quartos",
+          "Quintal",
+          "Armários",
+          "Churrasqueira",
+          "Piscina",
+          "Hospital Santa Mônica: ~11 min"
+        ],
+        "pontosAtencao": [
+          "Preço na faixa de oportunidade",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1576124,
+      "longitude": -44.8705769,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 4.9,
+        "distanciaKm": 6.4,
+        "tempoCarroMin": 11,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },

@@ -46,6 +46,33 @@
     "route:-20.169216,-44.843530:-20.120293,-44.895337": {
       "distanciaKm": 10.0,
       "tempoCarroMin": 18
+    },
+    "geo:rua fagundes varela, divinópolis, mg, brasil": {
+      "latitude": -20.1583588,
+      "longitude": -44.9066475,
+      "displayName": "Rua Fagundes Varela, São José, Santa Luzia, Divinópolis, Minas Gerais, Região Sudeste, 35501-197, Brasil"
+    },
+    "route:-20.158359,-44.906647:-20.120293,-44.895337": {
+      "distanciaKm": 7.5,
+      "tempoCarroMin": 10
+    },
+    "geo:rua coronel bragança, divinópolis, mg, brasil": {
+      "latitude": -20.1608705,
+      "longitude": -44.9090641,
+      "displayName": "Rua Coronel Bragança, São Judas Tadeu, São José, Divinópolis, Minas Gerais, Região Sudeste, 35501-283, Brasil"
+    },
+    "route:-20.160871,-44.909064:-20.120293,-44.895337": {
+      "distanciaKm": 7.6,
+      "tempoCarroMin": 10
+    },
+    "geo:rua barbosa lagares, divinópolis, mg, brasil": {
+      "latitude": -20.1576124,
+      "longitude": -44.8705769,
+      "displayName": "Rua Barbosa Lagares, Interlagos, Divinópolis, Minas Gerais, Região Sudeste, 35500-491, Brasil"
+    },
+    "route:-20.157612,-44.870577:-20.120293,-44.895337": {
+      "distanciaKm": 6.4,
+      "tempoCarroMin": 11
     }
   }
 }
