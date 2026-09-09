@@ -3,88 +3,6 @@
   "atualizadoEm": "2026-09-09",
   "imoveis": [
     {
-      "fonte": "Gerais Imobiliária",
-      "codigoFonte": "33194",
-      "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-aluguel-5-quartos-1-vaga-niteroi-divinopolis-mg/33194",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Niterói",
-      "endereco": null,
-      "aluguel": 2000.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 180.0,
-      "terrenoM2": null,
-      "quartos": 5,
-      "suites": null,
-      "banheiros": 5,
-      "vagas": 1,
-      "quintal": true,
-      "armarios": null,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "Casa com 2 salas, 2 copas, 5 quartos, 5 banheiros sociais, cozinha com bancada, lavabo, área de serviço, quintal e 1 vaga, com aproximadamente 180 m² de área construída.",
-      "fonteVerificacao": "pagina_publica",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Registro observado em página pública da Gerais Imobiliária em 09/09/2026. Valores devem ser confirmados com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "bc12ae5eda695616ebf3bd64",
-      "id": "imv_bc12ae5eda695616ebf3bd64",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Registro observado em página pública da Gerais Imobiliária em 09/09/2026. Valores devem ser confirmados com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "Gerais Imobiliária",
-          "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-aluguel-5-quartos-1-vaga-niteroi-divinopolis-mg/33194"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 100,
-        "localizacao": 88,
-        "custoBeneficio": 85.0,
-        "visual": 50.0,
-        "final": 86.5,
-        "motivosPositivos": [
-          "180 m²",
-          "5 quartos",
-          "Quintal",
-          "Preço dentro da faixa ideal",
-          "Hospital Santa Mônica: ~8 min"
-        ],
-        "pontosAtencao": [
-          "Armários: não informado",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1416394,
-      "longitude": -44.8746869,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 3.2,
-        "distanciaKm": 4.2,
-        "tempoCarroMin": 8,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
       "fonte": "MGF Imóveis",
       "codigoFonte": "301585037",
       "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037",
@@ -164,6 +82,88 @@
         "distanciaLinhaRetaKm": 4.4,
         "distanciaKm": 7.5,
         "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Gerais Imobiliária",
+      "codigoFonte": "33194",
+      "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-aluguel-5-quartos-1-vaga-niteroi-divinopolis-mg/33194",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Niterói",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 180.0,
+      "terrenoM2": null,
+      "quartos": 5,
+      "suites": null,
+      "banheiros": 5,
+      "vagas": 1,
+      "quintal": true,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa com 2 salas, 2 copas, 5 quartos, 5 banheiros sociais, cozinha com bancada, lavabo, área de serviço, quintal e 1 vaga, com aproximadamente 180 m² de área construída.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado em página pública da Gerais Imobiliária em 09/09/2026. Valores devem ser confirmados com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "bc12ae5eda695616ebf3bd64",
+      "id": "imv_bc12ae5eda695616ebf3bd64",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro observado em página pública da Gerais Imobiliária em 09/09/2026. Valores devem ser confirmados com a imobiliária; não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Gerais Imobiliária",
+          "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-aluguel-5-quartos-1-vaga-niteroi-divinopolis-mg/33194"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 88,
+        "custoBeneficio": 85.0,
+        "visual": 50.0,
+        "final": 86.5,
+        "motivosPositivos": [
+          "180 m²",
+          "5 quartos",
+          "Quintal",
+          "Preço dentro da faixa ideal",
+          "Hospital Santa Mônica: ~8 min"
+        ],
+        "pontosAtencao": [
+          "Armários: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1416394,
+      "longitude": -44.8746869,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 3.2,
+        "distanciaKm": 4.2,
+        "tempoCarroMin": 8,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -250,90 +250,6 @@
       }
     },
     {
-      "fonte": "Ponto Sete Imóveis",
-      "codigoFonte": "2973",
-      "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Santa Cruz (Santo Antônio dos Campos)",
-      "endereco": null,
-      "aluguel": 3200.0,
-      "condominio": 0.0,
-      "iptu": 0.0,
-      "areaM2": 200.0,
-      "terrenoM2": 4000.0,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 3,
-      "quintal": true,
-      "armarios": true,
-      "churrasqueira": true,
-      "piscina": true,
-      "hidromassagem": null,
-      "descricao": "Casa residencial com aproximadamente 200 m², 3 quartos (1 suíte), cozinha com armário e bancadas, área de serviço com armário, quintal amplo, área gourmet com churrasqueira, piscina, pomar, 3 vagas e terreno de aproximadamente 4.000 m².",
-      "fonteVerificacao": "pagina_publica",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "06519f78d5bad5edcae04bc1",
-      "id": "imv_06519f78d5bad5edcae04bc1",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "Ponto Sete Imóveis",
-          "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 100,
-        "localizacao": 48,
-        "custoBeneficio": 68.0,
-        "visual": 50.0,
-        "final": 73.1,
-        "motivosPositivos": [
-          "200 m²",
-          "3 quartos",
-          "Quintal",
-          "Armários",
-          "Churrasqueira",
-          "Piscina",
-          "Hospital Santa Mônica: ~18 min"
-        ],
-        "pontosAtencao": [
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1105467,
-      "longitude": -44.9787517,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 8.8,
-        "distanciaKm": 11.4,
-        "tempoCarroMin": 18,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
       "fonte": "MGF Imóveis",
       "codigoFonte": "300731990",
       "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990",
@@ -414,6 +330,90 @@
         "distanciaLinhaRetaKm": 4.9,
         "distanciaKm": 6.4,
         "tempoCarroMin": 11,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Ponto Sete Imóveis",
+      "codigoFonte": "2973",
+      "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santa Cruz (Santo Antônio dos Campos)",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": 4000.0,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 200 m², 3 quartos (1 suíte), cozinha com armário e bancadas, área de serviço com armário, quintal amplo, área gourmet com churrasqueira, piscina, pomar, 3 vagas e terreno de aproximadamente 4.000 m².",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "06519f78d5bad5edcae04bc1",
+      "id": "imv_06519f78d5bad5edcae04bc1",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Ponto Sete Imóveis",
+          "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 48,
+        "custoBeneficio": 68.0,
+        "visual": 50.0,
+        "final": 73.1,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "Quintal",
+          "Armários",
+          "Churrasqueira",
+          "Piscina",
+          "Hospital Santa Mônica: ~18 min"
+        ],
+        "pontosAtencao": [
+          "Preço na faixa de oportunidade",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1105467,
+      "longitude": -44.9787517,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 8.8,
+        "distanciaKm": 11.4,
+        "tempoCarroMin": 18,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
