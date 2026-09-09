@@ -19,6 +19,15 @@
     "route:-20.110547,-44.978752:-20.120293,-44.895337": {
       "distanciaKm": 11.4,
       "tempoCarroMin": 18
+    },
+    "geo:niterói, divinópolis, mg, brasil": {
+      "latitude": -20.1416394,
+      "longitude": -44.8746869,
+      "displayName": "Niterói, Divinópolis, Minas Gerais, Região Sudeste, 35500-234, Brasil"
+    },
+    "route:-20.141639,-44.874687:-20.120293,-44.895337": {
+      "distanciaKm": 4.2,
+      "tempoCarroMin": 8
     }
   }
 }
