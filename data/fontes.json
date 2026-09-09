@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "status": "auditoria_em_andamento",
   "atualizadoEm": "2026-09-09",
   "fontes": [
@@ -23,6 +23,7 @@
     {"nome":"Vitrine Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"ZAP Imóveis","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
     {"nome":"Viva Real","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
-    {"nome":"OLX","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false}
+    {"nome":"OLX","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
+    {"nome":"MGF Imóveis","tipo":"portal","status":"descoberta_manual_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.mgfimoveis.com.br/","motivo":"Portal público útil para descoberta de anúncios locais e identificação do anunciante original. Em 09/09/2026 páginas públicas de casas em Divinópolis atribuídas a Francisco Imóveis foram verificadas e preservadas em candidatos-verificados.json. Não automatizar até auditoria específica de termos/robots; usar somente descoberta/verificação manual e confirmar valores com o anunciante."}
   ]
 }
