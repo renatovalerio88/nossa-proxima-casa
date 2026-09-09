@@ -60,7 +60,14 @@
     },
     {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {"nome":"Gerais Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {
+      "nome":"Gerais Imobiliária",
+      "tipo":"imobiliaria",
+      "status":"manual_verificado_sem_automacao",
+      "coletaAutomatica":false,
+      "siteUrl":"https://www.geraisimobiliaria.com.br/",
+      "motivo":"Catálogo público ativo e estruturado. Em 09/09/2026 foi verificada a casa cód. 33194, no bairro Niterói, preservada em candidatos-verificados.json. Como ainda não foi localizada autorização clara para coleta automatizada, a fonte permanece em descoberta/verificação manual."
+    },
     {"nome":"Porto Seguro Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
     {"nome":"Prime Francisco","tipo":"imobiliaria","status":"mesma_operacao_francisco","coletaAutomatica":false},
     {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
