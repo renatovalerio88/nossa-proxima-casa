@@ -73,8 +73,9 @@ class CoreTests(unittest.TestCase):
         item = base_item(avaliacaoVisual={"nota": 8}, fotos=[])
         match = calculate_match(item, CFG)
         self.assertIsNone(match["visual"])
+        self.assertIsNone(match["final"])
         self.assertNotEqual(match.get("visual"), 50)
-        self.assertEqual(match["confianca"], "media")
+        self.assertEqual(match["confianca"], "incompleta")
 
     def test_match_waits_for_location(self):
         item = base_item(hospital={})
