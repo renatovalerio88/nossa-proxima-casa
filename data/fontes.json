@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 6,
+  "schemaVersion": 7,
   "status": "auditoria_em_andamento",
   "atualizadoEm": "2026-09-10",
   "fontes": [
@@ -17,10 +17,10 @@
     {"nome":"Prime Francisco","tipo":"imobiliaria","status":"mesma_operacao_francisco","coletaAutomatica":false},
     {"nome":"Cidade Imóveis","tipo":"imobiliaria","status":"identidade_site_confirmados_auditoria_catalogo","coletaAutomatica":false,"siteUrl":"https://www.cidadeimoveis.net.br/","motivo":"Operação local em Divinópolis desde 2002, com atuação em aluguel, compra e venda e domínio próprio confirmados publicamente. Catálogo/termos ainda precisam de validação direta antes de ingestão."},
     {"nome":"Bora Morá soluções imobiliárias","tipo":"imobiliaria","status":"identidade_local_confirmada_auditoria_catalogo","coletaAutomatica":false,"motivo":"Operação local em Divinópolis confirmada por diretório público. Catálogo e política de automação ainda precisam ser validados."},
-    {"nome":"Residencial Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Residencial Imobiliária","tipo":"imobiliaria","status":"identidade_local_confirmada_sem_catalogo_validado","coletaAutomatica":false,"motivo":"Empresa ativa em Divinópolis e atividade secundária de corretagem no aluguel de imóveis confirmadas em consulta pública em 10/09/2026. Não foi identificado catálogo oficial confiável para ingestão nesta auditoria; manter fora da coleta até localizar domínio/catálogo e termos próprios."},
     {"nome":"XP Imóveis","tipo":"imobiliaria","status":"catalogo_publico_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.xpimoveis.com/","motivo":"Site oficial ativo confirma imobiliária de Divinópolis, catálogo para comprar/alugar e filtros por casas e bairros locais. Ainda não foi localizada autorização explícita para coleta automatizada; manter descoberta/verificação sem automação até concluir termos/robots."},
-    {"nome":"Lumine Imobiliária","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
-    {"nome":"Vitrine Imóveis","tipo":"imobiliaria","status":"a_auditar","coletaAutomatica":false},
+    {"nome":"Lumine Imobiliária","tipo":"imobiliaria","status":"catalogo_oficial_confirmado_sem_aluguel_validado","coletaAutomatica":false,"siteUrl":"https://www.lumineimobiliaria.com.br/","motivo":"Site oficial e catálogo residencial de Divinópolis confirmados em 10/09/2026, com páginas estruturadas de casas e dados detalhados. As páginas verificadas nesta auditoria eram de venda; ainda não foi confirmado catálogo relevante de locação nem autorização de automação. Não ingerir até validar aluguel e termos/robots."},
+    {"nome":"Vitrine Imóveis","tipo":"imobiliaria","status":"site_oficial_confirmado_foco_venda","coletaAutomatica":false,"siteUrl":"https://www.vitrineimoveisdivinopolis.com.br/","motivo":"Site oficial, endereço e CRECI em Divinópolis confirmados em 10/09/2026. O catálogo público e a navegação verificados estão focados em imóveis à venda; não foi validado estoque de aluguel relevante para este projeto. Manter fora da ingestão automática e reavaliar se surgir seção de locação."},
     {"nome":"ZAP Imóveis","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
     {"nome":"Viva Real","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
     {"nome":"OLX","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
