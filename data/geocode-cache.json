@@ -163,6 +163,29 @@
     "route:-20.157332,-44.874470:-20.120293,-44.895337": {
       "distanciaKm": 5.9,
       "tempoCarroMin": 10
+    },
+    "geo:rua ibirité, 630, divinópolis, mg, brasil": {
+      "latitude": -20.1219737,
+      "longitude": -44.8906242,
+      "displayName": "Rua Ibirité, Industrial, Itaí, Divinópolis, Minas Gerais, Região Sudeste, 35500-184, Brasil"
+    },
+    "route:-20.121974,-44.890624:-20.120293,-44.895337": {
+      "distanciaKm": 0.7,
+      "tempoCarroMin": 2
+    },
+    "geo:padre eustáquio, divinópolis, mg, brasil": {
+      "latitude": -20.1722775,
+      "longitude": -44.8509976,
+      "displayName": "Padre Eustáquio, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "route:-20.172277,-44.850998:-20.120293,-44.895337": {
+      "distanciaKm": 9.4,
+      "tempoCarroMin": 17
+    },
+    "geo:santo antônio, divinópolis, mg, brasil": {
+      "latitude": -20.0803489,
+      "longitude": -45.0252039,
+      "displayName": "Santo Antônio dos Campos, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
     }
   }
 }

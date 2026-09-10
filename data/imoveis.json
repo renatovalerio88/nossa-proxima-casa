@@ -168,6 +168,334 @@
       }
     },
     {
+      "fonte": "Chaves na Mão / direto com proprietário",
+      "codigoFonte": "44391550",
+      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bom Pastor",
+      "endereco": "Rua Ibirité, 630",
+      "aluguel": 2700.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 170.0,
+      "terrenoM2": 200.0,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa térrea no Bom Pastor com 170 m² de área útil, 200 m² de área total, 3 quartos, 1 suíte, 2 banheiros e 2 vagas.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026; anúncio identificado como direto com o proprietário e com última atualização informada em 08/07/2026. Disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "cf96daff3431b274e55c74e3",
+      "id": "imv_cf96daff3431b274e55c74e3",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026; anúncio identificado como direto com o proprietário e com última atualização informada em 08/07/2026. Disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "Chaves na Mão / direto com proprietário",
+          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 80.0,
+        "localizacao": 95,
+        "custoBeneficio": 91.0,
+        "visual": 50.0,
+        "final": 81.5,
+        "motivosPositivos": [
+          "170 m²",
+          "3 quartos",
+          "Preço dentro da faixa ideal",
+          "Hospital Santa Mônica: ~0.7 km"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1219737,
+      "longitude": -44.8906242,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 0.5,
+        "distanciaKm": 0.7,
+        "tempoCarroMin": 2,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Chaves na Mão",
+      "codigoFonte": "46035641",
+      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-padre-eustaquio-100m2-RS2000/id-46035641/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Padre Eustáquio",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 100.0,
+      "terrenoM2": 100.0,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 2,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa no Padre Eustáquio com aproximadamente 100 m², 3 quartos, armários em dois quartos e na cozinha, 1 banheiro, varanda/sacada e 2 vagas.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 10824 e última atualização informada em 25/08/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "d5d75fde87dfd933a6916cf6",
+      "id": "imv_d5d75fde87dfd933a6916cf6",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 10824 e última atualização informada em 25/08/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "Chaves na Mão",
+          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-padre-eustaquio-100m2-RS2000/id-46035641/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 83.0,
+        "localizacao": 43.2,
+        "custoBeneficio": 85.0,
+        "visual": 50.0,
+        "final": 68.5,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Armários",
+          "Preço dentro da faixa ideal",
+          "Hospital Santa Mônica: ~9.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1722775,
+      "longitude": -44.8509976,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 7.4,
+        "distanciaKm": 9.4,
+        "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Chaves na Mão",
+      "codigoFonte": "46196440",
+      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-interlagos-300m2-RS1550/id-46196440/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Interlagos",
+      "endereco": null,
+      "aluguel": 1550.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 100.0,
+      "terrenoM2": 300.0,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 2,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa no Interlagos com aproximadamente 100 m² de área útil em área total de 300 m², 3 quartos, sala, copa, cozinha com bancada, banheiro social e 2 vagas.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 7114 e última atualização informada em 08/09/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "ef5ddcefbe7a14aeb5c05044",
+      "id": "imv_ef5ddcefbe7a14aeb5c05044",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 7114 e última atualização informada em 08/09/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "Chaves na Mão",
+          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-interlagos-300m2-RS1550/id-46196440/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 73.0,
+        "localizacao": 67.7,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 73.6,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~5.9 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1573321,
+      "longitude": -44.8744701,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 4.7,
+        "distanciaKm": 5.9,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Chaves na Mão",
+      "codigoFonte": "46081282",
+      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-santo-antonio-100m2-RS1800/id-46081282/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santo Antônio",
+      "endereco": null,
+      "aluguel": 1800.0,
+      "condominio": null,
+      "iptu": 486.0,
+      "areaM2": 100.0,
+      "terrenoM2": 100.0,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 1,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa no Santo Antônio com aproximadamente 100 m², 3 quartos, sala, copa, cozinha, banheiro com box, área de serviço coberta e 1 vaga.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 60626 e última atualização informada em 26/08/2026. IPTU de R$ 486 exibido no anúncio; disponibilidade e valor devem ser confirmados no portal; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "9d589d9e0965bfcf898817eb",
+      "id": "imv_9d589d9e0965bfcf898817eb",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 60626 e última atualização informada em 26/08/2026. IPTU de R$ 486 exibido no anúncio; disponibilidade e valor devem ser confirmados no portal; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "Chaves na Mão",
+          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-santo-antonio-100m2-RS1800/id-46081282/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 73.0,
+        "localizacao": 0,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 56.7,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~18.3 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.0803489,
+      "longitude": -45.0252039,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 14.3,
+        "distanciaKm": 18.3,
+        "tempoCarroMin": 29,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Casa Nova",
       "codigoFonte": "122457",
       "url": "https://renato.casanova.imb.br/imovel/122457",
