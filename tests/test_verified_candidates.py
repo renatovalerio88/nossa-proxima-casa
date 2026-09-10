@@ -13,9 +13,17 @@ CFG = {
     "criterios": {
         "areaMinimaM2": 90,
         "quartosMinimos": 3,
+        "banheirosMinimos": 2,
+        "areaExternaPrivativaObrigatoria": True,
         "aluguelIdealMin": 2000,
         "aluguelIdealMax": 3000,
         "aluguelOportunidadeMax": 3500,
+        "oportunidade": {
+            "distanciaHospitalMaxKm": 8,
+            "areaDestaqueM2": 110,
+            "aceitaQuartoExtra": True,
+            "aceitaArmarios": True,
+        },
     },
     "pesosMatch": {"casa": 40, "localizacao": 25, "custoBeneficio": 20, "visual": 15},
 }
@@ -36,11 +44,13 @@ class VerifiedCandidatesTest(unittest.TestCase):
             "aluguel": 3200.0,
             "areaM2": 200.0,
             "quartos": 3,
+            "banheiros": 2,
             "quintal": True,
             "armarios": True,
             "churrasqueira": True,
             "piscina": True,
             "hidromassagem": None,
+            "hospital": {"distanciaKm": 4.0},
             "coletaAutomaticaPermitida": False,
             "notaProveniencia": "Observação humana verificável.",
         }
@@ -60,6 +70,7 @@ class VerifiedCandidatesTest(unittest.TestCase):
         item = merged["imoveis"][0]
         self.assertEqual(item["ultimoVistoEm"], "2026-09-09")
         self.assertEqual(item["elegibilidade"]["status"], "elegivel")
+        self.assertIn("Oportunidade excepcional", item["elegibilidade"]["oportunidade"])
         self.assertIn("final", item["match"])
         self.assertEqual(item["historico"][0]["campo"], "observacao_verificada")
 
@@ -86,13 +97,7 @@ class VerifiedCandidatesTest(unittest.TestCase):
         second["url"] = "https://example.test/456"
         second["bairro"] = "Bom Pastor"
         inventory = {"schemaVersion": 1, "atualizadoEm": "2026-09-09", "imoveis": []}
-
-        merged = merge_candidate_documents(
-            inventory,
-            [{"imoveis": [first]}, {"imoveis": [second]}],
-            CFG,
-        )
-
+        merged = merge_candidate_documents(inventory, [{"imoveis": [first]}, {"imoveis": [second]}], CFG)
         self.assertEqual(len(merged["imoveis"]), 2)
         self.assertEqual({item["codigoFonte"] for item in merged["imoveis"]}, {"123", "456"})
 
@@ -102,13 +107,7 @@ class VerifiedCandidatesTest(unittest.TestCase):
         newer["observadoEm"] = "2026-09-10"
         newer["aluguel"] = 3000.0
         inventory = {"schemaVersion": 1, "atualizadoEm": "2026-09-09", "imoveis": []}
-
-        merged = merge_candidate_documents(
-            inventory,
-            [{"imoveis": [old]}, {"imoveis": [newer]}],
-            CFG,
-        )
-
+        merged = merge_candidate_documents(inventory, [{"imoveis": [old]}, {"imoveis": [newer]}], CFG)
         self.assertEqual(len(merged["imoveis"]), 1)
         self.assertEqual(merged["imoveis"][0]["ultimoVistoEm"], "2026-09-10")
         self.assertEqual(merged["imoveis"][0]["aluguel"], 3000.0)
