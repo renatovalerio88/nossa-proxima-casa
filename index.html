@@ -44,20 +44,28 @@
 
   <template id="cardTemplate">
     <article class="card">
-      <div class="card-topo">
-        <div class="card-identificacao">
-          <div class="linha-fonte"><span class="fonte"></span><span class="qualidade"></span></div>
-          <h2 class="titulo"></h2>
-          <p class="local"></p>
-        </div>
-        <div class="match"></div>
+      <div class="foto-wrap" hidden>
+        <img class="foto" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       </div>
-      <div class="metricas"></div>
-      <div class="alertas"></div>
-      <div class="acoes">
-        <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
-        <button class="favoritar">♡ Favoritar</button>
-        <button class="descartar">🗑 Descartar</button>
+      <div class="card-conteudo">
+        <div class="card-topo">
+          <div class="card-identificacao">
+            <div class="linha-fonte"><span class="fonte"></span><span class="qualidade"></span></div>
+            <h2 class="titulo"></h2>
+            <p class="local"></p>
+          </div>
+          <div class="match"></div>
+        </div>
+        <div class="metricas"></div>
+        <p class="descricao" hidden></p>
+        <div class="detalhes"></div>
+        <div class="alertas"></div>
+        <p class="proveniencia" hidden></p>
+        <div class="acoes">
+          <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
+          <button class="favoritar">♡ Favoritar</button>
+          <button class="descartar">🗑 Descartar</button>
+        </div>
       </div>
     </article>
   </template>
