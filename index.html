@@ -26,17 +26,19 @@
       <button class="tab" data-tab="favoritados">Favoritados</button>
       <button class="tab" data-tab="descartados">Descartados</button>
       <button class="tab" data-tab="todos">Todos</button>
+      <button class="tab tab-fontes" data-tab="imobiliarias">Imobiliárias</button>
     </nav>
 
-    <section class="filtros">
+    <section class="filtros" id="filtros">
       <label>Ordenar
         <select id="ordenacao">
-          <option value="recente" selected>Mais recentes</option>
+          <option value="recente" selected>Mais relevantes e recentes</option>
           <option value="match">Melhor Match</option>
           <option value="preco">Menor aluguel</option>
         </select>
       </label>
       <label class="check"><input type="checkbox" id="somenteElegiveis"> Só elegíveis confirmados</label>
+      <button class="marcar-vistos" id="marcarNovosVistos" type="button" hidden>Marcar novos como vistos</button>
     </section>
 
     <section id="lista" class="lista" aria-live="polite"></section>
@@ -57,14 +59,13 @@
           <div class="match"></div>
         </div>
         <div class="metricas"></div>
-        <p class="descricao" hidden></p>
         <div class="detalhes"></div>
         <div class="alertas"></div>
         <p class="proveniencia" hidden></p>
         <div class="acoes">
           <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
-          <button class="favoritar">♡ Favoritar</button>
-          <button class="descartar">🗑 Descartar</button>
+          <button class="favoritar" type="button">♡ Favoritar</button>
+          <button class="descartar" type="button">🗑 Descartar</button>
         </div>
       </div>
     </article>

@@ -8,7 +8,14 @@ function carregarDecisoes() {
   }
 }
 
-const state = { tab: 'novos', imoveis: [], decisoes: carregarDecisoes() };
+const state = {
+  tab: 'novos',
+  imoveis: [],
+  fontes: [],
+  decisoes: carregarDecisoes(),
+  novosIds: new Set(),
+  baselineNovosInicializado: false
+};
 const fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
 function salvarDecisoes() {
@@ -24,20 +31,46 @@ function setDecisao(id, valor) {
 function valor(v, fallback = '—') { return v === null || v === undefined || v === '' ? fallback : v; }
 function dataPtBr(v) {
   if (!v) return null;
-  const d = new Date(v.includes('T') ? v : `${v}T12:00:00`);
+  const d = new Date(String(v).includes('T') ? v : `${v}T12:00:00`);
   if (Number.isNaN(d.getTime())) return null;
   return new Intl.DateTimeFormat('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric' }).format(d);
 }
-function ehNovo(item) {
-  if (!item.primeiroVistoEm) return false;
-  const d = new Date(item.primeiroVistoEm.includes('T') ? item.primeiroVistoEm : `${item.primeiroVistoEm}T12:00:00`);
-  if (Number.isNaN(d.getTime())) return false;
-  const idade = Date.now() - d.getTime();
-  return idade >= 0 && idade <= 7 * 86400000;
-}
 function precisaConfirmacao(item) { return item.elegibilidade?.status === 'pendente'; }
+function foraDosCriterios(item) { return item.elegibilidade?.status === 'inelegivel'; }
 function ativo(item) { return item.disponivel !== false; }
 
+function inicializarNovos(items) {
+  const idsAtuais = items.filter(ativo).map(i => i.id).filter(Boolean);
+  try {
+    const raw = JSON.parse(localStorage.getItem('npc-inventario-conhecido') || 'null');
+    if (!Array.isArray(raw)) {
+      localStorage.setItem('npc-inventario-conhecido', JSON.stringify(idsAtuais));
+      state.novosIds = new Set();
+      state.baselineNovosInicializado = true;
+      return;
+    }
+    const conhecidos = new Set(raw);
+    state.novosIds = new Set(idsAtuais.filter(id => !conhecidos.has(id)));
+  } catch {
+    state.novosIds = new Set();
+  }
+  state.baselineNovosInicializado = true;
+}
+function ehNovo(item) { return Boolean(item?.id && state.novosIds.has(item.id)); }
+function marcarNovosComoVistos() {
+  try {
+    const idsAtuais = state.imoveis.filter(ativo).map(i => i.id).filter(Boolean);
+    localStorage.setItem('npc-inventario-conhecido', JSON.stringify(idsAtuais));
+  } catch {}
+  state.novosIds = new Set();
+  render();
+}
+
+function prioridadeCandidato(item) {
+  if (item.elegibilidade?.elegivel === true) return 0;
+  if (precisaConfirmacao(item)) return 1;
+  return 2;
+}
 function filtrar(items) {
   const somenteElegiveis = document.querySelector('#somenteElegiveis').checked;
   let rows = items.filter(i => !somenteElegiveis || i.elegibilidade?.elegivel === true);
@@ -51,6 +84,8 @@ function filtrar(items) {
   });
   const ordem = document.querySelector('#ordenacao').value;
   return rows.sort((a,b) => {
+    const prioridade = prioridadeCandidato(a) - prioridadeCandidato(b);
+    if (prioridade !== 0) return prioridade;
     if (ordem === 'preco') return (a.aluguel ?? Infinity) - (b.aluguel ?? Infinity);
     if (ordem === 'recente') {
       const data = String(b.primeiroVistoEm || '').localeCompare(String(a.primeiroVistoEm || ''));
@@ -60,19 +95,21 @@ function filtrar(items) {
   });
 }
 
-function metric(label, value) { return `<div><strong>${value}</strong><span>${label}</span></div>`; }
+function metric(label, value, classe = '') { return `<div${classe ? ` class="${classe}"` : ''}><strong>${value}</strong><span>${label}</span></div>`; }
 function renderResumo() {
   const ativos = state.imoveis.filter(ativo);
   const elegiveis = ativos.filter(i => i.elegibilidade?.elegivel === true).length;
   const confirmar = ativos.filter(i => precisaConfirmacao(i)).length;
-  const fav = ativos.filter(i => decisao(i.id) === 'favorito').length;
-  const novos = ativos.filter(i => ehNovo(i) && decisao(i.id) === null).length;
+  const fora = ativos.filter(i => foraDosCriterios(i)).length;
   document.querySelector('#resumo').innerHTML = [
+    metric('anúncios acompanhados', ativos.length),
     metric('elegíveis confirmados', elegiveis),
-    metric('novos em 7 dias', novos),
     metric('a confirmar', confirmar),
-    metric('favoritas', fav)
+    metric('fora dos critérios', fora)
   ].join('');
+  const fav = ativos.filter(i => decisao(i.id) === 'favorito').length;
+  document.querySelector('[data-tab="favoritados"]').textContent = fav ? `Favoritados (${fav})` : 'Favoritados';
+  document.querySelector('[data-tab="novos"]').textContent = state.novosIds.size ? `Novos (${state.novosIds.size})` : 'Novos';
 }
 
 function ultimoEventoPreco(item) {
@@ -81,6 +118,7 @@ function ultimoEventoPreco(item) {
 }
 function distanciaHospital(item) {
   const hospital = item.hospital || {};
+  if (hospital.localizacaoValidada !== true) return null;
   const km = hospital.distanciaKm ?? hospital.distanciaLinhaRetaKm;
   if (km == null || !Number.isFinite(Number(km))) return null;
   const aprox = hospital.precisaoLocalizacao === 'bairro' ? ' aprox.' : '';
@@ -94,34 +132,47 @@ function fotosConfiaveis(item) {
     ...(Array.isArray(item.imagens) ? item.imagens : [])
   ].filter(url => /^https:\/\//i.test(String(url))))];
 }
-function detalhe(label, value) { return value == null || value === '' ? null : `${label}: ${value}`; }
 function origemTexto(item) {
   const modo = item.proveniencia?.modo || item.fonteVerificacao;
   if (modo === 'verificacao_manual' || modo === 'portal_publico_terceiro') return 'Verificação manual · confirme valor e disponibilidade no anúncio';
   if (modo === 'coleta_automatica' || item.coletaAutomaticaPermitida === true) return 'Coleta automática da fonte cadastrada';
   return item.url ? 'Dados vinculados ao anúncio original' : null;
 }
+function temOportunidadeForte(item) {
+  const o = item.elegibilidade?.oportunidade;
+  return Boolean(o && (typeof o === 'string' ? o.trim() : Object.keys(o).length));
+}
 function faixaPreco(item) {
   const p = Number(item.aluguel);
   if (!Number.isFinite(p)) return null;
   if (p >= 2000 && p <= 3000) return 'Faixa principal';
-  if (p >= 3001 && p <= 3500 && item.elegibilidade?.elegivel === true) return 'Oportunidade acima da faixa';
-  if (p < 2000 && item.elegibilidade?.elegivel === true) return 'Oportunidade abaixo da faixa';
-  return null;
+  if (p >= 3001 && p <= 3500 && item.elegibilidade?.elegivel === true && temOportunidadeForte(item)) return 'Oportunidade excepcional';
+  if (p < 2000) return temOportunidadeForte(item) && item.elegibilidade?.elegivel === true ? 'Oportunidade abaixo da faixa' : 'Abaixo da faixa de referência';
+  if (p > 3500) return 'Acima do teto de R$ 3.500';
+  return 'Fora da faixa principal';
 }
 function matchDisponivel(item) {
-  return !precisaConfirmacao(item) && Number.isFinite(Number(item.match?.final));
+  const m = item.match || {};
+  const componentes = [m.casa, m.localizacao, m.custoBeneficio, m.visual];
+  return item.elegibilidade?.status !== 'pendente'
+    && m.confianca !== 'incompleta'
+    && componentes.every(v => Number.isFinite(Number(v)))
+    && Number.isFinite(Number(m.final));
+}
+function areaExternaTexto(item) {
+  if (item.areaExternaPrivativa === true || item.quintal === true) return '✓ Confirmada';
+  if (item.areaExternaPrivativa === false || item.quintal === false) return '✕ Não';
+  return 'A confirmar';
 }
 
-function render() {
-  renderResumo();
-  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === state.tab));
+function renderImoveis() {
   const lista = document.querySelector('#lista');
   const rows = filtrar(state.imoveis.filter(ativo));
+  lista.className = 'lista';
   lista.innerHTML = '';
   if (!rows.length) {
-    const msg = state.tab === 'novos' ? 'Nenhum imóvel novo nos últimos 7 dias.' : 'Nenhuma casa aqui ainda.';
-    lista.innerHTML = `<div class="vazio"><strong>${msg}</strong><span>Use “Todos” para consultar o inventário ativo completo.</span></div>`;
+    const msg = state.tab === 'novos' ? 'Nenhum imóvel novo desde sua última revisão.' : 'Nenhuma casa aqui ainda.';
+    lista.innerHTML = `<div class="vazio"><strong>${msg}</strong><span>Use “Todos” para consultar o inventário acompanhado.</span></div>`;
     return;
   }
 
@@ -142,7 +193,7 @@ function render() {
       img.alt = `Foto real do imóvel em ${valor(item.bairro, 'Divinópolis')}`;
       img.addEventListener('error', () => { wrap.hidden = true; });
       wrap.hidden = false;
-      if (fotos.length > 1) wrap.dataset.galeria = `${fotos.length} fotos reais`;
+      wrap.dataset.galeria = fotos.length > 1 ? `${fotos.length} fotos reais` : 'Foto real';
     }
 
     node.querySelector('.fonte').textContent = [item.fonte, item.codigoFonte ? `cód. ${item.codigoFonte}` : null].filter(Boolean).join(' · ') || 'Fonte a confirmar';
@@ -164,35 +215,28 @@ function render() {
       metric('aluguel', item.aluguel != null ? fmt.format(item.aluguel) : '—'),
       metric('quartos', valor(item.quartos)),
       metric('banheiros', valor(item.banheiros)),
-      metric('área', item.areaM2 != null ? `${item.areaM2} m²` : '—')
+      metric('área', item.areaM2 != null ? `${item.areaM2} m²` : '—'),
+      metric('área externa', areaExternaTexto(item), 'metrica-externa')
     ].join('');
 
     const detalhes = [
-      item.areaExternaPrivativa === true || item.quintal === true ? '✓ Área externa privativa' : null,
-      item.vagas != null ? `${item.vagas} vaga${Number(item.vagas) === 1 ? '' : 's'}` : null,
       distanciaHospital(item),
-      faixaPreco(item)
+      faixaPreco(item),
+      item.vagas != null ? `${item.vagas} vaga${Number(item.vagas) === 1 ? '' : 's'}` : null
     ].filter(Boolean);
     node.querySelector('.detalhes').innerHTML = detalhes.map(x => `<span>${x}</span>`).join('');
 
-    const descricao = node.querySelector('.descricao');
-    descricao.hidden = true;
-
     const alertas = [];
-    if (ehNovo(item)) alertas.push('● Novo nos últimos 7 dias');
-    if (item.elegibilidade?.status === 'pendente') alertas.push('⚠ Requisitos mínimos ainda não confirmados');
-    if (item.elegibilidade?.status === 'inelegivel') alertas.push('✕ Fora dos critérios mínimos');
-    (item.elegibilidade?.motivos || []).slice(0, 1).forEach(x => alertas.push(`✕ ${x}`));
-    (item.elegibilidade?.pendencias || []).slice(0, 2).forEach(x => alertas.push(`⚠ ${x}`));
-    if (!fotos.length) alertas.push('Avaliação visual indisponível · sem fotos reais');
-    else if (item.match?.visual == null) alertas.push('Fotos reais disponíveis · avaliação visual ainda não calculada');
-
-    const ultimoPreco = ultimoEventoPreco(item);
-    if (ultimoPreco?.para != null) {
-      const de = ultimoPreco.de != null ? fmt.format(ultimoPreco.de) : 'não informado';
-      alertas.push(`Preço: ${de} → ${fmt.format(ultimoPreco.para)}`);
+    if (item.elegibilidade?.status === 'inelegivel') {
+      const motivo = (item.elegibilidade?.motivos || [])[0];
+      alertas.push(motivo ? `Fora dos critérios: ${motivo}` : 'Fora dos critérios mínimos');
+    } else if (item.elegibilidade?.status === 'pendente') {
+      const faltas = (item.elegibilidade?.pendencias || []).slice(0, 3).map(x => x.replace(/ não confirmad[ao]$/i, '').replace(/ não informado$/i, ''));
+      alertas.push(`Falta confirmar: ${faltas.length ? faltas.join(' · ') : 'requisitos mínimos'}`);
     }
-    node.querySelector('.alertas').innerHTML = alertas.slice(0, 4).map(x => `<span>${x}</span>`).join('');
+    if (!fotos.length) alertas.push('Sem foto real disponível na fonte');
+    else if (item.match?.visual == null) alertas.push('Foto real disponível · avaliação visual ainda não calculada');
+    node.querySelector('.alertas').innerHTML = alertas.slice(0, 2).map(x => `<span>${x}</span>`).join('');
 
     const origem = origemTexto(item);
     const prov = node.querySelector('.proveniencia');
@@ -226,31 +270,69 @@ function render() {
   });
 }
 
-function textoStatus(inv, status) {
-  const ativos = (inv.imoveis || []).filter(ativo).length;
+function statusFonte(fonte) {
+  if (fonte.coletaAutomatica === true) return ['Coleta automática', 'automatico'];
+  const s = String(fonte.status || '');
+  if (s.includes('catalogo_publico') || s.includes('manual_verificado') || s.includes('auditoria_avancada')) return ['Acesso direto · no radar', 'radar'];
+  if (s.includes('nao_automatizar')) return ['Acesso direto · sem automação', 'manual'];
+  return ['Em validação', 'validacao'];
+}
+function renderImobiliarias() {
+  const lista = document.querySelector('#lista');
+  lista.className = 'lista-fontes';
+  const imobiliarias = state.fontes.filter(f => f.tipo === 'imobiliaria').sort((a,b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+  if (!imobiliarias.length) {
+    lista.innerHTML = '<div class="vazio"><strong>Nenhuma imobiliária carregada.</strong></div>';
+    return;
+  }
+  lista.innerHTML = `<div class="fontes-intro"><strong>Imobiliárias de Divinópolis no radar</strong><span>${imobiliarias.length} operações identificadas. Quando a coleta automática não é permitida ou ainda não foi validada, use o acesso direto ao site.</span></div>` + imobiliarias.map(fonte => {
+    const [status, tipo] = statusFonte(fonte);
+    const link = fonte.siteUrl ? `<a href="${fonte.siteUrl}" target="_blank" rel="noopener noreferrer">Abrir site</a>` : '<span class="sem-link">Site oficial ainda não identificado</span>';
+    return `<article class="fonte-card"><div><strong>${fonte.nome}</strong><span class="fonte-status" data-tipo="${tipo}">${status}</span></div><p>${fonte.motivo || 'Operação local identificada; catálogo e política de coleta ainda em validação.'}</p>${link}</article>`;
+  }).join('');
+}
+
+function render() {
+  renderResumo();
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === state.tab));
+  const filtros = document.querySelector('#filtros');
+  filtros.hidden = state.tab === 'imobiliarias';
+  const marcar = document.querySelector('#marcarNovosVistos');
+  marcar.hidden = state.tab !== 'novos' || state.novosIds.size === 0;
+  if (state.tab === 'imobiliarias') renderImobiliarias();
+  else renderImoveis();
+}
+
+function textoStatus(inv, status, fontesData) {
+  const acompanhados = (inv.imoveis || []).filter(ativo).length;
   const atualizado = dataPtBr(inv.atualizadoEm || status?.fim);
-  if (!status) return `${ativos} imóveis ativos${atualizado ? ` · atualizado em ${atualizado}` : ''}`;
-  const fontes = Object.entries(status.fontes || {});
-  const fontesComSucesso = fontes.filter(([,v]) => Number(v.sucessos || 0) > 0).length;
-  const fontesTentadas = fontes.length;
-  const partes = [`${ativos} imóveis ativos`];
-  if (fontesTentadas) partes.push(`${fontesComSucesso}/${fontesTentadas} fonte${fontesTentadas === 1 ? '' : 's'} com retorno nesta atualização`);
+  const fontesRadar = (fontesData?.fontes || []).length;
+  const partes = [`${acompanhados} anúncios acompanhados`];
+  if (status) {
+    const fontes = Object.entries(status.fontes || {});
+    const fontesComSucesso = fontes.filter(([,v]) => Number(v.sucessos || 0) > 0).length;
+    if (fontes.length) partes.push(`${fontesComSucesso} fonte${fontesComSucesso === 1 ? '' : 's'} automática${fontesComSucesso === 1 ? '' : 's'} com retorno`);
+  }
+  if (fontesRadar) partes.push(`${fontesRadar} fontes no radar`);
   if (atualizado) partes.push(`atualizado em ${atualizado}`);
   return partes.join(' · ');
 }
 
 async function carregar() {
   try {
-    const [inv, status] = await Promise.all([
+    const [inv, status, fontesData] = await Promise.all([
       fetch('data/imoveis.json', { cache: 'no-store' }).then(r => r.json()),
-      fetch('data/status-coleta.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
+      fetch('data/status-coleta.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('data/fontes.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { fontes: [] }).catch(() => ({ fontes: [] }))
     ]);
     state.imoveis = inv.imoveis || [];
+    state.fontes = fontesData.fontes || [];
+    inicializarNovos(state.imoveis);
     const idsAtivos = new Set(state.imoveis.map(i => i.id).filter(Boolean));
     const limpas = Object.fromEntries(Object.entries(state.decisoes).filter(([id]) => idsAtivos.has(id)));
     if (Object.keys(limpas).length !== Object.keys(state.decisoes).length) { state.decisoes = limpas; salvarDecisoes(); }
     const el = document.querySelector('#statusColeta');
-    el.textContent = textoStatus(inv, status);
+    el.textContent = textoStatus(inv, status, fontesData);
     if (status?.estado) el.dataset.estado = status.estado;
     render();
   } catch {
@@ -259,7 +341,8 @@ async function carregar() {
   }
 }
 
-document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { state.tab = b.dataset.tab; render(); b.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' }); }));
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { state.tab = b.dataset.tab; render(); }));
 document.querySelector('#ordenacao').addEventListener('change', render);
 document.querySelector('#somenteElegiveis').addEventListener('change', render);
+document.querySelector('#marcarNovosVistos').addEventListener('click', marcarNovosComoVistos);
 carregar();

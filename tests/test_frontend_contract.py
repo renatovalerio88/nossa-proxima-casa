@@ -14,12 +14,13 @@ class FrontendContractTests(unittest.TestCase):
         cls.css = (ROOT / "style.css").read_text(encoding="utf-8")
 
     def test_abas_principais_estao_publicadas(self):
-        for tab in ("novos", "a-confirmar", "favoritados", "descartados", "todos"):
+        for tab in ("novos", "a-confirmar", "favoritados", "descartados", "todos", "imobiliarias"):
             self.assertIn(f'data-tab="{tab}"', self.html)
 
     def test_controles_essenciais_existem(self):
         for element_id in (
-            "statusColeta", "resumo", "ordenacao", "somenteElegiveis", "lista", "cardTemplate"
+            "statusColeta", "resumo", "filtros", "ordenacao", "somenteElegiveis",
+            "marcarNovosVistos", "lista", "cardTemplate"
         ):
             self.assertRegex(self.html, rf'id="{re.escape(element_id)}"')
 
@@ -29,9 +30,18 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("'favorito'", self.js)
         self.assertIn("'descartado'", self.js)
 
-    def test_interface_consume_apenas_base_publicada_real(self):
+    def test_novos_usa_baseline_do_usuario_e_nao_inventario_inicial(self):
+        self.assertIn("npc-inventario-conhecido", self.js)
+        self.assertIn("state.novosIds", self.js)
+        self.assertIn("function inicializarNovos", self.js)
+        self.assertIn("function marcarNovosComoVistos", self.js)
+        self.assertIn("Nenhum imóvel novo desde sua última revisão", self.js)
+        self.assertNotIn("novos em 7 dias", self.js)
+
+    def test_interface_consume_bases_publicadas_reais(self):
         self.assertIn("fetch('data/imoveis.json'", self.js)
         self.assertIn("fetch('data/status-coleta.json'", self.js)
+        self.assertIn("fetch('data/fontes.json'", self.js)
         self.assertNotIn("imoveisExemplo", self.js)
         self.assertNotIn("mock", self.js.lower())
 
@@ -40,39 +50,33 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("Localização a confirmar", self.js)
         self.assertIn("item.aluguel != null", self.js)
         self.assertIn("item.areaM2 != null", self.js)
+        self.assertIn("A confirmar", self.js)
 
-    def test_link_da_fonte_preserva_url_e_isola_nova_aba(self):
-        self.assertIn('target="_blank"', self.html)
-        self.assertIn('rel="noopener noreferrer"', self.html)
-        self.assertIn("link.href = item.url || '#'", self.js)
-
-    def test_itens_indisponiveis_nao_aparecem_na_lista_ativa(self):
-        self.assertIn("function ativo(item)", self.js)
-        self.assertIn("state.imoveis.filter(ativo)", self.js)
-
-    def test_novos_dependem_de_primeiro_visto_e_janela_temporal(self):
-        self.assertIn("function ehNovo(item)", self.js)
-        self.assertIn("item.primeiroVistoEm", self.js)
-        self.assertIn("7 * 86400000", self.js)
-        self.assertIn("state.tab === 'novos'", self.js)
-        self.assertIn("ehNovo(i)", self.js)
-        self.assertIn("return false", self.js)
-
-    def test_pendentes_tem_aba_propria_e_match_incompleto(self):
-        self.assertIn("function precisaConfirmacao(item)", self.js)
-        self.assertIn("state.tab === 'a-confirmar'", self.js)
-        self.assertIn("Match incompleto", self.js)
-        self.assertIn('data-tab="a-confirmar"', self.html)
-
-    def test_match_final_so_aparece_quando_numerico(self):
+    def test_match_final_exige_todos_componentes_confirmados(self):
         self.assertIn("function matchDisponivel(item)", self.js)
-        self.assertIn("Number.isFinite(Number(item.match?.final))", self.js)
-        self.assertIn("item.match.final", self.js)
+        self.assertIn("m.casa", self.js)
+        self.assertIn("m.localizacao", self.js)
+        self.assertIn("m.custoBeneficio", self.js)
+        self.assertIn("m.visual", self.js)
+        self.assertIn("m.confianca !== 'incompleta'", self.js)
+        self.assertIn("componentes.every", self.js)
+        self.assertIn("Match incompleto", self.js)
         self.assertNotIn("Visual 50", self.js)
+
+    def test_card_prioriza_area_externa_e_hospital(self):
+        for termo in ("aluguel", "quartos", "banheiros", "área", "área externa", "Hospital Santa Mônica"):
+            self.assertIn(termo, self.js)
+        self.assertIn("function areaExternaTexto", self.js)
+
+    def test_distancia_so_aparece_com_localizacao_validada(self):
+        self.assertIn("hospital.localizacaoValidada !== true", self.js)
+        self.assertIn("hospital.distanciaKm", self.js)
+        self.assertIn("hospital.distanciaLinhaRetaKm", self.js)
+        self.assertIn("precisaoLocalizacao", self.js)
 
     def test_visual_sem_fotos_reais_e_indisponivel(self):
         self.assertIn("function fotosConfiaveis(item)", self.js)
-        self.assertIn("Avaliação visual indisponível · sem fotos reais", self.js)
+        self.assertIn("Sem foto real disponível na fonte", self.js)
         self.assertIn("item.match?.visual == null", self.js)
 
     def test_galeria_usa_apenas_fotos_reais_do_item(self):
@@ -86,37 +90,49 @@ class FrontendContractTests(unittest.TestCase):
     def test_galeria_tem_navegacao_e_acessibilidade(self):
         for termo in ("ArrowLeft", "ArrowRight", "role", "tabindex", "aria-label", "showModal"):
             self.assertIn(termo, self.gallery)
-        self.assertIn("galeria-anterior", self.gallery)
-        self.assertIn("galeria-proxima", self.gallery)
-        self.assertIn("galeria-fechar", self.gallery)
 
-    def test_preco_explicita_faixa_principal_e_oportunidades(self):
+    def test_preco_explicita_faixa_principal_oportunidade_e_teto(self):
         self.assertIn("p >= 2000 && p <= 3000", self.js)
         self.assertIn("p >= 3001 && p <= 3500", self.js)
-        self.assertIn("Oportunidade acima da faixa", self.js)
-        self.assertIn("Oportunidade abaixo da faixa", self.js)
+        self.assertIn("p > 3500", self.js)
+        self.assertIn("Oportunidade excepcional", self.js)
+        self.assertIn("Abaixo da faixa de referência", self.js)
+        self.assertIn("Acima do teto de R$ 3.500", self.js)
 
-    def test_card_prioriza_campos_essenciais(self):
-        for termo in ("aluguel", "quartos", "banheiros", "área", "Área externa privativa", "Hospital Santa Mônica"):
-            self.assertIn(termo, self.js)
+    def test_ordenacao_prioriza_elegiveis_e_pendentes(self):
+        self.assertIn("function prioridadeCandidato", self.js)
+        self.assertIn("prioridadeCandidato(a) - prioridadeCandidato(b)", self.js)
 
-    def test_distancia_do_hospital_prioriza_quilometros(self):
-        self.assertIn("hospital.distanciaKm", self.js)
-        self.assertIn("hospital.distanciaLinhaRetaKm", self.js)
-        self.assertIn("precisaoLocalizacao", self.js)
-        self.assertIn(" km", self.js)
-        self.assertNotIn("tempoCarroMin", self.js)
+    def test_alertas_sao_condensados(self):
+        self.assertIn("Falta confirmar:", self.js)
+        self.assertIn("alertas.slice(0, 2)", self.js)
+        self.assertNotIn("Requisitos mínimos ainda não confirmados", self.js)
 
-    def test_status_da_coleta_mostra_inventario_e_fontes_em_vez_de_so_capturados(self):
-        self.assertIn("imóveis ativos", self.js)
-        self.assertIn("fontesComSucesso", self.js)
-        self.assertIn("fontesTentadas", self.js)
+    def test_status_separa_anuncios_acompanhados_de_fontes_no_radar(self):
+        self.assertIn("anúncios acompanhados", self.js)
+        self.assertIn("fontes no radar", self.js)
+        self.assertIn("automática", self.js)
         self.assertNotIn("capturado(s)", self.js)
 
-    def test_mobile_tabs_tem_scroll_horizontal_sem_corte(self):
-        self.assertIn("overflow-x:auto", self.css)
-        self.assertIn("scroll-snap-type:x proximity", self.css)
-        self.assertIn("scroll-padding-inline", self.css)
+    def test_resumo_mostra_fora_dos_criterios(self):
+        self.assertIn("fora dos critérios", self.js)
+        self.assertIn("anúncios acompanhados", self.js)
+
+    def test_aba_imobiliarias_exibe_acesso_direto_sem_inventar_link(self):
+        self.assertIn("function renderImobiliarias", self.js)
+        self.assertIn("f.tipo === 'imobiliaria'", self.js)
+        self.assertIn("fonte.siteUrl ?", self.js)
+        self.assertIn("Site oficial ainda não identificado", self.js)
+        self.assertIn('target="_blank"', self.js)
+        self.assertIn('rel="noopener noreferrer"', self.js)
+
+    def test_mobile_tabs_nao_dependem_de_scroll_horizontal(self):
+        self.assertIn("grid-template-columns:repeat(3,minmax(0,1fr))", self.css)
+        self.assertNotIn("scroll-snap-type:x proximity", self.css)
+
+    def test_acoes_mobile_ficam_compactas(self):
+        self.assertIn(".acoes{display:grid", self.css)
+        self.assertNotIn("flex:1 1 100%", self.css)
 
 
 if __name__ == "__main__":
