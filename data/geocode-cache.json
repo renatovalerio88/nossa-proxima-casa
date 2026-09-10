@@ -100,6 +100,24 @@
     "route:-20.125070,-44.876236:-20.120293,-44.895337": {
       "distanciaKm": 3.1,
       "tempoCarroMin": 7
+    },
+    "geo:orion, divinópolis, mg, brasil": {
+      "latitude": -20.1390242,
+      "longitude": -44.9132061,
+      "displayName": "Orion, Divinópolis, Minas Gerais, Região Sudeste, 35502-453, Brasil"
+    },
+    "route:-20.139024,-44.913206:-20.120293,-44.895337": {
+      "distanciaKm": 4.2,
+      "tempoCarroMin": 6
+    },
+    "geo:esplanada, divinópolis, mg, brasil": {
+      "latitude": -20.1523015,
+      "longitude": -44.8904982,
+      "displayName": "Esplanada, Divinópolis, Minas Gerais, Região Sudeste, 35501-025, Brasil"
+    },
+    "route:-20.152302,-44.890498:-20.120293,-44.895337": {
+      "distanciaKm": 5.0,
+      "tempoCarroMin": 10
     }
   }
 }
