@@ -3,171 +3,6 @@
   "atualizadoEm": "2026-09-10",
   "imoveis": [
     {
-      "fonte": "Francisco Imóveis",
-      "codigoFonte": "302696805",
-      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-4-vagas-sao-jose-divinopolismg-302696805",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "São José",
-      "endereco": "Rua Castro Alves",
-      "aluguel": 1800.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 210.0,
-      "terrenoM2": null,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 4,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": true,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "Casa no São José com aproximadamente 210 m², 3 quartos com armários, 1 suíte, 2 banheiros, churrasqueira e 4 vagas.",
-      "fonteVerificacao": "portal_publico_terceiro",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente; não renovar automaticamente.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-10",
-      "ultimoVistoEm": "2026-09-10",
-      "fingerprint": "80aa73542061fa19e24f04e2",
-      "id": "imv_80aa73542061fa19e24f04e2",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-10",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente; não renovar automaticamente."
-      },
-      "historico": [
-        {
-          "data": "2026-09-10",
-          "campo": "observacao_verificada",
-          "fonte": "Francisco Imóveis",
-          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-4-vagas-sao-jose-divinopolismg-302696805"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 96.0,
-        "localizacao": 48.1,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 77.9,
-        "motivosPositivos": [
-          "210 m²",
-          "3 quartos",
-          "Armários",
-          "Churrasqueira",
-          "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~8.7 km"
-        ],
-        "pontosAtencao": [
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1715496,
-      "longitude": -44.908753,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "endereco",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 5.9,
-        "distanciaKm": 8.7,
-        "tempoCarroMin": 12,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
-      "fonte": "Francisco Imóveis",
-      "codigoFonte": "303218858",
-      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-belvedere-divinopolismg-303218858",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Belvedere",
-      "endereco": "Rua Vital Santos",
-      "aluguel": 1200.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 120.0,
-      "terrenoM2": null,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 3,
-      "quintal": true,
-      "armarios": null,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "Casa residencial no Belvedere com 3 quartos, 1 suíte, 2 banheiros, 120 m², quintal amplo e 3 vagas cobertas.",
-      "fonteVerificacao": "portal_publico_terceiro",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente com a imobiliária; não renovar automaticamente.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-10",
-      "ultimoVistoEm": "2026-09-10",
-      "fingerprint": "7f78cc1185bd4cbf32305cb4",
-      "id": "imv_7f78cc1185bd4cbf32305cb4",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-10",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente com a imobiliária; não renovar automaticamente."
-      },
-      "historico": [
-        {
-          "data": "2026-09-10",
-          "campo": "observacao_verificada",
-          "fonte": "Francisco Imóveis",
-          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-belvedere-divinopolismg-303218858"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 87.0,
-        "localizacao": 38.3,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 71.9,
-        "motivosPositivos": [
-          "120 m²",
-          "3 quartos",
-          "Quintal",
-          "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~10.1 km"
-        ],
-        "pontosAtencao": [
-          "Armários: não informado",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1755449,
-      "longitude": -44.8985936,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "endereco",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 6.2,
-        "distanciaKm": 10.1,
-        "tempoCarroMin": 15,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
       "fonte": "Chaves na Mão / direto com proprietário",
       "codigoFonte": "44391550",
       "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
@@ -250,49 +85,49 @@
       }
     },
     {
-      "fonte": "Chaves na Mão",
-      "codigoFonte": "46035641",
-      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-padre-eustaquio-100m2-RS2000/id-46035641/",
+      "fonte": "Francisco Imóveis",
+      "codigoFonte": "302696805",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-4-vagas-sao-jose-divinopolismg-302696805",
       "tipo": "casa",
       "operacao": "aluguel",
       "cidade": "Divinópolis",
-      "bairro": "Padre Eustáquio",
-      "endereco": null,
-      "aluguel": 2000.0,
+      "bairro": "São José",
+      "endereco": "Rua Castro Alves",
+      "aluguel": 1800.0,
       "condominio": null,
       "iptu": null,
-      "areaM2": 100.0,
-      "terrenoM2": 100.0,
+      "areaM2": 210.0,
+      "terrenoM2": null,
       "quartos": 3,
-      "suites": null,
-      "banheiros": 1,
-      "vagas": 2,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 4,
       "quintal": null,
       "armarios": true,
-      "churrasqueira": null,
+      "churrasqueira": true,
       "piscina": null,
       "hidromassagem": null,
-      "descricao": "Casa no Padre Eustáquio com aproximadamente 100 m², 3 quartos, armários em dois quartos e na cozinha, 1 banheiro, varanda/sacada e 2 vagas.",
+      "descricao": "Casa no São José com aproximadamente 210 m², 3 quartos com armários, 1 suíte, 2 banheiros, churrasqueira e 4 vagas.",
       "fonteVerificacao": "portal_publico_terceiro",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 10824 e última atualização informada em 25/08/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente.",
+      "notaProveniencia": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente; não renovar automaticamente.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-10",
       "ultimoVistoEm": "2026-09-10",
-      "fingerprint": "d5d75fde87dfd933a6916cf6",
-      "id": "imv_d5d75fde87dfd933a6916cf6",
+      "fingerprint": "80aa73542061fa19e24f04e2",
+      "id": "imv_80aa73542061fa19e24f04e2",
       "proveniencia": {
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-10",
         "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 10824 e última atualização informada em 25/08/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente."
+        "nota": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente; não renovar automaticamente."
       },
       "historico": [
         {
           "data": "2026-09-10",
           "campo": "observacao_verificada",
-          "fonte": "Chaves na Mão",
-          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-padre-eustaquio-100m2-RS2000/id-46035641/"
+          "fonte": "Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-4-vagas-sao-jose-divinopolismg-302696805"
         }
       ],
       "elegibilidade": {
@@ -302,32 +137,33 @@
         "pendencias": []
       },
       "match": {
-        "casa": 83.0,
-        "localizacao": 43.2,
-        "custoBeneficio": 85.0,
+        "casa": 96.0,
+        "localizacao": 48.1,
+        "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 68.5,
+        "final": 77.9,
         "motivosPositivos": [
-          "100 m²",
+          "210 m²",
           "3 quartos",
           "Armários",
-          "Preço dentro da faixa ideal",
-          "Hospital Santa Mônica: ~9.4 km (aprox. pelo bairro)"
+          "Churrasqueira",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~8.7 km"
         ],
         "pontosAtencao": [
           "Quintal: não informado",
           "Avaliação visual ainda não disponível"
         ]
       },
-      "latitude": -20.1722775,
-      "longitude": -44.8509976,
+      "latitude": -20.1715496,
+      "longitude": -44.908753,
       "hospital": {
         "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
+        "precisaoLocalizacao": "endereco",
         "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 7.4,
-        "distanciaKm": 9.4,
-        "tempoCarroMin": 17,
+        "distanciaLinhaRetaKm": 5.9,
+        "distanciaKm": 8.7,
+        "tempoCarroMin": 12,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -414,49 +250,49 @@
       }
     },
     {
-      "fonte": "Chaves na Mão",
-      "codigoFonte": "46081282",
-      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-santo-antonio-100m2-RS1800/id-46081282/",
+      "fonte": "Francisco Imóveis",
+      "codigoFonte": "303218858",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-belvedere-divinopolismg-303218858",
       "tipo": "casa",
       "operacao": "aluguel",
       "cidade": "Divinópolis",
-      "bairro": "Santo Antônio",
-      "endereco": null,
-      "aluguel": 1800.0,
+      "bairro": "Belvedere",
+      "endereco": "Rua Vital Santos",
+      "aluguel": 1200.0,
       "condominio": null,
-      "iptu": 486.0,
-      "areaM2": 100.0,
-      "terrenoM2": 100.0,
+      "iptu": null,
+      "areaM2": 120.0,
+      "terrenoM2": null,
       "quartos": 3,
-      "suites": null,
-      "banheiros": 1,
-      "vagas": 1,
-      "quintal": null,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": true,
       "armarios": null,
       "churrasqueira": null,
       "piscina": null,
       "hidromassagem": null,
-      "descricao": "Casa no Santo Antônio com aproximadamente 100 m², 3 quartos, sala, copa, cozinha, banheiro com box, área de serviço coberta e 1 vaga.",
+      "descricao": "Casa residencial no Belvedere com 3 quartos, 1 suíte, 2 banheiros, 120 m², quintal amplo e 3 vagas cobertas.",
       "fonteVerificacao": "portal_publico_terceiro",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 60626 e última atualização informada em 26/08/2026. IPTU de R$ 486 exibido no anúncio; disponibilidade e valor devem ser confirmados no portal; não renovar automaticamente.",
+      "notaProveniencia": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente com a imobiliária; não renovar automaticamente.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-10",
       "ultimoVistoEm": "2026-09-10",
-      "fingerprint": "9d589d9e0965bfcf898817eb",
-      "id": "imv_9d589d9e0965bfcf898817eb",
+      "fingerprint": "7f78cc1185bd4cbf32305cb4",
+      "id": "imv_7f78cc1185bd4cbf32305cb4",
       "proveniencia": {
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-10",
         "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 60626 e última atualização informada em 26/08/2026. IPTU de R$ 486 exibido no anúncio; disponibilidade e valor devem ser confirmados no portal; não renovar automaticamente."
+        "nota": "Descoberta manual no MGF Imóveis em 10/09/2026, anúncio atribuído a Francisco Imóveis. Valor e disponibilidade devem ser confirmados diretamente com a imobiliária; não renovar automaticamente."
       },
       "historico": [
         {
           "data": "2026-09-10",
           "campo": "observacao_verificada",
-          "fonte": "Chaves na Mão",
-          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-santo-antonio-100m2-RS1800/id-46081282/"
+          "fonte": "Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-belvedere-divinopolismg-303218858"
         }
       ],
       "elegibilidade": {
@@ -466,32 +302,114 @@
         "pendencias": []
       },
       "match": {
-        "casa": 73.0,
-        "localizacao": 0,
+        "casa": 87.0,
+        "localizacao": 38.3,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 56.7,
+        "final": 71.9,
         "motivosPositivos": [
-          "100 m²",
+          "120 m²",
           "3 quartos",
+          "Quintal",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~18.3 km (aprox. pelo bairro)"
+          "Hospital Santa Mônica: ~10.1 km"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
           "Armários: não informado",
           "Avaliação visual ainda não disponível"
         ]
       },
-      "latitude": -20.0803489,
-      "longitude": -45.0252039,
+      "latitude": -20.1755449,
+      "longitude": -44.8985936,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 6.2,
+        "distanciaKm": 10.1,
+        "tempoCarroMin": 15,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Chaves na Mão",
+      "codigoFonte": "46035641",
+      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-padre-eustaquio-100m2-RS2000/id-46035641/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Padre Eustáquio",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 100.0,
+      "terrenoM2": 100.0,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 2,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa no Padre Eustáquio com aproximadamente 100 m², 3 quartos, armários em dois quartos e na cozinha, 1 banheiro, varanda/sacada e 2 vagas.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 10824 e última atualização informada em 25/08/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "d5d75fde87dfd933a6916cf6",
+      "id": "imv_d5d75fde87dfd933a6916cf6",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 10824 e última atualização informada em 25/08/2026. Anunciante original não confirmado no material consultado; disponibilidade e valor devem ser confirmados no anúncio; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "Chaves na Mão",
+          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-padre-eustaquio-100m2-RS2000/id-46035641/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 83.0,
+        "localizacao": 43.2,
+        "custoBeneficio": 85.0,
+        "visual": 50.0,
+        "final": 68.5,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Armários",
+          "Preço dentro da faixa ideal",
+          "Hospital Santa Mônica: ~9.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1722775,
+      "longitude": -44.8509976,
       "hospital": {
         "referencia": "Hospital Santa Mônica",
         "precisaoLocalizacao": "bairro",
         "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 14.3,
-        "distanciaKm": 18.3,
-        "tempoCarroMin": 29,
+        "distanciaLinhaRetaKm": 7.4,
+        "distanciaKm": 9.4,
+        "tempoCarroMin": 17,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -661,6 +579,88 @@
         "distanciaLinhaRetaKm": 2.5,
         "distanciaKm": 4.8,
         "tempoCarroMin": 7,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Chaves na Mão",
+      "codigoFonte": "46081282",
+      "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-santo-antonio-100m2-RS1800/id-46081282/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Santo Antônio",
+      "endereco": null,
+      "aluguel": 1800.0,
+      "condominio": null,
+      "iptu": 486.0,
+      "areaM2": 100.0,
+      "terrenoM2": 100.0,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 1,
+      "vagas": 1,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa no Santo Antônio com aproximadamente 100 m², 3 quartos, sala, copa, cozinha, banheiro com box, área de serviço coberta e 1 vaga.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 60626 e última atualização informada em 26/08/2026. IPTU de R$ 486 exibido no anúncio; disponibilidade e valor devem ser confirmados no portal; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "9d589d9e0965bfcf898817eb",
+      "id": "imv_9d589d9e0965bfcf898817eb",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Chaves na Mão verificada em 10/09/2026, referência 60626 e última atualização informada em 26/08/2026. IPTU de R$ 486 exibido no anúncio; disponibilidade e valor devem ser confirmados no portal; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "Chaves na Mão",
+          "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-santo-antonio-100m2-RS1800/id-46081282/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 73.0,
+        "localizacao": 0,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 56.7,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~18.3 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Armários: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.0803489,
+      "longitude": -45.0252039,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 14.3,
+        "distanciaKm": 18.3,
+        "tempoCarroMin": 29,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
