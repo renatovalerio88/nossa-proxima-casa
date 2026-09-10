@@ -2,13 +2,23 @@ from __future__ import annotations
 
 from copy import deepcopy
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Iterable, List
 
 from core import DATA_DIR, calculate_match, eligibility, load_json, property_fingerprint, save_json, stable_id
 
-CANDIDATES_PATH = DATA_DIR / "candidatos-verificados.json"
+CANDIDATES_GLOB = "candidatos-verificados*.json"
 INVENTORY_PATH = DATA_DIR / "imoveis.json"
 CONFIG_PATH = DATA_DIR / "config.json"
+
+
+def candidate_paths() -> List[Path]:
+    """Lista lotes de observações verificadas em ordem estável.
+
+    O arquivo histórico ``candidatos-verificados.json`` continua suportado e novos
+    lotes podem ser adicionados sem reescrever o arquivo inteiro. Isso reduz risco
+    de conflito e permite ampliar cobertura manual de forma incremental.
+    """
+    return sorted(DATA_DIR.glob(CANDIDATES_GLOB), key=lambda path: path.name)
 
 
 def candidate_to_inventory(candidate: Dict[str, Any]) -> Dict[str, Any]:
@@ -97,17 +107,30 @@ def merge_candidates(
     return result
 
 
+def merge_candidate_documents(
+    inventory: Dict[str, Any], documents: Iterable[Dict[str, Any]], cfg: Dict[str, Any]
+) -> Dict[str, Any]:
+    """Aplica múltiplos lotes verificados preservando a regra de data mais recente."""
+    merged = deepcopy(inventory)
+    for document in documents:
+        merged = merge_candidates(merged, document, cfg)
+    return merged
+
+
 def main() -> None:
-    if not CANDIDATES_PATH.exists():
-        print("Sem arquivo de candidatos verificados; nada a fazer.")
+    paths = candidate_paths()
+    if not paths:
+        print("Sem arquivos de candidatos verificados; nada a fazer.")
         return
 
     cfg = load_json(CONFIG_PATH)
     inventory = load_json(INVENTORY_PATH)
-    candidates = load_json(CANDIDATES_PATH)
-    merged = merge_candidates(inventory, candidates, cfg)
+    documents = [load_json(path) for path in paths]
+    merged = merge_candidate_documents(inventory, documents, cfg)
     save_json(INVENTORY_PATH, merged)
-    print(f"Candidatos verificados processados: {len(candidates.get('imoveis', []))}")
+    total = sum(len(document.get("imoveis", [])) for document in documents)
+    print(f"Lotes de candidatos verificados: {len(paths)}")
+    print(f"Candidatos verificados processados: {total}")
 
 
 if __name__ == "__main__":
