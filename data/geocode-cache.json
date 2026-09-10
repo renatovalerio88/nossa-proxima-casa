@@ -186,6 +186,14 @@
       "latitude": -20.0803489,
       "longitude": -45.0252039,
       "displayName": "Santo Antônio dos Campos, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "geo:são roque, divinópolis, mg, brasil": {
+      "latitude": -20.1390242,
+      "longitude": -44.9132061,
+      "displayName": "Orion, Divinópolis, Minas Gerais, Região Sudeste, 35502-453, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
     }
   }
 }

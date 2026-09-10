@@ -738,6 +738,97 @@
       }
     },
     {
+      "fonte": "GFaria Imóveis",
+      "codigoFonte": "5929",
+      "url": "https://www.gfaria.com.br/imovel/casa-para-aluguel-no-bairro-sao-roque/5929",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São Roque",
+      "endereco": null,
+      "aluguel": 2200.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 130.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": null,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial no São Roque com 3 quartos, sendo 1 suíte, banho social, cozinha com armários e bancada, área de serviço, terraço, 1 vaga e 130 m² privativos. O terraço é citado pela fonte, mas a natureza privativa da área externa ainda não foi confirmada explicitamente.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da GFaria verificada em 10/09/2026. A descrição confirma 1 suíte e 1 banho social, contabilizados como 2 banheiros no total. A área externa privativa permanece null porque o anúncio cita terraço, mas não declara explicitamente que atende ao requisito oficial de área externa privativa. Disponibilidade e valores devem ser reconfirmados no anúncio.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-10",
+      "fingerprint": "06a1ed48d23a1d189306ead5",
+      "id": "imv_06a1ed48d23a1d189306ead5",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-10",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da GFaria verificada em 10/09/2026. A descrição confirma 1 suíte e 1 banho social, contabilizados como 2 banheiros no total. A área externa privativa permanece null porque o anúncio cita terraço, mas não declara explicitamente que atende ao requisito oficial de área externa privativa. Disponibilidade e valores devem ser reconfirmados no anúncio."
+      },
+      "historico": [
+        {
+          "data": "2026-09-10",
+          "campo": "observacao_verificada",
+          "fonte": "GFaria Imóveis",
+          "url": "https://www.gfaria.com.br/imovel/casa-para-aluguel-no-bairro-sao-roque/5929"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 79.6,
+        "custoBeneficio": 90.5,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "130 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~4.2 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Área externa privativa não confirmada",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
+        ]
+      },
+      "latitude": -20.1390242,
+      "longitude": -44.9132061,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 2.8,
+        "distanciaKm": 4.2,
+        "tempoCarroMin": 6,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Gerais Imobiliária",
       "codigoFonte": "33194",
       "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-aluguel-5-quartos-1-vaga-niteroi-divinopolis-mg/33194",
