@@ -3,11 +3,12 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+HTTP_RE = re.compile(r"^https?://", re.IGNORECASE)
 
 
 class QualityError(RuntimeError):
@@ -26,11 +27,33 @@ def valid_date(value: Any) -> bool:
     return value is None or (isinstance(value, str) and DATE_RE.match(value) is not None)
 
 
-def validate_inventory(document: Dict[str, Any]) -> List[str]:
+def is_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def reliable_photos(item: Dict[str, Any]) -> List[str]:
+    raw: List[Any] = [item.get("fotoUrl"), item.get("imagemUrl")]
+    for field in ("fotos", "imagens"):
+        value = item.get(field)
+        if isinstance(value, list):
+            raw.extend(value)
+    return [str(url) for url in raw if isinstance(url, str) and url.startswith("https://")]
+
+
+def validate_inventory(document: Dict[str, Any], config: Dict[str, Any]) -> List[str]:
     errors: List[str] = []
     items = document.get("imoveis")
     if not isinstance(items, list):
         return ["data/imoveis.json: campo 'imoveis' deve ser uma lista"]
+
+    criteria = config.get("criterios") or {}
+    min_area = criteria.get("areaMinimaM2", 90)
+    min_bedrooms = criteria.get("quartosMinimos", 3)
+    min_bathrooms = criteria.get("banheirosMinimos", 2)
+    external_required = criteria.get("areaExternaPrivativaObrigatoria", True)
+    price_min = criteria.get("aluguelIdealMin", 2000)
+    price_max = criteria.get("aluguelIdealMax", 3000)
+    opportunity_max = criteria.get("aluguelOportunidadeMax", 3500)
 
     seen_ids: set[str] = set()
     seen_fingerprints: set[str] = set()
@@ -45,10 +68,12 @@ def validate_inventory(document: Dict[str, Any]) -> List[str]:
         source = item.get("fonte")
         url = item.get("url")
         code = item.get("codigoFonte")
-        if not isinstance(source, str) or not source.strip():
-            fail(errors, f"{prefix}: fonte ausente")
-        if not isinstance(url, str) or not url.startswith(("https://", "http://")):
-            fail(errors, f"{prefix}: URL de origem ausente ou inválida")
+
+        # Fonte/URL desconhecidas devem permanecer null; quando informadas, precisam ser válidas.
+        if source is not None and (not isinstance(source, str) or not source.strip()):
+            fail(errors, f"{prefix}: fonte deve ser string não vazia ou null")
+        if url is not None and (not isinstance(url, str) or HTTP_RE.match(url) is None):
+            fail(errors, f"{prefix}: URL de origem deve ser http(s) válida ou null")
 
         item_id = item.get("id")
         if item_id:
@@ -93,25 +118,93 @@ def validate_inventory(document: Dict[str, Any]) -> List[str]:
                     fail(errors, f"{prefix}.historico[{hidx}]: campo ausente")
 
         eligibility = item.get("elegibilidade") or {}
-        if eligibility.get("elegivel") is True:
-            if eligibility.get("status") != "elegivel":
-                fail(errors, f"{prefix}: elegivel=true com status diferente de elegivel")
+        status = eligibility.get("status")
+        eligible = eligibility.get("elegivel") is True
+        pending = eligibility.get("pendencias") or []
+        opportunity = eligibility.get("oportunidade")
+
+        if status not in {"elegivel", "pendente", "inelegivel"}:
+            fail(errors, f"{prefix}: status de elegibilidade inválido")
+        if eligible and status != "elegivel":
+            fail(errors, f"{prefix}: elegivel=true com status diferente de elegivel")
+        if status == "elegivel" and not eligible:
+            fail(errors, f"{prefix}: status=elegivel sem elegivel=true")
+        if status == "pendente" and not pending:
+            fail(errors, f"{prefix}: status pendente sem pendências explícitas")
+
+        area = item.get("areaM2")
+        bedrooms = item.get("quartos")
+        bathrooms = item.get("banheiros")
+        price = item.get("aluguel")
+        external = item.get("areaExternaPrivativa") is True or item.get("quintal") is True
+
+        if eligible:
             mandatory = {
                 "cidade": item.get("cidade"),
                 "tipo": item.get("tipo"),
-                "areaM2": item.get("areaM2"),
-                "quartos": item.get("quartos"),
-                "aluguel": item.get("aluguel"),
+                "areaM2": area,
+                "quartos": bedrooms,
+                "banheiros": bathrooms,
+                "aluguel": price,
             }
             missing = [name for name, value in mandatory.items() if value is None]
+            if external_required and not external:
+                missing.append("areaExternaPrivativa")
             if missing:
-                fail(errors, f"{prefix}: imóvel elegível com dados obrigatórios ausentes: {', '.join(missing)}")
+                fail(errors, f"{prefix}: imóvel elegível com requisitos obrigatórios ausentes: {', '.join(missing)}")
+
             if str(item.get("cidade", "")).strip().lower() not in {"divinópolis", "divinopolis"}:
                 fail(errors, f"{prefix}: imóvel elegível fora de Divinópolis")
             if str(item.get("tipo", "")).strip().lower() != "casa":
                 fail(errors, f"{prefix}: imóvel elegível não é casa")
+            if is_number(area) and area < min_area:
+                fail(errors, f"{prefix}: imóvel elegível com área abaixo do mínimo")
+            if is_number(bedrooms) and bedrooms < min_bedrooms:
+                fail(errors, f"{prefix}: imóvel elegível com quartos abaixo do mínimo")
+            if is_number(bathrooms) and bathrooms < min_bathrooms:
+                fail(errors, f"{prefix}: imóvel elegível com banheiros abaixo do mínimo")
+            if is_number(price):
+                if price > opportunity_max:
+                    fail(errors, f"{prefix}: imóvel elegível acima do teto de oportunidade")
+                if (price < price_min or price > price_max) and not opportunity:
+                    fail(errors, f"{prefix}: imóvel fora da faixa principal elegível sem justificativa objetiva de oportunidade")
+
+        # Campos mínimos desconhecidos nunca podem resultar em elegibilidade confirmada.
+        required_unknown = (
+            area is None
+            or bedrooms is None
+            or bathrooms is None
+            or price is None
+            or (external_required and not external)
+        )
+        if required_unknown and eligible:
+            fail(errors, f"{prefix}: critérios mínimos confirmados apesar de requisito obrigatório ausente")
+
+        photos = reliable_photos(item)
+        match = item.get("match") or {}
+        components = [match.get("casa"), match.get("localizacao"), match.get("custoBeneficio"), match.get("visual")]
+        final_match = match.get("final")
+
+        if match.get("visual") is not None and not photos:
+            fail(errors, f"{prefix}: nota visual informada sem foto real HTTPS")
+        if match.get("visual") == 50 and not photos:
+            fail(errors, f"{prefix}: Visual 50 artificial sem evidência")
+
+        complete_components = all(is_number(value) for value in components)
+        if final_match is not None and not complete_components:
+            fail(errors, f"{prefix}: Match final calculado com componente relevante ausente")
+        if final_match is not None and not eligible:
+            fail(errors, f"{prefix}: Match final publicado para imóvel não elegível")
+        if final_match is None and match and match.get("confianca") not in {"incompleta", "baixa", None}:
+            fail(errors, f"{prefix}: Match incompleto com confiança enganosa")
+        if final_match is not None and not is_number(final_match):
+            fail(errors, f"{prefix}: Match final deve ser numérico ou null")
 
         hospital = item.get("hospital") or {}
+        for distance_field in ("distanciaKm", "distanciaLinhaRetaKm"):
+            distance = hospital.get(distance_field)
+            if distance is not None and (not is_number(distance) or distance < 0):
+                fail(errors, f"{prefix}: {distance_field} inválida")
         if hospital.get("distanciaKm") is not None:
             if hospital.get("tempoCarroMin") is None:
                 fail(errors, f"{prefix}: distância por rota sem tempo de carro")
@@ -129,7 +222,7 @@ def validate_collection_status(status: Dict[str, Any]) -> List[str]:
         fail(errors, "data/status-coleta.json: estado inválido")
     for field in ("coletados", "indisponiveisConfirmados", "erros"):
         value = status.get(field)
-        if not isinstance(value, int) or value < 0:
+        if not isinstance(value, int) or isinstance(value, bool) or value < 0:
             fail(errors, f"data/status-coleta.json: {field} deve ser inteiro >= 0")
     sources = status.get("fontes")
     if not isinstance(sources, dict):
@@ -141,8 +234,9 @@ def validate_collection_status(status: Dict[str, Any]) -> List[str]:
 
 def main() -> None:
     inventory = load("imoveis.json")
+    config = load("config.json")
     status = load("status-coleta.json")
-    errors = validate_inventory(inventory) + validate_collection_status(status)
+    errors = validate_inventory(inventory, config) + validate_collection_status(status)
     if errors:
         message = "Falhas de qualidade:\n- " + "\n- ".join(errors)
         raise QualityError(message)
