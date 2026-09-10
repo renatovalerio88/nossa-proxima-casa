@@ -1,7 +1,13 @@
 import unittest
 from unittest.mock import patch
 
-from scripts.enrich_location import haversine_km, hospital_reference, query_for
+from scripts.enrich_location import (
+    clear_untrusted_location,
+    geocode_is_plausible,
+    haversine_km,
+    hospital_reference,
+    query_for,
+)
 
 
 class LocationTests(unittest.TestCase):
@@ -52,6 +58,60 @@ class LocationTests(unittest.TestCase):
         b = haversine_km(-20.1500, -44.9000, -20.1435, -44.8830)
         self.assertAlmostEqual(a, b, places=6)
         self.assertGreater(a, 0)
+
+    def test_geocode_divinopolis_mg_proximo_e_aceito(self):
+        hospital = {"latitude": -20.1203, "longitude": -44.8953}
+        geo = {
+            "latitude": -20.1435,
+            "longitude": -44.8830,
+            "cidade": "Divinópolis",
+            "uf": "MG",
+        }
+        self.assertTrue(geocode_is_plausible(geo, hospital))
+
+    def test_geocode_de_outra_cidade_e_rejeitado(self):
+        hospital = {"latitude": -20.1203, "longitude": -44.8953}
+        geo = {
+            "latitude": -19.9208,
+            "longitude": -43.9378,
+            "cidade": "Belo Horizonte",
+            "uf": "MG",
+        }
+        self.assertFalse(geocode_is_plausible(geo, hospital))
+
+    def test_geocode_distante_e_rejeitado_mesmo_sem_metadados(self):
+        hospital = {"latitude": -20.1203, "longitude": -44.8953}
+        geo = {"latitude": -19.9208, "longitude": -43.9378}
+        self.assertFalse(geocode_is_plausible(geo, hospital))
+
+    def test_geocode_com_uf_incorreta_e_rejeitado(self):
+        hospital = {"latitude": -20.1203, "longitude": -44.8953}
+        geo = {
+            "latitude": -20.1435,
+            "longitude": -44.8830,
+            "cidade": "Divinópolis",
+            "uf": "SP",
+        }
+        self.assertFalse(geocode_is_plausible(geo, hospital))
+
+    def test_limpeza_de_localizacao_preserva_desconhecido_como_null(self):
+        item = {
+            "latitude": -19.0,
+            "longitude": -43.0,
+            "hospital": {
+                "distanciaKm": 120.0,
+                "distanciaLinhaRetaKm": 110.0,
+                "tempoCarroMin": 130,
+                "precisaoLocalizacao": "bairro",
+                "fonteLocalizacao": "teste",
+            },
+        }
+        clear_untrusted_location(item)
+        self.assertIsNone(item["latitude"])
+        self.assertIsNone(item["longitude"])
+        self.assertIsNone(item["hospital"]["distanciaKm"])
+        self.assertIsNone(item["hospital"]["distanciaLinhaRetaKm"])
+        self.assertFalse(item["hospital"]["localizacaoValidada"])
 
 
 if __name__ == "__main__":
