@@ -64,14 +64,19 @@ jobs:
           import json, os
           s=json.load(open('data/status-coleta.json', encoding='utf-8'))
           inv=json.load(open('data/imoveis.json', encoding='utf-8'))
-          localizados=sum(1 for i in inv.get('imoveis', []) if (i.get('hospital') or {}).get('distanciaKm') is not None)
+          ativos=sum(1 for i in inv.get('imoveis', []) if i.get('disponivel') is not False)
+          localizados=sum(1 for i in inv.get('imoveis', []) if (i.get('hospital') or {}).get('distanciaKm') is not None or (i.get('hospital') or {}).get('distanciaLinhaRetaKm') is not None)
           manuais=sum(1 for i in inv.get('imoveis', []) if (i.get('proveniencia') or {}).get('modo') == 'verificacao_manual')
           text=(f"### Coleta de imóveis\n"
-                f"- Estado: **{s['estado']}**\n"
-                f"- Coletados automaticamente: **{s['coletados']}**\n"
-                f"- Erros: **{s['erros']}**\n"
+                f"- Estado técnico: **{s['estado']}**\n"
+                f"- Inventário ativo: **{ativos}**\n"
+                f"- Coletados automaticamente nesta execução: **{s['coletados']}**\n"
+                f"- Anúncios confirmados indisponíveis: **{s['indisponiveisConfirmados']}**\n"
+                f"- Erros técnicos: **{s['erros']}**\n"
+                f"- Imóveis com foto real nesta coleta: **{s.get('imoveisComFotos', 0)}**\n"
+                f"- Fotos reais capturadas: **{s.get('fotosReaisCapturadas', 0)}**\n"
                 f"- Candidatos verificados no inventário: **{manuais}**\n"
-                f"- Com distância ao hospital: **{localizados}**\n")
+                f"- Com localização/distância ao hospital: **{localizados}**\n")
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as f: f.write(text)
           PY
       - name: Commit de atualização
@@ -84,4 +89,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/imoveis.json data/coleta-atual.json data/status-coleta.json data/geocode-cache.json
           git commit -m 'data: atualiza imóveis, localização e saúde da coleta'
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
