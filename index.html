@@ -70,6 +70,25 @@
     </article>
   </template>
 
+  <dialog class="galeria-modal" id="galeriaModal" aria-label="Galeria de fotos reais do imóvel">
+    <div class="galeria-painel">
+      <div class="galeria-topo">
+        <div>
+          <strong>Fotos reais do anúncio</strong>
+          <span class="galeria-contador"></span>
+        </div>
+        <button class="galeria-fechar" type="button" aria-label="Fechar galeria">×</button>
+      </div>
+      <div class="galeria-palco">
+        <button class="galeria-nav galeria-anterior" type="button" aria-label="Foto anterior">‹</button>
+        <img class="galeria-imagem" alt="" referrerpolicy="no-referrer">
+        <button class="galeria-nav galeria-proxima" type="button" aria-label="Próxima foto">›</button>
+      </div>
+      <p class="galeria-legenda"></p>
+    </div>
+  </dialog>
+
   <script src="app.js" defer></script>
+  <script src="gallery.js" defer></script>
 </body>
 </html>
