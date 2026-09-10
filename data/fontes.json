@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "status": "auditoria_em_andamento",
-  "atualizadoEm": "2026-09-09",
+  "atualizadoEm": "2026-09-10",
   "fontes": [
     {"nome":"Imóveis Casa Nova","tipo":"imobiliaria","status":"nao_automatizar_sem_autorizacao","coletaAutomatica":false,"motivo":"Condições de Uso atualizadas em 01/09/2026 proíbem coleta/cópia/extração automatizada sem autorização. Links públicos podem continuar preservados no inventário para uso pessoal.","termosUrl":"https://www.imoveiscasanova.com.br/termos-de-uso"},
     {"nome":"Nova Somar","tipo":"imobiliaria","status":"piloto_baixa_frequencia","coletaAutomatica":true,"motivo":"Páginas públicas estruturadas; nenhuma proibição explícita de coleta encontrada na auditoria inicial. Acesso externo está instável no GitHub Actions, portanto permanece em piloto de baixa frequência."},
@@ -24,6 +24,7 @@
     {"nome":"ZAP Imóveis","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
     {"nome":"Viva Real","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
     {"nome":"OLX","tipo":"portal","status":"a_auditar_termos_e_api","coletaAutomatica":false},
-    {"nome":"MGF Imóveis","tipo":"portal","status":"descoberta_manual_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.mgfimoveis.com.br/","motivo":"Portal público útil para descoberta de anúncios locais e identificação do anunciante original. Em 09/09/2026 páginas públicas de casas em Divinópolis atribuídas a Francisco Imóveis foram verificadas e preservadas em candidatos-verificados.json. Não automatizar até auditoria específica de termos/robots; usar somente descoberta/verificação manual e confirmar valores com o anunciante."}
+    {"nome":"MGF Imóveis","tipo":"portal","status":"descoberta_manual_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.mgfimoveis.com.br/","motivo":"Portal público útil para descoberta de anúncios locais e identificação do anunciante original. Em 09/09/2026 páginas públicas de casas em Divinópolis atribuídas a Francisco Imóveis foram verificadas e preservadas em candidatos-verificados.json. Não automatizar até auditoria específica de termos/robots; usar somente descoberta/verificação manual e confirmar valores com o anunciante."},
+    {"nome":"Chaves na Mão","tipo":"portal","status":"descoberta_manual_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.chavesnamao.com.br/","motivo":"Portal público com anúncios recentes de casas para aluguel em Divinópolis, páginas estruturadas e indicação de data de atualização. Em 10/09/2026 foram preservadas quatro oportunidades verificadas no lote candidatos-verificados-2026-09-10-b.json. Não automatizar sem auditoria específica de termos/robots; usar somente descoberta/verificação manual e preservar anunciante original quando identificável."}
   ]
 }
