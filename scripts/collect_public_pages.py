@@ -313,6 +313,7 @@ def main() -> None:
     seeds = json.loads((DATA / "coleta-seeds.json").read_text(encoding="utf-8"))["urls"]
     rows: List[Dict] = []
     errors: List[Dict] = []
+    unavailable_events: List[Dict] = []
     source_status: Dict[str, Dict] = {}
     unavailable = 0
     photos_collected = 0
@@ -338,7 +339,7 @@ def main() -> None:
             rows.append(tombstone(seed))
             unavailable += 1
             source_status[source]["indisponiveis"] += 1
-            errors.append({"fonte": source, "url": seed["url"], "erro": f"anúncio indisponível confirmado: {exc}"})
+            unavailable_events.append({"fonte": source, "url": seed["url"], "motivo": f"anúncio indisponível confirmado: {exc}"})
         except Exception as exc:
             errors.append({"fonte": source, "url": seed["url"], "erro": f"{type(exc).__name__}: {exc}"})
             source_status[source]["erros"] += 1
@@ -346,15 +347,31 @@ def main() -> None:
 
     finished = now_iso()
     valid_count = sum(1 for row in rows if row.get("disponivel") is not False)
-    OUT.write_text(json.dumps({"schemaVersion": 1, "coletadoEm": finished, "imoveis": rows, "erros": errors}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps({
+        "schemaVersion": 2,
+        "coletadoEm": finished,
+        "imoveis": rows,
+        "erros": errors,
+        "indisponiveisConfirmados": unavailable_events,
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     status = {
-        "schemaVersion": 1, "inicio": started, "fim": finished,
+        "schemaVersion": 2,
+        "inicio": started,
+        "fim": finished,
         "estado": "ok" if valid_count and not errors else ("parcial" if valid_count or unavailable else "indisponivel"),
-        "coletados": valid_count, "indisponiveisConfirmados": unavailable, "erros": len(errors),
-        "imoveisComFotos": listings_with_photos, "fotosReaisCapturadas": photos_collected, "fontes": source_status,
+        "coletados": valid_count,
+        "indisponiveisConfirmados": unavailable,
+        "erros": len(errors),
+        "avisos": len(unavailable_events),
+        "imoveisComFotos": listings_with_photos,
+        "fotosReaisCapturadas": photos_collected,
+        "fontes": source_status,
     }
     STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Coletados válidos: {valid_count} | com fotos reais: {listings_with_photos} | fotos: {photos_collected} | indisponíveis confirmados: {unavailable} | erros/avisos: {len(errors)} | estado: {status['estado']}")
+    print(
+        f"Coletados válidos: {valid_count} | com fotos reais: {listings_with_photos} | fotos: {photos_collected} | "
+        f"indisponíveis confirmados: {unavailable} | erros técnicos: {len(errors)} | estado: {status['estado']}"
+    )
     if not valid_count:
         print("Aviso: nenhuma observação válida nova; inventário anterior será preservado, salvo tombstones confirmados.")
 
