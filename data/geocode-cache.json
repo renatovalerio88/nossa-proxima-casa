@@ -118,6 +118,51 @@
     "route:-20.152302,-44.890498:-20.120293,-44.895337": {
       "distanciaKm": 5.0,
       "tempoCarroMin": 10
+    },
+    "geo:rua castro alves, divinópolis, mg, brasil": {
+      "latitude": -20.1715496,
+      "longitude": -44.908753,
+      "displayName": "Rua Castro Alves, Jardim Belvedere, São José, Divinópolis, Minas Gerais, Região Sudeste, 35503-822, Brasil"
+    },
+    "route:-20.171550,-44.908753:-20.120293,-44.895337": {
+      "distanciaKm": 8.7,
+      "tempoCarroMin": 12
+    },
+    "geo:rua vital santos, divinópolis, mg, brasil": {
+      "latitude": -20.1755449,
+      "longitude": -44.8985936,
+      "displayName": "Rua Vital Santos, Jardim Belvedere, São José, Divinópolis, Minas Gerais, Região Sudeste, 35501-261, Brasil"
+    },
+    "route:-20.175545,-44.898594:-20.120293,-44.895337": {
+      "distanciaKm": 10.1,
+      "tempoCarroMin": 15
+    },
+    "geo:são judas tadeu, divinópolis, mg, brasil": {
+      "latitude": -20.1614362,
+      "longitude": -44.9081956,
+      "displayName": "São Judas Tadeu, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "route:-20.161436,-44.908196:-20.120293,-44.895337": {
+      "distanciaKm": 7.7,
+      "tempoCarroMin": 10
+    },
+    "geo:rua ipanema, divinópolis, mg, brasil": {
+      "latitude": -20.1390368,
+      "longitude": -44.9077898,
+      "displayName": "Rua Ipanema, Ipiranga, Centro, Divinópolis, Minas Gerais, Região Sudeste, 35501-194, Brasil"
+    },
+    "route:-20.139037,-44.907790:-20.120293,-44.895337": {
+      "distanciaKm": 4.8,
+      "tempoCarroMin": 7
+    },
+    "geo:interlagos, divinópolis, mg, brasil": {
+      "latitude": -20.1573321,
+      "longitude": -44.8744701,
+      "displayName": "Interlagos, Divinópolis, Minas Gerais, Região Sudeste, Brasil"
+    },
+    "route:-20.157332,-44.874470:-20.120293,-44.895337": {
+      "distanciaKm": 5.9,
+      "tempoCarroMin": 10
     }
   }
 }
