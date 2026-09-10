@@ -49,27 +49,33 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
+        "elegivel": false,
+        "status": "pendente",
         "motivos": [],
-        "pendencias": []
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 80.0,
+        "casa": null,
         "localizacao": 95,
-        "custoBeneficio": 91.0,
-        "visual": 50.0,
-        "final": 81.5,
+        "custoBeneficio": 92.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "170 m²",
           "3 quartos",
-          "Preço dentro da faixa ideal",
+          "2 banheiros",
+          "Preço dentro da faixa principal",
           "Hospital Santa Mônica: ~0.7 km"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1219737,
@@ -131,28 +137,36 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 96.0,
+        "casa": null,
         "localizacao": 48.1,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 77.9,
+        "custoBeneficio": 66.3,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "210 m²",
           "3 quartos",
+          "2 banheiros",
           "Armários",
           "Churrasqueira",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~8.7 km"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
+          "Área externa privativa não confirmada",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1715496,
@@ -214,27 +228,36 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Banheiros abaixo do mínimo",
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 73.0,
+        "casa": null,
         "localizacao": 67.7,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 73.6,
+        "custoBeneficio": 59.1,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~5.9 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
+          "Menos de 2 banheiros",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
-          "Avaliação visual ainda não disponível"
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1573321,
@@ -296,27 +319,33 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
-        "casa": 87.0,
+        "casa": 96.5,
         "localizacao": 38.3,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 71.9,
+        "custoBeneficio": 50,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "120 m²",
           "3 quartos",
-          "Quintal",
-          "Preço abaixo da faixa ideal",
+          "2 banheiros",
+          "Área externa privativa",
           "Hospital Santa Mônica: ~10.1 km"
         ],
         "pontosAtencao": [
           "Armários: não informado",
-          "Avaliação visual ainda não disponível"
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1755449,
@@ -378,27 +407,35 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Banheiros abaixo do mínimo"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 83.0,
+        "casa": null,
         "localizacao": 43.2,
-        "custoBeneficio": 85.0,
-        "visual": 50.0,
-        "final": 68.5,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
           "Armários",
-          "Preço dentro da faixa ideal",
+          "Preço dentro da faixa principal",
           "Hospital Santa Mônica: ~9.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
+          "Menos de 2 banheiros",
+          "Área externa privativa não confirmada",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1722775,
@@ -463,26 +500,31 @@
         "elegivel": false,
         "status": "inelegivel",
         "motivos": [
+          "Banheiros abaixo do mínimo",
           "Área abaixo do mínimo"
         ],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": "Oportunidade excepcional: armários confirmados e ~7.7 km do Hospital Santa Mônica"
       },
       "match": {
-        "casa": 63.5,
+        "casa": null,
         "localizacao": 55.1,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 66.7,
+        "custoBeneficio": 60.6,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "3 quartos",
-          "Quintal",
+          "Área externa privativa",
           "Armários",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~7.7 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
-          "Avaliação visual ainda não disponível"
+          "Menos de 2 banheiros",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1614362,
@@ -549,25 +591,31 @@
         "motivos": [
           "Área abaixo do mínimo"
         ],
-        "pendencias": []
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 51.0,
+        "casa": null,
         "localizacao": 75.4,
-        "custoBeneficio": 95.0,
-        "visual": 50.0,
-        "final": 65.8,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "3 quartos",
+          "2 banheiros",
           "Armários",
           "Churrasqueira",
-          "Preço dentro da faixa ideal",
+          "Preço dentro da faixa principal",
           "Hospital Santa Mônica: ~4.8 km"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
+          "Área externa privativa não confirmada",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1390368,
@@ -629,27 +677,36 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Banheiros abaixo do mínimo",
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 73.0,
+        "casa": null,
         "localizacao": 0,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 56.7,
+        "custoBeneficio": 66.3,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~18.3 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
+          "Menos de 2 banheiros",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
-          "Avaliação visual ainda não disponível"
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.0803489,
@@ -714,24 +771,28 @@
         "elegivel": true,
         "status": "elegivel",
         "motivos": [],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
         "casa": 100,
         "localizacao": 79.6,
-        "custoBeneficio": 85.0,
-        "visual": 50.0,
-        "final": 84.4,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": 90.9,
+        "confianca": "media",
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "180 m²",
           "5 quartos",
-          "Quintal",
-          "Preço dentro da faixa ideal",
+          "5 banheiros",
+          "Área externa privativa",
+          "Preço dentro da faixa principal",
           "Hospital Santa Mônica: ~4.2 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Armários: não informado",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1416394,
@@ -743,6 +804,94 @@
         "distanciaLinhaRetaKm": 3.2,
         "distanciaKm": 4.2,
         "tempoCarroMin": 8,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "300731990",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Interlagos",
+      "endereco": "Rua Barbosa Lagares",
+      "aluguel": 3500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 683.0,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 5,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 4 quartos, 1 suíte, sala, copa, cozinha planejada, quintal grande, área gourmet com fogão a lenha, churrasqueira e forno, piscina com cascata, sauna, cozinha externa e vagas de garagem; área anunciada de 683 m².",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. Há divergência entre o título (6 vagas) e o resumo estruturado (5 vagas); foi preservado o valor estruturado de 5 vagas e a divergência deve ser confirmada antes de visita.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "9610855da434b3e3d1b09e0b",
+      "id": "imv_9610855da434b3e3d1b09e0b",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. Há divergência entre o título (6 vagas) e o resumo estruturado (5 vagas); foi preservado o valor estruturado de 5 vagas e a divergência deve ser confirmada antes de visita."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": "Oportunidade excepcional: área de 683 m² e ~6.4 km do Hospital Santa Mônica"
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 64.2,
+        "custoBeneficio": 55.2,
+        "visual": null,
+        "final": 78.9,
+        "confianca": "media",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "683 m²",
+          "4 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Piscina",
+          "Hospital Santa Mônica: ~6.4 km"
+        ],
+        "pontosAtencao": [
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
+        ]
+      },
+      "latitude": -20.1576124,
+      "longitude": -44.8705769,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 4.9,
+        "distanciaKm": 6.4,
+        "tempoCarroMin": 11,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -796,25 +945,29 @@
         "elegivel": true,
         "status": "elegivel",
         "motivos": [],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": "Oportunidade excepcional: área de 320 m² e ~7.5 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": 100,
         "localizacao": 56.5,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 81.6,
+        "custoBeneficio": 54.9,
+        "visual": null,
+        "final": 76.6,
+        "confianca": "media",
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "320 m²",
           "3 quartos",
-          "Quintal",
+          "2 banheiros",
+          "Área externa privativa",
           "Armários",
           "Hidromassagem",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~7.5 km"
         ],
         "pontosAtencao": [
-          "Avaliação visual ainda não disponível"
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1583588,
@@ -876,27 +1029,33 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Banheiros abaixo do mínimo"
+        ],
+        "pendencias": [],
+        "oportunidade": "Oportunidade excepcional: área de 120 m² e ~7.6 km do Hospital Santa Mônica"
       },
       "match": {
-        "casa": 97.0,
+        "casa": null,
         "localizacao": 55.8,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 80.2,
+        "custoBeneficio": 50,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "120 m²",
           "3 quartos",
-          "Quintal",
+          "Área externa privativa",
           "Armários",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~7.6 km"
         ],
         "pontosAtencao": [
-          "Avaliação visual ainda não disponível"
+          "Menos de 2 banheiros",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1608705,
@@ -908,90 +1067,6 @@
         "distanciaLinhaRetaKm": 4.7,
         "distanciaKm": 7.6,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
-      "fonte": "MGF Imóveis",
-      "codigoFonte": "300731990",
-      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Interlagos",
-      "endereco": "Rua Barbosa Lagares",
-      "aluguel": 3500.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 683.0,
-      "terrenoM2": null,
-      "quartos": 4,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 5,
-      "quintal": true,
-      "armarios": true,
-      "churrasqueira": true,
-      "piscina": true,
-      "hidromassagem": null,
-      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 4 quartos, 1 suíte, sala, copa, cozinha planejada, quintal grande, área gourmet com fogão a lenha, churrasqueira e forno, piscina com cascata, sauna, cozinha externa e vagas de garagem; área anunciada de 683 m².",
-      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. Há divergência entre o título (6 vagas) e o resumo estruturado (5 vagas); foi preservado o valor estruturado de 5 vagas e a divergência deve ser confirmada antes de visita.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "9610855da434b3e3d1b09e0b",
-      "id": "imv_9610855da434b3e3d1b09e0b",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. Há divergência entre o título (6 vagas) e o resumo estruturado (5 vagas); foi preservado o valor estruturado de 5 vagas e a divergência deve ser confirmada antes de visita."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "MGF Imóveis",
-          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-6-vagas-interlagos-divinopolismg-300731990"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 100,
-        "localizacao": 64.2,
-        "custoBeneficio": 53.0,
-        "visual": 50.0,
-        "final": 74.2,
-        "motivosPositivos": [
-          "683 m²",
-          "4 quartos",
-          "Quintal",
-          "Armários",
-          "Churrasqueira",
-          "Piscina",
-          "Hospital Santa Mônica: ~6.4 km"
-        ],
-        "pontosAtencao": [
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1576124,
-      "longitude": -44.8705769,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "endereco",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 4.9,
-        "distanciaKm": 6.4,
-        "tempoCarroMin": 11,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -1047,26 +1122,32 @@
         "motivos": [
           "Acima do teto de oportunidade"
         ],
-        "pendencias": []
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 100,
+        "casa": null,
         "localizacao": 95,
-        "custoBeneficio": 5,
-        "visual": 50.0,
-        "final": 72.2,
+        "custoBeneficio": 0.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "340 m²",
           "3 quartos",
+          "2 banheiros",
           "Armários",
           "Churrasqueira",
           "Piscina",
           "Hospital Santa Mônica: ~1 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
+          "Área externa privativa não confirmada",
           "Preço acima do teto de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1191,
@@ -1128,27 +1209,33 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
+        "elegivel": false,
+        "status": "pendente",
         "motivos": [],
-        "pendencias": []
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": "Oportunidade excepcional: armários confirmados e ~4.7 km do Hospital Santa Mônica"
       },
       "match": {
-        "casa": 83.0,
+        "casa": null,
         "localizacao": 76.1,
-        "custoBeneficio": 53.0,
-        "visual": 50.0,
-        "final": 70.3,
+        "custoBeneficio": 55.2,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
+          "2 banheiros",
           "Armários",
           "Hospital Santa Mônica: ~4.7 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Área externa privativa não confirmada",
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1463965,
@@ -1210,29 +1297,35 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
         "casa": 100,
         "localizacao": 29.2,
-        "custoBeneficio": 68.0,
-        "visual": 50.0,
-        "final": 68.4,
+        "custoBeneficio": 67.7,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "200 m²",
           "3 quartos",
-          "Quintal",
+          "2 banheiros",
+          "Área externa privativa",
           "Armários",
           "Churrasqueira",
           "Piscina",
           "Hospital Santa Mônica: ~11.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1105467,
@@ -1299,24 +1392,28 @@
         "motivos": [
           "Acima do teto de oportunidade"
         ],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
         "casa": 100,
         "localizacao": 79.6,
-        "custoBeneficio": 5,
-        "visual": 50.0,
-        "final": 68.4,
+        "custoBeneficio": 0.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "280 m²",
           "4 quartos",
-          "Quintal",
+          "4 banheiros",
+          "Área externa privativa",
           "Armários",
           "Hospital Santa Mônica: ~4.2 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Preço acima do teto de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1390242,
@@ -1381,26 +1478,32 @@
         "elegivel": false,
         "status": "inelegivel",
         "motivos": [
-          "Área abaixo do mínimo"
+          "Banheiros abaixo do mínimo",
+          "Área abaixo do mínimo",
+          "Fora da faixa principal sem justificativa de oportunidade forte"
         ],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
-        "casa": 46.0,
+        "casa": null,
         "localizacao": 87.3,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 67.7,
+        "custoBeneficio": 50,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "3 quartos",
-          "Quintal",
-          "Preço abaixo da faixa ideal",
+          "Área externa privativa",
           "Hospital Santa Mônica: ~3.1 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
+          "Menos de 2 banheiros",
           "Armários: não informado",
-          "Avaliação visual ainda não disponível"
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1250697,
@@ -1465,26 +1568,31 @@
         "elegivel": false,
         "status": "inelegivel",
         "motivos": [
+          "Banheiros abaixo do mínimo",
           "Acima do teto de oportunidade"
         ],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
-        "casa": 100,
+        "casa": null,
         "localizacao": 74.0,
-        "custoBeneficio": 5,
-        "visual": 50.0,
-        "final": 67.0,
+        "custoBeneficio": 0.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "200 m²",
           "6 quartos",
-          "Quintal",
+          "Área externa privativa",
           "Armários",
           "Hospital Santa Mônica: ~5 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
+          "Menos de 2 banheiros",
           "Preço acima do teto de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1523015,
@@ -1546,27 +1654,33 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
+        "elegivel": false,
+        "status": "pendente",
         "motivos": [],
-        "pendencias": []
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 83.0,
+        "casa": null,
         "localizacao": 36.2,
-        "custoBeneficio": 85.0,
-        "visual": 50.0,
-        "final": 66.8,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
+          "2 banheiros",
           "Armários",
-          "Preço dentro da faixa ideal",
+          "Preço dentro da faixa principal",
           "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
+          "Área externa privativa não confirmada",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1059298,
@@ -1628,27 +1742,35 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 86.0,
+        "casa": null,
         "localizacao": 36.2,
-        "custoBeneficio": 68.0,
-        "visual": 50.0,
-        "final": 64.5,
+        "custoBeneficio": 67.7,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "130 m²",
           "3 quartos",
+          "2 banheiros",
           "Armários",
           "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Área externa privativa não confirmada",
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1059298,
@@ -1715,24 +1837,28 @@
         "motivos": [
           "Acima do teto de oportunidade"
         ],
-        "pendencias": []
+        "pendencias": [],
+        "oportunidade": null
       },
       "match": {
         "casa": 100,
         "localizacao": 36.2,
-        "custoBeneficio": 30.0,
-        "visual": 50.0,
-        "final": 62.5,
+        "custoBeneficio": 0.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "180 m²",
           "3 quartos",
-          "Quintal",
+          "2 banheiros",
+          "Área externa privativa",
           "Armários",
           "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Preço acima do teto de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.1059298,
@@ -1797,26 +1923,34 @@
         "elegivel": false,
         "status": "inelegivel",
         "motivos": [
-          "Área abaixo do mínimo"
+          "Banheiros abaixo do mínimo",
+          "Área abaixo do mínimo",
+          "Fora da faixa principal sem justificativa de oportunidade forte"
         ],
-        "pendencias": []
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 51.5,
+        "casa": null,
         "localizacao": 39.0,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 57.9,
+        "custoBeneficio": 66.3,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "3 quartos",
           "Armários",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~10 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
+          "Menos de 2 banheiros",
+          "Área externa privativa não confirmada",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.169216,
@@ -1878,29 +2012,37 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 91.0,
+        "casa": null,
         "localizacao": 0,
-        "custoBeneficio": 68.0,
-        "visual": 50.0,
-        "final": 57.5,
+        "custoBeneficio": 67.7,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
+          "2 banheiros",
           "Armários",
           "Churrasqueira",
           "Piscina",
           "Hospital Santa Mônica: ~18.3 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Quintal: não informado",
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
+          "Área externa privativa não confirmada",
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "latitude": -20.0803489,
@@ -1952,27 +2094,33 @@
       "hidromassagem": null,
       "descricao": "Casa no Interlagos com aproximadamente 100 m², 3 quartos, cozinha com armário, quintal amplo, varanda frontal e 1 vaga.",
       "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Banheiros abaixo do mínimo"
+        ],
+        "pendencias": [],
+        "oportunidade": "Oportunidade excepcional: armários confirmados e ~5.9 km do Hospital Santa Mônica"
       },
       "match": {
-        "casa": 95.0,
+        "casa": null,
         "localizacao": 67.7,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 82.4,
+        "custoBeneficio": 63.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
-          "Quintal",
+          "Área externa privativa",
           "Armários",
-          "Preço abaixo da faixa ideal",
           "Hospital Santa Mônica: ~5.9 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Avaliação visual ainda não disponível"
+          "Menos de 2 banheiros",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "2818101a61b7315494b1a6e6",
@@ -1997,87 +2145,6 @@
         "coletaAutomaticaPermitida": false,
         "nota": "Página pública da Casa Nova verificada em 10/09/2026. Termos da fonte impedem automação sem autorização; registro é somente verificação manual e não deve ser renovado automaticamente."
       }
-    },
-    {
-      "fonte": "Nova Somar",
-      "codigoFonte": "10484",
-      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
-      "cidade": "Divinópolis",
-      "endereco": null,
-      "latitude": -20.1059298,
-      "longitude": -44.9741266,
-      "fotos": [],
-      "publicadoEm": null,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 8.4,
-        "distanciaKm": 10.4,
-        "tempoCarroMin": 17,
-        "fonteRota": "OSRM/OpenStreetMap"
-      },
-      "comercio": {},
-      "avaliacaoVisual": {},
-      "disponivel": true,
-      "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
-      "tipo": "casa",
-      "bairro": "Centro",
-      "aluguel": 5500.0,
-      "areaM2": 200.0,
-      "quartos": 3,
-      "banheiros": 1,
-      "vagas": 0,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM.",
-      "elegibilidade": {
-        "elegivel": false,
-        "status": "inelegivel",
-        "motivos": [
-          "Acima do teto de oportunidade"
-        ],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 92.0,
-        "localizacao": 36.2,
-        "custoBeneficio": 5,
-        "visual": 50.0,
-        "final": 54.4,
-        "motivosPositivos": [
-          "200 m²",
-          "3 quartos",
-          "Armários",
-          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
-        ],
-        "pontosAtencao": [
-          "Quintal: não informado",
-          "Preço acima do teto de oportunidade",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "fingerprint": "19a154047b1fb67fb7f83d0a",
-      "id": "imv_19a154047b1fb67fb7f83d0a",
-      "primeiroVistoEm": "2026-09-08",
-      "ultimoVistoEm": "2026-09-10",
-      "historico": [
-        {
-          "data": "2026-09-08",
-          "campo": "disponivel",
-          "de": true,
-          "para": false
-        },
-        {
-          "data": "2026-09-08",
-          "campo": "disponivel",
-          "de": false,
-          "para": true
-        }
-      ]
     },
     {
       "fonte": "Casa Nova",
@@ -2113,25 +2180,31 @@
         "motivos": [],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 67.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 55.0,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [
           "180 m²"
         ],
         "pontosAtencao": [
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "f66b94be34945ebc643948bc",
@@ -2174,25 +2247,31 @@
         "motivos": [],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 59.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 51.9,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [
           "100 m²"
         ],
         "pontosAtencao": [
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "ad4a74856f004056baee1a52",
@@ -2242,25 +2321,31 @@
         "motivos": [],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 59.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 51.9,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [
           "100 m²"
         ],
         "pontosAtencao": [
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "86dfbd60c9f718ee984879dc",
@@ -2310,25 +2395,31 @@
         "motivos": [],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 59.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 51.9,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [
           "100 m²"
         ],
         "pontosAtencao": [
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "f1433af393fb10f5d139dbc2",
@@ -2371,25 +2462,31 @@
         "motivos": [],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 59.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 51.9,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [
           "100 m²"
         ],
         "pontosAtencao": [
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "821ff566d83eba30ce019300",
@@ -2432,25 +2529,31 @@
         "motivos": [],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 58.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 51.5,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [
           "90 m²"
         ],
         "pontosAtencao": [
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "de5be3e2d2a763b25b7c7035",
@@ -2495,24 +2598,30 @@
         ],
         "pendencias": [
           "Quartos não confirmados",
+          "Banheiros não confirmados",
+          "Área externa privativa não confirmada",
           "Aluguel não confirmado"
-        ]
+        ],
+        "oportunidade": null
       },
       "match": {
-        "casa": 35.0,
-        "localizacao": 55,
-        "custoBeneficio": 35.0,
-        "visual": 50.0,
-        "final": 42.2,
+        "casa": null,
+        "localizacao": null,
+        "custoBeneficio": null,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 0.0,
         "motivosPositivos": [],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
           "Quartos não informados",
-          "Quintal: não informado",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
           "Armários: não informado",
           "Aluguel não informado",
           "Distância ao Hospital Santa Mônica ainda não calculada",
-          "Avaliação visual ainda não disponível"
+          "Avaliação visual indisponível sem fotos reais avaliadas"
         ]
       },
       "fingerprint": "57779b8616964f01728f8e6f",
@@ -2525,6 +2634,94 @@
           "campo": "disponivel",
           "de": true,
           "para": false
+        }
+      ]
+    },
+    {
+      "fonte": "Nova Somar",
+      "codigoFonte": "10484",
+      "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-centro-divinopolis-mg/10484",
+      "cidade": "Divinópolis",
+      "endereco": null,
+      "latitude": -20.1059298,
+      "longitude": -44.9741266,
+      "fotos": [],
+      "publicadoEm": null,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 8.4,
+        "distanciaKm": 10.4,
+        "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      },
+      "comercio": {},
+      "avaliacaoVisual": {},
+      "disponivel": true,
+      "titulo": "Casa para aluguel, 3 quartos, Centro - Divinopolis/MG",
+      "tipo": "casa",
+      "bairro": "Centro",
+      "aluguel": 5500.0,
+      "areaM2": 200.0,
+      "quartos": 3,
+      "banheiros": 1,
+      "vagas": 0,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "CASA RESIDENCIAL AMPLA E FUNCIONAL, IDEAL PARA QUEM BUSCA CONFORTO E QUALIDADE DE VIDA, COM APROXIMADAMENTE 200M², COM 03 QUARTOS SENDO 02 COM ARMÁRIOS E 01 SUÍTE, SALA AMPLA PARA 02 AMBIENTES, LAVABO, BANHEIRO SOCIAL COM BOX E ARMÁRIO, COZINHA COM BANCADA, ARMÁRIO, COOKTOP E COIFA, ÁREA DE SERVIÇO, DCE E 01 VAGA DE GARAGEM.",
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Banheiros abaixo do mínimo",
+          "Acima do teto de oportunidade"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 36.2,
+        "custoBeneficio": 0.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "Armários",
+          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Menos de 2 banheiros",
+          "Área externa privativa não confirmada",
+          "Preço acima do teto de oportunidade",
+          "Avaliação visual indisponível sem fotos reais avaliadas"
+        ]
+      },
+      "fingerprint": "19a154047b1fb67fb7f83d0a",
+      "id": "imv_19a154047b1fb67fb7f83d0a",
+      "primeiroVistoEm": "2026-09-08",
+      "ultimoVistoEm": "2026-09-10",
+      "historico": [
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": true,
+          "para": false
+        },
+        {
+          "data": "2026-09-08",
+          "campo": "disponivel",
+          "de": false,
+          "para": true
         }
       ]
     }
