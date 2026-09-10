@@ -56,17 +56,17 @@
       },
       "match": {
         "casa": 96.0,
-        "localizacao": 72,
+        "localizacao": 48.1,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 83.9,
+        "final": 77.9,
         "motivosPositivos": [
           "210 m²",
           "3 quartos",
           "Armários",
           "Churrasqueira",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~12 min"
+          "Hospital Santa Mônica: ~8.7 km"
         ],
         "pontosAtencao": [
           "Quintal: não informado",
@@ -139,16 +139,16 @@
       },
       "match": {
         "casa": 87.0,
-        "localizacao": 60,
+        "localizacao": 38.3,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 77.3,
+        "final": 71.9,
         "motivosPositivos": [
           "120 m²",
           "3 quartos",
           "Quintal",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~15 min"
+          "Hospital Santa Mônica: ~10.1 km"
         ],
         "pontosAtencao": [
           "Armários: não informado",
@@ -223,16 +223,16 @@
       },
       "match": {
         "casa": 63.5,
-        "localizacao": 80,
+        "localizacao": 55.1,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 72.9,
+        "final": 66.7,
         "motivosPositivos": [
           "3 quartos",
           "Quintal",
           "Armários",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~10 min"
+          "Hospital Santa Mônica: ~7.7 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
@@ -307,16 +307,16 @@
       },
       "match": {
         "casa": 51.0,
-        "localizacao": 92,
+        "localizacao": 75.4,
         "custoBeneficio": 95.0,
         "visual": 50.0,
-        "final": 69.9,
+        "final": 65.8,
         "motivosPositivos": [
           "3 quartos",
           "Armários",
           "Churrasqueira",
           "Preço dentro da faixa ideal",
-          "Hospital Santa Mônica: ~7 min"
+          "Hospital Santa Mônica: ~4.8 km"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
@@ -333,89 +333,6 @@
         "distanciaLinhaRetaKm": 2.5,
         "distanciaKm": 4.8,
         "tempoCarroMin": 7,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
-      "fonte": "MGF Imóveis",
-      "codigoFonte": "301585037",
-      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Catalão",
-      "endereco": "Rua Fagundes Varela",
-      "aluguel": 1400.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 320.0,
-      "terrenoM2": null,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 3,
-      "quintal": true,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": true,
-      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 3 quartos, sendo 1 suíte com box e banheira de hidromassagem, sala, copa, banheiro social, cozinha com armário, área de serviço, varanda com cozinha externa, quintal cimentado, terraço e 3 vagas, com aproximadamente 320 m².",
-      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "a77a8a617cb7f23878f17e42",
-      "id": "imv_a77a8a617cb7f23878f17e42",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "MGF Imóveis",
-          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 100,
-        "localizacao": 80,
-        "custoBeneficio": 100,
-        "visual": 50.0,
-        "final": 87.5,
-        "motivosPositivos": [
-          "320 m²",
-          "3 quartos",
-          "Quintal",
-          "Armários",
-          "Hidromassagem",
-          "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~10 min"
-        ],
-        "pontosAtencao": [
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1583588,
-      "longitude": -44.9066475,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "endereco",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 4.4,
-        "distanciaKm": 7.5,
-        "tempoCarroMin": 10,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -473,16 +390,16 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 88,
+        "localizacao": 79.6,
         "custoBeneficio": 85.0,
         "visual": 50.0,
-        "final": 86.5,
+        "final": 84.4,
         "motivosPositivos": [
           "180 m²",
           "5 quartos",
           "Quintal",
           "Preço dentro da faixa ideal",
-          "Hospital Santa Mônica: ~8 min"
+          "Hospital Santa Mônica: ~4.2 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Armários: não informado",
@@ -498,6 +415,89 @@
         "distanciaLinhaRetaKm": 3.2,
         "distanciaKm": 4.2,
         "tempoCarroMin": 8,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "301585037",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Catalão",
+      "endereco": "Rua Fagundes Varela",
+      "aluguel": 1400.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 320.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": true,
+      "descricao": "Anúncio público atribuído a Francisco Imóveis: casa com 3 quartos, sendo 1 suíte com box e banheira de hidromassagem, sala, copa, banheiro social, cozinha com armário, área de serviço, varanda com cozinha externa, quintal cimentado, terraço e 3 vagas, com aproximadamente 320 m².",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "a77a8a617cb7f23878f17e42",
+      "id": "imv_a77a8a617cb7f23878f17e42",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do portal MGF Imóveis estava acessível em 09/09/2026 e identifica Francisco Imóveis como anunciante. O próprio portal alerta que dados devem ser confirmados com o anunciante; manter como descoberta manual e não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-judas-divinopolismg-301585037"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 56.5,
+        "custoBeneficio": 100,
+        "visual": 50.0,
+        "final": 81.6,
+        "motivosPositivos": [
+          "320 m²",
+          "3 quartos",
+          "Quintal",
+          "Armários",
+          "Hidromassagem",
+          "Preço abaixo da faixa ideal",
+          "Hospital Santa Mônica: ~7.5 km"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1583588,
+      "longitude": -44.9066475,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 4.4,
+        "distanciaKm": 7.5,
+        "tempoCarroMin": 10,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -555,17 +555,17 @@
       },
       "match": {
         "casa": 97.0,
-        "localizacao": 80,
+        "localizacao": 55.8,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 86.3,
+        "final": 80.2,
         "motivosPositivos": [
           "120 m²",
           "3 quartos",
           "Quintal",
           "Armários",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~10 min"
+          "Hospital Santa Mônica: ~7.6 km"
         ],
         "pontosAtencao": [
           "Avaliação visual ainda não disponível"
@@ -637,10 +637,10 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 76,
+        "localizacao": 64.2,
         "custoBeneficio": 53.0,
         "visual": 50.0,
-        "final": 77.1,
+        "final": 74.2,
         "motivosPositivos": [
           "683 m²",
           "4 quartos",
@@ -648,7 +648,7 @@
           "Armários",
           "Churrasqueira",
           "Piscina",
-          "Hospital Santa Mônica: ~11 min"
+          "Hospital Santa Mônica: ~6.4 km"
         ],
         "pontosAtencao": [
           "Preço na faixa de oportunidade",
@@ -723,17 +723,17 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 100,
+        "localizacao": 95,
         "custoBeneficio": 5,
         "visual": 50.0,
-        "final": 73.5,
+        "final": 72.2,
         "motivosPositivos": [
           "340 m²",
           "3 quartos",
           "Armários",
           "Churrasqueira",
           "Piscina",
-          "Hospital Santa Mônica: ~3 min"
+          "Hospital Santa Mônica: ~1 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Quintal: não informado",
@@ -750,6 +750,88 @@
         "distanciaLinhaRetaKm": 0.7,
         "distanciaKm": 1.0,
         "tempoCarroMin": 3,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Porto Seguro Imóveis",
+      "codigoFonte": "15095",
+      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-1-vaga-porto-velho-divinopolis-mg/15095",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Porto Velho",
+      "endereco": null,
+      "aluguel": 3500.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 100.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 100 m², 3 quartos sendo 1 suíte, sala, banheiro social com box, cozinha com armário e bancada, área de serviço e 1 vaga.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "56561a0fd29bb8ac35b2cdba",
+      "id": "imv_56561a0fd29bb8ac35b2cdba",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Porto Seguro Imóveis",
+          "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-1-vaga-porto-velho-divinopolis-mg/15095"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 83.0,
+        "localizacao": 76.1,
+        "custoBeneficio": 53.0,
+        "visual": 50.0,
+        "final": 70.3,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Armários",
+          "Hospital Santa Mônica: ~4.7 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Preço na faixa de oportunidade",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1463965,
+      "longitude": -44.8809205,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 3.3,
+        "distanciaKm": 4.7,
+        "tempoCarroMin": 9,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -807,10 +889,10 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 48,
+        "localizacao": 29.2,
         "custoBeneficio": 68.0,
         "visual": 50.0,
-        "final": 73.1,
+        "final": 68.4,
         "motivosPositivos": [
           "200 m²",
           "3 quartos",
@@ -818,7 +900,7 @@
           "Armários",
           "Churrasqueira",
           "Piscina",
-          "Hospital Santa Mônica: ~18 min"
+          "Hospital Santa Mônica: ~11.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Preço na faixa de oportunidade",
@@ -893,16 +975,16 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 96,
+        "localizacao": 79.6,
         "custoBeneficio": 5,
         "visual": 50.0,
-        "final": 72.5,
+        "final": 68.4,
         "motivosPositivos": [
           "280 m²",
           "4 quartos",
           "Quintal",
           "Armários",
-          "Hospital Santa Mônica: ~6 min"
+          "Hospital Santa Mônica: ~4.2 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Preço acima do teto de oportunidade",
@@ -918,170 +1000,6 @@
         "distanciaLinhaRetaKm": 2.8,
         "distanciaKm": 4.2,
         "tempoCarroMin": 6,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
-      "fonte": "Porto Seguro Imóveis",
-      "codigoFonte": "15095",
-      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-1-vaga-porto-velho-divinopolis-mg/15095",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Porto Velho",
-      "endereco": null,
-      "aluguel": 3500.0,
-      "condominio": 0.0,
-      "iptu": 0.0,
-      "areaM2": 100.0,
-      "terrenoM2": null,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 1,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "Casa residencial com aproximadamente 100 m², 3 quartos sendo 1 suíte, sala, banheiro social com box, cozinha com armário e bancada, área de serviço e 1 vaga.",
-      "fonteVerificacao": "pagina_publica",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "56561a0fd29bb8ac35b2cdba",
-      "id": "imv_56561a0fd29bb8ac35b2cdba",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "Porto Seguro Imóveis",
-          "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-1-vaga-porto-velho-divinopolis-mg/15095"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 83.0,
-        "localizacao": 84,
-        "custoBeneficio": 53.0,
-        "visual": 50.0,
-        "final": 72.3,
-        "motivosPositivos": [
-          "100 m²",
-          "3 quartos",
-          "Armários",
-          "Hospital Santa Mônica: ~9 min"
-        ],
-        "pontosAtencao": [
-          "Quintal: não informado",
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1463965,
-      "longitude": -44.8809205,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 3.3,
-        "distanciaKm": 4.7,
-        "tempoCarroMin": 9,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
-      "fonte": "Porto Seguro Imóveis",
-      "codigoFonte": "18552",
-      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-centro-divinopolis-mg/18552",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Centro",
-      "endereco": null,
-      "aluguel": 3000.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 100.0,
-      "terrenoM2": null,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 2,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "Casa residencial com aproximadamente 100 m², 3 quartos sendo 1 suíte, sala, banheiro social com armário e box, cozinha com armário, área de serviço e 2 vagas.",
-      "fonteVerificacao": "pagina_publica",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "7b13760ec3f9881afcaa87d9",
-      "id": "imv_7b13760ec3f9881afcaa87d9",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "Porto Seguro Imóveis",
-          "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-centro-divinopolis-mg/18552"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 83.0,
-        "localizacao": 52,
-        "custoBeneficio": 85.0,
-        "visual": 50.0,
-        "final": 70.7,
-        "motivosPositivos": [
-          "100 m²",
-          "3 quartos",
-          "Armários",
-          "Preço dentro da faixa ideal",
-          "Hospital Santa Mônica: ~17 min"
-        ],
-        "pontosAtencao": [
-          "Quintal: não informado",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1059298,
-      "longitude": -44.9741266,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 8.4,
-        "distanciaKm": 10.4,
-        "tempoCarroMin": 17,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -1141,15 +1059,15 @@
       },
       "match": {
         "casa": 46.0,
-        "localizacao": 92,
+        "localizacao": 87.3,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 68.9,
+        "final": 67.7,
         "motivosPositivos": [
           "3 quartos",
           "Quintal",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~7 min"
+          "Hospital Santa Mônica: ~3.1 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
@@ -1166,88 +1084,6 @@
         "distanciaLinhaRetaKm": 2.1,
         "distanciaKm": 3.1,
         "tempoCarroMin": 7,
-        "fonteRota": "OSRM/OpenStreetMap"
-      }
-    },
-    {
-      "fonte": "Gerais Imobiliária",
-      "codigoFonte": "42348",
-      "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-alugar-centro-divinopolis-mg/42348",
-      "tipo": "casa",
-      "operacao": "aluguel",
-      "cidade": "Divinópolis",
-      "bairro": "Centro",
-      "endereco": null,
-      "aluguel": 3200.0,
-      "condominio": null,
-      "iptu": null,
-      "areaM2": 130.0,
-      "terrenoM2": null,
-      "quartos": 3,
-      "suites": 1,
-      "banheiros": 2,
-      "vagas": 0,
-      "quintal": null,
-      "armarios": true,
-      "churrasqueira": null,
-      "piscina": null,
-      "hidromassagem": null,
-      "descricao": "Casa com sala, copa, 3 quartos sendo 1 suíte com armário, banheiro social com armário, cozinha com armário e bancada, área aproximada de 130 m² e sem vaga de garagem.",
-      "fonteVerificacao": "pagina_publica",
-      "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Registro verificado em página pública da Gerais Imobiliária em 09/09/2026. Valores de aluguel, condomínio e IPTU devem ser confirmados; não renovar automaticamente.",
-      "disponivel": true,
-      "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
-      "fingerprint": "e0a53a6107394a8ff82e403d",
-      "id": "imv_e0a53a6107394a8ff82e403d",
-      "proveniencia": {
-        "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
-        "coletaAutomaticaPermitida": false,
-        "nota": "Registro verificado em página pública da Gerais Imobiliária em 09/09/2026. Valores de aluguel, condomínio e IPTU devem ser confirmados; não renovar automaticamente."
-      },
-      "historico": [
-        {
-          "data": "2026-09-09",
-          "campo": "observacao_verificada",
-          "fonte": "Gerais Imobiliária",
-          "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-alugar-centro-divinopolis-mg/42348"
-        }
-      ],
-      "elegibilidade": {
-        "elegivel": true,
-        "status": "elegivel",
-        "motivos": [],
-        "pendencias": []
-      },
-      "match": {
-        "casa": 86.0,
-        "localizacao": 52,
-        "custoBeneficio": 68.0,
-        "visual": 50.0,
-        "final": 68.5,
-        "motivosPositivos": [
-          "130 m²",
-          "3 quartos",
-          "Armários",
-          "Hospital Santa Mônica: ~17 min"
-        ],
-        "pontosAtencao": [
-          "Quintal: não informado",
-          "Preço na faixa de oportunidade",
-          "Avaliação visual ainda não disponível"
-        ]
-      },
-      "latitude": -20.1059298,
-      "longitude": -44.9741266,
-      "hospital": {
-        "referencia": "Hospital Santa Mônica",
-        "precisaoLocalizacao": "bairro",
-        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "distanciaLinhaRetaKm": 8.4,
-        "distanciaKm": 10.4,
-        "tempoCarroMin": 17,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -1307,16 +1143,16 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 80,
+        "localizacao": 74.0,
         "custoBeneficio": 5,
         "visual": 50.0,
-        "final": 68.5,
+        "final": 67.0,
         "motivosPositivos": [
           "200 m²",
           "6 quartos",
           "Quintal",
           "Armários",
-          "Hospital Santa Mônica: ~10 min"
+          "Hospital Santa Mônica: ~5 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Preço acima do teto de oportunidade",
@@ -1332,6 +1168,170 @@
         "distanciaLinhaRetaKm": 3.6,
         "distanciaKm": 5.0,
         "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Porto Seguro Imóveis",
+      "codigoFonte": "18552",
+      "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-centro-divinopolis-mg/18552",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Centro",
+      "endereco": null,
+      "aluguel": 3000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 100.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial com aproximadamente 100 m², 3 quartos sendo 1 suíte, sala, banheiro social com armário e box, cozinha com armário, área de serviço e 2 vagas.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "7b13760ec3f9881afcaa87d9",
+      "id": "imv_7b13760ec3f9881afcaa87d9",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro verificado em página pública da Porto Seguro Imóveis em 09/09/2026. Informações, disponibilidade e valores sujeitos a confirmação; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Porto Seguro Imóveis",
+          "url": "https://www.psimobiliaria.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-centro-divinopolis-mg/18552"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 83.0,
+        "localizacao": 36.2,
+        "custoBeneficio": 85.0,
+        "visual": 50.0,
+        "final": 66.8,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "Armários",
+          "Preço dentro da faixa ideal",
+          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1059298,
+      "longitude": -44.9741266,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 8.4,
+        "distanciaKm": 10.4,
+        "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Gerais Imobiliária",
+      "codigoFonte": "42348",
+      "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-alugar-centro-divinopolis-mg/42348",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Centro",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 130.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 0,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa com sala, copa, 3 quartos sendo 1 suíte com armário, banheiro social com armário, cozinha com armário e bancada, área aproximada de 130 m² e sem vaga de garagem.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro verificado em página pública da Gerais Imobiliária em 09/09/2026. Valores de aluguel, condomínio e IPTU devem ser confirmados; não renovar automaticamente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-09",
+      "fingerprint": "e0a53a6107394a8ff82e403d",
+      "id": "imv_e0a53a6107394a8ff82e403d",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-09",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Registro verificado em página pública da Gerais Imobiliária em 09/09/2026. Valores de aluguel, condomínio e IPTU devem ser confirmados; não renovar automaticamente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Gerais Imobiliária",
+          "url": "https://www.geraisimobiliaria.com.br/imovel/casa-para-alugar-centro-divinopolis-mg/42348"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": []
+      },
+      "match": {
+        "casa": 86.0,
+        "localizacao": 36.2,
+        "custoBeneficio": 68.0,
+        "visual": 50.0,
+        "final": 64.5,
+        "motivosPositivos": [
+          "130 m²",
+          "3 quartos",
+          "Armários",
+          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Quintal: não informado",
+          "Preço na faixa de oportunidade",
+          "Avaliação visual ainda não disponível"
+        ]
+      },
+      "latitude": -20.1059298,
+      "longitude": -44.9741266,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "distanciaLinhaRetaKm": 8.4,
+        "distanciaKm": 10.4,
+        "tempoCarroMin": 17,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -1391,16 +1391,16 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 52,
+        "localizacao": 36.2,
         "custoBeneficio": 30.0,
         "visual": 50.0,
-        "final": 66.5,
+        "final": 62.5,
         "motivosPositivos": [
           "180 m²",
           "3 quartos",
           "Quintal",
           "Armários",
-          "Hospital Santa Mônica: ~17 min"
+          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Preço acima do teto de oportunidade",
@@ -1475,15 +1475,15 @@
       },
       "match": {
         "casa": 51.5,
-        "localizacao": 48,
+        "localizacao": 39.0,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 60.1,
+        "final": 57.9,
         "motivosPositivos": [
           "3 quartos",
           "Armários",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~18 min"
+          "Hospital Santa Mônica: ~10 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Área abaixo de 90 m²",
@@ -1557,17 +1557,17 @@
       },
       "match": {
         "casa": 91.0,
-        "localizacao": 4,
+        "localizacao": 0,
         "custoBeneficio": 68.0,
         "visual": 50.0,
-        "final": 58.5,
+        "final": 57.5,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
           "Armários",
           "Churrasqueira",
           "Piscina",
-          "Hospital Santa Mônica: ~29 min"
+          "Hospital Santa Mônica: ~18.3 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Quintal: não informado",
@@ -1631,17 +1631,17 @@
       },
       "match": {
         "casa": 95.0,
-        "localizacao": 80,
+        "localizacao": 67.7,
         "custoBeneficio": 100,
         "visual": 50.0,
-        "final": 85.5,
+        "final": 82.4,
         "motivosPositivos": [
           "100 m²",
           "3 quartos",
           "Quintal",
           "Armários",
           "Preço abaixo da faixa ideal",
-          "Hospital Santa Mônica: ~10 min"
+          "Hospital Santa Mônica: ~5.9 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Avaliação visual ainda não disponível"
@@ -1716,15 +1716,15 @@
       },
       "match": {
         "casa": 92.0,
-        "localizacao": 52,
+        "localizacao": 36.2,
         "custoBeneficio": 5,
         "visual": 50.0,
-        "final": 58.3,
+        "final": 54.4,
         "motivosPositivos": [
           "200 m²",
           "3 quartos",
           "Armários",
-          "Hospital Santa Mônica: ~17 min"
+          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Quintal: não informado",
