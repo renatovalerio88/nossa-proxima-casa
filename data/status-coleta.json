@@ -1,11 +1,12 @@
 {
-  "schemaVersion": 1,
-  "inicio": "2026-09-10T19:51:25Z",
-  "fim": "2026-09-10T19:51:31Z",
-  "estado": "parcial",
+  "schemaVersion": 2,
+  "inicio": "2026-09-10T21:50:13Z",
+  "fim": "2026-09-10T21:50:21Z",
+  "estado": "ok",
   "coletados": 1,
   "indisponiveisConfirmados": 2,
-  "erros": 2,
+  "erros": 0,
+  "avisos": 2,
   "imoveisComFotos": 1,
   "fotosReaisCapturadas": 1,
   "fontes": {

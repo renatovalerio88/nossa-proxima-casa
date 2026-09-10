@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "coletadoEm": "2026-09-10T19:51:31Z",
+  "schemaVersion": 2,
+  "coletadoEm": "2026-09-10T21:50:21Z",
   "imoveis": [
     {
       "fonte": "Nova Somar",
@@ -65,16 +65,17 @@
       "disponivel": false
     }
   ],
-  "erros": [
+  "erros": [],
+  "indisponiveisConfirmados": [
     {
       "fonte": "Nova Somar",
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolis-mg/10630",
-      "erro": "anúncio indisponível confirmado: HTTP 410"
+      "motivo": "anúncio indisponível confirmado: HTTP 410"
     },
     {
       "fonte": "Nova Somar",
       "url": "https://www.novasomar.com.br/imovel/casa-para-aluguel-3-quartos-2-suites-3-vagas-sao-sebastiao-divinopolis-mg/10693",
-      "erro": "anúncio indisponível confirmado: HTTP 410"
+      "motivo": "anúncio indisponível confirmado: HTTP 410"
     }
   ]
 }
