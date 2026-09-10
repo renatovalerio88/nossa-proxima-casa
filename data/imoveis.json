@@ -779,8 +779,8 @@
         "localizacao": 79.6,
         "custoBeneficio": 86.9,
         "visual": null,
-        "final": 90.9,
-        "confianca": "media",
+        "final": null,
+        "confianca": "incompleta",
         "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "180 m²",
@@ -865,8 +865,8 @@
         "localizacao": 64.2,
         "custoBeneficio": 55.2,
         "visual": null,
-        "final": 78.9,
-        "confianca": "media",
+        "final": null,
+        "confianca": "incompleta",
         "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "683 m²",
@@ -953,8 +953,8 @@
         "localizacao": 56.5,
         "custoBeneficio": 54.9,
         "visual": null,
-        "final": 76.6,
-        "confianca": "media",
+        "final": null,
+        "confianca": "incompleta",
         "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "320 m²",
