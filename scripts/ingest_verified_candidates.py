@@ -48,6 +48,24 @@ def candidate_to_inventory(candidate: Dict[str, Any]) -> Dict[str, Any]:
     return item
 
 
+def _match_sort_value(item: Dict[str, Any]) -> float:
+    """Retorna valor apenas para ordenação, preservando ``null`` no inventário.
+
+    Match ausente ou não numérico vai para o fim dentro da mesma data, sem criar
+    uma nota sintética no dado publicado.
+    """
+    match = item.get("match")
+    if not isinstance(match, dict):
+        return -1.0
+    final = match.get("final")
+    if final is None:
+        return -1.0
+    try:
+        return float(final)
+    except (TypeError, ValueError):
+        return -1.0
+
+
 def merge_candidates(
     inventory: Dict[str, Any], candidates_doc: Dict[str, Any], cfg: Dict[str, Any]
 ) -> Dict[str, Any]:
@@ -101,7 +119,7 @@ def merge_candidates(
 
     result["imoveis"] = sorted(
         current.values(),
-        key=lambda x: (x.get("primeiroVistoEm") or "", x.get("match", {}).get("final", 0)),
+        key=lambda x: (x.get("primeiroVistoEm") or "", _match_sort_value(x)),
         reverse=True,
     )
     return result
