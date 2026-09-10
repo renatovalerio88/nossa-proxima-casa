@@ -10,6 +10,7 @@ class FrontendContractTests(unittest.TestCase):
     def setUpClass(cls):
         cls.html = (ROOT / "index.html").read_text(encoding="utf-8")
         cls.js = (ROOT / "app.js").read_text(encoding="utf-8")
+        cls.gallery = (ROOT / "gallery.js").read_text(encoding="utf-8")
         cls.css = (ROOT / "style.css").read_text(encoding="utf-8")
 
     def test_abas_principais_estao_publicadas(self):
@@ -48,7 +49,6 @@ class FrontendContractTests(unittest.TestCase):
     def test_itens_indisponiveis_nao_aparecem_na_lista_ativa(self):
         self.assertIn("function ativo(item)", self.js)
         self.assertIn("state.imoveis.filter(ativo)", self.js)
-        self.assertIn("state.imoveis.filter(ativo)", self.js)
 
     def test_novos_dependem_de_primeiro_visto_e_janela_temporal(self):
         self.assertIn("function ehNovo(item)", self.js)
@@ -74,6 +74,21 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("function fotosConfiaveis(item)", self.js)
         self.assertIn("Avaliação visual indisponível · sem fotos reais", self.js)
         self.assertIn("item.match?.visual == null", self.js)
+
+    def test_galeria_usa_apenas_fotos_reais_do_item(self):
+        self.assertIn('id="galeriaModal"', self.html)
+        self.assertIn('src="gallery.js"', self.html)
+        self.assertIn("fotosConfiaveis(item)", self.gallery)
+        self.assertIn("itemDaFoto", self.gallery)
+        self.assertNotIn("placeholder", self.gallery.lower())
+        self.assertNotIn("unsplash", self.gallery.lower())
+
+    def test_galeria_tem_navegacao_e_acessibilidade(self):
+        for termo in ("ArrowLeft", "ArrowRight", "role", "tabindex", "aria-label", "showModal"):
+            self.assertIn(termo, self.gallery)
+        self.assertIn("galeria-anterior", self.gallery)
+        self.assertIn("galeria-proxima", self.gallery)
+        self.assertIn("galeria-fechar", self.gallery)
 
     def test_preco_explicita_faixa_principal_e_oportunidades(self):
         self.assertIn("p >= 2000 && p <= 3000", self.js)
