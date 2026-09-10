@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 9,
+  "schemaVersion": 10,
   "status": "auditoria_em_andamento",
   "atualizadoEm": "2026-09-10",
   "fontes": [
@@ -9,7 +9,8 @@
     {"nome":"Ponto Sete Imóveis","tipo":"imobiliaria","status":"manual_verificado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.pontoseteimoveis.com.br/","motivo":"Catálogo público ativo; manter descoberta/verificação manual."},
     {"nome":"Achei Imóveis","tipo":"imobiliaria","status":"catalogo_aluguel_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.acheiimobiliaria.com/","motivo":"Site oficial confirma operação de aluguel em Divinópolis, destaques de aluguel e busca por casas; sem autorização explícita para automação."},
     {"nome":"Divilar Imóveis","tipo":"imobiliaria","status":"catalogo_aluguel_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.divilarimoveis.com.br/","motivo":"Site oficial em Divinópolis confirma destaques de aluguel e busca por casas para alugar. Nova fonte adicionada ao radar; manter acesso direto enquanto termos/robots são auditados."},
-    {"nome":"GFaria Imóveis","tipo":"imobiliaria","status":"catalogo_aluguel_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.gfaria.com.br/","motivo":"Site oficial em Divinópolis confirma destaques de aluguel e busca por casas para alugar. Nova fonte adicionada ao radar; manter acesso direto enquanto termos/robots são auditados."},
+    {"nome":"GFaria Imóveis","tipo":"imobiliaria","status":"catalogo_aluguel_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.gfaria.com.br/","motivo":"Site oficial em Divinópolis confirma casas residenciais para aluguel e busca por casas. Manter acesso direto enquanto termos/robots são auditados."},
+    {"nome":"Vivace Imobiliária","tipo":"imobiliaria","status":"catalogo_aluguel_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.vivaceimobiliaria.com.br/","motivo":"Site oficial em Divinópolis oferece finalidade Aluguel, seção de imóveis para locação e busca por tipo de imóvel; manter acesso direto enquanto política de automação é auditada."},
     {"nome":"Divimóveis Locadora","tipo":"imobiliaria","status":"nao_usar_catalogo_ate_validacao","coletaAutomatica":false,"siteUrl":"https://www.divimoveislocadora.com.br/","motivo":"Operação local ativa, mas catálogo auditado apresentou conteúdo inconsistente; acesso direto permanece disponível."},
     {"nome":"Somar Imóveis","tipo":"imobiliaria","status":"identidade_local_confirmada_auditoria_catalogo","coletaAutomatica":false,"motivo":"Operação local confirmada; domínio/catálogo próprio ainda em validação."},
     {"nome":"Referência Imóveis Divinópolis","tipo":"imobiliaria","status":"catalogo_publico_confirmado_sem_automacao","coletaAutomatica":false,"siteUrl":"https://www.imobiliariareferencia.com.br/","motivo":"Site oficial confirma Casas, Comprar e Alugar e destaques de aluguel; sem autorização explícita para automação."},
