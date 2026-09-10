@@ -8,7 +8,7 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'data/coleta-seeds.json'
-      - 'data/candidatos-verificados.json'
+      - 'data/candidatos-verificados*.json'
       - 'data/fontes.json'
       - 'data/config.json'
       - '.github/workflows/atualizar-imoveis.yml'
@@ -52,7 +52,10 @@ jobs:
           python -m json.tool data/status-coleta.json >/dev/null
           python -m json.tool data/geocode-cache.json >/dev/null
           python -m json.tool data/fontes.json >/dev/null
-          python -m json.tool data/candidatos-verificados.json >/dev/null
+          for arquivo in data/candidatos-verificados*.json; do
+            [ -e "$arquivo" ] || continue
+            python -m json.tool "$arquivo" >/dev/null
+          done
           python scripts/validate_data_quality.py
           python -m unittest discover -s tests -v
       - name: Resumo da coleta
