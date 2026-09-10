@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from ingest_verified_candidates import candidate_to_inventory, merge_candidates
+from ingest_verified_candidates import candidate_to_inventory, merge_candidate_documents, merge_candidates
 
 
 CFG = {
@@ -78,6 +78,40 @@ class VerifiedCandidatesTest(unittest.TestCase):
         item = candidate_to_inventory(self.candidate())
         self.assertIsNone(item["endereco"])
         self.assertIsNone(item["hidromassagem"])
+
+    def test_multiple_batches_are_merged_incrementally(self):
+        first = self.candidate()
+        second = copy.deepcopy(first)
+        second["codigoFonte"] = "456"
+        second["url"] = "https://example.test/456"
+        second["bairro"] = "Bom Pastor"
+        inventory = {"schemaVersion": 1, "atualizadoEm": "2026-09-09", "imoveis": []}
+
+        merged = merge_candidate_documents(
+            inventory,
+            [{"imoveis": [first]}, {"imoveis": [second]}],
+            CFG,
+        )
+
+        self.assertEqual(len(merged["imoveis"]), 2)
+        self.assertEqual({item["codigoFonte"] for item in merged["imoveis"]}, {"123", "456"})
+
+    def test_newer_batch_wins_for_same_property(self):
+        old = self.candidate()
+        newer = copy.deepcopy(old)
+        newer["observadoEm"] = "2026-09-10"
+        newer["aluguel"] = 3000.0
+        inventory = {"schemaVersion": 1, "atualizadoEm": "2026-09-09", "imoveis": []}
+
+        merged = merge_candidate_documents(
+            inventory,
+            [{"imoveis": [old]}, {"imoveis": [newer]}],
+            CFG,
+        )
+
+        self.assertEqual(len(merged["imoveis"]), 1)
+        self.assertEqual(merged["imoveis"][0]["ultimoVistoEm"], "2026-09-10")
+        self.assertEqual(merged["imoveis"][0]["aluguel"], 3000.0)
 
 
 if __name__ == "__main__":
