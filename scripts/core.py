@@ -180,12 +180,12 @@ def calculate_match(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]
     result, weights = eligibility(item, cfg), cfg["pesosMatch"]
     components = {"casa": casa, "localizacao": loc, "custoBeneficio": custo, "visual": visual}
     available_weight = sum(weights[k] for k, v in components.items() if v is not None); total_weight = sum(weights.values())
-    essential_complete = casa is not None and custo is not None and loc is not None
+    all_confirmed = all(value is not None for value in components.values())
     final = None
-    if result["elegivel"] and essential_complete and available_weight:
-        final = round(clamp(sum(components[k] * weights[k] for k in components if components[k] is not None) / available_weight), 1)
+    if result["elegivel"] and all_confirmed and total_weight:
+        final = round(clamp(sum(components[k] * weights[k] for k in components) / total_weight), 1)
     coverage = round(available_weight / total_weight * 100, 1) if total_weight else 0.0
-    confidence = "alta" if final is not None and coverage == 100 else "media" if final is not None else "incompleta"
+    confidence = "alta" if final is not None and coverage == 100 else "incompleta"
     return {**components, "final": final, "confianca": confidence, "coberturaPesoPct": coverage, "motivosPositivos": p1+p2+p3+p4, "pontosAtencao": w1+w2+w3+w4}
 
 
@@ -215,5 +215,6 @@ def merge_inventory(existing: Dict[str, Any], incoming: Iterable[Dict[str, Any]]
         merged = deepcopy(old)
         for key, value in item.items():
             if value is not None: merged[key] = value
-        merged["primeiroVistoEm"] = old.get("primeiroVistoEm") or today; merged["ultimoVistoEm"] = today; merged["disponivel"] = new_availability; merged["historico"] = history; current[pid] = merged
-    return {"schemaVersion": existing.get("schemaVersion", 1), "atualizadoEm": today, "imoveis": sorted(current.values(), key=lambda x: (x.get("primeiroVistoEm") or "", x.get("match", {}).get("final") or -1), reverse=True)}
+        merged["historico"] = history; merged["primeiroVistoEm"] = old.get("primeiroVistoEm") or today; merged["ultimoVistoEm"] = today
+        current[pid] = merged
+    return {**existing, "atualizadoEm": today, "imoveis": list(current.values())}
