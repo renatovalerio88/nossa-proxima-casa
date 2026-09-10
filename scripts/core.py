@@ -140,17 +140,24 @@ def score_cost(item: Dict[str, Any], cfg: Dict[str, Any]) -> Tuple[float, List[s
 
 def score_location(item: Dict[str, Any]) -> Tuple[float, List[str], List[str]]:
     hospital = item.get("hospital") or {}
-    minutes = hospital.get("tempoCarroMin")
     km = hospital.get("distanciaKm")
+    straight_km = hospital.get("distanciaLinhaRetaKm")
+    minutes = hospital.get("tempoCarroMin")
+    precision = norm_text(hospital.get("precisaoLocalizacao"))
     positives: List[str] = []
     warnings: List[str] = []
 
-    if isinstance(minutes, (int, float)):
-        score = 100 - max(0, minutes - 5) * 4
-        positives.append(f"Hospital Santa Mônica: ~{minutes:g} min")
-    elif isinstance(km, (int, float)):
+    if isinstance(km, (int, float)):
         score = 95 - max(0, km - 2) * 7
-        positives.append(f"Hospital Santa Mônica: ~{km:g} km")
+        suffix = " (aprox. pelo bairro)" if precision == "bairro" else ""
+        positives.append(f"Hospital Santa Mônica: ~{km:g} km{suffix}")
+    elif isinstance(straight_km, (int, float)):
+        score = 90 - max(0, straight_km - 2) * 7
+        suffix = " (aprox. pelo bairro)" if precision == "bairro" else " (linha reta)"
+        positives.append(f"Hospital Santa Mônica: ~{straight_km:g} km{suffix}")
+    elif isinstance(minutes, (int, float)):
+        score = 100 - max(0, minutes - 5) * 4
+        warnings.append(f"Hospital Santa Mônica: ~{minutes:g} min; distância em km ainda não calculada")
     else:
         score = 55
         warnings.append("Distância ao Hospital Santa Mônica ainda não calculada")
