@@ -2645,7 +2645,9 @@
       "endereco": null,
       "latitude": -20.1059298,
       "longitude": -44.9741266,
-      "fotos": [],
+      "fotos": [
+        "https://cdn.imoview.com.br/somar/Imoveis/10484/isdet-whatsapp-image-2026-05-28-at-112224-1779982761.jpeg?1780062712"
+      ],
       "publicadoEm": null,
       "hospital": {
         "referencia": "Hospital Santa Mônica",
@@ -2723,7 +2725,8 @@
           "de": false,
           "para": true
         }
-      ]
+      ],
+      "fotoUrl": "https://cdn.imoview.com.br/somar/Imoveis/10484/isdet-whatsapp-image-2026-05-28-at-112224-1779982761.jpeg?1780062712"
     }
   ]
 }
