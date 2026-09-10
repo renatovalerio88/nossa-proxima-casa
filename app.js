@@ -1,13 +1,27 @@
+function carregarDecisoes() {
+  try {
+    const bruto = JSON.parse(localStorage.getItem('npc-decisoes') || '{}');
+    if (!bruto || typeof bruto !== 'object' || Array.isArray(bruto)) return {};
+    return Object.fromEntries(Object.entries(bruto).filter(([, v]) => v === 'favorito' || v === 'descartado'));
+  } catch {
+    return {};
+  }
+}
+
 const state = {
   tab: 'novos',
   imoveis: [],
-  decisoes: JSON.parse(localStorage.getItem('npc-decisoes') || '{}')
+  decisoes: carregarDecisoes()
 };
 
 const fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
 function salvarDecisoes() {
-  localStorage.setItem('npc-decisoes', JSON.stringify(state.decisoes));
+  try {
+    localStorage.setItem('npc-decisoes', JSON.stringify(state.decisoes));
+  } catch {
+    // O painel continua funcional mesmo se o navegador bloquear armazenamento local.
+  }
 }
 
 function decisao(id) {
@@ -101,6 +115,38 @@ function distanciaHospital(item) {
   return `Hospital: ~${Number(km).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} km${tipo}${sufixo}`;
 }
 
+function fotoConfiavel(item) {
+  const candidatos = [
+    item.fotoUrl,
+    item.imagemUrl,
+    ...(Array.isArray(item.fotos) ? item.fotos : []),
+    ...(Array.isArray(item.imagens) ? item.imagens : [])
+  ].filter(Boolean);
+  return candidatos.find(url => /^https:\/\//i.test(String(url))) || null;
+}
+
+function detalhe(label, value) {
+  if (value === null || value === undefined || value === '') return null;
+  return `${label}: ${value}`;
+}
+
+function detalhesImovel(item) {
+  return [
+    detalhe('Suítes', item.suites),
+    detalhe('Banheiros', item.banheiros),
+    detalhe('Terreno', item.terrenoM2 != null ? `${item.terrenoM2} m²` : null),
+    detalhe('Condomínio', item.condominio != null ? fmt.format(item.condominio) : null),
+    detalhe('IPTU', item.iptu != null ? fmt.format(item.iptu) : null)
+  ].filter(Boolean);
+}
+
+function origemTexto(item) {
+  const modo = item.proveniencia?.modo || item.fonteVerificacao;
+  if (modo === 'verificacao_manual' || modo === 'portal_publico_terceiro') return 'Verificação manual · confirme valor e disponibilidade no anúncio';
+  if (modo === 'coleta_automatica' || item.coletaAutomaticaPermitida === true) return 'Coleta automática da fonte cadastrada';
+  return item.url ? 'Dados vinculados ao anúncio original' : null;
+}
+
 function render() {
   renderResumo();
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === state.tab));
@@ -120,12 +166,24 @@ function render() {
     const pendente = precisaConfirmacao(item);
     if (d === 'favorito') card.classList.add('favorito-card');
     if (pendente) card.classList.add('pendente-card');
+
+    const foto = fotoConfiavel(item);
+    if (foto) {
+      const wrap = node.querySelector('.foto-wrap');
+      const img = node.querySelector('.foto');
+      img.src = foto;
+      img.alt = `Foto do imóvel em ${valor(item.bairro, 'Divinópolis')}`;
+      img.addEventListener('error', () => { wrap.hidden = true; });
+      wrap.hidden = false;
+    }
+
     node.querySelector('.fonte').textContent = `${valor(item.fonte, 'Fonte')} · cód. ${valor(item.codigoFonte)}`;
     const qualidade = node.querySelector('.qualidade');
     qualidade.textContent = pendente ? 'A confirmar' : item.elegibilidade?.elegivel === true ? 'Elegível' : 'Dados confirmados';
     qualidade.dataset.tipo = pendente ? 'pendente' : item.elegibilidade?.elegivel === true ? 'elegivel' : 'confirmado';
-    node.querySelector('.titulo').textContent = valor(item.titulo, 'Casa para aluguel');
-    node.querySelector('.local').textContent = [item.bairro, item.cidade].filter(Boolean).join(' · ') || 'Localização a confirmar';
+    node.querySelector('.titulo').textContent = valor(item.titulo, item.bairro ? `Casa em ${item.bairro}` : 'Casa para aluguel');
+    node.querySelector('.local').textContent = [item.endereco, item.bairro, item.cidade].filter(Boolean).join(' · ') || 'Localização a confirmar';
+
     const match = node.querySelector('.match');
     if (pendente) {
       match.classList.add('match-pendente');
@@ -133,6 +191,7 @@ function render() {
     } else {
       match.innerHTML = `<strong>${valor(item.match?.final)}</strong><span>Match</span>`;
     }
+
     node.querySelector('.metricas').innerHTML = [
       metric('aluguel', item.aluguel != null ? fmt.format(item.aluguel) : '—'),
       metric('área', item.areaM2 != null ? `${item.areaM2} m²` : '—'),
@@ -140,9 +199,17 @@ function render() {
       metric('vagas', valor(item.vagas))
     ].join('');
 
+    const descricao = node.querySelector('.descricao');
+    if (item.descricao) {
+      descricao.textContent = item.descricao;
+      descricao.hidden = false;
+    }
+
+    const detalhes = detalhesImovel(item);
+    node.querySelector('.detalhes').innerHTML = detalhes.map(x => `<span>${x}</span>`).join('');
+
     const alertas = [];
     if (ehNovo(item)) alertas.push('● Novo nos últimos 7 dias');
-
     const primeiro = dataPtBr(item.primeiroVistoEm);
     const ultimo = dataPtBr(item.ultimoVistoEm);
     if (primeiro) alertas.push(`Visto desde ${primeiro}`);
@@ -166,6 +233,7 @@ function render() {
     if (item.armarios === true) alertas.push('✓ Armários');
     if (item.churrasqueira === true) alertas.push('✓ Churrasqueira');
     if (item.piscina === true) alertas.push('✓ Piscina');
+    if (item.hidromassagem === true) alertas.push('✓ Hidromassagem');
     const hospitalKm = distanciaHospital(item);
     if (hospitalKm) alertas.push(hospitalKm);
 
@@ -181,6 +249,13 @@ function render() {
 
     (item.match?.pontosAtencao || []).slice(0,2).forEach(x => alertas.push(`⚠ ${x}`));
     node.querySelector('.alertas').innerHTML = alertas.map(x => `<span>${x}</span>`).join('');
+
+    const origem = origemTexto(item);
+    const prov = node.querySelector('.proveniencia');
+    if (origem) {
+      prov.textContent = origem;
+      prov.hidden = false;
+    }
 
     const link = node.querySelector('.link');
     link.href = item.url || '#';
@@ -215,6 +290,13 @@ async function carregar() {
       fetch('data/status-coleta.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
     ]);
     state.imoveis = inv.imoveis || [];
+    const idsAtivos = new Set(state.imoveis.map(i => i.id).filter(Boolean));
+    const limpas = Object.fromEntries(Object.entries(state.decisoes).filter(([id]) => idsAtivos.has(id)));
+    if (Object.keys(limpas).length !== Object.keys(state.decisoes).length) {
+      state.decisoes = limpas;
+      salvarDecisoes();
+    }
+
     const el = document.querySelector('#statusColeta');
     if (!status) el.textContent = `Base atualizada: ${valor(inv.atualizadoEm, 'aguardando primeira coleta')}`;
     else {
@@ -223,7 +305,7 @@ async function carregar() {
       el.dataset.estado = status.estado;
     }
     render();
-  } catch (err) {
+  } catch {
     document.querySelector('#statusColeta').textContent = 'Não foi possível carregar os dados';
     document.querySelector('#lista').innerHTML = '<div class="vazio">Falha ao carregar a base publicada.</div>';
   }
