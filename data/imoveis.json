@@ -87,7 +87,9 @@
         "distanciaLinhaRetaKm": 0.5,
         "distanciaKm": 0.7,
         "tempoCarroMin": 2,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -178,7 +180,9 @@
         "distanciaLinhaRetaKm": 5.9,
         "distanciaKm": 8.7,
         "tempoCarroMin": 12,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -269,7 +273,9 @@
         "distanciaLinhaRetaKm": 4.7,
         "distanciaKm": 5.9,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -357,7 +363,9 @@
         "distanciaLinhaRetaKm": 6.2,
         "distanciaKm": 10.1,
         "tempoCarroMin": 15,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -447,7 +455,9 @@
         "distanciaLinhaRetaKm": 7.4,
         "distanciaKm": 9.4,
         "tempoCarroMin": 17,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -536,7 +546,9 @@
         "distanciaLinhaRetaKm": 4.8,
         "distanciaKm": 7.7,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -627,7 +639,9 @@
         "distanciaLinhaRetaKm": 2.5,
         "distanciaKm": 4.8,
         "tempoCarroMin": 7,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -718,7 +732,9 @@
         "distanciaLinhaRetaKm": 14.3,
         "distanciaKm": 18.3,
         "tempoCarroMin": 29,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -804,7 +820,9 @@
         "distanciaLinhaRetaKm": 3.2,
         "distanciaKm": 4.2,
         "tempoCarroMin": 8,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -892,7 +910,9 @@
         "distanciaLinhaRetaKm": 4.9,
         "distanciaKm": 6.4,
         "tempoCarroMin": 11,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -979,7 +999,9 @@
         "distanciaLinhaRetaKm": 4.4,
         "distanciaKm": 7.5,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1067,7 +1089,9 @@
         "distanciaLinhaRetaKm": 4.7,
         "distanciaKm": 7.6,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1159,7 +1183,9 @@
         "distanciaLinhaRetaKm": 0.7,
         "distanciaKm": 1.0,
         "tempoCarroMin": 3,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1247,7 +1273,9 @@
         "distanciaLinhaRetaKm": 3.3,
         "distanciaKm": 4.7,
         "tempoCarroMin": 9,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1337,7 +1365,9 @@
         "distanciaLinhaRetaKm": 8.8,
         "distanciaKm": 11.4,
         "tempoCarroMin": 18,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1425,7 +1455,9 @@
         "distanciaLinhaRetaKm": 2.8,
         "distanciaKm": 4.2,
         "tempoCarroMin": 6,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1515,7 +1547,9 @@
         "distanciaLinhaRetaKm": 2.1,
         "distanciaKm": 3.1,
         "tempoCarroMin": 7,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1604,7 +1638,9 @@
         "distanciaLinhaRetaKm": 3.6,
         "distanciaKm": 5.0,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1692,7 +1728,9 @@
         "distanciaLinhaRetaKm": 8.4,
         "distanciaKm": 10.4,
         "tempoCarroMin": 17,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1782,7 +1820,9 @@
         "distanciaLinhaRetaKm": 8.4,
         "distanciaKm": 10.4,
         "tempoCarroMin": 17,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1870,7 +1910,9 @@
         "distanciaLinhaRetaKm": 8.4,
         "distanciaKm": 10.4,
         "tempoCarroMin": 17,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -1962,7 +2004,9 @@
         "distanciaLinhaRetaKm": 7.7,
         "distanciaKm": 10.0,
         "tempoCarroMin": 18,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -2054,7 +2098,9 @@
         "distanciaLinhaRetaKm": 14.3,
         "distanciaKm": 18.3,
         "tempoCarroMin": 29,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       }
     },
     {
@@ -2074,7 +2120,9 @@
         "distanciaLinhaRetaKm": 4.7,
         "distanciaKm": 5.9,
         "tempoCarroMin": 10,
-        "fonteRota": "OSRM/OpenStreetMap"
+        "fonteRota": "OSRM/OpenStreetMap",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2156,7 +2204,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": true,
@@ -2223,7 +2278,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": false,
@@ -2297,7 +2359,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": false,
@@ -2371,7 +2440,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": true,
@@ -2438,7 +2514,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": true,
@@ -2505,7 +2588,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": true,
@@ -2572,7 +2662,14 @@
       "longitude": null,
       "fotos": [],
       "publicadoEm": null,
-      "hospital": {},
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
+      },
       "comercio": {},
       "avaliacaoVisual": {},
       "disponivel": false,
@@ -2652,7 +2749,9 @@
       "hospital": {
         "referencia": "Hospital Santa Mônica",
         "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
         "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
         "distanciaLinhaRetaKm": 8.4,
         "distanciaKm": 10.4,
         "tempoCarroMin": 17,
