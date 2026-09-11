@@ -12,7 +12,14 @@ CFG = {
         "aluguelIdealMin": 2000,
         "aluguelIdealMax": 3000,
         "aluguelOportunidadeMax": 3500,
-        "oportunidade": {"distanciaHospitalMaxKm": 8, "areaDestaqueM2": 110, "aceitaQuartoExtra": True, "aceitaArmarios": True},
+        "oportunidade": {
+            "distanciaHospitalMaxKm": 8,
+            "areaDestaqueM2": 110,
+            "aceitaQuartoExtra": True,
+            "aceitaArmarios": True,
+            "destaquesMinimosAcimaFaixa": 2,
+            "destaquesMinimosAbaixoFaixa": 1,
+        },
     },
     "pesosMatch": {"casa": 40, "localizacao": 25, "custoBeneficio": 20, "visual": 15},
 }
@@ -63,14 +70,29 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(result["status"], "inelegivel")
         self.assertIn("Fora da faixa principal sem justificativa de oportunidade forte", result["motivos"])
 
+    def test_price_below_main_range_uses_specific_opportunity_label(self):
+        item = base_item(aluguel=1800, areaM2=125)
+        result = eligibility(item, CFG)
+        self.assertTrue(result["elegivel"])
+        self.assertIn("Oportunidade abaixo da faixa", result["oportunidade"])
+        self.assertNotIn("Oportunidade excepcional", result["oportunidade"])
+
+    def test_above_main_range_needs_multiple_objective_highlights(self):
+        item = base_item(aluguel=3300, areaM2=125, armarios=None)
+        result = eligibility(item, CFG)
+        self.assertEqual(result["status"], "inelegivel")
+        self.assertIsNone(result["oportunidade"])
+
     def test_price_outside_main_range_can_be_exceptional_opportunity(self):
-        item = base_item(aluguel=3300, areaM2=125, hospital={"distanciaKm": 5, "localizacaoValidada": True})
+        item = base_item(aluguel=3300, areaM2=125, armarios=True, hospital={"distanciaKm": 5, "localizacaoValidada": True})
         result = eligibility(item, CFG)
         self.assertTrue(result["elegivel"])
         self.assertIn("Oportunidade excepcional", result["oportunidade"])
+        self.assertIn("área de 125 m²", result["oportunidade"])
+        self.assertIn("armários confirmados", result["oportunidade"])
 
     def test_unvalidated_distance_cannot_create_exceptional_opportunity(self):
-        item = base_item(aluguel=3300, areaM2=125, hospital={"distanciaKm": 3, "localizacaoValidada": False})
+        item = base_item(aluguel=3300, areaM2=125, armarios=True, hospital={"distanciaKm": 3, "localizacaoValidada": False})
         result = eligibility(item, CFG)
         self.assertEqual(result["status"], "inelegivel")
         self.assertIsNone(result["oportunidade"])
