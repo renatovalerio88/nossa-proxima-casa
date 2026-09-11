@@ -326,6 +326,30 @@
     "route:-20.178532,-44.905222:-20.120293,-44.895337": {
       "distanciaKm": 10.0,
       "tempoCarroMin": 15
+    },
+    "geo:bela vista, divinópolis, mg, brasil": {
+      "latitude": -20.1718684,
+      "longitude": -44.9047411,
+      "displayName": "Bela Vista, Divinópolis, Minas Gerais, Região Sudeste, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.171868,-44.904741:-20.120293,-44.895337": {
+      "distanciaKm": 9.0,
+      "tempoCarroMin": 13
+    },
+    "geo:catalão, divinópolis, mg, brasil": {
+      "latitude": -20.1533371,
+      "longitude": -44.9008033,
+      "displayName": "Catalão, Divinópolis, Minas Gerais, Região Sudeste, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.153337,-44.900803:-20.120293,-44.895337": {
+      "distanciaKm": 4.3,
+      "tempoCarroMin": 10
     }
   }
 }

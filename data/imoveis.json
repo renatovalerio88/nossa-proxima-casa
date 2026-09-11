@@ -556,7 +556,7 @@
       "tipo": "casa",
       "operacao": "aluguel",
       "cidade": "Divinópolis",
-      "bairro": "São José",
+      "bairro": "Bela Vista",
       "endereco": null,
       "aluguel": 2500.0,
       "condominio": null,
@@ -573,10 +573,10 @@
       "churrasqueira": null,
       "piscina": true,
       "hidromassagem": null,
-      "descricao": "Casa residencial anunciada como Bela Vista/São José, com 3 quartos, 2 banheiros, 142 m², área de serviço, varanda, quintal, piscina e 3 vagas.",
-      "fonteVerificacao": "portal_publico_anunciante_identificado",
+      "descricao": "Casa residencial anunciada como Bela Vista, com 142 m², 3 quartos, 2 banheiros, 3 vagas, quintal, varanda colonial, porão, área de serviço e piscina.",
+      "fonteVerificacao": "portal_publico_terceiro",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. O portal informa R$ 2.500, 3 quartos, 2 banheiros, 142 m², quintal e 3 vagas. Deve permanecer com proveniência explícita do portal/anunciante e ser revalidado na origem antes de visita/contratação.",
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava R$ 2.500/mês, IPTU de R$ 462, 142 m², 3 dormitórios, 2 banheiros, 3 vagas, quintal, varanda e piscina. O cabeçalho do portal exibe São José como localização ao mesmo tempo em que o título/descrição identificam Bela Vista; por isso o bairro deve ser revalidado antes da visita. Nenhuma imagem foi persistida porque a galeria não expôs nesta verificação uma URL estável adequada para armazenamento no radar.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-11",
       "ultimoVistoEm": "2026-09-11",
@@ -586,7 +586,7 @@
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. O portal informa R$ 2.500, 3 quartos, 2 banheiros, 142 m², quintal e 3 vagas. Deve permanecer com proveniência explícita do portal/anunciante e ser revalidado na origem antes de visita/contratação."
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava R$ 2.500/mês, IPTU de R$ 462, 142 m², 3 dormitórios, 2 banheiros, 3 vagas, quintal, varanda e piscina. O cabeçalho do portal exibe São José como localização ao mesmo tempo em que o título/descrição identificam Bela Vista; por isso o bairro deve ser revalidado antes da visita. Nenhuma imagem foi persistida porque a galeria não expôs nesta verificação uma URL estável adequada para armazenamento no radar."
       },
       "historico": [
         {
@@ -605,7 +605,7 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": 56.5,
+        "localizacao": 46.0,
         "custoBeneficio": 96.0,
         "visual": null,
         "final": null,
@@ -618,24 +618,24 @@
           "Área externa privativa",
           "Piscina",
           "Preço dentro da faixa principal",
-          "Hospital Santa Mônica: ~7.5 km (aprox. pelo bairro)"
+          "Hospital Santa Mônica: ~9 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
           "Armários: não informado",
           "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
         ]
       },
-      "latitude": -20.1584219,
-      "longitude": -44.9062321,
+      "latitude": -20.1718684,
+      "longitude": -44.9047411,
       "hospital": {
         "referencia": "Hospital Santa Mônica",
         "precisaoLocalizacao": "bairro",
         "fonteLocalizacao": "Nominatim/OpenStreetMap",
         "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
         "localizacaoValidada": true,
-        "distanciaLinhaRetaKm": 4.4,
-        "distanciaKm": 7.5,
-        "tempoCarroMin": 10,
+        "distanciaLinhaRetaKm": 5.8,
+        "distanciaKm": 9.0,
+        "tempoCarroMin": 13,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
@@ -1280,12 +1280,12 @@
       "tipo": "casa",
       "operacao": "aluguel",
       "cidade": "Divinópolis",
-      "bairro": null,
+      "bairro": "Catalão",
       "endereco": null,
       "aluguel": 2400.0,
       "condominio": null,
       "iptu": null,
-      "areaM2": 208.0,
+      "areaM2": 207.67,
       "terrenoM2": 274.0,
       "quartos": 4,
       "suites": 1,
@@ -1298,10 +1298,10 @@
       "piscina": null,
       "hidromassagem": null,
       "fotoUrl": "https://a.deztop.com/image/000/105/694/105694526_640x480.webp",
-      "descricao": "Casa com 4 quartos, 1 suíte, 2 banheiros, aproximadamente 208 m² construídos em lote de 274 m², quintal, barracão nos fundos, varanda e 4 vagas cobertas.",
-      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "descricao": "Casa anunciada como Planalto/Catalão com aproximadamente 207,67 m² construídos em lote de 274 m², 4 quartos, 1 suíte, 2 banheiros, cozinha com armário, quintal, barracão nos fundos, varanda e 4 vagas cobertas.",
+      "fonteVerificacao": "portal_publico_terceiro",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Há divergência de bairro: o título menciona Planalto enquanto o resumo estruturado cita Catalão. Para não inventar localização, bairro ficou null até validação. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio.",
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava R$ 2.400/mês, aproximadamente 207,67 m² de área construída, lote de 274 m², 4 dormitórios, 1 suíte, 2 banheiros, quintal, varanda, armário na cozinha, barracão nos fundos e 4 vagas cobertas. O título usa Planalto enquanto a localização exibida pelo portal é Catalão; o radar mantém Catalão como bairro observado e registra a divergência para confirmação antes da visita.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-11",
       "ultimoVistoEm": "2026-09-11",
@@ -1311,7 +1311,7 @@
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Há divergência de bairro: o título menciona Planalto enquanto o resumo estruturado cita Catalão. Para não inventar localização, bairro ficou null até validação. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio."
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava R$ 2.400/mês, aproximadamente 207,67 m² de área construída, lote de 274 m², 4 dormitórios, 1 suíte, 2 banheiros, quintal, varanda, armário na cozinha, barracão nos fundos e 4 vagas cobertas. O título usa Planalto enquanto a localização exibida pelo portal é Catalão; o radar mantém Catalão como bairro observado e registra a divergência para confirmação antes da visita."
       },
       "historico": [
         {
@@ -1330,35 +1330,38 @@
       },
       "match": {
         "casa": 100,
-        "localizacao": null,
+        "localizacao": 78.9,
         "custoBeneficio": 94.2,
         "visual": null,
         "final": null,
         "confianca": "incompleta",
-        "coberturaPesoPct": 60.0,
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
-          "208 m²",
+          "207.67 m²",
           "4 quartos",
           "2 banheiros",
           "Área externa privativa",
           "Armários",
-          "Preço dentro da faixa principal"
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~4.3 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Localização ainda não validada para calcular distância ao Hospital Santa Mônica",
           "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
         ]
       },
-      "latitude": null,
-      "longitude": null,
+      "latitude": -20.1533371,
+      "longitude": -44.9008033,
       "hospital": {
-        "distanciaKm": null,
-        "distanciaLinhaRetaKm": null,
-        "tempoCarroMin": null,
-        "precisaoLocalizacao": null,
-        "fonteLocalizacao": null,
-        "localizacaoValidada": false,
-        "fonteDistancia": null
+        "distanciaKm": 4.3,
+        "distanciaLinhaRetaKm": 3.7,
+        "tempoCarroMin": 10,
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "localizacaoValidada": true,
+        "fonteDistancia": null,
+        "referencia": "Hospital Santa Mônica",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "fonteRota": "OSRM/OpenStreetMap"
       }
     },
     {
