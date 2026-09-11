@@ -41,6 +41,13 @@ class CandidatePolicyContractTests(unittest.TestCase):
         self.assertIn("candidatos ativos", self.policy)
         self.assertIn("fora do radar ativo", self.policy)
 
+    def test_new_counter_only_counts_visible_undecided_active_candidates(self):
+        self.assertIn("const novosVisiveis = candidatos.filter", self.policy)
+        self.assertIn("decisao(i.id) === null", self.policy)
+        self.assertIn("state.novosIds.has(i.id)", self.policy)
+        self.assertIn("Novos (${novosVisiveis})", self.policy)
+        self.assertNotIn("Novos (${state.novosIds.size})", self.policy)
+
 
 if __name__ == "__main__":
     unittest.main()
