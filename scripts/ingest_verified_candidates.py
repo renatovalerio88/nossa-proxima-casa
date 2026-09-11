@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
+from urllib.parse import urlsplit, urlunsplit
 
 from core import DATA_DIR, calculate_match, eligibility, load_json, property_fingerprint, save_json, stable_id
 
@@ -66,22 +67,55 @@ def _match_sort_value(item: Dict[str, Any]) -> float:
         return -1.0
 
 
+def _canonical_history_url(value: Any) -> str:
+    """Cria uma chave estável para URLs equivalentes usadas no histórico.
+
+    O mesmo anúncio pode aparecer nos lotes como http/https, com/sem ``www`` ou
+    com barra final. Essas diferenças não representam uma nova observação e não
+    devem multiplicar eventos no histórico publicado.
+    """
+    if not isinstance(value, str):
+        return ""
+    raw = value.strip()
+    if not raw:
+        return ""
+
+    try:
+        parts = urlsplit(raw)
+    except ValueError:
+        return raw.rstrip("/").lower()
+
+    host = (parts.hostname or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    port = parts.port
+    netloc = f"{host}:{port}" if port else host
+    path = parts.path.rstrip("/") or "/"
+    scheme = "https" if host else parts.scheme.lower()
+    return urlunsplit((scheme, netloc, path, parts.query, ""))
+
+
+def _history_key(event: Dict[str, Any]) -> tuple:
+    return (
+        event.get("data"),
+        event.get("campo"),
+        event.get("fonte"),
+        _canonical_history_url(event.get("url")),
+    )
+
+
 def _dedupe_history(history: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Remove eventos duplicados preservando a primeira ocorrência e a ordem.
 
     A ingestão roda repetidamente no GitHub Actions e relê todos os lotes
     verificados. O histórico precisa ser idempotente: a mesma observação não pode
-    crescer a cada execução só porque o lote foi reprocessado.
+    crescer a cada execução só porque o lote foi reprocessado ou porque a mesma
+    URL apareceu com uma variante equivalente.
     """
     unique: List[Dict[str, Any]] = []
     seen = set()
     for event in history:
-        key = (
-            event.get("data"),
-            event.get("campo"),
-            event.get("fonte"),
-            event.get("url"),
-        )
+        key = _history_key(event)
         if key in seen:
             continue
         seen.add(key)
@@ -133,7 +167,8 @@ def merge_candidates(
             "fonte": incoming.get("fonte"),
             "url": incoming.get("url"),
         }
-        if event not in history:
+        event_key = _history_key(event)
+        if all(_history_key(existing) != event_key for existing in history):
             history.append(event)
         merged["historico"] = history
         merged["elegibilidade"] = eligibility(merged, cfg)
