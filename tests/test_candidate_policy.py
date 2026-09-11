@@ -29,6 +29,7 @@ class CandidatePolicyContractTests(unittest.TestCase):
         self.assertIn("preco >= 2000 && preco <= 3000 ? 0 : 1", self.policy)
         self.assertIn("prioridadeCandidato = function prioridadeCandidatoComFaixa", self.policy)
         self.assertIn("nivel + prioridadeFaixaPrincipal(item)", self.policy)
+        self.assertIn("const faixa = prioridadeFaixaPrincipal(a) - prioridadeFaixaPrincipal(b)", self.policy)
 
     def test_ineligible_listing_never_enters_active_candidates(self):
         self.assertIn("elegibilidade.status === 'inelegivel'", self.policy)
@@ -53,6 +54,24 @@ class CandidatePolicyContractTests(unittest.TestCase):
         self.assertIn("state.novosIds.has(i.id)", self.policy)
         self.assertIn("Novos (${novosVisiveis})", self.policy)
         self.assertNotIn("Novos (${state.novosIds.size})", self.policy)
+
+    def test_match_is_only_used_when_all_real_components_are_available(self):
+        self.assertIn("function matchConfiavel", self.policy)
+        self.assertIn("componentes.every(v => Number.isFinite(Number(v)))", self.policy)
+        self.assertIn("m.confianca !== 'incompleta'", self.policy)
+        self.assertIn("Number.isFinite(Number(m.final))", self.policy)
+
+    def test_default_ranking_prefers_real_information_without_fabricating_score(self):
+        self.assertIn("function prioridadeQualidade", self.policy)
+        self.assertIn("const temMatch = matchConfiavel(item) ? 0 : 1", self.policy)
+        self.assertIn("const temFoto", self.policy)
+        self.assertIn("localizacaoValidada === true", self.policy)
+        self.assertIn("Não cria nota", self.policy)
+
+    def test_match_order_does_not_promote_incomplete_match(self):
+        self.assertIn("if (ordem === 'match')", self.policy)
+        self.assertIn("if (aTem !== bTem) return aTem ? -1 : 1", self.policy)
+        self.assertIn("if (aTem && bTem)", self.policy)
 
 
 if __name__ == "__main__":
