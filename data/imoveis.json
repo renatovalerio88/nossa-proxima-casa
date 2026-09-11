@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "atualizadoEm": "2026-09-10",
+  "atualizadoEm": "2026-09-11",
   "imoveis": [
     {
       "fonte": "Chaves na Mão / direto com proprietário",
@@ -2901,7 +2901,7 @@
       "fingerprint": "19a154047b1fb67fb7f83d0a",
       "id": "imv_19a154047b1fb67fb7f83d0a",
       "primeiroVistoEm": "2026-09-08",
-      "ultimoVistoEm": "2026-09-10",
+      "ultimoVistoEm": "2026-09-11",
       "historico": [
         {
           "data": "2026-09-08",
