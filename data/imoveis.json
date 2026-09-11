@@ -1637,6 +1637,97 @@
       }
     },
     {
+      "fonte": "Imovelweb",
+      "codigoFonte": "3039496763",
+      "url": "https://www.imovelweb.com.br/propriedades/excelente-casa-de-3-quartos-no-bom-pastor-3039496763.html",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bom Pastor",
+      "endereco": null,
+      "aluguel": 2700.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/39/49/67/63/1200x1200/4882782609.jpg",
+      "descricao": "Casa térrea no Bom Pastor com 3 quartos, sendo 1 suíte, 2 banheiros, aproximadamente 200 m², 2 vagas, armários, área gourmet com churrasqueira e área de serviço.",
+      "fonteVerificacao": "portal_publico_anuncio_direto_proprietario",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Imovelweb verificada em 11/09/2026. O anúncio informa locação direta com o proprietário e confirma aluguel residencial de R$ 2.700, 200 m², 3 quartos, 2 banheiros, 2 vagas, área gourmet com churrasqueira, armários e que IPTU/condomínio/seguro locatício estão incluídos no valor anunciado. A foto principal foi usada somente porque a própria página pública expôs imagem específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "bdf8b86a18fba5b160168526",
+      "id": "imv_bdf8b86a18fba5b160168526",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do Imovelweb verificada em 11/09/2026. O anúncio informa locação direta com o proprietário e confirma aluguel residencial de R$ 2.700, 200 m², 3 quartos, 2 banheiros, 2 vagas, área gourmet com churrasqueira, armários e que IPTU/condomínio/seguro locatício estão incluídos no valor anunciado. A foto principal foi usada somente porque a própria página pública expôs imagem específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imovelweb",
+          "url": "https://www.imovelweb.com.br/propriedades/excelente-casa-de-3-quartos-no-bom-pastor-3039496763.html"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 95,
+        "custoBeneficio": 92.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~1 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1191,
+      "longitude": -44.8885593,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 0.7,
+        "distanciaKm": 1.0,
+        "tempoCarroMin": 3,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Chaves na Mão / direto com proprietário",
       "codigoFonte": "44391550",
       "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
