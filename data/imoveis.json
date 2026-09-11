@@ -144,66 +144,6 @@
           "campo": "observacao_verificada",
           "fonte": "Imóveis Casa Nova",
           "url": "https://imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
-        },
-        {
-          "data": "2026-09-11",
-          "campo": "observacao_verificada",
-          "fonte": "Imóveis Casa Nova",
-          "url": "https://imoveiscasanova.com.br/imovel/122262"
         }
       ],
       "elegibilidade": {
@@ -1475,13 +1415,11 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": false,
-        "status": "inelegivel",
-        "motivos": [
-          "Fora da faixa principal sem justificativa de oportunidade forte"
-        ],
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
         "pendencias": [],
-        "oportunidade": null
+        "oportunidade": "Oportunidade excepcional: área de 231 m² + armários confirmados e ~1.5 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": 100,
@@ -4627,12 +4565,6 @@
           "campo": "disponivel",
           "de": true,
           "para": false
-        },
-        {
-          "data": "2026-09-08",
-          "campo": "disponivel",
-          "de": false,
-          "para": true
         }
       ],
       "fotoUrl": "https://cdn.imoview.com.br/somar/Imoveis/10484/isdet-whatsapp-image-2026-05-28-at-112224-1779982761.jpeg?1780062712"
