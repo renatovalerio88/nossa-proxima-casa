@@ -63,6 +63,25 @@ def private_external_area(item: Dict[str, Any]) -> Optional[bool]:
     return explicit if explicit is not None else tri_state(item.get("quintal"))
 
 
+def reliable_photo_urls(item: Dict[str, Any]) -> List[str]:
+    raw: List[Any] = [item.get("fotoUrl"), item.get("imagemUrl")]
+    for field in ("fotos", "imagens"):
+        value = item.get(field)
+        if isinstance(value, list):
+            raw.extend(value)
+    unique: List[str] = []
+    seen = set()
+    for value in raw:
+        if not isinstance(value, str):
+            continue
+        url = value.strip()
+        if not url.lower().startswith("https://") or url in seen:
+            continue
+        seen.add(url)
+        unique.append(url)
+    return unique
+
+
 def score_house(item: Dict[str, Any], cfg: Dict[str, Any]) -> Tuple[Optional[float], List[str], List[str]]:
     c = cfg["criterios"]
     positives, warnings = [], []
@@ -128,10 +147,11 @@ def score_location(item: Dict[str, Any]) -> Tuple[Optional[float], List[str], Li
 
 
 def score_visual(item: Dict[str, Any]) -> Tuple[Optional[float], List[str], List[str]]:
-    photos = item.get("fotos") if isinstance(item.get("fotos"), list) else []
+    photos = reliable_photo_urls(item)
     note = (item.get("avaliacaoVisual") or {}).get("nota")
-    if photos and isinstance(note, (int, float)): return round(clamp(note * 10), 1), [f"Avaliação visual: {note:g}/10"], []
-    return None, [], ["Avaliação visual indisponível sem fotos reais avaliadas"]
+    if photos and isinstance(note, (int, float)):
+        return round(clamp(note * 10), 1), [f"Avaliação visual: {note:g}/10"], []
+    return None, [], ["Avaliação visual indisponível sem fotos reais HTTPS avaliadas"]
 
 
 def _hospital_km(item: Dict[str, Any]) -> Optional[float]:
