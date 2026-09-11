@@ -1866,13 +1866,11 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": false,
-        "status": "inelegivel",
-        "motivos": [
-          "Fora da faixa principal sem justificativa de oportunidade forte"
-        ],
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
         "pendencias": [],
-        "oportunidade": null
+        "oportunidade": "Oportunidade excepcional: área de 150 m² + 4 quartos e ~7.2 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": 100,
