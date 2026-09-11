@@ -66,6 +66,29 @@ def _match_sort_value(item: Dict[str, Any]) -> float:
         return -1.0
 
 
+def _dedupe_history(history: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Remove eventos duplicados preservando a primeira ocorrência e a ordem.
+
+    A ingestão roda repetidamente no GitHub Actions e relê todos os lotes
+    verificados. O histórico precisa ser idempotente: a mesma observação não pode
+    crescer a cada execução só porque o lote foi reprocessado.
+    """
+    unique: List[Dict[str, Any]] = []
+    seen = set()
+    for event in history:
+        key = (
+            event.get("data"),
+            event.get("campo"),
+            event.get("fonte"),
+            event.get("url"),
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(deepcopy(event))
+    return unique
+
+
 def merge_candidates(
     inventory: Dict[str, Any], candidates_doc: Dict[str, Any], cfg: Dict[str, Any]
 ) -> Dict[str, Any]:
@@ -103,19 +126,25 @@ def merge_candidates(
                 merged[key] = value
         merged["primeiroVistoEm"] = old.get("primeiroVistoEm") or incoming["primeiroVistoEm"]
         merged["ultimoVistoEm"] = incoming_last
-        history = deepcopy(old.get("historico") or [])
+        history = _dedupe_history(old.get("historico") or [])
         event = {
             "data": incoming_last,
             "campo": "observacao_verificada",
             "fonte": incoming.get("fonte"),
             "url": incoming.get("url"),
         }
-        if not history or history[-1] != event:
+        if event not in history:
             history.append(event)
         merged["historico"] = history
         merged["elegibilidade"] = eligibility(merged, cfg)
         merged["match"] = calculate_match(merged, cfg)
         current[pid] = merged
+
+    # Normaliza também imóveis não tocados nesta execução, para limpar duplicações
+    # históricas já acumuladas por versões anteriores do pipeline.
+    for item in current.values():
+        if item.get("historico"):
+            item["historico"] = _dedupe_history(item["historico"])
 
     result["imoveis"] = sorted(
         current.values(),
