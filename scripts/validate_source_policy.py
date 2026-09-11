@@ -3,16 +3,18 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import Dict, Set
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
-BLOCKED_STATUS = {
-    "nao_automatizar_sem_autorizacao",
-    "web_crawling_proibido_sem_autorizacao",
-    "descoberta_manual_sem_automacao",
-    "manual_verificado_sem_automacao",
-    "catalogo_publico_confirmado_sem_automacao",
+# Automação é opt-in: qualquer status novo fica bloqueado até ser explicitamente
+# revisado e incluído nesta lista. Isso evita que uma simples mudança de rótulo
+# habilite coleta sem querer.
+ALLOWED_AUTOMATION_STATUS = {
+    "piloto_baixa_frequencia",
+    "automacao_autorizada",
+    "api_oficial",
 }
 
 
@@ -25,7 +27,15 @@ def allowed_sources(fontes: Dict) -> Set[str]:
         row["nome"]
         for row in fontes.get("fontes", [])
         if row.get("coletaAutomatica") is True
+        and row.get("status") in ALLOWED_AUTOMATION_STATUS
     }
+
+
+def _is_https_url(value: object) -> bool:
+    if not isinstance(value, str) or not value.strip():
+        return False
+    parsed = urlparse(value.strip())
+    return parsed.scheme == "https" and bool(parsed.netloc)
 
 
 def validate_source_flags(fontes: Dict) -> None:
@@ -35,13 +45,21 @@ def validate_source_flags(fontes: Dict) -> None:
     if duplicates:
         raise ValueError("Fontes duplicadas: " + ", ".join(duplicates))
 
+    unnamed = [str(index) for index, row in enumerate(rows) if not row.get("nome")]
+    if unnamed:
+        raise ValueError("Fontes sem nome nos índices: " + ", ".join(unnamed))
+
     unsafe = [
         row.get("nome")
         for row in rows
-        if row.get("coletaAutomatica") is True and row.get("status") in BLOCKED_STATUS
+        if row.get("coletaAutomatica") is True
+        and row.get("status") not in ALLOWED_AUTOMATION_STATUS
     ]
     if unsafe:
-        raise ValueError("Fontes bloqueadas marcadas para automação: " + ", ".join(sorted(unsafe)))
+        raise ValueError(
+            "Fontes sem status explicitamente autorizado marcadas para automação: "
+            + ", ".join(sorted(unsafe))
+        )
 
     missing_reason = [
         row.get("nome")
@@ -52,6 +70,16 @@ def validate_source_flags(fontes: Dict) -> None:
     ]
     if missing_reason:
         raise ValueError("Fontes sem justificativa de política: " + ", ".join(sorted(missing_reason)))
+
+    invalid_urls = [
+        row.get("nome")
+        for row in rows
+        if row.get("siteUrl") is not None and not _is_https_url(row.get("siteUrl"))
+    ]
+    if invalid_urls:
+        raise ValueError(
+            "Fontes com siteUrl inválida ou não HTTPS: " + ", ".join(sorted(invalid_urls))
+        )
 
 
 def validate_seed_sources(seeds: Dict, fontes: Dict) -> None:
