@@ -194,6 +194,18 @@
       "cidade": "Divinópolis",
       "uf": "BR-MG",
       "fonte": "Nominatim/OpenStreetMap"
+    },
+    "geo:belvedere ii, divinópolis, mg, brasil": {
+      "latitude": -20.1762915,
+      "longitude": -44.9080035,
+      "displayName": "Congregação Cristã no Brasil - Bela Vista, 40, Rua Lagoa Dourada, Bela Vista, Divinópolis, Minas Gerais, Região Sudeste, 35501-344, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.176292,-44.908003:-20.120293,-44.895337": {
+      "distanciaKm": 9.6,
+      "tempoCarroMin": 14
     }
   }
 }

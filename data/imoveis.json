@@ -3,6 +3,190 @@
   "atualizadoEm": "2026-09-11",
   "imoveis": [
     {
+      "fonte": "Imóveis Casa Nova",
+      "codigoFonte": "122380",
+      "url": "https://www.imoveiscasanova.com.br/imovel/122380",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Belvedere II",
+      "endereco": null,
+      "aluguel": 2300.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 75.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial no Belvedere II com 3 dormitórios, sendo 1 suíte, 2 banheiros, sala, cozinha com armário e cooktop, área de serviço coberta, área externa aberta nos fundos, varanda frontal, 1 vaga e aproximadamente 75 m² de área principal.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio explicita área externa aberta nos fundos, permitindo confirmar área externa privativa. A área principal anunciada é 75 m² e deve ser tratada pelo motor conforme o critério mínimo oficial, sem flexibilização manual.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "6342a2c69ad314da17731371",
+      "id": "imv_6342a2c69ad314da17731371",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio explicita área externa aberta nos fundos, permitindo confirmar área externa privativa. A área principal anunciada é 75 m² e deve ser tratada pelo motor conforme o critério mínimo oficial, sem flexibilização manual."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122380"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Área abaixo do mínimo"
+        ],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 41.8,
+        "custoBeneficio": 92.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~9.6 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Área abaixo de 90 m²",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1762915,
+      "longitude": -44.9080035,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 6.4,
+        "distanciaKm": 9.6,
+        "tempoCarroMin": 14,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Imóveis Casa Nova",
+      "codigoFonte": "122262",
+      "url": "https://www.imoveiscasanova.com.br/imovel/122262",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Centro",
+      "endereco": null,
+      "aluguel": 1900.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 150.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 0,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": null,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial na região central com aproximadamente 150 m², sala ampla, copa, 3 dormitórios, 2 banheiros, terraço com bancada em granito e armário embutido e garagem em fila indiana.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio cita terraço, mas não declara de forma suficientemente inequívoca que ele atende ao requisito de área externa privativa; esse campo permanece null. Como o aluguel é inferior a R$ 2.000, o imóvel não deve entrar automaticamente no radar ativo nem ganhar vantagem de ranking.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "b1d666ba0326c166e332e56f",
+      "id": "imv_b1d666ba0326c166e332e56f",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio cita terraço, mas não declara de forma suficientemente inequívoca que ele atende ao requisito de área externa privativa; esse campo permanece null. Como o aluguel é inferior a R$ 2.000, o imóvel não deve entrar automaticamente no radar ativo nem ganhar vantagem de ranking."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 36.2,
+        "custoBeneficio": 69.1,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "150 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Armários",
+          "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Área externa privativa não confirmada",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1059298,
+      "longitude": -44.9741266,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 8.4,
+        "distanciaKm": 10.4,
+        "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Chaves na Mão / direto com proprietário",
       "codigoFonte": "44391550",
       "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
@@ -1394,24 +1578,30 @@
       "churrasqueira": true,
       "piscina": true,
       "hidromassagem": null,
-      "descricao": "Casa residencial com aproximadamente 200 m², 3 quartos (1 suíte), cozinha com armário e bancadas, área de serviço com armário, quintal amplo, área gourmet com churrasqueira, piscina, pomar, 3 vagas e terreno de aproximadamente 4.000 m².",
-      "fonteVerificacao": "pagina_publica",
+      "descricao": "Casa residencial com aproximadamente 200 m², 3 quartos sendo 1 suíte, 2 banheiros, área de serviço, área com fogão a lenha e forno, quintal amplo, área gourmet com churrasqueira, piscina, pomar, jardim externo gramado e 3 vagas. Terreno anunciado com aproximadamente 4.000 m².",
+      "fonteVerificacao": "site_oficial_imobiliaria",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página.",
+      "notaProveniencia": "Página oficial da Ponto Sete verificada em 11/09/2026. O anúncio confirma aluguel de R$ 3.200, 3 quartos, 2 banheiros, 200 m² privativos, quintal amplo, área gourmet, piscina e terreno de aproximadamente 4.000 m². Por estar acima da faixa principal, deve competir apenas se o motor confirmar oportunidade excepcional e localização/distância adequadas.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-09",
-      "ultimoVistoEm": "2026-09-09",
+      "ultimoVistoEm": "2026-09-11",
       "fingerprint": "06519f78d5bad5edcae04bc1",
       "id": "imv_06519f78d5bad5edcae04bc1",
       "proveniencia": {
         "modo": "verificacao_manual",
-        "observadoEm": "2026-09-09",
+        "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Registro observado manualmente em página pública em 09/09/2026. Não renovar ultimoVistoEm automaticamente até nova verificação da própria página."
+        "nota": "Página oficial da Ponto Sete verificada em 11/09/2026. O anúncio confirma aluguel de R$ 3.200, 3 quartos, 2 banheiros, 200 m² privativos, quintal amplo, área gourmet, piscina e terreno de aproximadamente 4.000 m². Por estar acima da faixa principal, deve competir apenas se o motor confirmar oportunidade excepcional e localização/distância adequadas."
       },
       "historico": [
         {
           "data": "2026-09-09",
+          "campo": "observacao_verificada",
+          "fonte": "Ponto Sete Imóveis",
+          "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973"
+        },
+        {
+          "data": "2026-09-11",
           "campo": "observacao_verificada",
           "fonte": "Ponto Sete Imóveis",
           "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/2973"
@@ -1461,7 +1651,8 @@
         "fonteRota": "OSRM/OpenStreetMap",
         "fonteLocalizacao": "Nominatim/OpenStreetMap",
         "localizacaoValidada": true
-      }
+      },
+      "areaExternaPrivativa": true
     },
     {
       "fonte": "Gerais Imobiliária",
