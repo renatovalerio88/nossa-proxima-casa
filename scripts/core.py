@@ -111,6 +111,8 @@ def score_cost(item: Dict[str, Any], cfg: Dict[str, Any]) -> Tuple[Optional[floa
 
 def score_location(item: Dict[str, Any]) -> Tuple[Optional[float], List[str], List[str]]:
     hospital = item.get("hospital") or {}
+    if hospital.get("localizacaoValidada") is not True:
+        return None, [], ["Localização ainda não validada para calcular distância ao Hospital Santa Mônica"]
     km, straight_km = hospital.get("distanciaKm"), hospital.get("distanciaLinhaRetaKm")
     precision = norm_text(hospital.get("precisaoLocalizacao"))
     if isinstance(km, (int, float)):
@@ -134,6 +136,8 @@ def score_visual(item: Dict[str, Any]) -> Tuple[Optional[float], List[str], List
 
 def _hospital_km(item: Dict[str, Any]) -> Optional[float]:
     hospital = item.get("hospital") or {}
+    if hospital.get("localizacaoValidada") is not True:
+        return None
     for field in ("distanciaKm", "distanciaLinhaRetaKm"):
         value = hospital.get(field)
         if isinstance(value, (int, float)): return float(value)
