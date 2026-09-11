@@ -180,6 +180,18 @@
           "campo": "observacao_verificada",
           "fonte": "Imóveis Casa Nova",
           "url": "https://imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://imoveiscasanova.com.br/imovel/122262"
         }
       ],
       "elegibilidade": {
@@ -1040,6 +1052,366 @@
         "distanciaKm": 10.1,
         "tempoCarroMin": 15,
         "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "303579983",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-2-vagas-novo-paraiso-divinopolismg-303579983",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Novo Paraíso",
+      "endereco": "Rua Jefferson Ribeiro Rocha",
+      "aluguel": 2200.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 130.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": null,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial no Novo Paraíso com 3 quartos, 1 suíte, 2 banheiros, 130 m², cozinha com armários planejados, área gourmet com churrasqueira elétrica, piscina, área de serviço e 2 vagas.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Apesar de área gourmet e piscina estarem confirmadas, a página não declara de forma inequívoca que a área externa é privativa; por isso areaExternaPrivativa permanece null e o imóvel deve ficar A confirmar até validação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "aa6a9dd2e7a9d261abb446fb",
+      "id": "imv_aa6a9dd2e7a9d261abb446fb",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Apesar de área gourmet e piscina estarem confirmadas, a página não declara de forma inequívoca que a área externa é privativa; por isso areaExternaPrivativa permanece null e o imóvel deve ficar A confirmar até validação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-2-vagas-novo-paraiso-divinopolismg-303579983"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 47.4,
+        "custoBeneficio": 90.5,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "130 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Armários",
+          "Churrasqueira",
+          "Piscina",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~8.8 km"
+        ],
+        "pontosAtencao": [
+          "Área externa privativa não confirmada",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.175207,
+      "longitude": -44.858255,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 7.2,
+        "distanciaKm": 8.8,
+        "tempoCarroMin": 15,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "302719707",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-centro-divinopolismg-aluguel-mg-divinopolis-302719707",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Centro",
+      "endereco": "Rua Bahia",
+      "aluguel": 2700.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 350.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 3,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://a.deztop.com/image/000/079/820/79820721_640x480.webp",
+      "descricao": "Casa residencial/comercial em dois pavimentos no Centro, com 3 quartos, 3 banheiros, 350 m², cozinha com armários, área de serviço, varanda, quintal, terraço e 1 vaga.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "1270a61f2f78fea281848ae6",
+      "id": "imv_1270a61f2f78fea281848ae6",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-centro-divinopolismg-aluguel-mg-divinopolis-302719707"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 83.8,
+        "custoBeneficio": 92.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "350 m²",
+          "3 quartos",
+          "3 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~3.6 km"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.145678,
+      "longitude": -44.8951979,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 2.8,
+        "distanciaKm": 3.6,
+        "tempoCarroMin": 8,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "310131021",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-2-vagas-sao-joao-deus-divinopolismg-aluguel-310131021",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São João de Deus",
+      "endereco": null,
+      "aluguel": 2800.0,
+      "condominio": null,
+      "iptu": 1502.0,
+      "areaM2": 100.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://a.deztop.com/image/000/105/695/105695465_640x480.webp",
+      "descricao": "Casa na região do São João de Deus com 3 quartos, 2 banheiros, 100 m², duas salas, copa, duas cozinhas, área de serviço, área externa e garagem para 2 carros.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. A página confirma explicitamente área externa. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e valor do IPTU na origem antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "5465cd4f4aa0eb508fd6567a",
+      "id": "imv_5465cd4f4aa0eb508fd6567a",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. A página confirma explicitamente área externa. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e valor do IPTU na origem antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-2-vagas-sao-joao-deus-divinopolismg-aluguel-310131021"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 94.8,
+        "localizacao": 76.8,
+        "custoBeneficio": 90.5,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "100 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~4.6 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Armários: não informado",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1468569,
+      "longitude": -44.8753521,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.6,
+        "distanciaKm": 4.6,
+        "tempoCarroMin": 9,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "310130954",
+      "url": "https://mg.mgfimoveis.com.br/casa-localizada-no-bairro-planalto-aluguel-mg-divinopolis-area-servico-310130954",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": null,
+      "endereco": null,
+      "aluguel": 2400.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 208.0,
+      "terrenoM2": 274.0,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 4,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://a.deztop.com/image/000/105/694/105694526_640x480.webp",
+      "descricao": "Casa com 4 quartos, 1 suíte, 2 banheiros, aproximadamente 208 m² construídos em lote de 274 m², quintal, barracão nos fundos, varanda e 4 vagas cobertas.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Há divergência de bairro: o título menciona Planalto enquanto o resumo estruturado cita Catalão. Para não inventar localização, bairro ficou null até validação. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "054dbdfb7c0e3ae61c4dcd7f",
+      "id": "imv_054dbdfb7c0e3ae61c4dcd7f",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Há divergência de bairro: o título menciona Planalto enquanto o resumo estruturado cita Catalão. Para não inventar localização, bairro ficou null até validação. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-localizada-no-bairro-planalto-aluguel-mg-divinopolis-area-servico-310130954"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": null,
+        "custoBeneficio": 94.2,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 60.0,
+        "motivosPositivos": [
+          "208 m²",
+          "4 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal"
+        ],
+        "pontosAtencao": [
+          "Localização ainda não validada para calcular distância ao Hospital Santa Mônica",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": null,
+      "longitude": null,
+      "hospital": {
+        "distanciaKm": null,
+        "distanciaLinhaRetaKm": null,
+        "tempoCarroMin": null,
+        "precisaoLocalizacao": null,
+        "fonteLocalizacao": null,
+        "localizacaoValidada": false
       }
     },
     {

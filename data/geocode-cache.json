@@ -242,6 +242,42 @@
     "route:-20.128264,-44.873167:-20.120293,-44.895337": {
       "distanciaKm": 3.3,
       "tempoCarroMin": 7
+    },
+    "geo:rua jefferson ribeiro rocha, divinópolis, mg, brasil": {
+      "latitude": -20.175207,
+      "longitude": -44.858255,
+      "displayName": "Rua Jefferson Ribeiro Rocha, Santa Rosa, Divinópolis, Minas Gerais, Região Sudeste, 35500-556, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.175207,-44.858255:-20.120293,-44.895337": {
+      "distanciaKm": 8.8,
+      "tempoCarroMin": 15
+    },
+    "geo:rua bahia, divinópolis, mg, brasil": {
+      "latitude": -20.145678,
+      "longitude": -44.8951979,
+      "displayName": "Rua Bahia, Vila Belo Horizonte, Centro, Divinópolis, Minas Gerais, Região Sudeste, 35500-188, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.145678,-44.895198:-20.120293,-44.895337": {
+      "distanciaKm": 3.6,
+      "tempoCarroMin": 8
+    },
+    "geo:são joão de deus, divinópolis, mg, brasil": {
+      "latitude": -20.1468569,
+      "longitude": -44.8753521,
+      "displayName": "São João de Deus, Divinópolis, Minas Gerais, Região Sudeste, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.146857,-44.875352:-20.120293,-44.895337": {
+      "distanciaKm": 4.6,
+      "tempoCarroMin": 9
     }
   }
 }
