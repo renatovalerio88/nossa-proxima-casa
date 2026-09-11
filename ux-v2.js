@@ -1,15 +1,19 @@
 (() => {
   const renderBase = render;
-  const textoStatusBase = textoStatus;
 
   function aplicarRotulos() {
     document.querySelectorAll('.qualidade[data-tipo="elegivel"]').forEach(el => {
       el.textContent = 'Mínimos OK';
-      el.title = 'Quartos, banheiros, área mínima e área externa confirmados. Não significa recomendação final.';
+      el.title = 'Cumpre os critérios mínimos confirmados. Isso não significa recomendação final.';
     });
-    document.querySelectorAll('.match-pendente span').forEach(el => {
-      el.textContent = 'Match a calcular';
+
+    document.querySelectorAll('.match-pendente').forEach(el => {
+      const texto = el.querySelector('span');
+      if (texto) texto.textContent = 'Sem nota';
+      el.title = 'O Match só aparece quando todos os componentes necessários estão disponíveis. Mínimos OK e Match são avaliações diferentes.';
+      el.setAttribute('aria-label', 'Match ainda não calculável');
     });
+
     document.querySelectorAll('.proveniencia').forEach(el => {
       el.classList.add('proveniencia-secundaria');
     });
@@ -21,12 +25,16 @@
   };
 
   textoStatus = function textoStatusUX(inv, status, fontesData) {
-    const ativos = (inv.imoveis || []).filter(ativo);
-    const elegiveis = ativos.filter(i => i.elegibilidade?.elegivel === true).length;
     const atualizado = dataPtBr(inv.atualizadoEm || status?.fim);
-    const partes = [`${ativos.length} casas no radar`, `${elegiveis} com mínimos confirmados`];
-    if (atualizado) partes.push(`atualizado em ${atualizado}`);
-    return partes.join(' · ');
+    const fontes = fontesData?.fontes || [];
+    const imobiliarias = fontes.filter(f => f.tipo === 'imobiliaria').length;
+    const partes = [];
+    if (atualizado) partes.push(`Atualizado em ${atualizado}`);
+    if (imobiliarias) partes.push(`${imobiliarias} imobiliárias monitoradas`);
+    if (status && Number(status.imoveisComFotos || 0) > 0) {
+      partes.push(`${Number(status.imoveisComFotos)} anúncios com foto real na coleta atual`);
+    }
+    return partes.length ? partes.join(' · ') : 'Radar atualizado';
   };
 
   statusFonte = function statusFonteUX(fonte) {
@@ -37,6 +45,7 @@
     return ['Site em verificação', 'validacao'];
   };
 
+  // A home sempre abre no inventário útil. "Novos" continua disponível como filtro de revisão.
   state.tab = 'todos';
   const somente = document.querySelector('#somenteElegiveis');
   if (somente) somente.checked = false;
