@@ -166,14 +166,31 @@ def _hospital_km(item: Dict[str, Any]) -> Optional[float]:
 
 def opportunity_justification(item: Dict[str, Any], cfg: Dict[str, Any]) -> Optional[str]:
     c, op = cfg["criterios"], cfg["criterios"].get("oportunidade") or {}
-    km = _hospital_km(item); max_km = op.get("distanciaHospitalMaxKm", 8)
-    if km is None or km > max_km: return None
+    price = item.get("aluguel")
+    if not isinstance(price, (int, float)):
+        return None
+    km = _hospital_km(item)
+    max_km = op.get("distanciaHospitalMaxKm", 8)
+    if km is None or km > max_km:
+        return None
+
     highlights = []
     area = item.get("areaM2")
-    if isinstance(area, (int, float)) and area >= op.get("areaDestaqueM2", c["areaMinimaM2"] + 20): highlights.append(f"área de {area:g} m²")
-    if op.get("aceitaQuartoExtra") and isinstance(item.get("quartos"), int) and item["quartos"] > c["quartosMinimos"]: highlights.append(f"{item['quartos']} quartos")
-    if op.get("aceitaArmarios") and tri_state(item.get("armarios")) is True: highlights.append("armários confirmados")
-    return f"Oportunidade excepcional: {highlights[0]} e ~{km:g} km do Hospital Santa Mônica" if highlights else None
+    if isinstance(area, (int, float)) and area >= op.get("areaDestaqueM2", c["areaMinimaM2"] + 20):
+        highlights.append(f"área de {area:g} m²")
+    if op.get("aceitaQuartoExtra") and isinstance(item.get("quartos"), int) and item["quartos"] > c["quartosMinimos"]:
+        highlights.append(f"{item['quartos']} quartos")
+    if op.get("aceitaArmarios") and tri_state(item.get("armarios")) is True:
+        highlights.append("armários confirmados")
+
+    above_main = price > c["aluguelIdealMax"]
+    minimum = op.get("destaquesMinimosAcimaFaixa", 2) if above_main else op.get("destaquesMinimosAbaixoFaixa", 1)
+    if len(highlights) < minimum:
+        return None
+
+    label = "Oportunidade excepcional" if above_main else "Oportunidade abaixo da faixa"
+    details = " + ".join(highlights[:minimum])
+    return f"{label}: {details} e ~{km:g} km do Hospital Santa Mônica"
 
 
 def eligibility(item: Dict[str, Any], cfg: Dict[str, Any]) -> Dict[str, Any]:
