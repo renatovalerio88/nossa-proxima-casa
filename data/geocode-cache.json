@@ -230,6 +230,18 @@
     "route:-20.140103,-44.866111:-20.120293,-44.895337": {
       "distanciaKm": 5.2,
       "tempoCarroMin": 10
+    },
+    "geo:rua alvorada, divinópolis, mg, brasil": {
+      "latitude": -20.1282641,
+      "longitude": -44.8731674,
+      "displayName": "Rua Alvorada, Manoel Valinhas, Itaí, Divinópolis, Minas Gerais, Região Sudeste, 35500-259, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.128264,-44.873167:-20.120293,-44.895337": {
+      "distanciaKm": 3.3,
+      "tempoCarroMin": 7
     }
   }
 }

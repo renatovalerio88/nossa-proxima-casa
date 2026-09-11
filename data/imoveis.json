@@ -168,6 +168,18 @@
           "campo": "observacao_verificada",
           "fonte": "Imóveis Casa Nova",
           "url": "https://imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://imoveiscasanova.com.br/imovel/122262"
         }
       ],
       "elegibilidade": {
@@ -846,6 +858,187 @@
         "distanciaLinhaRetaKm": 3.8,
         "distanciaKm": 5.2,
         "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "301526056",
+      "url": "https://mg.mgfimoveis.com.br/alugo-casa-triplex-no-manoel-valinhas-aluguel-mg-divinopolis-301526056",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Manoel Valinhas",
+      "endereco": "Rua Alvorada",
+      "aluguel": 2100.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa triplex mobiliada no Manoel Valinhas com 3 quartos, 2 banheiros, 200 m², sacada, varanda frontal, churrasqueira e garagem para um carro e uma moto.",
+      "fonteVerificacao": "portal_publico",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100, 3 quartos, 2 banheiros, 200 m², varanda e churrasqueira. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "c96e7246ebf756bb8c3fdaee",
+      "id": "imv_c96e7246ebf756bb8c3fdaee",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100, 3 quartos, 2 banheiros, 200 m², varanda e churrasqueira. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/alugo-casa-triplex-no-manoel-valinhas-aluguel-mg-divinopolis-301526056"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 85.9,
+        "custoBeneficio": 88.7,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Churrasqueira",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~3.3 km"
+        ],
+        "pontosAtencao": [
+          "Armários: não informado",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1282641,
+      "longitude": -44.8731674,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 2.5,
+        "distanciaKm": 3.3,
+        "tempoCarroMin": 7,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "303218858",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-belvedere-divinopolismg-303218858",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Belvedere",
+      "endereco": "Rua Vital Santos",
+      "aluguel": 1200.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 120.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 3,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial no Belvedere com 3 quartos, 1 suíte, 2 banheiros, 120 m², área de serviço coberta, quintal amplo e 3 vagas cobertas.",
+      "fonteVerificacao": "portal_publico_anunciante_identificado",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. Está muito abaixo da faixa principal e não deve receber vantagem automática; só pode permanecer no radar se o motor confirmar oportunidade real e demais critérios. Revalidar disponibilidade/preço na origem.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "f5f3f0a2b5409b97ffd23fc8",
+      "id": "imv_f5f3f0a2b5409b97ffd23fc8",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. Está muito abaixo da faixa principal e não deve receber vantagem automática; só pode permanecer no radar se o motor confirmar oportunidade real e demais critérios. Revalidar disponibilidade/preço na origem."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-belvedere-divinopolismg-303218858"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 96.5,
+        "localizacao": 38.3,
+        "custoBeneficio": 50,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "120 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Hospital Santa Mônica: ~10.1 km"
+        ],
+        "pontosAtencao": [
+          "Armários: não informado",
+          "Preço abaixo da faixa principal; só vale como oportunidade real",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1755449,
+      "longitude": -44.8985936,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 6.2,
+        "distanciaKm": 10.1,
+        "tempoCarroMin": 15,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
