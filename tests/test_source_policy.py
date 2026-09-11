@@ -16,13 +16,20 @@ class SourcePolicyTests(unittest.TestCase):
                     "nome": "Bloqueada",
                     "status": "nao_automatizar_sem_autorizacao",
                     "coletaAutomatica": False,
+                    "siteUrl": "https://example.com/",
                     "motivo": "Termos não autorizam automação.",
                 },
             ]
         }
 
-    def test_allowed_sources_only_returns_automatic(self):
+    def test_allowed_sources_only_returns_automatic_with_explicit_status(self):
         self.assertEqual(allowed_sources(self.fontes), {"Permitida"})
+        fontes = {
+            "fontes": [
+                {"nome": "Status novo", "status": "novo_status", "coletaAutomatica": True},
+            ]
+        }
+        self.assertEqual(allowed_sources(fontes), set())
 
     def test_validate_accepts_allowed_source(self):
         validate_seed_sources({"urls": [{"fonte": "Permitida"}]}, self.fontes)
@@ -35,7 +42,7 @@ class SourcePolicyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "não auditadas"):
             validate_seed_sources({"urls": [{"fonte": "Desconhecida"}]}, self.fontes)
 
-    def test_rejects_blocked_status_marked_as_automatic(self):
+    def test_rejects_non_allowlisted_status_marked_as_automatic(self):
         fontes = {
             "fontes": [
                 {
@@ -46,7 +53,20 @@ class SourcePolicyTests(unittest.TestCase):
                 }
             ]
         }
-        with self.assertRaisesRegex(ValueError, "bloqueadas"):
+        with self.assertRaisesRegex(ValueError, "sem status explicitamente autorizado"):
+            validate_source_flags(fontes)
+
+    def test_rejects_unknown_future_status_marked_as_automatic(self):
+        fontes = {
+            "fontes": [
+                {
+                    "nome": "Fonte futura",
+                    "status": "status_novo_ainda_nao_auditado",
+                    "coletaAutomatica": True,
+                }
+            ]
+        }
+        with self.assertRaisesRegex(ValueError, "sem status explicitamente autorizado"):
             validate_source_flags(fontes)
 
     def test_rejects_blocked_source_without_reason(self):
@@ -76,6 +96,46 @@ class SourcePolicyTests(unittest.TestCase):
         }
         with self.assertRaisesRegex(ValueError, "duplicadas"):
             validate_source_flags(fontes)
+
+    def test_rejects_source_without_name(self):
+        fontes = {
+            "fontes": [
+                {"status": "piloto_baixa_frequencia", "coletaAutomatica": True},
+            ]
+        }
+        with self.assertRaisesRegex(ValueError, "sem nome"):
+            validate_source_flags(fontes)
+
+    def test_accepts_https_official_site(self):
+        fontes = {
+            "fontes": [
+                {
+                    "nome": "Imobiliária",
+                    "status": "manual_verificado_sem_automacao",
+                    "coletaAutomatica": False,
+                    "siteUrl": "https://imobiliaria.example/",
+                    "motivo": "Acesso direto confirmado.",
+                }
+            ]
+        }
+        validate_source_flags(fontes)
+
+    def test_rejects_http_or_malformed_site_url(self):
+        for url in ("http://example.com/", "example.com", ""):
+            fontes = {
+                "fontes": [
+                    {
+                        "nome": "Imobiliária",
+                        "status": "manual_verificado_sem_automacao",
+                        "coletaAutomatica": False,
+                        "siteUrl": url,
+                        "motivo": "Acesso direto confirmado.",
+                    }
+                ]
+            }
+            with self.subTest(url=url):
+                with self.assertRaisesRegex(ValueError, "siteUrl inválida"):
+                    validate_source_flags(fontes)
 
 
 if __name__ == "__main__":
