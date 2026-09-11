@@ -24,6 +24,12 @@ class CandidatePolicyContractTests(unittest.TestCase):
         self.assertIn("preco < 2000 || preco > 3000", self.policy)
         self.assertIn("elegibilidade.elegivel === true && temJustificativaOportunidade(item)", self.policy)
 
+    def test_main_price_band_has_ranking_priority_inside_same_eligibility_level(self):
+        self.assertIn("function prioridadeFaixaPrincipal", self.policy)
+        self.assertIn("preco >= 2000 && preco <= 3000 ? 0 : 1", self.policy)
+        self.assertIn("prioridadeCandidato = function prioridadeCandidatoComFaixa", self.policy)
+        self.assertIn("nivel + prioridadeFaixaPrincipal(item)", self.policy)
+
     def test_ineligible_listing_never_enters_active_candidates(self):
         self.assertIn("elegibilidade.status === 'inelegivel'", self.policy)
         self.assertIn("return false", self.policy)
