@@ -53,8 +53,9 @@ renderResumo = function renderResumoComPoliticaDeCandidatos() {
   ].join('');
 
   const fav = candidatos.filter(i => decisao(i.id) === 'favorito').length;
+  const novosVisiveis = candidatos.filter(i => decisao(i.id) === null && i?.id && state.novosIds.has(i.id)).length;
   document.querySelector('[data-tab="favoritados"]').textContent = fav ? `Favoritados (${fav})` : 'Favoritados';
-  document.querySelector('[data-tab="novos"]').textContent = state.novosIds.size ? `Novos (${state.novosIds.size})` : 'Novos';
+  document.querySelector('[data-tab="novos"]').textContent = novosVisiveis ? `Novos (${novosVisiveis})` : 'Novos';
 };
 
 textoStatus = function textoStatusComRadar(inv, status, fontesData) {
