@@ -187,6 +187,191 @@
       }
     },
     {
+      "fonte": "Ponto Sete Imóveis",
+      "codigoFonte": "3437",
+      "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/3437",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Porto Velho",
+      "endereco": null,
+      "aluguel": 3500.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 6,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial de aproximadamente 200 m² em dois pavimentos, com 6 quartos, 1 suíte, 2 banheiros, varanda, duas áreas de serviço, área gourmet com churrasqueira, quintal e 1 vaga de garagem.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da Ponto Sete verificada em 11/09/2026. O anúncio confirma R$ 3.500 de aluguel, 6 quartos, 2 banheiros, 200 m² privativos, quintal e área gourmet. Por estar no teto da faixa excepcional, só deve entrar no radar ativo se o motor confirmar múltiplos diferenciais objetivos e localização/distância adequadas.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "c929237d58642014df206826",
+      "id": "imv_c929237d58642014df206826",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da Ponto Sete verificada em 11/09/2026. O anúncio confirma R$ 3.500 de aluguel, 6 quartos, 2 banheiros, 200 m² privativos, quintal e área gourmet. Por estar no teto da faixa excepcional, só deve entrar no radar ativo se o motor confirmar múltiplos diferenciais objetivos e localização/distância adequadas."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Ponto Sete Imóveis",
+          "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/3437"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 76.1,
+        "custoBeneficio": 55.2,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "200 m²",
+          "6 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Hospital Santa Mônica: ~4.7 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1463965,
+      "longitude": -44.8809205,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.3,
+        "distanciaKm": 4.7,
+        "tempoCarroMin": 9,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Imóveis Casa Nova",
+      "codigoFonte": "122202",
+      "url": "https://www.imoveiscasanova.com.br/imovel/122202",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Padre Eustáquio",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": null,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": null,
+      "vagas": 1,
+      "areaExternaPrivativa": null,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa nova para locação no Padre Eustáquio com 3 dormitórios, sala ampla, cozinha planejada, varanda, área de serviço e garagem com portão eletrônico.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O cabeçalho estruturado informa 2 banheiros, mas a descrição textual menciona apenas 1 banheiro; para não escolher arbitrariamente entre dados conflitantes, banheiros permanece null. A página também não informa metragem nem confirma área externa privativa; portanto o imóvel deve permanecer A confirmar, apesar de estar na faixa principal de preço.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "ffbe7ba8b9146d9a67866d96",
+      "id": "imv_ffbe7ba8b9146d9a67866d96",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O cabeçalho estruturado informa 2 banheiros, mas a descrição textual menciona apenas 1 banheiro; para não escolher arbitrariamente entre dados conflitantes, banheiros permanece null. A página também não informa metragem nem confirma área externa privativa; portanto o imóvel deve permanecer A confirmar, apesar de estar na faixa principal de preço."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122202"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Banheiros não confirmados",
+          "Área não confirmada",
+          "Área externa privativa não confirmada"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 43.2,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "3 quartos",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~9.4 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Área não informada",
+          "Banheiros não informados",
+          "Área externa privativa não confirmada",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1722775,
+      "longitude": -44.8509976,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 7.4,
+        "distanciaKm": 9.4,
+        "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Chaves na Mão / direto com proprietário",
       "codigoFonte": "44391550",
       "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
