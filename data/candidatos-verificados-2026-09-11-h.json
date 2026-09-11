@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "atualizadoEm": "2026-09-11",
+  "observacao": "Oitavo lote incremental verificado manualmente em página pública. Nenhuma coleta automática foi habilitada. Campos não confirmados permanecem null. Foto principal incluída somente porque a própria página pública expõe imagem específica do anúncio.",
+  "imoveis": [
+    {
+      "fonte": "Imovelweb",
+      "codigoFonte": "3039496763",
+      "url": "https://www.imovelweb.com.br/propriedades/excelente-casa-de-3-quartos-no-bom-pastor-3039496763.html",
+      "observadoEm": "2026-09-11",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bom Pastor",
+      "endereco": null,
+      "aluguel": 2700.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/39/49/67/63/1200x1200/4882782609.jpg",
+      "descricao": "Casa térrea no Bom Pastor com 3 quartos, sendo 1 suíte, 2 banheiros, aproximadamente 200 m², 2 vagas, armários, área gourmet com churrasqueira e área de serviço.",
+      "fonteVerificacao": "portal_publico_anuncio_direto_proprietario",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do Imovelweb verificada em 11/09/2026. O anúncio informa locação direta com o proprietário e confirma aluguel residencial de R$ 2.700, 200 m², 3 quartos, 2 banheiros, 2 vagas, área gourmet com churrasqueira, armários e que IPTU/condomínio/seguro locatício estão incluídos no valor anunciado. A foto principal foi usada somente porque a própria página pública expôs imagem específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+    }
+  ]
+}
