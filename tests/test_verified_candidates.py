@@ -50,7 +50,7 @@ class VerifiedCandidatesTest(unittest.TestCase):
             "churrasqueira": True,
             "piscina": True,
             "hidromassagem": None,
-            "hospital": {"distanciaKm": 4.0},
+            "hospital": {"distanciaKm": 4.0, "localizacaoValidada": True},
             "coletaAutomaticaPermitida": False,
             "notaProveniencia": "Observação humana verificável.",
         }
