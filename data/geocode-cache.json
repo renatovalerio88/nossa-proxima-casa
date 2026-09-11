@@ -302,6 +302,18 @@
     "route:-20.117471,-44.894790:-20.120293,-44.895337": {
       "distanciaKm": 0.5,
       "tempoCarroMin": 1
+    },
+    "geo:nações, divinópolis, mg, brasil": {
+      "latitude": -20.1575131,
+      "longitude": -44.8586795,
+      "displayName": "Nações, Divinópolis, Minas Gerais, Região Sudeste, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.157513,-44.858680:-20.120293,-44.895337": {
+      "distanciaKm": 7.2,
+      "tempoCarroMin": 13
     }
   }
 }

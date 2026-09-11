@@ -1728,6 +1728,189 @@
       }
     },
     {
+      "fonte": "ZAP Imóveis / Francisco Imóveis",
+      "codigoFonte": "2902699101",
+      "url": "https://www.zapimoveis.com.br/imovel/aluguel-casa-4-quartos-com-area-de-servico-esplanada-divinopolis-mg-200m2-id-2902699101/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Esplanada",
+      "endereco": null,
+      "aluguel": 2700.0,
+      "condominio": 0.0,
+      "iptu": null,
+      "areaM2": 200.0,
+      "terrenoM2": 300.0,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa residencial no Esplanada com aproximadamente 200 m² de área construída em lote de 300 m², 4 quartos com armário, sendo 1 suíte, banheiro social, 3 salas, cozinha, área de serviço, varanda colonial, quintal, cômodo de despejo e 1 vaga coberta.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do ZAP Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis (CRECI 03251-J-MG), estava atualizado no mesmo dia e confirmava aluguel de R$ 2.700, 200 m², 4 quartos, 1 suíte, 2 banheiros no conjunto suíte + banheiro social, quintal, armários e 1 vaga. Revalidar disponibilidade e condições diretamente com a imobiliária antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "c791830d9108d7e4abe4d28a",
+      "id": "imv_c791830d9108d7e4abe4d28a",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do ZAP Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis (CRECI 03251-J-MG), estava atualizado no mesmo dia e confirmava aluguel de R$ 2.700, 200 m², 4 quartos, 1 suíte, 2 banheiros no conjunto suíte + banheiro social, quintal, armários e 1 vaga. Revalidar disponibilidade e condições diretamente com a imobiliária antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "ZAP Imóveis / Francisco Imóveis",
+          "url": "https://www.zapimoveis.com.br/imovel/aluguel-casa-4-quartos-com-area-de-servico-esplanada-divinopolis-mg-200m2-id-2902699101/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 74.0,
+        "custoBeneficio": 92.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "200 m²",
+          "4 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~5 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1523015,
+      "longitude": -44.8904982,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.6,
+        "distanciaKm": 5.0,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "ZAP Imóveis / Francisco Imóveis",
+      "codigoFonte": "2908741517",
+      "url": "https://www.zapimoveis.com.br/imovel/aluguel-casa-4-quartos-com-churrasqueira-nacoes-divinopolis-mg-150m2-id-2908741517/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Nações",
+      "endereco": null,
+      "aluguel": 3200.0,
+      "condominio": 0.0,
+      "iptu": null,
+      "areaM2": 150.0,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 3,
+      "vagas": 5,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa residencial no Nações com 150 m², 4 quartos, sendo 1 suíte, 3 banheiros, cozinha planejada com armários, área gourmet, churrasqueira, varanda colonial, quintal amplo e 5 vagas.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do ZAP Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis (CRECI 03251-J-MG), estava atualizado no mesmo dia e confirmava aluguel de R$ 3.200, 150 m², 4 quartos, 3 banheiros, área gourmet, churrasqueira, quintal grande, armários/cozinha planejada e 5 vagas. Por estar acima da faixa principal, deve permanecer ativo somente se a regra objetiva de oportunidade excepcional for satisfeita após enriquecimento de localização.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "7d03bd1084499073fb6a0a7b",
+      "id": "imv_7d03bd1084499073fb6a0a7b",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do ZAP Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis (CRECI 03251-J-MG), estava atualizado no mesmo dia e confirmava aluguel de R$ 3.200, 150 m², 4 quartos, 3 banheiros, área gourmet, churrasqueira, quintal grande, armários/cozinha planejada e 5 vagas. Por estar acima da faixa principal, deve permanecer ativo somente se a regra objetiva de oportunidade excepcional for satisfeita após enriquecimento de localização."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "ZAP Imóveis / Francisco Imóveis",
+          "url": "https://www.zapimoveis.com.br/imovel/aluguel-casa-4-quartos-com-churrasqueira-nacoes-divinopolis-mg-150m2-id-2908741517/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 58.6,
+        "custoBeneficio": 67.7,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "150 m²",
+          "4 quartos",
+          "3 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Hospital Santa Mônica: ~7.2 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1575131,
+      "longitude": -44.8586795,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 5.6,
+        "distanciaKm": 7.2,
+        "tempoCarroMin": 13,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Chaves na Mão / direto com proprietário",
       "codigoFonte": "44391550",
       "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
