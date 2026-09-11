@@ -22,7 +22,7 @@ def base_item(**overrides):
     item = {
         "cidade": "Divinópolis", "tipo": "casa", "areaM2": 110, "quartos": 3,
         "banheiros": 2, "quintal": True, "aluguel": 2800,
-        "hospital": {"distanciaKm": 4.0},
+        "hospital": {"distanciaKm": 4.0, "localizacaoValidada": True},
     }
     item.update(overrides)
     return item
@@ -58,16 +58,23 @@ class CoreTests(unittest.TestCase):
         self.assertIn("Acima do teto de oportunidade", result["motivos"])
 
     def test_price_below_main_range_is_not_automatic_good_match(self):
-        weak = base_item(aluguel=1800, areaM2=90, armarios=None, hospital={"distanciaKm": 9})
+        weak = base_item(aluguel=1800, areaM2=90, armarios=None, hospital={"distanciaKm": 9, "localizacaoValidada": True})
         result = eligibility(weak, CFG)
         self.assertEqual(result["status"], "inelegivel")
         self.assertIn("Fora da faixa principal sem justificativa de oportunidade forte", result["motivos"])
 
     def test_price_outside_main_range_can_be_exceptional_opportunity(self):
-        item = base_item(aluguel=3300, areaM2=125, hospital={"distanciaKm": 5})
+        item = base_item(aluguel=3300, areaM2=125, hospital={"distanciaKm": 5, "localizacaoValidada": True})
         result = eligibility(item, CFG)
         self.assertTrue(result["elegivel"])
         self.assertIn("Oportunidade excepcional", result["oportunidade"])
+
+    def test_unvalidated_distance_cannot_create_exceptional_opportunity(self):
+        item = base_item(aluguel=3300, areaM2=125, hospital={"distanciaKm": 3, "localizacaoValidada": False})
+        result = eligibility(item, CFG)
+        self.assertEqual(result["status"], "inelegivel")
+        self.assertIsNone(result["oportunidade"])
+        self.assertIn("Fora da faixa principal sem justificativa de oportunidade forte", result["motivos"])
 
     def test_visual_without_real_photos_is_null_not_default_50(self):
         item = base_item(avaliacaoVisual={"nota": 8}, fotos=[])
@@ -82,6 +89,18 @@ class CoreTests(unittest.TestCase):
         match = calculate_match(item, CFG)
         self.assertIsNone(match["final"])
         self.assertEqual(match["confianca"], "incompleta")
+
+    def test_match_rejects_stale_distance_without_location_validation(self):
+        item = base_item(
+            fotos=["https://example.com/real.jpg"],
+            avaliacaoVisual={"nota": 8},
+            hospital={"distanciaKm": 2.0, "localizacaoValidada": False},
+        )
+        match = calculate_match(item, CFG)
+        self.assertIsNone(match["localizacao"])
+        self.assertIsNone(match["final"])
+        self.assertEqual(match["confianca"], "incompleta")
+        self.assertTrue(any("Localização ainda não validada" in aviso for aviso in match["pontosAtencao"]))
 
     def test_real_photos_allow_visual_when_assessed(self):
         item = base_item(fotos=["https://example.com/real.jpg"], avaliacaoVisual={"nota": 8})
