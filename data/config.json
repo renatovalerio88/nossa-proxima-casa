@@ -16,7 +16,9 @@
       "distanciaHospitalMaxKm": 8,
       "areaDestaqueM2": 110,
       "aceitaQuartoExtra": true,
-      "aceitaArmarios": true
+      "aceitaArmarios": true,
+      "destaquesMinimosAcimaFaixa": 2,
+      "destaquesMinimosAbaixoFaixa": 1
     },
     "desejaveis": ["armarios"],
     "bonus": ["churrasqueira", "piscina", "hidromassagem"]
