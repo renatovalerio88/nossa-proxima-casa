@@ -112,10 +112,6 @@ function renderResumo() {
   document.querySelector('[data-tab="novos"]').textContent = state.novosIds.size ? `Novos (${state.novosIds.size})` : 'Novos';
 }
 
-function ultimoEventoPreco(item) {
-  const eventos = (item.historico || []).filter(e => e.campo === 'aluguel');
-  return eventos.length ? eventos[eventos.length - 1] : null;
-}
 function distanciaHospital(item) {
   const hospital = item.hospital || {};
   if (hospital.localizacaoValidada !== true) return null;
@@ -273,8 +269,9 @@ function renderImoveis() {
 function statusFonte(fonte) {
   if (fonte.coletaAutomatica === true) return ['Coleta automática', 'automatico'];
   const s = String(fonte.status || '');
-  if (s.includes('catalogo_publico') || s.includes('manual_verificado') || s.includes('auditoria_avancada')) return ['Acesso direto · no radar', 'radar'];
-  if (s.includes('nao_automatizar')) return ['Acesso direto · sem automação', 'manual'];
+  if (s.includes('nao_automatizar') || s.includes('sem_automacao')) return ['Acesso direto · sem automação', 'manual'];
+  if (s.includes('catalogo_') || s.includes('manual_verificado') || s.includes('auditoria_avancada') || s.includes('identidade_site_confirmados')) return ['Acesso direto · no radar', 'radar'];
+  if (fonte.siteUrl) return ['Acesso direto · em validação', 'validacao'];
   return ['Em validação', 'validacao'];
 }
 function renderImobiliarias() {
@@ -285,7 +282,9 @@ function renderImobiliarias() {
     lista.innerHTML = '<div class="vazio"><strong>Nenhuma imobiliária carregada.</strong></div>';
     return;
   }
-  lista.innerHTML = `<div class="fontes-intro"><strong>Imobiliárias de Divinópolis no radar</strong><span>${imobiliarias.length} operações identificadas. Quando a coleta automática não é permitida ou ainda não foi validada, use o acesso direto ao site.</span></div>` + imobiliarias.map(fonte => {
+  const automaticas = imobiliarias.filter(f => f.coletaAutomatica === true).length;
+  const comSite = imobiliarias.filter(f => Boolean(f.siteUrl)).length;
+  lista.innerHTML = `<div class="fontes-intro"><strong>Imobiliárias de Divinópolis no radar</strong><span>${imobiliarias.length} operações identificadas · ${comSite} com acesso direto · ${automaticas} com coleta automática autorizada. As demais ficam disponíveis para consulta manual enquanto política e catálogo são validados.</span></div>` + imobiliarias.map(fonte => {
     const [status, tipo] = statusFonte(fonte);
     const link = fonte.siteUrl ? `<a href="${fonte.siteUrl}" target="_blank" rel="noopener noreferrer">Abrir site</a>` : '<span class="sem-link">Site oficial ainda não identificado</span>';
     return `<article class="fonte-card"><div><strong>${fonte.nome}</strong><span class="fonte-status" data-tipo="${tipo}">${status}</span></div><p>${fonte.motivo || 'Operação local identificada; catálogo e política de coleta ainda em validação.'}</p>${link}</article>`;
@@ -306,14 +305,13 @@ function render() {
 function textoStatus(inv, status, fontesData) {
   const acompanhados = (inv.imoveis || []).filter(ativo).length;
   const atualizado = dataPtBr(inv.atualizadoEm || status?.fim);
-  const fontesRadar = (fontesData?.fontes || []).length;
+  const fontes = fontesData?.fontes || [];
+  const imobiliarias = fontes.filter(f => f.tipo === 'imobiliaria');
+  const automaticasAtivas = imobiliarias.filter(f => f.coletaAutomatica === true).length;
   const partes = [`${acompanhados} anúncios acompanhados`];
-  if (status) {
-    const fontes = Object.entries(status.fontes || {});
-    const fontesComSucesso = fontes.filter(([,v]) => Number(v.sucessos || 0) > 0).length;
-    if (fontes.length) partes.push(`${fontesComSucesso} fonte${fontesComSucesso === 1 ? '' : 's'} automática${fontesComSucesso === 1 ? '' : 's'} com retorno`);
-  }
-  if (fontesRadar) partes.push(`${fontesRadar} fontes no radar`);
+  if (imobiliarias.length) partes.push(`${imobiliarias.length} imobiliárias no radar`);
+  if (automaticasAtivas) partes.push(`${automaticasAtivas} fonte${automaticasAtivas === 1 ? '' : 's'} automática${automaticasAtivas === 1 ? '' : 's'} ativa${automaticasAtivas === 1 ? '' : 's'}`);
+  if (status && Number(status.imoveisComFotos || 0) > 0) partes.push(`${Number(status.imoveisComFotos)} com foto real na coleta atual`);
   if (atualizado) partes.push(`atualizado em ${atualizado}`);
   return partes.join(' · ');
 }
