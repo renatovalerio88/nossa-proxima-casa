@@ -2301,7 +2301,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2375,7 +2376,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2456,7 +2458,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2537,7 +2540,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2611,7 +2615,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2685,7 +2690,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2759,7 +2765,8 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
       },
       "comercio": {},
       "avaliacaoVisual": {},
@@ -2838,13 +2845,14 @@
       ],
       "publicadoEm": null,
       "hospital": {
-        "referencia": "Hospital Santa Mônica",
+        "distanciaKm": 10.4,
+        "distanciaLinhaRetaKm": 8.4,
         "precisaoLocalizacao": "bairro",
+        "fonteDistancia": null,
+        "localizacaoValidada": true,
+        "referencia": "Hospital Santa Mônica",
         "fonteLocalizacao": "Nominatim/OpenStreetMap",
         "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
-        "localizacaoValidada": true,
-        "distanciaLinhaRetaKm": 8.4,
-        "distanciaKm": 10.4,
         "tempoCarroMin": 17,
         "fonteRota": "OSRM/OpenStreetMap"
       },
