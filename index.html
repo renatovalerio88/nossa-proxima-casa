@@ -7,6 +7,7 @@
   <meta name="description" content="Painel pessoal para acompanhar casas de aluguel em Divinópolis.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="ux-v2.css">
 </head>
 <body>
   <header class="topo">
@@ -22,11 +23,11 @@
     <section class="resumo" id="resumo"></section>
 
     <nav class="tabs" aria-label="Filtros principais">
-      <button class="tab ativo" data-tab="novos">Novos</button>
+      <button class="tab" data-tab="novos">Novos</button>
       <button class="tab" data-tab="a-confirmar">A confirmar</button>
       <button class="tab" data-tab="favoritados">Favoritados</button>
       <button class="tab" data-tab="descartados">Descartados</button>
-      <button class="tab" data-tab="todos">Todos</button>
+      <button class="tab ativo" data-tab="todos">Todos</button>
       <button class="tab tab-fontes" data-tab="imobiliarias">Imobiliárias</button>
     </nav>
 
@@ -38,7 +39,7 @@
           <option value="preco">Menor aluguel</option>
         </select>
       </label>
-      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só elegíveis confirmados</label>
+      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só com mínimos confirmados</label>
       <button class="marcar-vistos" id="marcarNovosVistos" type="button" hidden>Marcar novos como vistos</button>
     </section>
 
@@ -93,5 +94,6 @@
   <script src="app.js" defer></script>
   <script src="candidate-policy.js" defer></script>
   <script src="gallery.js" defer></script>
+  <script src="ux-v2.js" defer></script>
 </body>
 </html>
