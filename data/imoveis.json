@@ -514,7 +514,7 @@
           "Área abaixo do mínimo"
         ],
         "pendencias": [],
-        "oportunidade": "Oportunidade excepcional: armários confirmados e ~7.7 km do Hospital Santa Mônica"
+        "oportunidade": "Oportunidade abaixo da faixa: armários confirmados e ~7.7 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": null,
@@ -967,7 +967,7 @@
         "status": "elegivel",
         "motivos": [],
         "pendencias": [],
-        "oportunidade": "Oportunidade excepcional: área de 683 m² e ~6.4 km do Hospital Santa Mônica"
+        "oportunidade": "Oportunidade excepcional: área de 683 m² + 4 quartos e ~6.4 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": 100,
@@ -1057,7 +1057,7 @@
         "status": "elegivel",
         "motivos": [],
         "pendencias": [],
-        "oportunidade": "Oportunidade excepcional: área de 320 m² e ~7.5 km do Hospital Santa Mônica"
+        "oportunidade": "Oportunidade abaixo da faixa: área de 320 m² e ~7.5 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": 100,
@@ -1148,7 +1148,7 @@
           "Banheiros abaixo do mínimo"
         ],
         "pendencias": [],
-        "oportunidade": "Oportunidade excepcional: área de 120 m² e ~7.6 km do Hospital Santa Mônica"
+        "oportunidade": "Oportunidade abaixo da faixa: área de 120 m² e ~7.6 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": null,
@@ -1327,12 +1327,14 @@
       ],
       "elegibilidade": {
         "elegivel": false,
-        "status": "pendente",
-        "motivos": [],
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
         "pendencias": [
           "Área externa privativa não confirmada"
         ],
-        "oportunidade": "Oportunidade excepcional: armários confirmados e ~4.7 km do Hospital Santa Mônica"
+        "oportunidade": null
       },
       "match": {
         "casa": null,
@@ -2239,7 +2241,7 @@
           "Banheiros abaixo do mínimo"
         ],
         "pendencias": [],
-        "oportunidade": "Oportunidade excepcional: armários confirmados e ~5.9 km do Hospital Santa Mônica"
+        "oportunidade": "Oportunidade abaixo da faixa: armários confirmados e ~5.9 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": null,
