@@ -96,7 +96,7 @@
     {
       "fonte": "Imóveis Casa Nova",
       "codigoFonte": "122262",
-      "url": "https://www.imoveiscasanova.com.br/imovel/122262",
+      "url": "https://imoveiscasanova.com.br/imovel/122262",
       "tipo": "casa",
       "operacao": "aluguel",
       "cidade": "Divinópolis",
@@ -111,16 +111,16 @@
       "suites": 0,
       "banheiros": 2,
       "vagas": 1,
-      "areaExternaPrivativa": null,
+      "areaExternaPrivativa": true,
       "quintal": null,
       "armarios": true,
       "churrasqueira": null,
       "piscina": null,
       "hidromassagem": null,
-      "descricao": "Casa residencial na região central com aproximadamente 150 m², sala ampla, copa, 3 dormitórios, 2 banheiros, terraço com bancada em granito e armário embutido e garagem em fila indiana.",
+      "descricao": "Casa residencial na região central com aproximadamente 150 m², 3 dormitórios, 2 banheiros, sala, copa, cozinha e terraço privativo com bancada e armário, além de garagem.",
       "fonteVerificacao": "site_oficial_imobiliaria",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio cita terraço, mas não declara de forma suficientemente inequívoca que ele atende ao requisito de área externa privativa; esse campo permanece null. Como o aluguel é inferior a R$ 2.000, o imóvel não deve entrar automaticamente no radar ativo nem ganhar vantagem de ranking.",
+      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio confirma aluguel de R$ 1.900, 3 quartos, 2 banheiros, 150 m² e terraço. Por estar abaixo da faixa principal, não deve receber vantagem automática no ranking: só pode permanecer no radar ativo como oportunidade real se localização/distância e demais critérios forem confirmados pelo motor.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-11",
       "ultimoVistoEm": "2026-09-11",
@@ -130,7 +130,7 @@
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio cita terraço, mas não declara de forma suficientemente inequívoca que ele atende ao requisito de área externa privativa; esse campo permanece null. Como o aluguel é inferior a R$ 2.000, o imóvel não deve entrar automaticamente no radar ativo nem ganhar vantagem de ranking."
+        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio confirma aluguel de R$ 1.900, 3 quartos, 2 banheiros, 150 m² e terraço. Por estar abaixo da faixa principal, não deve receber vantagem automática no ranking: só pode permanecer no radar ativo como oportunidade real se localização/distância e demais critérios forem confirmados pelo motor."
       },
       "historico": [
         {
@@ -138,6 +138,12 @@
           "campo": "observacao_verificada",
           "fonte": "Imóveis Casa Nova",
           "url": "https://www.imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://imoveiscasanova.com.br/imovel/122262"
         }
       ],
       "elegibilidade": {
@@ -146,28 +152,26 @@
         "motivos": [
           "Fora da faixa principal sem justificativa de oportunidade forte"
         ],
-        "pendencias": [
-          "Área externa privativa não confirmada"
-        ],
+        "pendencias": [],
         "oportunidade": null
       },
       "match": {
-        "casa": null,
+        "casa": 100,
         "localizacao": 36.2,
         "custoBeneficio": 69.1,
         "visual": null,
         "final": null,
         "confianca": "incompleta",
-        "coberturaPesoPct": 45.0,
+        "coberturaPesoPct": 85.0,
         "motivosPositivos": [
           "150 m²",
           "3 quartos",
           "2 banheiros",
+          "Área externa privativa",
           "Armários",
           "Hospital Santa Mônica: ~10.4 km (aprox. pelo bairro)"
         ],
         "pontosAtencao": [
-          "Área externa privativa não confirmada",
           "Preço abaixo da faixa principal; só vale como oportunidade real",
           "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
         ]
@@ -234,13 +238,11 @@
         }
       ],
       "elegibilidade": {
-        "elegivel": false,
-        "status": "inelegivel",
-        "motivos": [
-          "Fora da faixa principal sem justificativa de oportunidade forte"
-        ],
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
         "pendencias": [],
-        "oportunidade": null
+        "oportunidade": "Oportunidade excepcional: área de 200 m² + 6 quartos e ~4.7 km do Hospital Santa Mônica"
       },
       "match": {
         "casa": 100,
@@ -368,6 +370,188 @@
         "distanciaLinhaRetaKm": 7.4,
         "distanciaKm": 9.4,
         "tempoCarroMin": 17,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Imóveis Casa Nova",
+      "codigoFonte": "122405",
+      "url": "https://www.imoveiscasanova.com.br/imovel/122405",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Esplanada",
+      "endereco": null,
+      "aluguel": 3000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": null,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 2,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa ampla no Esplanada com 4 dormitórios, sendo 2 suítes, 2 banheiros, sala, cozinha planejada, área de serviço coberta, despensa, terraço coberto e 2 vagas.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio confirma preço no teto da faixa principal, 4 quartos, 2 suítes, 2 banheiros e terraço, mas não informa metragem. Como a metragem é requisito oficial do projeto, areaM2 permanece null e o imóvel deve ficar A confirmar até haver evidência suficiente.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "1ecec5a533ebbebd23596e35",
+      "id": "imv_1ecec5a533ebbebd23596e35",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio confirma preço no teto da faixa principal, 4 quartos, 2 suítes, 2 banheiros e terraço, mas não informa metragem. Como a metragem é requisito oficial do projeto, areaM2 permanece null e o imóvel deve ficar A confirmar até haver evidência suficiente."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122405"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Área não confirmada"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 74.0,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "4 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~5 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Área não informada",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1523015,
+      "longitude": -44.8904982,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.6,
+        "distanciaKm": 5.0,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "Imóveis Casa Nova",
+      "codigoFonte": "121882",
+      "url": "https://imoveiscasanova.com.br/imovel/121882",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Porto Velho",
+      "endereco": null,
+      "aluguel": 2900.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 300.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": null,
+      "vagas": 4,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial de aproximadamente 300 m² no Porto Velho, com 3 quartos, 1 suíte, sala ampla, cozinha planejada, área de serviço independente, varanda, ampla área externa, cozinha externa e 4 vagas.",
+      "fonteVerificacao": "site_oficial_imobiliaria",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio confirma R$ 2.900, 300 m², 3 quartos, 1 suíte e ampla área externa. O resumo informa 1 banheiro além da suíte, mas não explicita de modo inequívoco o total de banheiros; por isso banheiros permanece null e o imóvel deve ficar A confirmar em vez de ser artificialmente elegível.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "11817234801be5ac84e8602e",
+      "id": "imv_11817234801be5ac84e8602e",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página oficial da Casa Nova verificada em 11/09/2026. O anúncio confirma R$ 2.900, 300 m², 3 quartos, 1 suíte e ampla área externa. O resumo informa 1 banheiro além da suíte, mas não explicita de modo inequívoco o total de banheiros; por isso banheiros permanece null e o imóvel deve ficar A confirmar em vez de ser artificialmente elegível."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://imoveiscasanova.com.br/imovel/121882"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Banheiros não confirmados"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 76.1,
+        "custoBeneficio": 88.7,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "300 m²",
+          "3 quartos",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~4.7 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Banheiros não informados",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1463965,
+      "longitude": -44.8809205,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.3,
+        "distanciaKm": 4.7,
+        "tempoCarroMin": 9,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
