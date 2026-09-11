@@ -41,13 +41,13 @@ ativo = candidatoAtivo;
 renderResumo = function renderResumoComPoliticaDeCandidatos() {
   const acompanhados = state.imoveis.filter(disponivelNaFonte);
   const candidatos = acompanhados.filter(candidatoAtivo);
-  const elegiveis = candidatos.filter(i => i.elegibilidade?.elegivel === true).length;
+  const minimosOk = candidatos.filter(i => i.elegibilidade?.elegivel === true).length;
   const confirmar = candidatos.filter(i => precisaConfirmacao(i)).length;
   const foraRadar = acompanhados.filter(i => !candidatoAtivo(i)).length;
 
   document.querySelector('#resumo').innerHTML = [
     metric('candidatos ativos', candidatos.length),
-    metric('elegíveis confirmados', elegiveis),
+    metric('mínimos OK', minimosOk),
     metric('a confirmar', confirmar),
     metric('fora do radar ativo', foraRadar)
   ].join('');
@@ -61,13 +61,15 @@ renderResumo = function renderResumoComPoliticaDeCandidatos() {
 textoStatus = function textoStatusComRadar(inv, status, fontesData) {
   const disponiveis = (inv.imoveis || []).filter(disponivelNaFonte);
   const candidatos = disponiveis.filter(candidatoAtivo).length;
+  const minimosOk = disponiveis.filter(i => candidatoAtivo(i) && i.elegibilidade?.elegivel === true).length;
   const atualizado = dataPtBr(inv.atualizadoEm || status?.fim);
   const fontes = fontesData?.fontes || [];
   const imobiliarias = fontes.filter(f => f.tipo === 'imobiliaria');
   const automaticasAtivas = imobiliarias.filter(f => f.coletaAutomatica === true).length;
   const partes = [
     `${disponiveis.length} anúncios acompanhados`,
-    `${candidatos} candidatos ativos`
+    `${candidatos} candidatos ativos`,
+    `${minimosOk} mínimos OK`
   ];
   if (imobiliarias.length) partes.push(`${imobiliarias.length} imobiliárias no radar`);
   if (automaticasAtivas) partes.push(`${automaticasAtivas} fonte${automaticasAtivas === 1 ? '' : 's'} automática${automaticasAtivas === 1 ? '' : 's'} ativa${automaticasAtivas === 1 ? '' : 's'}`);
