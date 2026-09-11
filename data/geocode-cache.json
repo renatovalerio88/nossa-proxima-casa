@@ -278,6 +278,30 @@
     "route:-20.146857,-44.875352:-20.120293,-44.895337": {
       "distanciaKm": 4.6,
       "tempoCarroMin": 9
+    },
+    "geo:rua das nações, divinópolis, mg, brasil": {
+      "latitude": -20.1241136,
+      "longitude": -44.8856059,
+      "displayName": "Rua das Nações, Industrial, Itaí, Divinópolis, Minas Gerais, Região Sudeste, 35500-071, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.124114,-44.885606:-20.120293,-44.895337": {
+      "distanciaKm": 1.5,
+      "tempoCarroMin": 4
+    },
+    "geo:rua ibirité, divinópolis, mg, brasil": {
+      "latitude": -20.1174711,
+      "longitude": -44.8947896,
+      "displayName": "Rua Ibirité, Alvorada, Divinópolis, Minas Gerais, Região Sudeste, 35500-184, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.117471,-44.894790:-20.120293,-44.895337": {
+      "distanciaKm": 0.5,
+      "tempoCarroMin": 1
     }
   }
 }

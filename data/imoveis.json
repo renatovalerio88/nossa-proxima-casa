@@ -192,6 +192,18 @@
           "campo": "observacao_verificada",
           "fonte": "Imóveis Casa Nova",
           "url": "https://imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://imoveiscasanova.com.br/imovel/122262"
         }
       ],
       "elegibilidade": {
@@ -1411,7 +1423,285 @@
         "tempoCarroMin": null,
         "precisaoLocalizacao": null,
         "fonteLocalizacao": null,
-        "localizacaoValidada": false
+        "localizacaoValidada": false,
+        "fonteDistancia": null
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "303073785",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolismg-303073785",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bom Pastor",
+      "endereco": "Rua das Nações",
+      "aluguel": 3500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 231.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": true,
+      "descricao": "Casa no Bom Pastor com 3 quartos, 1 suíte, 2 banheiros, 231 m², armários, hidromassagem, cobertura com varanda colonial, espaço gourmet, área para ducha, área livre, churrasqueira e 2 vagas.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Está no teto excepcional de R$ 3.500 e só deve permanecer como candidato ativo se a regra de oportunidade excepcional confirmar forte aderência aos demais critérios. A área externa privativa foi considerada confirmada porque a descrição explicita cobertura/varanda, espaço gourmet, área para ducha e área livre pertencentes à casa.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "390000c10d54c3713ac00cba",
+      "id": "imv_390000c10d54c3713ac00cba",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Está no teto excepcional de R$ 3.500 e só deve permanecer como candidato ativo se a regra de oportunidade excepcional confirmar forte aderência aos demais critérios. A área externa privativa foi considerada confirmada porque a descrição explicita cobertura/varanda, espaço gourmet, área para ducha e área livre pertencentes à casa."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-2-vagas-bom-pastor-divinopolismg-303073785"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "inelegivel",
+        "motivos": [
+          "Fora da faixa principal sem justificativa de oportunidade forte"
+        ],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 95,
+        "custoBeneficio": 55.2,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "231 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Hidromassagem",
+          "Hospital Santa Mônica: ~1.5 km"
+        ],
+        "pontosAtencao": [
+          "Preço acima da faixa principal; exige oportunidade excepcional",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1241136,
+      "longitude": -44.8856059,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 1.1,
+        "distanciaKm": 1.5,
+        "tempoCarroMin": 4,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "303545569",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-2-vagas-bom-pastor-divinopolismg-303545569",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bom Pastor",
+      "endereco": "Rua Ibirité",
+      "aluguel": 2800.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 240.0,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": null,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": true,
+      "fotoUrl": "https://a.deztop.com/image/000/087/322/87322036_640x480.webp",
+      "descricao": "Casa no Bom Pastor com 4 quartos, 1 suíte, 240 m², área externa com varanda colonial, espaço gourmet, churrasqueira, bancada, banheiro externo, área para ducha e 2 vagas.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Há conflito na contagem de banheiros: o resumo estruturado informa 1, enquanto a descrição menciona suíte, banheiro social e banheiro externo. Para não escolher arbitrariamente um total, banheiros permanece null e o imóvel deve ficar A confirmar. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "a3d93e39264d1d740445a3f5",
+      "id": "imv_a3d93e39264d1d740445a3f5",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Há conflito na contagem de banheiros: o resumo estruturado informa 1, enquanto a descrição menciona suíte, banheiro social e banheiro externo. Para não escolher arbitrariamente um total, banheiros permanece null e o imóvel deve ficar A confirmar. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-2-vagas-bom-pastor-divinopolismg-303545569"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": false,
+        "status": "pendente",
+        "motivos": [],
+        "pendencias": [
+          "Banheiros não confirmados"
+        ],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": null,
+        "localizacao": 95,
+        "custoBeneficio": 90.5,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 45.0,
+        "motivosPositivos": [
+          "240 m²",
+          "4 quartos",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Hidromassagem",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~0.5 km"
+        ],
+        "pontosAtencao": [
+          "Banheiros não informados",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1174711,
+      "longitude": -44.8947896,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 0.3,
+        "distanciaKm": 0.5,
+        "tempoCarroMin": 1,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "310130996",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-1-vaga-sao-jose-divinopolismg-310130996",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São José",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": 1777.0,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://a.deztop.com/image/000/105/695/105695080_640x480.webp",
+      "descricao": "Casa no São José com 3 quartos, 1 suíte, 2 banheiros, lavabo adicional descrito, 200 m², armários, varanda, cozinha externa, área de serviço, quintal e 1 vaga.",
+      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Está exatamente no piso da faixa principal e confirma quartos, banheiros, área e quintal privativo. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e o valor do IPTU diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "823715c0d0483137af2c350b",
+      "id": "imv_823715c0d0483137af2c350b",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. Está exatamente no piso da faixa principal e confirma quartos, banheiros, área e quintal privativo. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e o valor do IPTU diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-1-vaga-sao-jose-divinopolismg-310130996"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 56.5,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~7.5 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1584219,
+      "longitude": -44.9062321,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 4.4,
+        "distanciaKm": 7.5,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
       }
     },
     {
