@@ -38,6 +38,20 @@ function candidatoAtivo(item) {
 // Substituímos apenas a semântica de "ativo"; disponibilidade da fonte continua preservada separadamente.
 ativo = candidatoAtivo;
 
+function prioridadeFaixaPrincipal(item) {
+  const preco = Number(item?.aluguel);
+  if (!Number.isFinite(preco)) return 2;
+  return preco >= 2000 && preco <= 3000 ? 0 : 1;
+}
+
+// Mínimos confirmados continuam acima de pendências, mas dentro de cada grupo a faixa principal vem primeiro.
+// Assim, oportunidades abaixo de R$ 2.000 ou entre R$ 3.001–3.500 permanecem consultáveis sem dominar o ranking.
+prioridadeCandidato = function prioridadeCandidatoComFaixa(item) {
+  const elegibilidade = item?.elegibilidade || {};
+  const nivel = elegibilidade.elegivel === true ? 0 : precisaConfirmacao(item) ? 10 : 20;
+  return nivel + prioridadeFaixaPrincipal(item);
+};
+
 renderResumo = function renderResumoComPoliticaDeCandidatos() {
   const acompanhados = state.imoveis.filter(disponivelNaFonte);
   const candidatos = acompanhados.filter(candidatoAtivo);
