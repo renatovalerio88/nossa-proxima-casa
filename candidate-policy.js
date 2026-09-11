@@ -44,12 +44,79 @@ function prioridadeFaixaPrincipal(item) {
   return preco >= 2000 && preco <= 3000 ? 0 : 1;
 }
 
+function matchConfiavel(item) {
+  const m = item?.match || {};
+  const componentes = [m.casa, m.localizacao, m.custoBeneficio, m.visual];
+  return item?.elegibilidade?.status !== 'pendente'
+    && m.confianca !== 'incompleta'
+    && componentes.every(v => Number.isFinite(Number(v)))
+    && Number.isFinite(Number(m.final));
+}
+
+function prioridadeQualidade(item) {
+  // Não cria nota. Apenas usa sinais reais já existentes como desempate.
+  const temMatch = matchConfiavel(item) ? 0 : 1;
+  const temFoto = typeof fotosConfiaveis === 'function' && fotosConfiaveis(item).length > 0 ? 0 : 1;
+  const hospitalValidado = item?.hospital?.localizacaoValidada === true ? 0 : 1;
+  return [temMatch, temFoto, hospitalValidado];
+}
+
 // Mínimos confirmados continuam acima de pendências, mas dentro de cada grupo a faixa principal vem primeiro.
 // Assim, oportunidades abaixo de R$ 2.000 ou entre R$ 3.001–3.500 permanecem consultáveis sem dominar o ranking.
 prioridadeCandidato = function prioridadeCandidatoComFaixa(item) {
   const elegibilidade = item?.elegibilidade || {};
   const nivel = elegibilidade.elegivel === true ? 0 : precisaConfirmacao(item) ? 10 : 20;
   return nivel + prioridadeFaixaPrincipal(item);
+};
+
+filtrar = function filtrarComPolitica(items) {
+  const somenteElegiveis = document.querySelector('#somenteElegiveis').checked;
+  let rows = items.filter(i => candidatoAtivo(i) && (!somenteElegiveis || i.elegibilidade?.elegivel === true));
+
+  rows = rows.filter(i => {
+    const d = decisao(i.id);
+    if (state.tab === 'favoritados') return d === 'favorito';
+    if (state.tab === 'descartados') return d === 'descartado';
+    if (state.tab === 'a-confirmar') return d === null && precisaConfirmacao(i);
+    if (state.tab === 'novos') return d === null && ehNovo(i);
+    return true;
+  });
+
+  const ordem = document.querySelector('#ordenacao').value;
+  return rows.sort((a, b) => {
+    const prioridade = prioridadeCandidato(a) - prioridadeCandidato(b);
+    if (prioridade !== 0) return prioridade;
+
+    // Fora da faixa principal nunca ganha de candidato equivalente da faixa apenas por preço ou Match.
+    const faixa = prioridadeFaixaPrincipal(a) - prioridadeFaixaPrincipal(b);
+    if (faixa !== 0) return faixa;
+
+    if (ordem === 'preco') return (a.aluguel ?? Infinity) - (b.aluguel ?? Infinity);
+
+    if (ordem === 'match') {
+      const aTem = matchConfiavel(a);
+      const bTem = matchConfiavel(b);
+      if (aTem !== bTem) return aTem ? -1 : 1;
+      if (aTem && bTem) {
+        const diff = Number(b.match.final) - Number(a.match.final);
+        if (diff !== 0) return diff;
+      }
+    }
+
+    // Em "Mais relevantes e recentes", preferência por informação real mais completa, sem fabricar nota.
+    if (ordem === 'recente') {
+      const qa = prioridadeQualidade(a);
+      const qb = prioridadeQualidade(b);
+      for (let i = 0; i < qa.length; i += 1) {
+        if (qa[i] !== qb[i]) return qa[i] - qb[i];
+      }
+      const data = String(b.primeiroVistoEm || '').localeCompare(String(a.primeiroVistoEm || ''));
+      if (data !== 0) return data;
+      if (matchConfiavel(a) && matchConfiavel(b)) return Number(b.match.final) - Number(a.match.final);
+    }
+
+    return 0;
+  });
 };
 
 renderResumo = function renderResumoComPoliticaDeCandidatos() {
