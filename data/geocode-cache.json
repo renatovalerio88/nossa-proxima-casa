@@ -314,6 +314,18 @@
     "route:-20.157513,-44.858680:-20.120293,-44.895337": {
       "distanciaKm": 7.2,
       "tempoCarroMin": 13
+    },
+    "geo:rua viriato correa, divinópolis, mg, brasil": {
+      "latitude": -20.178532,
+      "longitude": -44.9052216,
+      "displayName": "Rua Viriato Correa, Jardim Belvedere, Divinópolis, Minas Gerais, Região Sudeste, 35501-303, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.178532,-44.905222:-20.120293,-44.895337": {
+      "distanciaKm": 10.0,
+      "tempoCarroMin": 15
     }
   }
 }

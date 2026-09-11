@@ -663,10 +663,10 @@
       "churrasqueira": null,
       "piscina": null,
       "hidromassagem": null,
-      "descricao": "Casa residencial no Nossa Senhora das Graças com 3 quartos, 1 suíte, 3 banheiros, 190 m², área de serviço coberta, quintal, área externa, varanda e 3 vagas.",
-      "fonteVerificacao": "portal_publico_anunciante_identificado",
+      "descricao": "Casa residencial no Nossa Senhora das Graças com 190 m², 3 quartos, 1 suíte, 3 banheiros, 3 vagas, cozinha com armários planejados, área de serviço coberta, quintal, área externa, varanda e energia solar.",
+      "fonteVerificacao": "portal_publico_terceiro",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Anúncio público no MGF Imóveis verificado em 11/09/2026 e marcado como atualizado no mesmo dia, atribuído a Francisco Imóveis. O anúncio confirma R$ 2.500, 3 quartos, 3 banheiros, 190 m², quintal e área externa. Revalidar disponibilidade/preço diretamente com a imobiliária antes de qualquer decisão.",
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, estava marcado como atualizado hoje e confirmava R$ 2.500/mês, 190 m², 3 dormitórios, 3 banheiros, 3 vagas, quintal e área externa. Revalidar disponibilidade, valores acessórios e condições diretamente com o anunciante antes de visita/contratação.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-11",
       "ultimoVistoEm": "2026-09-11",
@@ -676,7 +676,7 @@
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Anúncio público no MGF Imóveis verificado em 11/09/2026 e marcado como atualizado no mesmo dia, atribuído a Francisco Imóveis. O anúncio confirma R$ 2.500, 3 quartos, 3 banheiros, 190 m², quintal e área externa. Revalidar disponibilidade/preço diretamente com a imobiliária antes de qualquer decisão."
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, estava marcado como atualizado hoje e confirmava R$ 2.500/mês, 190 m², 3 dormitórios, 3 banheiros, 3 vagas, quintal e área externa. Revalidar disponibilidade, valores acessórios e condições diretamente com o anunciante antes de visita/contratação."
       },
       "historico": [
         {
@@ -1118,10 +1118,10 @@
       "piscina": null,
       "hidromassagem": null,
       "fotoUrl": "https://a.deztop.com/image/000/079/820/79820721_640x480.webp",
-      "descricao": "Casa residencial/comercial em dois pavimentos no Centro, com 3 quartos, 3 banheiros, 350 m², cozinha com armários, área de serviço, varanda, quintal, terraço e 1 vaga.",
-      "fonteVerificacao": "portal_publico_anunciante_francisco_imoveis",
+      "descricao": "Casa de dois pavimentos no Centro com 350 m², 3 quartos, 3 banheiros, cozinha e quartos com armários, área de serviço, varanda, quintal, terraço e 1 vaga.",
+      "fonteVerificacao": "portal_publico_terceiro",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava aluguel de R$ 2.700/mês, 350 m², 3 dormitórios, 3 banheiros, quintal, terraço e 1 vaga. O anúncio também menciona uso residencial/comercial; o radar mantém apenas os fatos residenciais confirmados e não infere suíte. Revalidar disponibilidade e condições diretamente com o anunciante.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-11",
       "ultimoVistoEm": "2026-09-11",
@@ -1131,7 +1131,7 @@
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026 e atribuída a Francisco Imóveis. A foto principal foi usada somente porque a própria página expôs URL direta específica do anúncio. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava aluguel de R$ 2.700/mês, 350 m², 3 dormitórios, 3 banheiros, quintal, terraço e 1 vaga. O anúncio também menciona uso residencial/comercial; o radar mantém apenas os fatos residenciais confirmados e não infere suíte. Revalidar disponibilidade e condições diretamente com o anunciante."
       },
       "historico": [
         {
@@ -1905,6 +1905,96 @@
         "distanciaLinhaRetaKm": 5.6,
         "distanciaKm": 7.2,
         "tempoCarroMin": 13,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "302458706",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-1-vaga-catalao-divinopolismg-aluguel-302458706",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São José",
+      "endereco": "Rua Viriato Correa",
+      "aluguel": 2160.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 164.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa no São José com 164 m², 3 quartos, 1 suíte, 2 banheiros, sala para 2 ambientes, área de serviço externa, área privativa, varanda, jardim frontal e 1 vaga.",
+      "fonteVerificacao": "portal_publico_terceiro",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava R$ 2.160/mês, 164 m², 3 dormitórios, 1 suíte, 2 banheiros, área externa/privativa, varanda, jardim frontal e 1 vaga. O título do portal menciona Catalão, mas o endereço exibido na própria página é Rua Viriato Correa, São José, Divinópolis; por isso o bairro persistido segue o endereço detalhado e a divergência deve ser revalidada antes de visita.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "5336c6b8be9eb122dccdbfc0",
+      "id": "imv_5336c6b8be9eb122dccdbfc0",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio, atribuído à Francisco Imóveis, confirmava R$ 2.160/mês, 164 m², 3 dormitórios, 1 suíte, 2 banheiros, área externa/privativa, varanda, jardim frontal e 1 vaga. O título do portal menciona Catalão, mas o endereço exibido na própria página é Rua Viriato Correa, São José, Divinópolis; por isso o bairro persistido segue o endereço detalhado e a divergência deve ser revalidada antes de visita."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-1-vaga-catalao-divinopolismg-aluguel-302458706"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 39.0,
+        "custoBeneficio": 89.8,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "164 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~10 km"
+        ],
+        "pontosAtencao": [
+          "Armários: não informado",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.178532,
+      "longitude": -44.9052216,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 6.6,
+        "distanciaKm": 10.0,
+        "tempoCarroMin": 15,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },
