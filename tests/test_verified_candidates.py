@@ -112,6 +112,19 @@ class VerifiedCandidatesTest(unittest.TestCase):
         self.assertEqual(merged["imoveis"][0]["ultimoVistoEm"], "2026-09-10")
         self.assertEqual(merged["imoveis"][0]["aluguel"], 3000.0)
 
+    def test_equivalent_url_variants_do_not_duplicate_history(self):
+        first = self.candidate()
+        first["url"] = "https://www.example.test/123/"
+        inventory = {"schemaVersion": 1, "atualizadoEm": "2026-09-09", "imoveis": []}
+        merged = merge_candidates(inventory, {"imoveis": [first]}, CFG)
+
+        same = self.candidate()
+        same["url"] = "http://example.test/123"
+        merged = merge_candidates(merged, {"imoveis": [same]}, CFG)
+
+        self.assertEqual(len(merged["imoveis"]), 1)
+        self.assertEqual(len(merged["imoveis"][0]["historico"]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()
