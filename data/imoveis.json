@@ -144,6 +144,18 @@
           "campo": "observacao_verificada",
           "fonte": "Imóveis Casa Nova",
           "url": "https://imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://www.imoveiscasanova.com.br/imovel/122262"
+        },
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "Imóveis Casa Nova",
+          "url": "https://imoveiscasanova.com.br/imovel/122262"
         }
       ],
       "elegibilidade": {
@@ -552,6 +564,276 @@
         "distanciaLinhaRetaKm": 3.3,
         "distanciaKm": 4.7,
         "tempoCarroMin": 9,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "310130998",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-3-vagas-bela-vista-divinopolismg-aluguel-mg-310130998",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São José",
+      "endereco": null,
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": 462.0,
+      "areaM2": 142.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": null,
+      "banheiros": 2,
+      "vagas": 3,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": null,
+      "churrasqueira": null,
+      "piscina": true,
+      "hidromassagem": null,
+      "descricao": "Casa residencial anunciada como Bela Vista/São José, com 3 quartos, 2 banheiros, 142 m², área de serviço, varanda, quintal, piscina e 3 vagas.",
+      "fonteVerificacao": "portal_publico_anunciante_identificado",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. O portal informa R$ 2.500, 3 quartos, 2 banheiros, 142 m², quintal e 3 vagas. Deve permanecer com proveniência explícita do portal/anunciante e ser revalidado na origem antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "ae37a79f39e621efd75f75e7",
+      "id": "imv_ae37a79f39e621efd75f75e7",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. O portal informa R$ 2.500, 3 quartos, 2 banheiros, 142 m², quintal e 3 vagas. Deve permanecer com proveniência explícita do portal/anunciante e ser revalidado na origem antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-3-vagas-bela-vista-divinopolismg-aluguel-mg-310130998"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 56.5,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "142 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Piscina",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~7.5 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Armários: não informado",
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1584219,
+      "longitude": -44.9062321,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 4.4,
+        "distanciaKm": 7.5,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "310131204",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-nossa-senhora-das-gracas-310131204",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Nossa Senhora das Graças",
+      "endereco": null,
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 190.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 3,
+      "vagas": 3,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial no Nossa Senhora das Graças com 3 quartos, 1 suíte, 3 banheiros, 190 m², área de serviço coberta, quintal, área externa, varanda e 3 vagas.",
+      "fonteVerificacao": "portal_publico_anunciante_identificado",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Anúncio público no MGF Imóveis verificado em 11/09/2026 e marcado como atualizado no mesmo dia, atribuído a Francisco Imóveis. O anúncio confirma R$ 2.500, 3 quartos, 3 banheiros, 190 m², quintal e área externa. Revalidar disponibilidade/preço diretamente com a imobiliária antes de qualquer decisão.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "b91d77e4c1cfeb09f05a46be",
+      "id": "imv_b91d77e4c1cfeb09f05a46be",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Anúncio público no MGF Imóveis verificado em 11/09/2026 e marcado como atualizado no mesmo dia, atribuído a Francisco Imóveis. O anúncio confirma R$ 2.500, 3 quartos, 3 banheiros, 190 m², quintal e área externa. Revalidar disponibilidade/preço diretamente com a imobiliária antes de qualquer decisão."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-nossa-senhora-das-gracas-310131204"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 87.3,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "190 m²",
+          "3 quartos",
+          "3 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~3.1 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1250697,
+      "longitude": -44.876236,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 2.1,
+        "distanciaKm": 3.1,
+        "tempoCarroMin": 7,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "303188307",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-4-vagas-sao-luis-divinopolismg-303188307",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São Luís",
+      "endereco": "Rua Saara",
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 297.0,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 4,
+      "vagas": 4,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": true,
+      "descricao": "Casa residencial no São Luís com 4 quartos, 1 suíte, 4 banheiros, 297 m², varanda gourmet com churrasqueira e ofurô, cobertura com área gourmet e 4 vagas.",
+      "fonteVerificacao": "portal_publico_anunciante_identificado",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. O anúncio confirma R$ 2.500, 4 quartos, 4 banheiros, 297 m², varanda gourmet, cobertura com área gourmet e 4 vagas. Revalidar disponibilidade/preço diretamente com a imobiliária antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "b17f8782140f238140559602",
+      "id": "imv_b17f8782140f238140559602",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Anúncio público no MGF Imóveis verificado em 11/09/2026, atribuído a Francisco Imóveis. O anúncio confirma R$ 2.500, 4 quartos, 4 banheiros, 297 m², varanda gourmet, cobertura com área gourmet e 4 vagas. Revalidar disponibilidade/preço diretamente com a imobiliária antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-4-vagas-sao-luis-divinopolismg-303188307"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 72.6,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "297 m²",
+          "4 quartos",
+          "4 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Hidromassagem",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~5.2 km"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1401025,
+      "longitude": -44.8661113,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.8,
+        "distanciaKm": 5.2,
+        "tempoCarroMin": 10,
         "fonteRota": "OSRM/OpenStreetMap"
       }
     },

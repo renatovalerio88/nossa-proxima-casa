@@ -206,6 +206,30 @@
     "route:-20.176292,-44.908003:-20.120293,-44.895337": {
       "distanciaKm": 9.6,
       "tempoCarroMin": 14
+    },
+    "geo:são josé, divinópolis, mg, brasil": {
+      "latitude": -20.1584219,
+      "longitude": -44.9062321,
+      "displayName": "São José, Divinópolis, Minas Gerais, Região Sudeste, 35501-197, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.158422,-44.906232:-20.120293,-44.895337": {
+      "distanciaKm": 7.5,
+      "tempoCarroMin": 10
+    },
+    "geo:rua saara, divinópolis, mg, brasil": {
+      "latitude": -20.1401025,
+      "longitude": -44.8661113,
+      "displayName": "Rua Saara, São Luiz, Itaí, Divinópolis, Minas Gerais, Região Sudeste, 35500-312, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.140103,-44.866111:-20.120293,-44.895337": {
+      "distanciaKm": 5.2,
+      "tempoCarroMin": 10
     }
   }
 }
