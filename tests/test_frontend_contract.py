@@ -108,10 +108,11 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("alertas.slice(0, 2)", self.js)
         self.assertNotIn("Requisitos mínimos ainda não confirmados", self.js)
 
-    def test_status_separa_anuncios_acompanhados_de_fontes_no_radar(self):
+    def test_status_separa_inventario_radar_automacao_e_fotos(self):
         self.assertIn("anúncios acompanhados", self.js)
-        self.assertIn("fontes no radar", self.js)
+        self.assertIn("imobiliárias no radar", self.js)
         self.assertIn("automática", self.js)
+        self.assertIn("com foto real na coleta atual", self.js)
         self.assertNotIn("capturado(s)", self.js)
 
     def test_resumo_mostra_fora_dos_criterios(self):
@@ -125,6 +126,14 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("Site oficial ainda não identificado", self.js)
         self.assertIn('target="_blank"', self.js)
         self.assertIn('rel="noopener noreferrer"', self.js)
+        self.assertIn("com acesso direto", self.js)
+        self.assertIn("coleta automática autorizada", self.js)
+
+    def test_status_de_fonte_reconhece_catalogos_confirmados_sem_automacao(self):
+        self.assertIn("s.includes('sem_automacao')", self.js)
+        self.assertIn("s.includes('catalogo_')", self.js)
+        self.assertIn("Acesso direto · sem automação", self.js)
+        self.assertIn("Acesso direto · no radar", self.js)
 
     def test_mobile_tabs_nao_dependem_de_scroll_horizontal(self):
         self.assertIn("grid-template-columns:repeat(3,minmax(0,1fr))", self.css)
