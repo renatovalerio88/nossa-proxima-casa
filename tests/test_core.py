@@ -108,6 +108,30 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(match["visual"], 80)
         self.assertEqual(match["confianca"], "alta")
 
+    def test_single_real_cover_photo_allows_visual_when_assessed(self):
+        item = base_item(fotoUrl="https://example.com/cover.jpg", avaliacaoVisual={"nota": 8})
+        match = calculate_match(item, CFG)
+        self.assertEqual(match["visual"], 80)
+        self.assertIsNotNone(match["final"])
+        self.assertEqual(match["confianca"], "alta")
+
+    def test_image_url_and_imagens_are_supported_as_real_photos(self):
+        for overrides in (
+            {"imagemUrl": "https://example.com/main.jpg"},
+            {"imagens": ["https://example.com/one.jpg", "https://example.com/two.jpg"]},
+        ):
+            item = base_item(avaliacaoVisual={"nota": 7}, **overrides)
+            match = calculate_match(item, CFG)
+            self.assertEqual(match["visual"], 70)
+            self.assertEqual(match["confianca"], "alta")
+
+    def test_non_https_photo_never_unlocks_visual(self):
+        item = base_item(fotoUrl="http://example.com/not-trusted.jpg", avaliacaoVisual={"nota": 9})
+        match = calculate_match(item, CFG)
+        self.assertIsNone(match["visual"])
+        self.assertIsNone(match["final"])
+        self.assertEqual(match["confianca"], "incompleta")
+
     def test_reapply_rules_updates_legacy_classification_without_losing_history(self):
         document = {"schemaVersion": 1, "atualizadoEm": "2026-09-08", "imoveis": [{"id": "imv_legacy", "fonte": "Casa Nova", "codigoFonte": "1", "cidade": "Divinópolis", "tipo": "casa", "areaM2": 100, "quartos": None, "banheiros": None, "quintal": None, "aluguel": None, "disponivel": False, "historico": [{"data": "2026-09-08", "campo": "disponivel", "de": True, "para": False}], "elegibilidade": {"elegivel": True, "motivos": []}}]}
         updated = reapply_rules(document, CFG); item = updated["imoveis"][0]
