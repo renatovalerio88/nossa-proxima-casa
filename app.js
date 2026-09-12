@@ -9,7 +9,7 @@ function carregarDecisoes() {
 }
 
 const state = {
-  tab: 'novos',
+  tab: 'todos',
   imoveis: [],
   fontes: [],
   decisoes: carregarDecisoes(),
