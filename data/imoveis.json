@@ -367,6 +367,186 @@
       }
     },
     {
+      "fonte": "MGF Imóveis / Francisco Imóveis",
+      "codigoFonte": "310131204",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-nossa-senhora-das-gracas-310131204",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Nossa Senhora das Graças",
+      "endereco": null,
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 190.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 3,
+      "vagas": 3,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://a.deztop.com/image/000/105/697/105697242_640x480.webp",
+      "descricao": "Casa residencial em Nossa Senhora das Graças com 190 m², 3 quartos sendo 1 suíte, 3 banheiros, 3 vagas, cozinha planejada, área de serviço coberta, quintal, área externa, varanda, banheiro externo e energia solar. Aluguel anunciado de R$ 2.500/mês.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 310131204 informa R$ 2.500/mês, 190 m², 3 dormitórios, 1 suíte, 3 banheiros e 3 vagas; a descrição confirma quintal, área externa e varanda privativos. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A foto principal persistida é a imagem pública vinculada diretamente ao anúncio. Revalidar disponibilidade, IPTU e demais condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-12",
+      "ultimoVistoEm": "2026-09-12",
+      "fingerprint": "7c746c8f17a949d635e938cc",
+      "id": "imv_7c746c8f17a949d635e938cc",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-12",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 310131204 informa R$ 2.500/mês, 190 m², 3 dormitórios, 1 suíte, 3 banheiros e 3 vagas; a descrição confirma quintal, área externa e varanda privativos. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A foto principal persistida é a imagem pública vinculada diretamente ao anúncio. Revalidar disponibilidade, IPTU e demais condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-12",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis / Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-nossa-senhora-das-gracas-310131204"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 87.3,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "190 m²",
+          "3 quartos",
+          "3 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~3.1 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1250697,
+      "longitude": -44.876236,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 2.1,
+        "distanciaKm": 3.1,
+        "tempoCarroMin": 7,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis / Francisco Imóveis",
+      "codigoFonte": "300882996",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-jose-divinopolismg-300882996",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São José",
+      "endereco": "Rua Cascalho Rico",
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 184.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 3,
+      "vagas": 3,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://a.deztop.com/image/000/058/443/58443812_640x480.webp",
+      "descricao": "Casa residencial de 3 pavimentos no São José com 184 m², 3 quartos sendo 1 suíte, 3 banheiros, 3 vagas, duas salas, cozinha com armários, duas áreas de serviço cobertas, cobertura com banheiro e varanda. Aluguel anunciado de R$ 2.000/mês.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 300882996 informa R$ 2.000/mês, 184 m², 3 dormitórios, 1 suíte, 3 banheiros e 3 vagas; a descrição confirma cobertura e varanda privativas, além de duas áreas de serviço cobertas. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A foto principal persistida é a imagem pública vinculada diretamente ao anúncio. Revalidar disponibilidade, IPTU e demais condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-12",
+      "ultimoVistoEm": "2026-09-12",
+      "fingerprint": "6a554ec05c41d80d098cd288",
+      "id": "imv_6a554ec05c41d80d098cd288",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-12",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 300882996 informa R$ 2.000/mês, 184 m², 3 dormitórios, 1 suíte, 3 banheiros e 3 vagas; a descrição confirma cobertura e varanda privativas, além de duas áreas de serviço cobertas. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A foto principal persistida é a imagem pública vinculada diretamente ao anúncio. Revalidar disponibilidade, IPTU e demais condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-12",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis / Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-3-vagas-sao-jose-divinopolismg-300882996"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 55.8,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "184 m²",
+          "3 quartos",
+          "3 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~7.6 km"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1591259,
+      "longitude": -44.9050495,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 4.4,
+        "distanciaKm": 7.6,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Imóveis Casa Nova",
       "codigoFonte": "122380",
       "url": "https://www.imoveiscasanova.com.br/imovel/122380",

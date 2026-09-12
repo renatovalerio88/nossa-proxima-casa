@@ -374,6 +374,18 @@
     "route:-20.129356,-44.887871:-20.120293,-44.895337": {
       "distanciaKm": 1.4,
       "tempoCarroMin": 3
+    },
+    "geo:rua cascalho rico, divinópolis, mg, brasil": {
+      "latitude": -20.1591259,
+      "longitude": -44.9050495,
+      "displayName": "Rua Cascalho Rico, São José, Divinópolis, Minas Gerais, Região Sudeste, 35501-283, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.159126,-44.905049:-20.120293,-44.895337": {
+      "distanciaKm": 7.6,
+      "tempoCarroMin": 10
     }
   }
 }
