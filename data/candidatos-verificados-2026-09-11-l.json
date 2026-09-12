@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "atualizadoEm": "2026-09-11",
+  "observacao": "Décimo segundo lote incremental verificado manualmente em página pública. Nenhuma coleta automática foi habilitada. Foi incluída apenas casa dentro da faixa principal de R$ 2.000 a R$ 3.000 com área, quartos, banheiros e área externa explicitamente confirmados. Campos não confirmados permanecem null. O portal exibe 6 fotos, mas nenhuma URL de imagem estável e específica do anúncio foi persistida nesta verificação.",
+  "imoveis": [
+    {
+      "fonte": "MGF Imóveis",
+      "codigoFonte": "301526056",
+      "url": "https://mg.mgfimoveis.com.br/alugo-casa-triplex-no-manoel-valinhas-aluguel-mg-divinopolis-301526056",
+      "observadoEm": "2026-09-11",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Manoel Valinhas",
+      "endereco": "Rua Alvorada",
+      "aluguel": 2100.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa triplex mobiliada no Manoel Valinhas, com 200 m², 3 quartos, 2 banheiros, suíte, varanda/sacada, área gourmet com churrasqueira, armários planejados e 1 vaga, anunciada diretamente pelo proprietário.",
+      "fonteVerificacao": "portal_publico_anuncio_direto_proprietario",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100/mês, 200 m², 3 dormitórios, 2 banheiros, 1 vaga, suíte, varanda/sacada, área gourmet com churrasqueira, armários e locação direta com o proprietário. A área externa privativa foi confirmada pela varanda/sacada e área gourmet do próprio imóvel. O portal informa 6 fotos, porém nenhuma URL estável e específica do anúncio foi persistida nesta verificação. Revalidar disponibilidade, caução e condições diretamente com o anunciante antes de visita/contratação."
+    }
+  ]
+}
