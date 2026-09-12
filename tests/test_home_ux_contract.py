@@ -24,9 +24,10 @@ class HomeUxContractTests(unittest.TestCase):
         self.assertIn("texto.textContent = 'Sem nota';", self.ux)
         self.assertIn('O Match só aparece quando todos os componentes necessários estão disponíveis.', self.ux)
 
-    def test_imobiliarias_explica_cobertura_sem_raspagem_nao_autorizada(self):
-        self.assertIn('sem raspagem não autorizada', self.ux)
-        self.assertIn('candidatos só entram após verificação individual', self.ux)
+    def test_imobiliarias_explica_cobertura_sem_automatizar_fonte_nao_permitida(self):
+        self.assertIn('Quando não há acompanhamento direto permitido, o site da imobiliária continua disponível para consulta.', self.ux)
+        self.assertIn('Novos candidatos entram somente após verificação.', self.ux)
+        self.assertIn('Abrir site', self.ux)
 
 
 if __name__ == '__main__':
