@@ -362,6 +362,18 @@
     "route:-20.148760,-44.906642:-20.120293,-44.895337": {
       "distanciaKm": 5.9,
       "tempoCarroMin": 9
+    },
+    "geo:rua tiradentes, divinópolis, mg, brasil": {
+      "latitude": -20.129356,
+      "longitude": -44.8878711,
+      "displayName": "Rua Tiradentes, São Sebastião, Itaí, Divinópolis, Minas Gerais, Região Sudeste, 35500-074, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.129356,-44.887871:-20.120293,-44.895337": {
+      "distanciaKm": 1.4,
+      "tempoCarroMin": 3
     }
   }
 }

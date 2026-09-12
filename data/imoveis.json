@@ -186,6 +186,187 @@
       }
     },
     {
+      "fonte": "MGF Imóveis / Francisco Imóveis",
+      "codigoFonte": "310130996",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-1-vaga-sao-jose-divinopolismg-310130996",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São José",
+      "endereco": null,
+      "aluguel": 2000.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": null,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa residencial no São José com 200 m², 3 quartos sendo 1 suíte, banheiro social, 2 salas, lavabo, varanda, cozinha externa com armários, área de serviço, quintal, cômodo de despejo e 1 vaga. Aluguel anunciado de R$ 2.000/mês.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 310130996 informa R$ 2.000/mês, 200 m², 3 dormitórios, 1 suíte, 2 banheiros e 1 vaga; a descrição confirma varanda, cozinha externa e quintal privativo, além de armários. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A página exibe 20 fotos reais, mas nenhuma URL de imagem individual suficientemente estável foi persistida. Revalidar disponibilidade, IPTU e demais condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-12",
+      "ultimoVistoEm": "2026-09-12",
+      "fingerprint": "0d9c4bafc248e5270a6255a1",
+      "id": "imv_0d9c4bafc248e5270a6255a1",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-12",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 310130996 informa R$ 2.000/mês, 200 m², 3 dormitórios, 1 suíte, 2 banheiros e 1 vaga; a descrição confirma varanda, cozinha externa e quintal privativo, além de armários. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A página exibe 20 fotos reais, mas nenhuma URL de imagem individual suficientemente estável foi persistida. Revalidar disponibilidade, IPTU e demais condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-12",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis / Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-3-quartos-1-suite-1-vaga-sao-jose-divinopolismg-310130996"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 56.5,
+        "custoBeneficio": 86.9,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "200 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~7.5 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1584219,
+      "longitude": -44.9062321,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 4.4,
+        "distanciaKm": 7.5,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis / Francisco Imóveis",
+      "codigoFonte": "302132993",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-5-quartos-4-suites-3-vagas-sao-sebastiao-divinopolismg-302132993",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São Sebastião",
+      "endereco": "Rua Tiradentes",
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 198.0,
+      "terrenoM2": null,
+      "quartos": 5,
+      "suites": 4,
+      "banheiros": 5,
+      "vagas": 3,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa residencial no São Sebastião com 198 m², 5 quartos, 4 suítes, 5 banheiros, 3 vagas, varanda e área gourmet privativa com churrasqueira, ducha e fogão a lenha. Aluguel anunciado de R$ 2.500/mês.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 302132993 informa R$ 2.500/mês, 198 m², 5 dormitórios, 4 suítes, 5 banheiros e 3 vagas; a descrição confirma varanda e área gourmet com churrasqueira, ducha e fogão a lenha, sustentando área externa privativa. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A página exibe 20 fotos reais, mas nenhuma URL de imagem individual suficientemente estável foi persistida. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-12",
+      "ultimoVistoEm": "2026-09-12",
+      "fingerprint": "7288e7467b2071aae82ce870",
+      "id": "imv_7288e7467b2071aae82ce870",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-12",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública individual do MGF Imóveis verificada em 12/09/2026. O anúncio de código 302132993 informa R$ 2.500/mês, 198 m², 5 dormitórios, 4 suítes, 5 banheiros e 3 vagas; a descrição confirma varanda e área gourmet com churrasqueira, ducha e fogão a lenha, sustentando área externa privativa. O portal identifica Francisco Imóveis como responsável pelo conteúdo. A página exibe 20 fotos reais, mas nenhuma URL de imagem individual suficientemente estável foi persistida. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-12",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis / Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-5-quartos-4-suites-3-vagas-sao-sebastiao-divinopolismg-302132993"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 95,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "198 m²",
+          "5 quartos",
+          "5 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~1.4 km"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.129356,
+      "longitude": -44.8878711,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 1.3,
+        "distanciaKm": 1.4,
+        "tempoCarroMin": 3,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Imóveis Casa Nova",
       "codigoFonte": "122380",
       "url": "https://www.imoveiscasanova.com.br/imovel/122380",
