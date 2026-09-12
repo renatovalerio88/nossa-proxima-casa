@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "atualizadoEm": "2026-09-11",
+  "atualizadoEm": "2026-09-12",
   "imoveis": [
     {
       "fonte": "Imóveis Casa Nova",
@@ -834,19 +834,19 @@
       "areaM2": 200.0,
       "terrenoM2": null,
       "quartos": 3,
-      "suites": null,
+      "suites": 1,
       "banheiros": 2,
       "vagas": 1,
       "areaExternaPrivativa": true,
       "quintal": null,
-      "armarios": null,
+      "armarios": true,
       "churrasqueira": true,
       "piscina": null,
       "hidromassagem": null,
-      "descricao": "Casa triplex mobiliada no Manoel Valinhas com 3 quartos, 2 banheiros, 200 m², sacada, varanda frontal, churrasqueira e garagem para um carro e uma moto.",
-      "fonteVerificacao": "portal_publico",
+      "descricao": "Casa triplex mobiliada no Manoel Valinhas, com 200 m², 3 quartos, 2 banheiros, suíte, varanda/sacada, área gourmet com churrasqueira, armários planejados e 1 vaga, anunciada diretamente pelo proprietário.",
+      "fonteVerificacao": "portal_publico_anuncio_direto_proprietario",
       "coletaAutomaticaPermitida": false,
-      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100, 3 quartos, 2 banheiros, 200 m², varanda e churrasqueira. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "notaProveniencia": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100/mês, 200 m², 3 dormitórios, 2 banheiros, 1 vaga, suíte, varanda/sacada, área gourmet com churrasqueira, armários e locação direta com o proprietário. A área externa privativa foi confirmada pela varanda/sacada e área gourmet do próprio imóvel. O portal informa 6 fotos, porém nenhuma URL estável e específica do anúncio foi persistida nesta verificação. Revalidar disponibilidade, caução e condições diretamente com o anunciante antes de visita/contratação.",
       "disponivel": true,
       "primeiroVistoEm": "2026-09-11",
       "ultimoVistoEm": "2026-09-11",
@@ -856,7 +856,7 @@
         "modo": "verificacao_manual",
         "observadoEm": "2026-09-11",
         "coletaAutomaticaPermitida": false,
-        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100, 3 quartos, 2 banheiros, 200 m², varanda e churrasqueira. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+        "nota": "Página pública do MGF Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.100/mês, 200 m², 3 dormitórios, 2 banheiros, 1 vaga, suíte, varanda/sacada, área gourmet com churrasqueira, armários e locação direta com o proprietário. A área externa privativa foi confirmada pela varanda/sacada e área gourmet do próprio imóvel. O portal informa 6 fotos, porém nenhuma URL estável e específica do anúncio foi persistida nesta verificação. Revalidar disponibilidade, caução e condições diretamente com o anunciante antes de visita/contratação."
       },
       "historico": [
         {
@@ -886,12 +886,12 @@
           "3 quartos",
           "2 banheiros",
           "Área externa privativa",
+          "Armários",
           "Churrasqueira",
           "Preço dentro da faixa principal",
           "Hospital Santa Mônica: ~3.3 km"
         ],
         "pontosAtencao": [
-          "Armários: não informado",
           "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
         ]
       },
@@ -4917,7 +4917,7 @@
       "fingerprint": "19a154047b1fb67fb7f83d0a",
       "id": "imv_19a154047b1fb67fb7f83d0a",
       "primeiroVistoEm": "2026-09-08",
-      "ultimoVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-12",
       "historico": [
         {
           "data": "2026-09-08",
