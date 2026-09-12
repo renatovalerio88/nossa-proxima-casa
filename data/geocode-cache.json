@@ -350,6 +350,18 @@
     "route:-20.153337,-44.900803:-20.120293,-44.895337": {
       "distanciaKm": 4.3,
       "tempoCarroMin": 10
+    },
+    "geo:santa luzia, divinópolis, mg, brasil": {
+      "latitude": -20.1487597,
+      "longitude": -44.9066417,
+      "displayName": "Santa Luzia, Divinópolis, Minas Gerais, Região Sudeste, Brasil",
+      "cidade": "Divinópolis",
+      "uf": "BR-MG",
+      "fonte": "Nominatim/OpenStreetMap"
+    },
+    "route:-20.148760,-44.906642:-20.120293,-44.895337": {
+      "distanciaKm": 5.9,
+      "tempoCarroMin": 9
     }
   }
 }
