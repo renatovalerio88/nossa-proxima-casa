@@ -3,6 +3,189 @@
   "atualizadoEm": "2026-09-12",
   "imoveis": [
     {
+      "fonte": "Rentola / Francisco Imóveis",
+      "codigoFonte": "rentola-pd9e3d5",
+      "url": "https://rentola.com.br/listings/casa-para-aluguel-3-quartos-1-suite-1-vaga-bela-vista-divinopolis-mg-pd9e3d5",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bela Vista",
+      "endereco": null,
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 330.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": "https://cdn.imoview.com.br/francisco/Imoveis/7782/4lfvv-img-0647-1687288964.jpg?1788894080",
+      "descricao": "Casa residencial no Bela Vista, próxima ao CEFET, com 330 m², 3 quartos sendo 1 suíte, banheiro social, 2 salas, cozinha com armários, varanda, varanda gourmet com churrasqueira, amplo terraço e 1 vaga. Aluguel anunciado de R$ 2.500/mês.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública individual da Rentola verificada em 12/09/2026, marcada como listada no dia e disponível imediatamente. A descrição confirma 3 quartos, sendo 1 suíte, além de 1 banheiro social; por isso o total funcional de banheiros foi registrado como 2. A varanda gourmet e o amplo terraço confirmam área externa privativa. A própria página expõe galeria real e a primeira imagem referencia o CDN público da origem Francisco Imóveis/Imoview; somente essa URL foi persistida como foto principal. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-12",
+      "ultimoVistoEm": "2026-09-12",
+      "fingerprint": "a55f3fee97d9952e78856d7a",
+      "id": "imv_a55f3fee97d9952e78856d7a",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-12",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública individual da Rentola verificada em 12/09/2026, marcada como listada no dia e disponível imediatamente. A descrição confirma 3 quartos, sendo 1 suíte, além de 1 banheiro social; por isso o total funcional de banheiros foi registrado como 2. A varanda gourmet e o amplo terraço confirmam área externa privativa. A própria página expõe galeria real e a primeira imagem referencia o CDN público da origem Francisco Imóveis/Imoview; somente essa URL foi persistida como foto principal. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-12",
+          "campo": "observacao_verificada",
+          "fonte": "Rentola / Francisco Imóveis",
+          "url": "https://rentola.com.br/listings/casa-para-aluguel-3-quartos-1-suite-1-vaga-bela-vista-divinopolis-mg-pd9e3d5"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 46.0,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "330 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~9 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1718684,
+      "longitude": -44.9047411,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 5.8,
+        "distanciaKm": 9.0,
+        "tempoCarroMin": 13,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
+      "fonte": "MGF Imóveis / Francisco Imóveis",
+      "codigoFonte": "303188307",
+      "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-4-vagas-sao-luis-divinopolismg-303188307",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "São Luís",
+      "endereco": "Rua Saara",
+      "aluguel": 2500.0,
+      "condominio": null,
+      "iptu": null,
+      "areaM2": 297.0,
+      "terrenoM2": null,
+      "quartos": 4,
+      "suites": 1,
+      "banheiros": 4,
+      "vagas": 4,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": true,
+      "fotoUrl": null,
+      "descricao": "Casa residencial no São Luís com 297 m², 4 quartos sendo 1 suíte, 4 banheiros informados, escritório, cozinha planejada, varanda gourmet com churrasqueira e ofurô, cobertura com segunda área gourmet e 4 vagas. Aluguel anunciado de R$ 2.500/mês.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página pública individual do MGF Imóveis e catálogo público atual verificados em 12/09/2026. O anúncio identifica Francisco Imóveis como responsável, endereço Rua Saara, bairro São Luís, 297 m², 4 quartos, 1 suíte, 4 banheiros, 4 vagas e aluguel de R$ 2.500/mês. A descrição confirma varanda gourmet com churrasqueira e ofurô e cobertura com outra área gourmet, sustentando área externa privativa. A página exibe fotos reais, mas nenhuma URL de imagem específica e estável foi persistida nesta verificação. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-12",
+      "ultimoVistoEm": "2026-09-12",
+      "fingerprint": "43571ef223c69e45d547bf3f",
+      "id": "imv_43571ef223c69e45d547bf3f",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-12",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página pública individual do MGF Imóveis e catálogo público atual verificados em 12/09/2026. O anúncio identifica Francisco Imóveis como responsável, endereço Rua Saara, bairro São Luís, 297 m², 4 quartos, 1 suíte, 4 banheiros, 4 vagas e aluguel de R$ 2.500/mês. A descrição confirma varanda gourmet com churrasqueira e ofurô e cobertura com outra área gourmet, sustentando área externa privativa. A página exibe fotos reais, mas nenhuma URL de imagem específica e estável foi persistida nesta verificação. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-12",
+          "campo": "observacao_verificada",
+          "fonte": "MGF Imóveis / Francisco Imóveis",
+          "url": "https://mg.mgfimoveis.com.br/casa-para-aluguel-4-quartos-1-suite-4-vagas-sao-luis-divinopolismg-303188307"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 72.6,
+        "custoBeneficio": 96.0,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "297 m²",
+          "4 quartos",
+          "4 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Hidromassagem",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~5.2 km"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1401025,
+      "longitude": -44.8661113,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "endereco",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 3.8,
+        "distanciaKm": 5.2,
+        "tempoCarroMin": 10,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Imóveis Casa Nova",
       "codigoFonte": "122380",
       "url": "https://www.imoveiscasanova.com.br/imovel/122380",
