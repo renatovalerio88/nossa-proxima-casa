@@ -2002,6 +2002,97 @@
       }
     },
     {
+      "fonte": "ZAP Imóveis",
+      "codigoFonte": "2897313790",
+      "url": "https://www.zapimoveis.com.br/imovel/aluguel-casa-3-quartos-com-churrasqueira-bom-pastor-divinopolis-mg-170m2-id-2897313790/",
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Bom Pastor",
+      "endereco": null,
+      "aluguel": 2700.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 170.0,
+      "terrenoM2": null,
+      "quartos": 3,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 2,
+      "areaExternaPrivativa": true,
+      "quintal": null,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "fotoUrl": null,
+      "descricao": "Casa térrea no Bom Pastor com 170 m², 3 quartos, 1 suíte, 2 banheiros, 2 vagas, varanda/área gourmet privativa com churrasqueira, cozinha americana e armários planejados. O anúncio informa aluguel residencial de R$ 2.700/mês com IPTU e condomínio isentos.",
+      "fonteVerificacao": "portal_publico_anuncio_individual",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Página individual pública do ZAP Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.700/mês, 170 m², 3 quartos, 2 banheiros, 2 vagas, 1 suíte, varanda gourmet, área gourmet com churrasqueira, cozinha americana e armários. A área externa privativa foi confirmada pela varanda/área gourmet do próprio imóvel. O anúncio informa 16 fotos, porém nenhuma URL estável e específica foi persistida nesta verificação. Código do anunciante ECE5C55A; código ZAP 2897313790. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação.",
+      "disponivel": true,
+      "primeiroVistoEm": "2026-09-11",
+      "ultimoVistoEm": "2026-09-11",
+      "fingerprint": "57351d3afc784550e631e465",
+      "id": "imv_57351d3afc784550e631e465",
+      "proveniencia": {
+        "modo": "verificacao_manual",
+        "observadoEm": "2026-09-11",
+        "coletaAutomaticaPermitida": false,
+        "nota": "Página individual pública do ZAP Imóveis verificada em 11/09/2026. O anúncio confirma R$ 2.700/mês, 170 m², 3 quartos, 2 banheiros, 2 vagas, 1 suíte, varanda gourmet, área gourmet com churrasqueira, cozinha americana e armários. A área externa privativa foi confirmada pela varanda/área gourmet do próprio imóvel. O anúncio informa 16 fotos, porém nenhuma URL estável e específica foi persistida nesta verificação. Código do anunciante ECE5C55A; código ZAP 2897313790. Revalidar disponibilidade e condições diretamente com o anunciante antes de visita/contratação."
+      },
+      "historico": [
+        {
+          "data": "2026-09-11",
+          "campo": "observacao_verificada",
+          "fonte": "ZAP Imóveis",
+          "url": "https://www.zapimoveis.com.br/imovel/aluguel-casa-3-quartos-com-churrasqueira-bom-pastor-divinopolis-mg-170m2-id-2897313790/"
+        }
+      ],
+      "elegibilidade": {
+        "elegivel": true,
+        "status": "elegivel",
+        "motivos": [],
+        "pendencias": [],
+        "oportunidade": null
+      },
+      "match": {
+        "casa": 100,
+        "localizacao": 95,
+        "custoBeneficio": 92.4,
+        "visual": null,
+        "final": null,
+        "confianca": "incompleta",
+        "coberturaPesoPct": 85.0,
+        "motivosPositivos": [
+          "170 m²",
+          "3 quartos",
+          "2 banheiros",
+          "Área externa privativa",
+          "Armários",
+          "Churrasqueira",
+          "Preço dentro da faixa principal",
+          "Hospital Santa Mônica: ~1 km (aprox. pelo bairro)"
+        ],
+        "pontosAtencao": [
+          "Avaliação visual indisponível sem fotos reais HTTPS avaliadas"
+        ]
+      },
+      "latitude": -20.1191,
+      "longitude": -44.8885593,
+      "hospital": {
+        "referencia": "Hospital Santa Mônica",
+        "precisaoLocalizacao": "bairro",
+        "fonteLocalizacao": "Nominatim/OpenStreetMap",
+        "fonteReferencia": "https://www2.hapvida.com.br/unidades/hospital-e-maternidade-santa-monica",
+        "localizacaoValidada": true,
+        "distanciaLinhaRetaKm": 0.7,
+        "distanciaKm": 1.0,
+        "tempoCarroMin": 3,
+        "fonteRota": "OSRM/OpenStreetMap"
+      }
+    },
+    {
       "fonte": "Chaves na Mão / direto com proprietário",
       "codigoFonte": "44391550",
       "url": "https://www.chavesnamao.com.br/imovel/casa-para-alugar-3-quartos-com-garagem-mg-divinopolis-bom-pastor-200m2-RS2700/id-44391550/",
