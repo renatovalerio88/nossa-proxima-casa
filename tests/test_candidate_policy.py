@@ -20,8 +20,15 @@ class CandidatePolicyContractTests(unittest.TestCase):
     def test_above_3500_never_enters_active_candidates(self):
         self.assertIn("if (preco > 3500) return false", self.policy)
 
-    def test_outside_main_range_requires_confirmed_eligibility_and_opportunity(self):
-        self.assertIn("preco < 2000 || preco > 3000", self.policy)
+    def test_below_2000_requires_strong_structured_opportunity(self):
+        self.assertIn("function temJustificativaForteAbaixoDoPiso", self.policy)
+        self.assertIn("if (preco < 2000)", self.policy)
+        self.assertIn("elegibilidade.elegivel === true && temJustificativaForteAbaixoDoPiso(item)", self.policy)
+        self.assertIn("oportunidade.forte === true", self.policy)
+        self.assertIn("motivos.length >= 2 || justificativa.length >= 80", self.policy)
+
+    def test_above_main_range_requires_confirmed_eligibility_and_opportunity(self):
+        self.assertIn("if (preco > 3000)", self.policy)
         self.assertIn("elegibilidade.elegivel === true && temJustificativaOportunidade(item)", self.policy)
 
     def test_main_price_band_has_ranking_priority_inside_same_eligibility_level(self):
