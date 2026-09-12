@@ -8,6 +8,20 @@ function temJustificativaOportunidade(item) {
   return Boolean(oportunidade && typeof oportunidade === 'object' && Object.keys(oportunidade).length);
 }
 
+function temJustificativaForteAbaixoDoPiso(item) {
+  const oportunidade = item?.elegibilidade?.oportunidade;
+  if (!oportunidade || typeof oportunidade !== 'object') return false;
+
+  const nivel = String(oportunidade.nivel || oportunidade.forca || oportunidade.classificacao || '').toLowerCase();
+  const marcadaForte = oportunidade.forte === true || ['forte', 'alta', 'excepcional'].includes(nivel);
+  const motivos = Array.isArray(oportunidade.motivos) ? oportunidade.motivos.filter(Boolean) : [];
+  const justificativa = String(oportunidade.justificativa || oportunidade.texto || '').trim();
+
+  // Abaixo de R$ 2 mil não basta um rótulo genérico: exige marcação explícita de força
+  // e evidência concreta registrada em motivos ou justificativa substancial.
+  return marcadaForte && (motivos.length >= 2 || justificativa.length >= 80);
+}
+
 function candidatoAtivo(item) {
   if (!disponivelNaFonte(item)) return false;
 
@@ -25,8 +39,13 @@ function candidatoAtivo(item) {
   // Acima do teto absoluto não é candidato ativo, embora continue preservado no inventário/histórico.
   if (preco > 3500) return false;
 
-  // Fora da faixa principal só entra quando a oportunidade já está objetiva e todos os mínimos foram confirmados.
-  if (preco < 2000 || preco > 3000) {
+  // Abaixo de R$ 2.000 a exceção é realmente excepcional: mínimos confirmados + justificativa forte estruturada.
+  if (preco < 2000) {
+    return elegibilidade.elegivel === true && temJustificativaForteAbaixoDoPiso(item);
+  }
+
+  // Entre R$ 3.001 e R$ 3.500 a oportunidade também precisa estar objetiva e com mínimos confirmados.
+  if (preco > 3000) {
     return elegibilidade.elegivel === true && temJustificativaOportunidade(item);
   }
 
