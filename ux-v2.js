@@ -54,11 +54,9 @@
       return;
     }
 
-    const automaticas = imobiliarias.filter(f => f.coletaAutomatica === true).length;
     const comSite = imobiliarias.filter(f => Boolean(f.siteUrl)).length;
     const enriquecidas = imobiliarias.map(fonte => ({ fonte, cobertura: coberturaFonte(fonte) }));
     const comCandidato = enriquecidas.filter(x => x.cobertura.ativos > 0).length;
-    const totalCandidatosVinculados = enriquecidas.reduce((s, x) => s + x.cobertura.ativos, 0);
 
     enriquecidas.sort((a, b) => {
       if (b.cobertura.ativos !== a.cobertura.ativos) return b.cobertura.ativos - a.cobertura.ativos;
@@ -67,17 +65,17 @@
     });
 
     lista.innerHTML = `<div class="fontes-intro">
-      <strong>${imobiliarias.length} imobiliárias no radar</strong>
-      <span>${comSite} têm site identificado, mas apenas ${automaticas} permite coleta automática hoje. ${comCandidato} já têm candidatos ativos vinculados ao inventário${totalCandidatosVinculados ? ` (${totalCandidatosVinculados} vínculos)` : ''}. As demais continuam acessíveis para consulta direta, sem raspagem não autorizada.</span>
+      <strong>${imobiliarias.length} imobiliárias mapeadas</strong>
+      <span>${comSite} têm site identificado e ${comCandidato} já contribuíram com candidatos ativos. Quando não há acompanhamento direto permitido, o site da imobiliária continua disponível para consulta.</span>
     </div>` + enriquecidas.map(({ fonte, cobertura }) => {
       const [status, tipo] = statusFonte(fonte);
-      const link = fonte.siteUrl ? `<a href="${fonte.siteUrl}" target="_blank" rel="noopener noreferrer">Abrir site</a>` : '<span class="sem-link">Site oficial em verificação</span>';
+      const link = fonte.siteUrl ? `<a href="${fonte.siteUrl}" target="_blank" rel="noopener noreferrer">Abrir site</a>` : '<span class="sem-link">Site em verificação</span>';
       const coberturaTexto = cobertura.ativos > 0
-        ? `${cobertura.ativos} candidato${cobertura.ativos === 1 ? '' : 's'} ativo${cobertura.ativos === 1 ? '' : 's'} · ${cobertura.minimos} mínimos OK${cobertura.comFoto ? ` · ${cobertura.comFoto} com foto` : ''}`
-        : 'Nenhum candidato ativo vinculado ainda';
+        ? `${cobertura.ativos} candidato${cobertura.ativos === 1 ? '' : 's'} · ${cobertura.minimos} mínimos OK${cobertura.comFoto ? ` · ${cobertura.comFoto} com foto` : ''}`
+        : 'Sem candidato ativo no momento';
       const nota = fonte.coletaAutomatica === true
-        ? 'Catálogo acompanhado automaticamente em baixa frequência.'
-        : 'Consulta direta; candidatos só entram após verificação individual.';
+        ? 'Anúncios desta fonte podem ser atualizados pelo radar.'
+        : 'Novos candidatos entram somente após verificação.';
       return `<article class="fonte-card">
         <div><strong>${fonte.nome}</strong><span class="fonte-status" data-tipo="${tipo}">${status}</span></div>
         <p class="fonte-cobertura">${coberturaTexto}</p>
@@ -98,17 +96,17 @@
     const imobiliarias = fontes.filter(f => f.tipo === 'imobiliaria').length;
     const partes = [];
     if (atualizado) partes.push(`Atualizado em ${atualizado}`);
-    if (imobiliarias) partes.push(`${imobiliarias} imobiliárias monitoradas`);
+    if (imobiliarias) partes.push(`${imobiliarias} imobiliárias mapeadas`);
     if (status && Number(status.imoveisComFotos || 0) > 0) {
-      partes.push(`${Number(status.imoveisComFotos)} anúncio${Number(status.imoveisComFotos) === 1 ? '' : 's'} com foto real na coleta atual`);
+      partes.push(`${Number(status.imoveisComFotos)} anúncio${Number(status.imoveisComFotos) === 1 ? '' : 's'} com foto real na atualização atual`);
     }
     return partes.length ? partes.join(' · ') : 'Radar atualizado';
   };
 
   statusFonte = function statusFonteUX(fonte) {
-    if (fonte.coletaAutomatica === true) return ['Busca automática', 'automatico'];
+    if (fonte.coletaAutomatica === true) return ['No radar', 'automatico'];
     const s = String(fonte.status || '');
-    if (s.includes('nao_usar_catalogo')) return ['Catálogo em verificação', 'validacao'];
+    if (s.includes('nao_usar_catalogo')) return ['Consultar site', 'validacao'];
     if (fonte.siteUrl) return ['Consultar site', 'manual'];
     return ['Site em verificação', 'validacao'];
   };
