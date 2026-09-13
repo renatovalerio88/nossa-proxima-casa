@@ -1,125 +1,205 @@
 (() => {
+  const CHAVE = 'npc-decisoes';
+  const DIAS_NOVO = 7;
   const renderBase = render;
+  const filtrarBase = filtrar;
 
-  function aplicarRotulos() {
-    document.querySelectorAll('.qualidade[data-tipo="elegivel"]').forEach(el => {
-      el.textContent = 'Mínimos OK';
-      el.title = 'Cumpre os critérios mínimos confirmados. Isso não significa recomendação final.';
-    });
-
-    document.querySelectorAll('.match-pendente').forEach(el => {
-      const texto = el.querySelector('span');
-      if (texto) texto.textContent = 'Sem nota';
-      el.title = 'O Match só aparece quando todos os componentes necessários estão disponíveis. Mínimos OK e Match são avaliações diferentes.';
-      el.setAttribute('aria-label', 'Match ainda não calculável');
-    });
-
-    document.querySelectorAll('.proveniencia').forEach(el => {
-      el.classList.add('proveniencia-secundaria');
-    });
+  function lerDecisoesCompletas() {
+    try {
+      const bruto = JSON.parse(localStorage.getItem(CHAVE) || '{}');
+      if (!bruto || typeof bruto !== 'object' || Array.isArray(bruto)) return {};
+      return Object.fromEntries(Object.entries(bruto).filter(([, v]) => ['favorito','descartado','indisponivel'].includes(v)));
+    } catch { return {}; }
   }
+
+  state.decisoes = lerDecisoesCompletas();
+  salvarDecisoes = function salvarDecisoesUX() {
+    try { localStorage.setItem(CHAVE, JSON.stringify(state.decisoes)); } catch {}
+  };
+
+  function dataValida(v) {
+    if (!v) return null;
+    const d = new Date(String(v).includes('T') ? v : `${v}T12:00:00`);
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+  function novoPorData(item) {
+    const d = dataValida(item.primeiroVistoEm);
+    if (!d || !ativo(item)) return false;
+    const idade = (Date.now() - d.getTime()) / 86400000;
+    return idade >= 0 && idade <= DIAS_NOVO;
+  }
+
+  ehNovo = novoPorData;
+  inicializarNovos = function inicializarNovosUX(items) {
+    state.novosIds = new Set(items.filter(novoPorData).map(i => i.id).filter(Boolean));
+    state.baselineNovosInicializado = true;
+  };
+  marcarNovosComoVistos = function marcarNovosComoVistosUX() {
+    state.novosIds = new Set();
+    render();
+  };
+
+  function indisponivelLocal(item) { return decisao(item.id) === 'indisponivel'; }
+  function descartadoLocal(item) { return decisao(item.id) === 'descartado'; }
+  function disponivelParaSugestao(item) {
+    return ativo(item) && !indisponivelLocal(item) && !descartadoLocal(item) && !foraDosCriterios(item);
+  }
+
+  filtrar = function filtrarUX(items) {
+    const somenteElegiveis = document.querySelector('#somenteElegiveis')?.checked;
+    let rows = items.filter(i => !somenteElegiveis || i.elegibilidade?.elegivel === true);
+    rows = rows.filter(i => {
+      const d = decisao(i.id);
+      if (state.tab === 'favoritados') return d === 'favorito' && ativo(i);
+      if (state.tab === 'descartados') return d === 'descartado' || d === 'indisponivel';
+      if (state.tab === 'a-confirmar') return d !== 'descartado' && d !== 'indisponivel' && precisaConfirmacao(i) && ativo(i);
+      if (state.tab === 'novos') return d !== 'descartado' && d !== 'indisponivel' && state.novosIds.has(i.id) && ativo(i);
+      if (state.tab === 'todos') return disponivelParaSugestao(i);
+      return true;
+    });
+    const ordem = document.querySelector('#ordenacao')?.value || 'recente';
+    return rows.sort((a,b) => {
+      const prioridade = prioridadeCandidato(a) - prioridadeCandidato(b);
+      if (prioridade !== 0) return prioridade;
+      if (ordem === 'preco') return (a.aluguel ?? Infinity) - (b.aluguel ?? Infinity);
+      if (ordem === 'recente') {
+        const novo = Number(novoPorData(b)) - Number(novoPorData(a));
+        if (novo !== 0) return novo;
+      }
+      return (b.match?.final ?? -1) - (a.match?.final ?? -1);
+    });
+  };
 
   function normalizarNome(value) {
-    return String(value || '')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, ' ')
-      .trim();
+    return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   }
-
   function itemPertenceFonte(item, fonte) {
     const origem = normalizarNome(item?.fonte);
-    const nomes = [fonte?.nome, ...(Array.isArray(fonte?.aliases) ? fonte.aliases : [])]
-      .map(normalizarNome)
-      .filter(Boolean);
-    return nomes.some(nome => origem.includes(nome));
+    return [fonte?.nome, ...(Array.isArray(fonte?.aliases) ? fonte.aliases : [])].map(normalizarNome).filter(Boolean).some(nome => origem.includes(nome));
   }
-
   function coberturaFonte(fonte) {
     const relacionados = state.imoveis.filter(item => itemPertenceFonte(item, fonte));
     const ativos = relacionados.filter(item => typeof candidatoAtivo === 'function' ? candidatoAtivo(item) : ativo(item));
-    const minimos = ativos.filter(item => item.elegibilidade?.elegivel === true).length;
-    const confirmar = ativos.filter(item => item.elegibilidade?.status === 'pendente').length;
-    const comFoto = ativos.filter(item => fotosConfiaveis(item).length > 0).length;
-    return { relacionados: relacionados.length, ativos: ativos.length, minimos, confirmar, comFoto };
+    return {
+      ativos: ativos.length,
+      minimos: ativos.filter(item => item.elegibilidade?.elegivel === true).length,
+      comFoto: ativos.filter(item => fotosConfiaveis(item).length > 0).length
+    };
   }
 
   renderImobiliarias = function renderImobiliariasUX() {
     const lista = document.querySelector('#lista');
     lista.className = 'lista-fontes';
     const imobiliarias = state.fontes.filter(f => f.tipo === 'imobiliaria');
-    if (!imobiliarias.length) {
-      lista.innerHTML = '<div class="vazio"><strong>Nenhuma imobiliária carregada.</strong></div>';
-      return;
-    }
-
-    const comSite = imobiliarias.filter(f => Boolean(f.siteUrl)).length;
+    if (!imobiliarias.length) { lista.innerHTML = '<div class="vazio"><strong>Nenhuma imobiliária carregada.</strong></div>'; return; }
     const enriquecidas = imobiliarias.map(fonte => ({ fonte, cobertura: coberturaFonte(fonte) }));
-    const comCandidato = enriquecidas.filter(x => x.cobertura.ativos > 0).length;
-
-    enriquecidas.sort((a, b) => {
-      if (b.cobertura.ativos !== a.cobertura.ativos) return b.cobertura.ativos - a.cobertura.ativos;
-      if (Boolean(b.fonte.siteUrl) !== Boolean(a.fonte.siteUrl)) return Number(Boolean(b.fonte.siteUrl)) - Number(Boolean(a.fonte.siteUrl));
-      return a.fonte.nome.localeCompare(b.fonte.nome, 'pt-BR');
-    });
-
-    lista.innerHTML = `<div class="fontes-intro">
-      <strong>${imobiliarias.length} imobiliárias mapeadas</strong>
-      <span>${comSite} têm site identificado e ${comCandidato} já contribuíram com candidatos ativos. Quando não há acompanhamento direto permitido, o site da imobiliária continua disponível para consulta.</span>
-    </div>` + enriquecidas.map(({ fonte, cobertura }) => {
-      const [status, tipo] = statusFonte(fonte);
+    enriquecidas.sort((a,b) => b.cobertura.ativos - a.cobertura.ativos || a.fonte.nome.localeCompare(b.fonte.nome, 'pt-BR'));
+    lista.innerHTML = `<div class="fontes-intro"><strong>${imobiliarias.length} imobiliárias no radar</strong><span>Abra direto quando quiser conferir uma fonte.</span></div>` + enriquecidas.map(({ fonte, cobertura }) => {
       const link = fonte.siteUrl ? `<a href="${fonte.siteUrl}" target="_blank" rel="noopener noreferrer">Abrir site</a>` : '<span class="sem-link">Site em verificação</span>';
-      const coberturaTexto = cobertura.ativos > 0
-        ? `${cobertura.ativos} candidato${cobertura.ativos === 1 ? '' : 's'} · ${cobertura.minimos} mínimos OK${cobertura.comFoto ? ` · ${cobertura.comFoto} com foto` : ''}`
-        : 'Sem candidato ativo no momento';
-      const nota = fonte.coletaAutomatica === true
-        ? 'Anúncios desta fonte podem ser atualizados pelo radar.'
-        : 'Novos candidatos entram somente após verificação.';
-      return `<article class="fonte-card">
-        <div><strong>${fonte.nome}</strong><span class="fonte-status" data-tipo="${tipo}">${status}</span></div>
-        <p class="fonte-cobertura">${coberturaTexto}</p>
-        <p class="fonte-nota">${nota}</p>
-        ${link}
-      </article>`;
+      const info = cobertura.ativos ? `${cobertura.ativos} candidato${cobertura.ativos === 1 ? '' : 's'}${cobertura.comFoto ? ` · ${cobertura.comFoto} com foto` : ''}` : 'Sem candidato ativo agora';
+      return `<article class="fonte-card"><div><strong>${fonte.nome}</strong></div><p class="fonte-cobertura">${info}</p>${link}</article>`;
     }).join('');
+  };
+
+  function aplicarRotulos() {
+    document.querySelectorAll('.qualidade[data-tipo="elegivel"]').forEach(el => { el.textContent = 'Mínimos OK'; el.title = 'Cumpre os critérios mínimos confirmados.'; });
+    document.querySelectorAll('.match-pendente').forEach(el => { el.hidden = true; });
+    document.querySelectorAll('.proveniencia').forEach(el => el.classList.add('proveniencia-secundaria'));
+  }
+
+  function aplicarDecisoesVisuais() {
+    document.querySelectorAll('.card').forEach(card => {
+      const titulo = card.querySelector('.titulo')?.textContent;
+      const item = state.imoveis.find(i => valor(i.titulo, i.bairro ? `Casa em ${i.bairro}` : 'Casa para aluguel') === titulo);
+      if (!item) return;
+      const d = decisao(item.id);
+      const indisponivel = card.querySelector('.indisponivel');
+      if (!indisponivel) return;
+      if (d === 'indisponivel') {
+        card.classList.add('indisponivel-card');
+        indisponivel.textContent = '↩ Restaurar';
+        const estado = card.querySelector('.estado-anuncio');
+        if (estado) { estado.hidden = false; estado.textContent = 'Indisponível'; }
+      } else {
+        indisponivel.textContent = '⌂ Já alugado';
+      }
+      indisponivel.onclick = () => setDecisaoUX(item.id, d === 'indisponivel' ? null : 'indisponivel');
+      const descartar = card.querySelector('.descartar');
+      if (descartar && d !== 'indisponivel') descartar.textContent = d === 'descartado' ? '↩ Restaurar' : '✕ Não gostei';
+    });
+  }
+
+  function setDecisaoUX(id, valor) {
+    if (valor === null || decisao(id) === valor) delete state.decisoes[id];
+    else state.decisoes[id] = valor;
+    salvarDecisoes();
+    render();
+  }
+  setDecisao = setDecisaoUX;
+
+  const renderResumoBase = renderResumo;
+  renderResumo = function renderResumoUX() {
+    renderResumoBase();
+    const ativos = state.imoveis.filter(ativo);
+    const sugestoes = ativos.filter(disponivelParaSugestao).length;
+    const favoritos = ativos.filter(i => decisao(i.id) === 'favorito').length;
+    const descartados = state.imoveis.filter(i => ['descartado','indisponivel'].includes(decisao(i.id))).length;
+    const confirmar = ativos.filter(i => precisaConfirmacao(i) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
+    document.querySelector('#resumo').innerHTML = [metric('sugestões', sugestoes), metric('mínimos OK', ativos.filter(i => i.elegibilidade?.elegivel === true).length), metric('a confirmar', confirmar), metric('favoritos', favoritos)].join('');
+    const set = (tab, texto, n) => { const el = document.querySelector(`[data-tab="${tab}"]`); if (el) el.textContent = n ? `${texto} (${n})` : texto; };
+    set('todos','Sugestões',sugestoes); set('novos','Novos',state.novosIds.size); set('a-confirmar','A confirmar',confirmar); set('favoritados','Favoritos',favoritos); set('descartados','Descartados',descartados);
   };
 
   render = function renderUX() {
     renderBase();
     aplicarRotulos();
+    aplicarDecisoesVisuais();
   };
 
   textoStatus = function textoStatusUX(inv, status, fontesData) {
     const atualizado = dataPtBr(inv.atualizadoEm || status?.fim);
-    const fontes = fontesData?.fontes || [];
-    const imobiliarias = fontes.filter(f => f.tipo === 'imobiliaria').length;
-    const partes = [];
-    if (atualizado) partes.push(`Atualizado em ${atualizado}`);
-    if (imobiliarias) partes.push(`${imobiliarias} imobiliárias mapeadas`);
-    if (status && Number(status.imoveisComFotos || 0) > 0) {
-      partes.push(`${Number(status.imoveisComFotos)} anúncio${Number(status.imoveisComFotos) === 1 ? '' : 's'} com foto real na atualização atual`);
-    }
-    return partes.length ? partes.join(' · ') : 'Radar atualizado';
+    const imobiliarias = (fontesData?.fontes || []).filter(f => f.tipo === 'imobiliaria').length;
+    return [atualizado ? `Atualizado ${atualizado}` : null, imobiliarias ? `${imobiliarias} imobiliárias` : null].filter(Boolean).join(' · ') || 'Radar atualizado';
   };
 
-  statusFonte = function statusFonteUX(fonte) {
-    if (fonte.coletaAutomatica === true) return ['No radar', 'automatico'];
-    const s = String(fonte.status || '');
-    if (s.includes('nao_usar_catalogo')) return ['Consultar site', 'validacao'];
-    if (fonte.siteUrl) return ['Consultar site', 'manual'];
-    return ['Site em verificação', 'validacao'];
-  };
+  function codificarEscolhas() {
+    const payload = JSON.stringify({ v:1, decisoes: state.decisoes });
+    return btoa(unescape(encodeURIComponent(payload))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  }
+  function decodificarEscolhas(token) {
+    try {
+      const base = token.replace(/-/g,'+').replace(/_/g,'/');
+      const pad = base + '='.repeat((4 - base.length % 4) % 4);
+      const payload = JSON.parse(decodeURIComponent(escape(atob(pad))));
+      return payload?.v === 1 && payload.decisoes && typeof payload.decisoes === 'object' ? payload.decisoes : null;
+    } catch { return null; }
+  }
+  function importarDaUrl() {
+    const params = new URLSearchParams(location.search);
+    const compartilhadas = decodificarEscolhas(params.get('escolhas') || '');
+    if (!compartilhadas) return;
+    Object.entries(compartilhadas).forEach(([id, valor]) => { if (['favorito','descartado','indisponivel'].includes(valor)) state.decisoes[id] = valor; });
+    salvarDecisoes();
+    params.delete('escolhas');
+    const query = params.toString();
+    history.replaceState(null,'',`${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
+    const feedback = document.querySelector('#syncFeedback');
+    if (feedback) feedback.textContent = 'Escolhas sincronizadas neste aparelho';
+  }
+  async function compartilharEscolhas() {
+    const url = `${location.origin}${location.pathname}?escolhas=${codificarEscolhas()}`;
+    const feedback = document.querySelector('#syncFeedback');
+    try {
+      if (navigator.share) await navigator.share({ title:'Nossa Próxima Casa', text:'Abra para sincronizar nossas escolhas.', url });
+      else if (navigator.clipboard) { await navigator.clipboard.writeText(url); if (feedback) feedback.textContent = 'Link copiado'; }
+      else { prompt('Copie este link', url); }
+    } catch (e) { if (e?.name !== 'AbortError' && feedback) feedback.textContent = 'Não foi possível compartilhar'; }
+  }
 
-  // A home sempre abre no inventário útil. "Novos" continua disponível como filtro de revisão.
   state.tab = 'todos';
   const somente = document.querySelector('#somenteElegiveis');
   if (somente) somente.checked = false;
-  const checkLabel = somente?.closest('label');
-  if (checkLabel) {
-    const texto = Array.from(checkLabel.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
-    if (texto) texto.textContent = ' Só com mínimos confirmados';
-  }
-
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === 'todos'));
+  document.querySelector('#compartilharEscolhas')?.addEventListener('click', compartilharEscolhas);
+  importarDaUrl();
 })();
