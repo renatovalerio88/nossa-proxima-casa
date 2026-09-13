@@ -1,14 +1,18 @@
 (() => {
   const CHAVE = 'npc-decisoes';
   const CHAVE_VISTOS = 'npc-novos-vistos';
+  const CHAVE_REVISAO = 'npc-decisoes-revisao';
   const DIAS_NOVO = 7;
   const renderBase = render;
 
+  function decisoesValidas(obj) {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return {};
+    return Object.fromEntries(Object.entries(obj).filter(([, v]) => ['favorito','descartado','indisponivel'].includes(v)));
+  }
+
   function lerDecisoesCompletas() {
     try {
-      const bruto = JSON.parse(localStorage.getItem(CHAVE) || '{}');
-      if (!bruto || typeof bruto !== 'object' || Array.isArray(bruto)) return {};
-      return Object.fromEntries(Object.entries(bruto).filter(([, v]) => ['favorito','descartado','indisponivel'].includes(v)));
+      return decisoesValidas(JSON.parse(localStorage.getItem(CHAVE) || '{}'));
     } catch { return {}; }
   }
 
@@ -19,14 +23,24 @@
     } catch { return new Set(); }
   }
 
+  function marcarRevisao() {
+    try { localStorage.setItem(CHAVE_REVISAO, String(Date.now())); } catch {}
+  }
+
   const vistosNovos = lerVistos();
   state.decisoes = lerDecisoesCompletas();
 
   salvarDecisoes = function salvarDecisoesUX() {
-    try { localStorage.setItem(CHAVE, JSON.stringify(state.decisoes)); } catch {}
+    try {
+      localStorage.setItem(CHAVE, JSON.stringify(state.decisoes));
+      marcarRevisao();
+    } catch {}
   };
   function salvarVistos() {
-    try { localStorage.setItem(CHAVE_VISTOS, JSON.stringify([...vistosNovos])); } catch {}
+    try {
+      localStorage.setItem(CHAVE_VISTOS, JSON.stringify([...vistosNovos]));
+      marcarRevisao();
+    } catch {}
   }
 
   function dataValida(v) {
@@ -150,9 +164,7 @@
     });
     const box = card.querySelector('.alertas');
     if (box && !box.children.length) box.hidden = true;
-    if (item.elegibilidade?.elegivel === true) {
-      card.classList.add('card-confirmado');
-    }
+    if (item.elegibilidade?.elegivel === true) card.classList.add('card-confirmado');
   }
 
   function aplicarRotulos() {
@@ -199,12 +211,8 @@
       }
       indisponivel.onclick = () => setDecisaoUX(item.id, d === 'indisponivel' ? null : 'indisponivel');
 
-      if (fav) {
-        fav.textContent = d === 'favorito' ? '♥ Salvo' : '♡ Salvar';
-      }
-      if (descartar && d !== 'indisponivel') {
-        descartar.textContent = d === 'descartado' ? '↩ Restaurar' : '✕ Não quero';
-      }
+      if (fav) fav.textContent = d === 'favorito' ? '♥ Salvo' : '♡ Salvar';
+      if (descartar && d !== 'indisponivel') descartar.textContent = d === 'descartado' ? '↩ Restaurar' : '✕ Não quero';
     });
   }
 
@@ -244,7 +252,7 @@
   };
 
   function codificarEscolhas() {
-    const payload = JSON.stringify({ v:2, decisoes: state.decisoes, vistos:[...vistosNovos] });
+    const payload = JSON.stringify({ v:3, modo:'snapshot', atualizadoEm:Date.now(), decisoes:state.decisoes, vistos:[...vistosNovos] });
     return btoa(unescape(encodeURIComponent(payload))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
   }
   function decodificarEscolhas(token) {
@@ -252,32 +260,54 @@
       const base = token.replace(/-/g,'+').replace(/_/g,'/');
       const pad = base + '='.repeat((4 - base.length % 4) % 4);
       const payload = JSON.parse(decodeURIComponent(escape(atob(pad))));
-      if (![1,2].includes(payload?.v) || !payload.decisoes || typeof payload.decisoes !== 'object') return null;
+      if (![1,2,3].includes(payload?.v) || !payload.decisoes || typeof payload.decisoes !== 'object') return null;
+      payload.decisoes = decisoesValidas(payload.decisoes);
       return payload;
     } catch { return null; }
+  }
+  function aplicarSnapshot(compartilhadas) {
+    if (compartilhadas.v >= 3 && compartilhadas.modo === 'snapshot') {
+      state.decisoes = { ...compartilhadas.decisoes };
+      vistosNovos.clear();
+      if (Array.isArray(compartilhadas.vistos)) compartilhadas.vistos.forEach(id => { if (id) vistosNovos.add(id); });
+      return;
+    }
+    Object.entries(compartilhadas.decisoes).forEach(([id, valor]) => { state.decisoes[id] = valor; });
+    if (Array.isArray(compartilhadas.vistos)) compartilhadas.vistos.forEach(id => { if (id) vistosNovos.add(id); });
   }
   function importarDaUrl() {
     const params = new URLSearchParams(location.search);
     const compartilhadas = decodificarEscolhas(params.get('escolhas') || '');
     if (!compartilhadas) return;
-    Object.entries(compartilhadas.decisoes).forEach(([id, valor]) => { if (['favorito','descartado','indisponivel'].includes(valor)) state.decisoes[id] = valor; });
-    if (Array.isArray(compartilhadas.vistos)) compartilhadas.vistos.forEach(id => { if (id) vistosNovos.add(id); });
+    aplicarSnapshot(compartilhadas);
     salvarDecisoes();
     salvarVistos();
     params.delete('escolhas');
     const query = params.toString();
     history.replaceState(null,'',`${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
     const feedback = document.querySelector('#syncFeedback');
-    if (feedback) feedback.textContent = 'Celular sincronizado';
+    if (feedback) feedback.textContent = 'Celular sincronizado com as escolhas deste link';
   }
   async function compartilharEscolhas() {
     const url = `${location.origin}${location.pathname}?escolhas=${codificarEscolhas()}`;
     const feedback = document.querySelector('#syncFeedback');
     try {
-      if (navigator.share) await navigator.share({ title:'Nossa Próxima Casa', text:'Abra este link no outro celular para sincronizar as escolhas.', url });
-      else if (navigator.clipboard) { await navigator.clipboard.writeText(url); if (feedback) feedback.textContent = 'Link copiado'; }
+      if (navigator.share) await navigator.share({ title:'Nossa Próxima Casa', text:'Abra este link no outro celular para deixar as escolhas iguais às deste aparelho.', url });
+      else if (navigator.clipboard) { await navigator.clipboard.writeText(url); if (feedback) feedback.textContent = 'Link de sincronização copiado'; }
       else { prompt('Copie este link', url); }
     } catch (e) { if (e?.name !== 'AbortError' && feedback) feedback.textContent = 'Não foi possível compartilhar'; }
+  }
+
+  function atualizarDoMesmoNavegador(event) {
+    if (![CHAVE, CHAVE_VISTOS, CHAVE_REVISAO].includes(event.key)) return;
+    state.decisoes = lerDecisoesCompletas();
+    const vistos = lerVistos();
+    vistosNovos.clear();
+    vistos.forEach(id => vistosNovos.add(id));
+    if (state.imoveis.length) inicializarNovos(state.imoveis);
+    render();
+    const feedback = document.querySelector('#syncFeedback');
+    if (feedback) feedback.textContent = 'Escolhas atualizadas neste aparelho';
   }
 
   state.tab = 'todos';
@@ -285,5 +315,6 @@
   if (somente) somente.checked = false;
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === 'todos'));
   document.querySelector('#compartilharEscolhas')?.addEventListener('click', compartilharEscolhas);
+  window.addEventListener('storage', atualizarDoMesmoNavegador);
   importarDaUrl();
 })();
