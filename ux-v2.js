@@ -63,11 +63,25 @@
       && !foraDosCriterios(item);
   }
 
+  distanciaHospital = function distanciaHospitalUX(item) {
+    const hospital = item.hospital || {};
+    if (hospital.localizacaoValidada !== true) return null;
+    const km = hospital.distanciaKm ?? hospital.distanciaLinhaRetaKm;
+    if (km == null || !Number.isFinite(Number(km))) return null;
+    const distancia = Number(km).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+    return `${distancia} km do hospital${hospital.precisaoLocalizacao === 'bairro' ? ' aprox.' : ''}`;
+  };
+
+  origemTexto = function origemTextoUX(item) {
+    const modo = item.proveniencia?.modo || item.fonteVerificacao;
+    if (modo === 'coleta_automatica' || item.coletaAutomaticaPermitida === true) return 'Fonte monitorada';
+    if (item.url) return 'Anúncio verificado';
+    return null;
+  };
+
   filtrar = function filtrarUX(items) {
     const somenteElegiveis = document.querySelector('#somenteElegiveis')?.checked;
     let rows = items;
-    // “A confirmar” e “Descartados” são estados próprios: o filtro de mínimos
-    // não pode esvaziar essas abas nem esconder a razão de um imóvel estar ali.
     if (somenteElegiveis && !['a-confirmar','descartados'].includes(state.tab)) {
       rows = rows.filter(i => i.elegibilidade?.elegivel === true);
     }
@@ -119,17 +133,46 @@
     if (!imobiliarias.length) { lista.innerHTML = '<div class="vazio"><strong>Nenhuma imobiliária carregada.</strong></div>'; return; }
     const enriquecidas = imobiliarias.map(fonte => ({ fonte, cobertura: coberturaFonte(fonte) }));
     enriquecidas.sort((a,b) => b.cobertura.ativos - a.cobertura.ativos || a.fonte.nome.localeCompare(b.fonte.nome, 'pt-BR'));
-    lista.innerHTML = `<div class="fontes-intro"><strong>${imobiliarias.length} imobiliárias no radar</strong><span>Abra direto quando quiser conferir uma fonte.</span></div>` + enriquecidas.map(({ fonte, cobertura }) => {
+    lista.innerHTML = `<div class="fontes-intro"><strong>${imobiliarias.length} imobiliárias no radar</strong><span>Acesso direto às fontes.</span></div>` + enriquecidas.map(({ fonte, cobertura }) => {
       const link = fonte.siteUrl ? `<a href="${fonte.siteUrl}" target="_blank" rel="noopener noreferrer">Abrir site</a>` : '<span class="sem-link">Site em verificação</span>';
-      const info = cobertura.ativos ? `${cobertura.ativos} candidato${cobertura.ativos === 1 ? '' : 's'}${cobertura.comFoto ? ` · ${cobertura.comFoto} com foto` : ''}` : 'Sem candidato ativo agora';
+      const info = cobertura.ativos ? `${cobertura.ativos} candidato${cobertura.ativos === 1 ? '' : 's'}${cobertura.comFoto ? ` · ${cobertura.comFoto} com foto` : ''}` : 'Sem candidato ativo';
       return `<article class="fonte-card"><div><strong>${fonte.nome}</strong></div><p class="fonte-cobertura">${info}</p>${link}</article>`;
     }).join('');
   };
+
+  function limparTextoTecnico(card, item) {
+    const alertas = [...card.querySelectorAll('.alertas span')];
+    alertas.forEach(el => {
+      const texto = el.textContent.trim();
+      if (/avaliação visual ainda não calculada/i.test(texto)) el.remove();
+      else if (/sem foto real disponível/i.test(texto)) el.textContent = 'Sem foto';
+      else if (/falta confirmar:/i.test(texto)) el.textContent = texto.replace(/^Falta confirmar:\s*/i, 'Confirmar: ');
+    });
+    const box = card.querySelector('.alertas');
+    if (box && !box.children.length) box.hidden = true;
+    if (item.elegibilidade?.elegivel === true) {
+      card.classList.add('card-confirmado');
+    }
+  }
 
   function aplicarRotulos() {
     document.querySelectorAll('.qualidade[data-tipo="elegivel"]').forEach(el => { el.textContent = 'Mínimos OK'; el.title = 'Cumpre os critérios mínimos confirmados.'; });
     document.querySelectorAll('.match-pendente').forEach(el => { el.hidden = true; });
     document.querySelectorAll('.proveniencia').forEach(el => el.classList.add('proveniencia-secundaria'));
+  }
+
+  function aplicarVazio() {
+    const vazio = document.querySelector('#lista .vazio');
+    if (!vazio) return;
+    const mensagens = {
+      'todos': ['Sem sugestões confirmadas agora.', 'Veja “A confirmar” para anúncios que ainda precisam de informação.'],
+      'novos': ['Nada novo por aqui.', 'Novos anúncios aparecem aqui por 7 dias.'],
+      'a-confirmar': ['Nada pendente agora.', 'Ótimo: não há anúncios aguardando confirmação.'],
+      'favoritados': ['Nenhum favorito ainda.', 'Salve as casas que vocês querem comparar.'],
+      'descartados': ['Nada descartado.', 'Casas rejeitadas ou já alugadas ficam aqui.']
+    };
+    const [titulo, apoio] = mensagens[state.tab] || ['Nada por aqui.', ''];
+    vazio.innerHTML = `<strong>${titulo}</strong>${apoio ? `<span>${apoio}</span>` : ''}`;
   }
 
   function aplicarDecisoesVisuais() {
@@ -138,21 +181,30 @@
     cards.forEach((card, index) => {
       const item = visiveis[index];
       if (!item) return;
+      limparTextoTecnico(card, item);
       const d = decisao(item.id);
       const indisponivel = card.querySelector('.indisponivel');
       if (!indisponivel) return;
       const estado = card.querySelector('.estado-anuncio');
+      const fav = card.querySelector('.favoritar');
+      const descartar = card.querySelector('.descartar');
+
       if (d === 'indisponivel') {
         card.classList.add('indisponivel-card');
         indisponivel.textContent = '↩ Restaurar';
         if (estado) { estado.hidden = false; estado.textContent = 'Alugado / indisponível'; }
       } else {
-        indisponivel.textContent = '⌂ Já alugado';
+        indisponivel.textContent = '⌂ Alugado';
         if (estado) estado.hidden = true;
       }
       indisponivel.onclick = () => setDecisaoUX(item.id, d === 'indisponivel' ? null : 'indisponivel');
-      const descartar = card.querySelector('.descartar');
-      if (descartar && d !== 'indisponivel') descartar.textContent = d === 'descartado' ? '↩ Restaurar' : '✕ Não gostei';
+
+      if (fav) {
+        fav.textContent = d === 'favorito' ? '♥ Salvo' : '♡ Salvar';
+      }
+      if (descartar && d !== 'indisponivel') {
+        descartar.textContent = d === 'descartado' ? '↩ Restaurar' : '✕ Não quero';
+      }
     });
   }
 
@@ -173,7 +225,7 @@
     const descartados = state.imoveis.filter(i => ['descartado','indisponivel'].includes(decisao(i.id))).length;
     const confirmar = ativos.filter(i => precisaConfirmacao(i) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
     const novos = ativos.filter(i => state.novosIds.has(i.id) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
-    document.querySelector('#resumo').innerHTML = [metric('sugestões confirmadas', sugestoes), metric('mínimos OK', ativos.filter(i => i.elegibilidade?.elegivel === true).length), metric('a confirmar', confirmar), metric('favoritos', favoritos)].join('');
+    document.querySelector('#resumo').innerHTML = [metric('sugestões', sugestoes), metric('novos', novos), metric('a confirmar', confirmar), metric('favoritos', favoritos)].join('');
     const set = (tab, texto, n) => { const el = document.querySelector(`[data-tab="${tab}"]`); if (el) el.textContent = n ? `${texto} (${n})` : texto; };
     set('todos','Sugestões',sugestoes); set('novos','Novos',novos); set('a-confirmar','A confirmar',confirmar); set('favoritados','Favoritos',favoritos); set('descartados','Descartados',descartados);
   };
@@ -181,13 +233,14 @@
   render = function renderUX() {
     renderBase();
     aplicarRotulos();
+    aplicarVazio();
     aplicarDecisoesVisuais();
   };
 
   textoStatus = function textoStatusUX(inv, status, fontesData) {
     const atualizado = dataPtBr(inv.atualizadoEm || status?.fim);
     const imobiliarias = (fontesData?.fontes || []).filter(f => f.tipo === 'imobiliaria').length;
-    return [atualizado ? `Atualizado ${atualizado}` : null, imobiliarias ? `${imobiliarias} imobiliárias` : null].filter(Boolean).join(' · ') || 'Radar atualizado';
+    return [atualizado ? `Atualizado ${atualizado}` : null, imobiliarias ? `${imobiliarias} fontes` : null].filter(Boolean).join(' · ') || 'Radar atualizado';
   };
 
   function codificarEscolhas() {
@@ -215,13 +268,13 @@
     const query = params.toString();
     history.replaceState(null,'',`${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
     const feedback = document.querySelector('#syncFeedback');
-    if (feedback) feedback.textContent = 'Escolhas sincronizadas neste aparelho';
+    if (feedback) feedback.textContent = 'Celular sincronizado';
   }
   async function compartilharEscolhas() {
     const url = `${location.origin}${location.pathname}?escolhas=${codificarEscolhas()}`;
     const feedback = document.querySelector('#syncFeedback');
     try {
-      if (navigator.share) await navigator.share({ title:'Nossa Próxima Casa', text:'Abra para sincronizar nossas escolhas.', url });
+      if (navigator.share) await navigator.share({ title:'Nossa Próxima Casa', text:'Abra este link no outro celular para sincronizar as escolhas.', url });
       else if (navigator.clipboard) { await navigator.clipboard.writeText(url); if (feedback) feedback.textContent = 'Link copiado'; }
       else { prompt('Copie este link', url); }
     } catch (e) { if (e?.name !== 'AbortError' && feedback) feedback.textContent = 'Não foi possível compartilhar'; }
