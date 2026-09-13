@@ -1,8 +1,8 @@
 (() => {
   const CHAVE = 'npc-decisoes';
+  const CHAVE_VISTOS = 'npc-novos-vistos';
   const DIAS_NOVO = 7;
   const renderBase = render;
-  const filtrarBase = filtrar;
 
   function lerDecisoesCompletas() {
     try {
@@ -12,10 +12,22 @@
     } catch { return {}; }
   }
 
+  function lerVistos() {
+    try {
+      const bruto = JSON.parse(localStorage.getItem(CHAVE_VISTOS) || '[]');
+      return new Set(Array.isArray(bruto) ? bruto.filter(Boolean) : []);
+    } catch { return new Set(); }
+  }
+
+  const vistosNovos = lerVistos();
   state.decisoes = lerDecisoesCompletas();
+
   salvarDecisoes = function salvarDecisoesUX() {
     try { localStorage.setItem(CHAVE, JSON.stringify(state.decisoes)); } catch {}
   };
+  function salvarVistos() {
+    try { localStorage.setItem(CHAVE_VISTOS, JSON.stringify([...vistosNovos])); } catch {}
+  }
 
   function dataValida(v) {
     if (!v) return null;
@@ -24,7 +36,7 @@
   }
   function novoPorData(item) {
     const d = dataValida(item.primeiroVistoEm);
-    if (!d || !ativo(item)) return false;
+    if (!d || !ativo(item) || vistosNovos.has(item.id)) return false;
     const idade = (Date.now() - d.getTime()) / 86400000;
     return idade >= 0 && idade <= DIAS_NOVO;
   }
@@ -35,6 +47,8 @@
     state.baselineNovosInicializado = true;
   };
   marcarNovosComoVistos = function marcarNovosComoVistosUX() {
+    state.novosIds.forEach(id => vistosNovos.add(id));
+    salvarVistos();
     state.novosIds = new Set();
     render();
   };
@@ -52,8 +66,8 @@
       const d = decisao(i.id);
       if (state.tab === 'favoritados') return d === 'favorito' && ativo(i);
       if (state.tab === 'descartados') return d === 'descartado' || d === 'indisponivel';
-      if (state.tab === 'a-confirmar') return d !== 'descartado' && d !== 'indisponivel' && precisaConfirmacao(i) && ativo(i);
-      if (state.tab === 'novos') return d !== 'descartado' && d !== 'indisponivel' && state.novosIds.has(i.id) && ativo(i);
+      if (state.tab === 'a-confirmar') return !['descartado','indisponivel'].includes(d) && precisaConfirmacao(i) && ativo(i);
+      if (state.tab === 'novos') return !['descartado','indisponivel'].includes(d) && state.novosIds.has(i.id) && ativo(i);
       if (state.tab === 'todos') return disponivelParaSugestao(i);
       return true;
     });
@@ -65,6 +79,8 @@
       if (ordem === 'recente') {
         const novo = Number(novoPorData(b)) - Number(novoPorData(a));
         if (novo !== 0) return novo;
+        const data = String(b.primeiroVistoEm || '').localeCompare(String(a.primeiroVistoEm || ''));
+        if (data !== 0) return data;
       }
       return (b.match?.final ?? -1) - (a.match?.final ?? -1);
     });
@@ -108,20 +124,22 @@
   }
 
   function aplicarDecisoesVisuais() {
-    document.querySelectorAll('.card').forEach(card => {
-      const titulo = card.querySelector('.titulo')?.textContent;
-      const item = state.imoveis.find(i => valor(i.titulo, i.bairro ? `Casa em ${i.bairro}` : 'Casa para aluguel') === titulo);
+    const cards = [...document.querySelectorAll('.card')];
+    const visiveis = filtrar(state.imoveis.filter(ativo));
+    cards.forEach((card, index) => {
+      const item = visiveis[index];
       if (!item) return;
       const d = decisao(item.id);
       const indisponivel = card.querySelector('.indisponivel');
       if (!indisponivel) return;
+      const estado = card.querySelector('.estado-anuncio');
       if (d === 'indisponivel') {
         card.classList.add('indisponivel-card');
         indisponivel.textContent = '↩ Restaurar';
-        const estado = card.querySelector('.estado-anuncio');
-        if (estado) { estado.hidden = false; estado.textContent = 'Indisponível'; }
+        if (estado) { estado.hidden = false; estado.textContent = 'Alugado / indisponível'; }
       } else {
         indisponivel.textContent = '⌂ Já alugado';
+        if (estado) estado.hidden = true;
       }
       indisponivel.onclick = () => setDecisaoUX(item.id, d === 'indisponivel' ? null : 'indisponivel');
       const descartar = card.querySelector('.descartar');
@@ -145,9 +163,10 @@
     const favoritos = ativos.filter(i => decisao(i.id) === 'favorito').length;
     const descartados = state.imoveis.filter(i => ['descartado','indisponivel'].includes(decisao(i.id))).length;
     const confirmar = ativos.filter(i => precisaConfirmacao(i) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
+    const novos = ativos.filter(i => state.novosIds.has(i.id) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
     document.querySelector('#resumo').innerHTML = [metric('sugestões', sugestoes), metric('mínimos OK', ativos.filter(i => i.elegibilidade?.elegivel === true).length), metric('a confirmar', confirmar), metric('favoritos', favoritos)].join('');
     const set = (tab, texto, n) => { const el = document.querySelector(`[data-tab="${tab}"]`); if (el) el.textContent = n ? `${texto} (${n})` : texto; };
-    set('todos','Sugestões',sugestoes); set('novos','Novos',state.novosIds.size); set('a-confirmar','A confirmar',confirmar); set('favoritados','Favoritos',favoritos); set('descartados','Descartados',descartados);
+    set('todos','Sugestões',sugestoes); set('novos','Novos',novos); set('a-confirmar','A confirmar',confirmar); set('favoritados','Favoritos',favoritos); set('descartados','Descartados',descartados);
   };
 
   render = function renderUX() {
@@ -163,7 +182,7 @@
   };
 
   function codificarEscolhas() {
-    const payload = JSON.stringify({ v:1, decisoes: state.decisoes });
+    const payload = JSON.stringify({ v:2, decisoes: state.decisoes, vistos:[...vistosNovos] });
     return btoa(unescape(encodeURIComponent(payload))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
   }
   function decodificarEscolhas(token) {
@@ -171,15 +190,18 @@
       const base = token.replace(/-/g,'+').replace(/_/g,'/');
       const pad = base + '='.repeat((4 - base.length % 4) % 4);
       const payload = JSON.parse(decodeURIComponent(escape(atob(pad))));
-      return payload?.v === 1 && payload.decisoes && typeof payload.decisoes === 'object' ? payload.decisoes : null;
+      if (![1,2].includes(payload?.v) || !payload.decisoes || typeof payload.decisoes !== 'object') return null;
+      return payload;
     } catch { return null; }
   }
   function importarDaUrl() {
     const params = new URLSearchParams(location.search);
     const compartilhadas = decodificarEscolhas(params.get('escolhas') || '');
     if (!compartilhadas) return;
-    Object.entries(compartilhadas).forEach(([id, valor]) => { if (['favorito','descartado','indisponivel'].includes(valor)) state.decisoes[id] = valor; });
+    Object.entries(compartilhadas.decisoes).forEach(([id, valor]) => { if (['favorito','descartado','indisponivel'].includes(valor)) state.decisoes[id] = valor; });
+    if (Array.isArray(compartilhadas.vistos)) compartilhadas.vistos.forEach(id => { if (id) vistosNovos.add(id); });
     salvarDecisoes();
+    salvarVistos();
     params.delete('escolhas');
     const query = params.toString();
     history.replaceState(null,'',`${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
