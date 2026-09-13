@@ -10,16 +10,17 @@
   <link rel="stylesheet" href="ux-v2.css">
 </head>
 <body>
-  <header class="topo">
-    <div>
-      <p class="eyebrow">Divinópolis · aluguel</p>
+  <header class="topo topo-produto">
+    <div class="marca-produto">
       <h1>Nossa Próxima Casa</h1>
-      <p class="sub">Menos busca. Mais casas que valem abrir.</p>
+      <p class="sub">Casas que valem abrir em Divinópolis.</p>
     </div>
-    <div class="status" id="statusColeta">Carregando…</div>
-    <div class="sync-familia">
-      <button id="compartilharEscolhas" type="button">Compartilhar escolhas</button>
-      <span id="syncFeedback" aria-live="polite"></span>
+    <div class="topo-acoes">
+      <div class="status" id="statusColeta">Carregando…</div>
+      <div class="sync-familia">
+        <button id="compartilharEscolhas" type="button">Sincronizar celulares</button>
+        <span id="syncFeedback" aria-live="polite"></span>
+      </div>
     </div>
   </header>
 
@@ -44,7 +45,7 @@
         </select>
       </label>
       <label class="check"><input type="checkbox" id="somenteElegiveis"> Só mínimos OK</label>
-      <button class="marcar-vistos" id="marcarNovosVistos" type="button" hidden>Marcar como vistos</button>
+      <button class="marcar-vistos" id="marcarNovosVistos" type="button" hidden>Marcar vistos</button>
     </section>
 
     <section id="lista" class="lista" aria-live="polite"></section>
@@ -70,9 +71,9 @@
         <p class="proveniencia" hidden></p>
         <div class="acoes">
           <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
-          <button class="favoritar" type="button">♡ Favoritar</button>
-          <button class="descartar" type="button">✕ Não gostei</button>
-          <button class="indisponivel" type="button">⌂ Já alugado</button>
+          <button class="favoritar" type="button">♡ Salvar</button>
+          <button class="descartar" type="button">✕ Não quero</button>
+          <button class="indisponivel" type="button">⌂ Alugado</button>
         </div>
       </div>
     </article>
