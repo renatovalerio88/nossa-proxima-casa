@@ -29,11 +29,13 @@ class MobileUxTests(unittest.TestCase):
     def test_cards_mobile_recebem_compactacao_explicita(self):
         for rule in (".card-conteudo", ".titulo", ".metricas", ".detalhes", ".alertas", ".acoes"):
             self.assertIn(rule, self.ux)
-        self.assertIn("max-height:185px", self.ux)
+        self.assertIn("max-height:155px", self.ux)
+        self.assertIn("aspect-ratio:16/6.8", self.ux)
 
     def test_acoes_de_decisao_cabem_no_mobile(self):
-        self.assertIn("grid-template-columns:1.25fr 1fr 1fr", self.ux)
-        self.assertIn("min-height:40px", self.ux)
+        self.assertIn("grid-template-columns:repeat(3,minmax(0,1fr))", self.ux)
+        self.assertIn("min-height:38px", self.ux)
+        self.assertIn("font-size:.7rem", self.ux)
         self.assertIn(".acoes .indisponivel", self.ux)
 
 
