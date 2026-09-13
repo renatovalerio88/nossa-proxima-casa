@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Nossa Próxima Casa</title>
-  <meta name="description" content="Painel pessoal para acompanhar casas de aluguel em Divinópolis.">
+  <meta name="description" content="Casas reais para aluguel em Divinópolis, organizadas para decidir rápido em família.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mobile.css">
   <link rel="stylesheet" href="ux-v2.css">
@@ -14,33 +14,37 @@
     <div>
       <p class="eyebrow">Divinópolis · aluguel</p>
       <h1>Nossa Próxima Casa</h1>
-      <p class="sub">Casas reais que combinam com o que procuramos.</p>
+      <p class="sub">Menos busca. Mais casas que valem abrir.</p>
     </div>
-    <div class="status" id="statusColeta">Carregando dados…</div>
+    <div class="status" id="statusColeta">Carregando…</div>
+    <div class="sync-familia">
+      <button id="compartilharEscolhas" type="button">Compartilhar escolhas</button>
+      <span id="syncFeedback" aria-live="polite"></span>
+    </div>
   </header>
 
   <main>
     <section class="resumo" id="resumo"></section>
 
     <nav class="tabs" aria-label="Filtros principais">
+      <button class="tab ativo" data-tab="todos">Sugestões</button>
       <button class="tab" data-tab="novos">Novos</button>
       <button class="tab" data-tab="a-confirmar">A confirmar</button>
-      <button class="tab" data-tab="favoritados">Favoritados</button>
+      <button class="tab" data-tab="favoritados">Favoritos</button>
       <button class="tab" data-tab="descartados">Descartados</button>
-      <button class="tab ativo" data-tab="todos">Todos</button>
       <button class="tab tab-fontes" data-tab="imobiliarias">Imobiliárias</button>
     </nav>
 
     <section class="filtros" id="filtros">
       <label>Ordenar
         <select id="ordenacao">
-          <option value="recente" selected>Mais relevantes e recentes</option>
+          <option value="recente" selected>Melhores primeiro</option>
           <option value="match">Melhor Match</option>
           <option value="preco">Menor aluguel</option>
         </select>
       </label>
-      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só com mínimos confirmados</label>
-      <button class="marcar-vistos" id="marcarNovosVistos" type="button" hidden>Marcar novos como vistos</button>
+      <label class="check"><input type="checkbox" id="somenteElegiveis"> Só mínimos OK</label>
+      <button class="marcar-vistos" id="marcarNovosVistos" type="button" hidden>Marcar como vistos</button>
     </section>
 
     <section id="lista" class="lista" aria-live="polite"></section>
@@ -54,7 +58,7 @@
       <div class="card-conteudo">
         <div class="card-topo">
           <div class="card-identificacao">
-            <div class="linha-fonte"><span class="fonte"></span><span class="qualidade"></span></div>
+            <div class="linha-fonte"><span class="fonte"></span><span class="qualidade"></span><span class="estado-anuncio" hidden></span></div>
             <h2 class="titulo"></h2>
             <p class="local"></p>
           </div>
@@ -67,7 +71,8 @@
         <div class="acoes">
           <a class="link" target="_blank" rel="noopener noreferrer">Ver anúncio</a>
           <button class="favoritar" type="button">♡ Favoritar</button>
-          <button class="descartar" type="button">🗑 Descartar</button>
+          <button class="descartar" type="button">✕ Não gostei</button>
+          <button class="indisponivel" type="button">⌂ Já alugado</button>
         </div>
       </div>
     </article>
@@ -75,18 +80,8 @@
 
   <dialog class="galeria-modal" id="galeriaModal" aria-label="Galeria de fotos reais do imóvel">
     <div class="galeria-painel">
-      <div class="galeria-topo">
-        <div>
-          <strong>Fotos reais do anúncio</strong>
-          <span class="galeria-contador"></span>
-        </div>
-        <button class="galeria-fechar" type="button" aria-label="Fechar galeria">×</button>
-      </div>
-      <div class="galeria-palco">
-        <button class="galeria-nav galeria-anterior" type="button" aria-label="Foto anterior">‹</button>
-        <img class="galeria-imagem" alt="" referrerpolicy="no-referrer">
-        <button class="galeria-nav galeria-proxima" type="button" aria-label="Próxima foto">›</button>
-      </div>
+      <div class="galeria-topo"><div><strong>Fotos do anúncio</strong><span class="galeria-contador"></span></div><button class="galeria-fechar" type="button" aria-label="Fechar galeria">×</button></div>
+      <div class="galeria-palco"><button class="galeria-nav galeria-anterior" type="button" aria-label="Foto anterior">‹</button><img class="galeria-imagem" alt="" referrerpolicy="no-referrer"><button class="galeria-nav galeria-proxima" type="button" aria-label="Próxima foto">›</button></div>
       <p class="galeria-legenda"></p>
     </div>
   </dialog>
