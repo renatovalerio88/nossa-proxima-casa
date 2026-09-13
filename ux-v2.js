@@ -56,12 +56,21 @@
   function indisponivelLocal(item) { return decisao(item.id) === 'indisponivel'; }
   function descartadoLocal(item) { return decisao(item.id) === 'descartado'; }
   function disponivelParaSugestao(item) {
-    return ativo(item) && !indisponivelLocal(item) && !descartadoLocal(item) && !foraDosCriterios(item);
+    return ativo(item)
+      && item.elegibilidade?.elegivel === true
+      && !indisponivelLocal(item)
+      && !descartadoLocal(item)
+      && !foraDosCriterios(item);
   }
 
   filtrar = function filtrarUX(items) {
     const somenteElegiveis = document.querySelector('#somenteElegiveis')?.checked;
-    let rows = items.filter(i => !somenteElegiveis || i.elegibilidade?.elegivel === true);
+    let rows = items;
+    // “A confirmar” e “Descartados” são estados próprios: o filtro de mínimos
+    // não pode esvaziar essas abas nem esconder a razão de um imóvel estar ali.
+    if (somenteElegiveis && !['a-confirmar','descartados'].includes(state.tab)) {
+      rows = rows.filter(i => i.elegibilidade?.elegivel === true);
+    }
     rows = rows.filter(i => {
       const d = decisao(i.id);
       if (state.tab === 'favoritados') return d === 'favorito' && ativo(i);
@@ -164,7 +173,7 @@
     const descartados = state.imoveis.filter(i => ['descartado','indisponivel'].includes(decisao(i.id))).length;
     const confirmar = ativos.filter(i => precisaConfirmacao(i) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
     const novos = ativos.filter(i => state.novosIds.has(i.id) && !['descartado','indisponivel'].includes(decisao(i.id))).length;
-    document.querySelector('#resumo').innerHTML = [metric('sugestões', sugestoes), metric('mínimos OK', ativos.filter(i => i.elegibilidade?.elegivel === true).length), metric('a confirmar', confirmar), metric('favoritos', favoritos)].join('');
+    document.querySelector('#resumo').innerHTML = [metric('sugestões confirmadas', sugestoes), metric('mínimos OK', ativos.filter(i => i.elegibilidade?.elegivel === true).length), metric('a confirmar', confirmar), metric('favoritos', favoritos)].join('');
     const set = (tab, texto, n) => { const el = document.querySelector(`[data-tab="${tab}"]`); if (el) el.textContent = n ? `${texto} (${n})` : texto; };
     set('todos','Sugestões',sugestoes); set('novos','Novos',novos); set('a-confirmar','A confirmar',confirmar); set('favoritados','Favoritos',favoritos); set('descartados','Descartados',descartados);
   };
