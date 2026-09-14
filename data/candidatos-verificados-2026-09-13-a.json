@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "atualizadoEm": "2026-09-13",
+  "observacao": "Observação manual verificada em página pública da imobiliária. Não implica autorização para coleta automática; disponibilidade e valores devem ser confirmados com a fonte antes de visita ou contratação.",
+  "imoveis": [
+    {
+      "fonte": "Ponto Sete Imóveis",
+      "codigoFonte": "3437",
+      "url": "https://www.pontoseteimoveis.com.br/imovel/casa-residencial/3437",
+      "observadoEm": "2026-09-13",
+      "disponibilidadeObservada": true,
+      "tipo": "casa",
+      "operacao": "aluguel",
+      "cidade": "Divinópolis",
+      "bairro": "Porto Velho",
+      "endereco": null,
+      "aluguel": 3500.0,
+      "condominio": 0.0,
+      "iptu": 0.0,
+      "areaM2": 200.0,
+      "terrenoM2": null,
+      "quartos": 6,
+      "suites": 1,
+      "banheiros": 2,
+      "vagas": 1,
+      "quintal": true,
+      "armarios": true,
+      "churrasqueira": true,
+      "piscina": null,
+      "hidromassagem": null,
+      "descricao": "Casa residencial de aproximadamente 200 m² em dois pavimentos, com 6 quartos, 1 suíte, 2 banheiros, cozinha com armário, varanda, duas áreas de serviço, área gourmet com churrasqueira, quintal e 1 vaga de garagem.",
+      "fonteVerificacao": "pagina_publica",
+      "coletaAutomaticaPermitida": false,
+      "notaProveniencia": "Registro observado manualmente na página pública da Ponto Sete Imóveis em 13/09/2026. Imóvel no teto da faixa de oportunidade (R$ 3.500); preservar como oportunidade apenas se os demais critérios e destaques forem confirmados pelo motor. Não renovar ultimoVistoEm automaticamente sem nova verificação da fonte."
+    }
+  ]
+}
