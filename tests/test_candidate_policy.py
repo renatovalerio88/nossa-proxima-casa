@@ -20,6 +20,16 @@ class CandidatePolicyContractTests(unittest.TestCase):
     def test_above_3500_never_enters_active_candidates(self):
         self.assertIn("if (preco > 3500) return false", self.policy)
 
+    def test_explicit_commercial_listings_never_enter_residential_radar(self):
+        self.assertIn("function anuncioResidencial", self.policy)
+        self.assertIn("if (!anuncioResidencial(item)) return false", self.policy)
+        self.assertIn("'casa comercial'", self.policy)
+        self.assertIn("'imóvel comercial'", self.policy)
+        self.assertIn("'uso comercial'", self.policy)
+        self.assertIn("'ponto comercial'", self.policy)
+        self.assertIn("'sala comercial'", self.policy)
+        self.assertIn("['comercial', 'loja', 'sala', 'galpao', 'galpão', 'deposito', 'depósito'].includes(tipo)", self.policy)
+
     def test_below_2000_requires_strong_structured_opportunity(self):
         self.assertIn("function temJustificativaForteAbaixoDoPiso", self.policy)
         self.assertIn("if (preco < 2000)", self.policy)
