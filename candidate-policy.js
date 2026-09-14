@@ -2,6 +2,32 @@ function disponivelNaFonte(item) {
   return item?.disponivel !== false;
 }
 
+function anuncioResidencial(item) {
+  const tipo = String(item?.tipo || '').toLowerCase();
+  const texto = [
+    item?.titulo,
+    item?.descricao,
+    item?.tipo,
+    item?.subtipo,
+    item?.finalidade
+  ].filter(Boolean).join(' ').toLowerCase();
+
+  const tipoComercial = ['comercial', 'loja', 'sala', 'galpao', 'galpão', 'deposito', 'depósito'].includes(tipo);
+  const marcadoresComerciais = [
+    'casa comercial',
+    'imovel comercial',
+    'imóvel comercial',
+    'uso comercial',
+    'ponto comercial',
+    'sala comercial',
+    'loja comercial',
+    'galpao comercial',
+    'galpão comercial'
+  ];
+
+  return !tipoComercial && !marcadoresComerciais.some(marcador => texto.includes(marcador));
+}
+
 function temJustificativaOportunidade(item) {
   const oportunidade = item?.elegibilidade?.oportunidade;
   if (typeof oportunidade === 'string') return oportunidade.trim().length > 0;
@@ -24,6 +50,7 @@ function temJustificativaForteAbaixoDoPiso(item) {
 
 function candidatoAtivo(item) {
   if (!disponivelNaFonte(item)) return false;
+  if (!anuncioResidencial(item)) return false;
 
   const elegibilidade = item?.elegibilidade || {};
   const preco = Number(item?.aluguel);
