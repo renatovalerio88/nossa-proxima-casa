@@ -1,94 +1,13 @@
-name: Atualizar imóveis
+name: Atualizar imóveis (pausado)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/**'
-      - 'tests/**'
-      - 'data/coleta-seeds.json'
-      - 'data/candidatos-verificados*.json'
-      - 'data/fontes.json'
-      - 'data/config.json'
-      - '.github/workflows/atualizar-imoveis.yml'
-  schedule:
-    - cron: '15 10 * * *'
 
 permissions:
-  contents: write
-
-concurrency:
-  group: atualizar-imoveis
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  atualizar:
+  pausado:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Sincronizar main mais recente
-        run: |
-          git fetch origin main
-          git checkout -B main origin/main
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Validar política de fontes
-        run: python scripts/validate_source_policy.py
-      - name: Coletar páginas públicas verificadas
-        run: python scripts/collect_public_pages.py
-      - name: Atualizar inventário, elegibilidade e Match
-        run: python scripts/update_inventory.py --input data/coleta-atual.json
-      - name: Integrar candidatos verificados
-        run: python scripts/ingest_verified_candidates.py
-      - name: Enriquecer localização e distância ao hospital
-        run: python scripts/enrich_location.py
-      - name: Validar dados e testes
-        run: |
-          python -m json.tool data/imoveis.json >/dev/null
-          python -m json.tool data/status-coleta.json >/dev/null
-          python -m json.tool data/geocode-cache.json >/dev/null
-          python -m json.tool data/fontes.json >/dev/null
-          for arquivo in data/candidatos-verificados*.json; do
-            [ -e "$arquivo" ] || continue
-            python -m json.tool "$arquivo" >/dev/null
-          done
-          python scripts/validate_data_quality.py
-          python -m unittest discover -s tests -v
-      - name: Resumo da coleta
-        run: |
-          python - <<'PY'
-          import json, os
-          s=json.load(open('data/status-coleta.json', encoding='utf-8'))
-          inv=json.load(open('data/imoveis.json', encoding='utf-8'))
-          ativos=sum(1 for i in inv.get('imoveis', []) if i.get('disponivel') is not False)
-          localizados=sum(1 for i in inv.get('imoveis', []) if (i.get('hospital') or {}).get('distanciaKm') is not None or (i.get('hospital') or {}).get('distanciaLinhaRetaKm') is not None)
-          manuais=sum(1 for i in inv.get('imoveis', []) if (i.get('proveniencia') or {}).get('modo') == 'verificacao_manual')
-          text=(f"### Coleta de imóveis\n"
-                f"- Estado técnico: **{s['estado']}**\n"
-                f"- Inventário ativo: **{ativos}**\n"
-                f"- Coletados automaticamente nesta execução: **{s['coletados']}**\n"
-                f"- Anúncios confirmados indisponíveis: **{s['indisponiveisConfirmados']}**\n"
-                f"- Erros técnicos: **{s['erros']}**\n"
-                f"- Imóveis com foto real nesta coleta: **{s.get('imoveisComFotos', 0)}**\n"
-                f"- Fotos reais capturadas: **{s.get('fotosReaisCapturadas', 0)}**\n"
-                f"- Candidatos verificados no inventário: **{manuais}**\n"
-                f"- Com localização/distância ao hospital: **{localizados}**\n")
-          with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as f: f.write(text)
-          PY
-      - name: Commit de atualização
-        run: |
-          if git diff --quiet -- data/imoveis.json data/coleta-atual.json data/status-coleta.json data/geocode-cache.json; then
-            echo 'Sem alterações de imóveis, localização ou status.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/imoveis.json data/coleta-atual.json data/status-coleta.json data/geocode-cache.json
-          git commit -m 'data: atualiza imóveis, localização e saúde da coleta'
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+      - run: echo "Projeto pausado após a casa ser encontrada. Lógicas preservadas para uso futuro."
